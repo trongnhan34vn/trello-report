@@ -1,0 +1,49 @@
+\section{CHƯƠNG 1: GIỚI THIỆU ĐỀ TÀI}
+
+\subsection{Giới thiệu đề tài}
+Trong bối cảnh nền kinh tế số phát triển mạnh mẽ, khối lượng công việc và yêu cầu phối hợp giữa các cá nhân, phòng ban trong mọi tổ chức ngày càng gia tăng. Việc quản lý công việc và dự án một cách khoa học, hiệu quả đã trở thành một nhu cầu cấp thiết để duy trì tính cạnh tranh và tối ưu hóa hiệu suất vận hành. Sự bùng nổ của công nghệ thông tin đã và đang thúc đẩy việc số hóa quy trình làm việc, chuyển đổi từ các phương thức quản lý truyền thống sang các giải pháp cộng tác trực tuyến trực quan. Nhu cầu thực tế đặt ra đòi hỏi một hệ thống có khả năng tổ chức công việc khoa học, cập nhật trạng thái theo thời gian thực và hỗ trợ các công cụ tương tác trực quan để nâng cao năng lực cộng tác của các thành viên trong cùng một dự án.
+
+\subsection{Tính cấp thiết của đề tài}
+Hiện nay, mặc dù đã có nhiều giải pháp phần mềm hỗ trợ quản lý, nhiều cá nhân và tổ chức tại Việt Nam vẫn sử dụng các phương pháp thủ công như ghi chép sổ tay, bảng trắng, hoặc các công cụ kỹ thuật số rời rạc và thiếu tính trực quan như email, bảng tính Excel, hay các ứng dụng nhắn tin nhanh. Các phương thức tiếp cận truyền thống này bộc lộ nhiều hạn chế nghiêm trọng trong môi trường làm việc hiện đại:
+\begin{itemize}
+    \item \textbf{Thất lạc và phân mảnh thông tin:} Các yêu cầu công việc, phản hồi và tài liệu đính kèm bị phân tán trên nhiều kênh giao tiếp khác nhau, dẫn đến khó khăn trong việc tìm kiếm và dễ bỏ sót nhiệm vụ.
+    \item \textbf{Khó theo dõi tiến độ tổng thể:} Người quản lý và các thành viên gặp nhiều khó khăn để có được cái nhìn tổng quan về trạng thái hiện tại của dự án, dẫn đến chậm trễ tiến độ mà không có biện pháp cảnh báo hoặc xử lý kịp thời.
+    \item \textbf{Thiếu tính tương tác trực quan:} Các công cụ truyền thống không hỗ trợ cập nhật động trạng thái công việc và luồng di chuyển của các nhiệm vụ theo thời gian thực.
+    \item \textbf{Giảm hiệu suất cộng tác nhóm:} Việc phân chia trách nhiệm và giao việc không được định nghĩa rõ ràng, gây chồng chéo công việc và suy giảm hiệu quả làm việc chung.
+\end{itemize}
+Từ những hạn chế trên, việc nghiên cứu và xây dựng ``Hệ thống quản lý công việc'' là vô cùng cấp thiết. Hệ thống được phát triển nhằm khắc phục triệt để các nhược điểm của phương pháp truyền thống bằng việc cung cấp một giao diện quản lý trực quan theo mô hình Kanban. Giải pháp này giúp chuẩn hóa quy trình giao việc, nâng cao tính minh bạch trong tập thể, tối ưu hóa quy trình làm việc và giảm thiểu tối đa các sai sót thông tin trong suốt quá trình vận hành dự án.
+
+\subsection{Mục tiêu đề tài}
+Mục tiêu chính của đề tài là nghiên cứu, thiết kế và phát triển một nền tảng quản lý công việc và thẻ công việc (task/card) hiệu quả, trực quan, dễ tiếp cận và có khả năng tương tác cao. Các mục tiêu chi tiết bao gồm:
+\begin{itemize}
+    \item \textbf{Xây dựng nền tảng quản lý khoa học:} Cho phép người dùng dễ dàng tổ chức công việc theo các không gian làm việc (workspace) riêng biệt và các bảng công việc (board) theo từng dự án cụ thể.
+    \item \textbf{Quản lý thẻ công việc chi tiết:} Cung cấp đầy đủ các thuộc tính quản lý cho một nhiệm vụ như tiêu đề, mô tả chi tiết, gán thành viên thực hiện, thiết lập thời hạn hoàn thành (due date) và xây dựng các danh sách kiểm tra công việc con (checklist) để theo dõi chi tiết.
+    \item \textbf{Tích hợp cơ chế tương tác trực quan:} Triển khai thành công tính năng kéo thả (drag and drop) các thẻ công việc giữa các danh sách trạng thái khác nhau, mang lại trải nghiệm mượt mà và trực quan cho người dùng.
+    \item \textbf{Đồng bộ dữ liệu và cộng tác hiệu quả:} Đảm bảo các cập nhật về trạng thái công việc, phân công nhân sự và thời hạn được đồng bộ hóa nhanh chóng đến toàn bộ thành viên trong bảng công việc.
+\end{itemize}
+
+\subsection{Phạm vi đề tài}
+Đề tài tập trung nghiên cứu và triển khai các chức năng cốt lõi phục vụ nhu cầu quản lý công việc hàng ngày của cá nhân và đội ngũ, cụ thể bao gồm:
+\begin{itemize}
+    \item \textbf{Hệ thống xác thực và quản lý tài khoản:} Triển khai các tính năng đăng ký, đăng nhập, đăng xuất và cập nhật thông tin cá nhân của người dùng, tích hợp giải pháp xác thực bảo mật thông qua dịch vụ điện toán đám mây Amazon Cognito.
+    \item \textbf{Quản lý Workspace:} Tạo lập, cập nhật thông tin và tổ chức các không gian làm việc để quản lý tập trung nhiều dự án liên quan.
+    \item \textbf{Quản lý Board:} Tạo mới, cập nhật thông tin, xóa các bảng công việc theo dự án; triển khai tính năng tìm kiếm và thêm thành viên vào bảng công việc.
+    \item \textbf{Quản lý danh sách công việc (List):} Tạo mới, đổi tên, thay đổi thứ tự sắp xếp và xóa các danh sách trong mỗi bảng nhằm phân loại trạng thái công việc (ví dụ: Cần làm, Đang làm, Đã hoàn thành).
+    \item \textbf{Quản lý thẻ công việc (Card):} Thực hiện các thao tác CRUD (Tạo, Đọc, Cập nhật, Xóa) đối với thẻ công việc; hỗ trợ thêm mô tả chi tiết, gán thành viên chịu trách nhiệm, thiết lập thời hạn hoàn thành và hiển thị trạng thái cảnh báo trực quan khi công việc sắp đến hạn hoặc quá hạn.
+    \item \textbf{Quản lý danh sách kiểm tra (Checklist):} Cho phép tạo các checklist trong mỗi card, thêm các hạng mục công việc con (checklist item), đánh dấu hoàn thành/chưa hoàn thành và hiển thị thanh tiến độ (progress bar) trực quan theo tỷ lệ phần trăm hoàn thành.
+    \item \textbf{Tương tác kéo thả (Drag and Drop):} Phát triển thuật toán và giao diện hỗ trợ kéo thả thẻ công việc giữa các danh sách hoặc thay đổi vị trí của các thẻ trong cùng một danh sách, đảm bảo tính nhất quán về vị trí hiển thị giữa Frontend và Backend.
+\end{itemize}
+Các nội dung và tính năng nằm ngoài phạm vi nghiên cứu thực hiện của học phần bao gồm:
+\begin{itemize}
+    \item Các chức năng phân tích số liệu nâng cao, dự báo tiến độ và tự động xuất các báo cáo thống kê định kỳ dưới dạng biểu đồ phức tạp.
+    \item Việc tích hợp sâu hệ thống quản lý công việc với các nền tảng và dịch vụ của bên thứ ba như Slack, Google Calendar, hay các công cụ lưu trữ đám mây bên ngoài.
+    \item Tối ưu hóa hạ tầng và cơ chế cân bằng tải để phục vụ cho hệ thống quy mô lớn có hàng triệu người dùng hoạt động đồng thời.
+\end{itemize}
+
+\subsection{Đối tượng sử dụng}
+Hệ thống quản lý công việc hướng đến việc giải quyết nhu cầu của các nhóm đối tượng người dùng chính sau:
+\begin{itemize}
+    \item \textbf{Cá nhân:} Người dùng có nhu cầu sắp xếp, lên kế hoạch và quản lý các công việc học tập, nghiên cứu hoặc làm việc cá nhân hàng ngày một cách khoa học, giúp tăng tính kỷ luật và hiệu suất cá nhân.
+    \item \textbf{Nhóm làm việc và phòng ban:} Các đội ngũ phát triển dự án, nhóm nghiên cứu hoặc các phòng ban chức năng trong tổ chức cần một không gian cộng tác số thống nhất để phân công công việc, phối hợp thực hiện và cùng theo dõi tiến độ công việc một cách minh bạch, rõ ràng.
+    \item \textbf{Quản lý dự án:} Những người chịu trách nhiệm điều phối và giám sát toàn bộ hoạt động của dự án, cần theo dõi tổng quan tiến độ của từng hạng mục công việc, kiểm soát thời hạn hoàn thành (deadlines) và tối ưu hóa việc phân bổ nguồn lực nhân sự.
+\end{itemize}
