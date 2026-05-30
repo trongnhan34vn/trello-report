@@ -1,7 +1,7 @@
 \section{CHƯƠNG 1: GIỚI THIỆU ĐỀ TÀI}
 
 \subsection{Giới thiệu đề tài}
-Trong bối cảnh nền kinh tế số phát triển mạnh mẽ, khối lượng công việc và yêu cầu phối hợp giữa các cá nhân, phòng ban trong mọi tổ chức ngày càng gia tăng. Việc quản lý công việc và dự án một cách khoa học, hiệu quả đã trở thành một nhu cầu cấp thiết để duy trì tính cạnh tranh và tối ưu hóa hiệu suất vận hành. Sự bùng nổ của công nghệ thông tin đã và đang thúc đẩy việc số hóa quy trình làm việc, chuyển đổi từ các phương thức quản lý truyền thống sang các giải pháp cộng tác trực tuyến trực quan. Nhu cầu thực tế đặt ra đòi hỏi một hệ thống có khả năng tổ chức công việc khoa học, cập nhật trạng thái theo thời gian thực và hỗ trợ các công cụ tương tác trực quan để nâng cao năng lực cộng tác của các thành viên trong cùng một dự án.
+Trong quá trình quản lý dự án, việc tổ chức và theo dõi công việc luôn là một bài toán phức tạp đối với các cá nhân hay tổ chức. Khi số lượng công việc gia tăng, các phương pháp quản lý truyền thống hoặc rời rạc thường bộc lộ nhiều hạn chế, dẫn đến những khó khăn trực tiếp trong việc kiểm soát tiến độ, phân chia nguồn lực và duy trì sự phối hợp giữa các thành viên. Tình trạng thất lạc thông tin, thiếu minh bạch về trạng thái thực hiện các hạng mục công việc làm suy giảm đáng kể hiệu suất chung. Xuất phát từ thực trạng này, bài toán đặt ra là cần xây dựng một giải pháp phần mềm hỗ trợ quản lý dự án tập trung, trực quan, giúp người dùng dễ dàng tổ chức các đầu việc, theo dõi tiến độ và nâng cao hiệu quả cộng tác.
 
 \subsection{Tính cấp thiết của đề tài}
 Hiện nay, mặc dù đã có nhiều giải pháp phần mềm hỗ trợ quản lý, nhiều cá nhân và tổ chức tại Việt Nam vẫn sử dụng các phương pháp thủ công như ghi chép sổ tay, bảng trắng, hoặc các công cụ kỹ thuật số rời rạc và thiếu tính trực quan như email, bảng tính Excel, hay các ứng dụng nhắn tin nhanh. Các phương thức tiếp cận truyền thống này bộc lộ nhiều hạn chế nghiêm trọng trong môi trường làm việc hiện đại:
@@ -26,7 +26,7 @@ Mục tiêu chính của đề tài là nghiên cứu, thiết kế và phát tr
 Đề tài tập trung nghiên cứu và triển khai các chức năng cốt lõi phục vụ nhu cầu quản lý công việc hàng ngày của cá nhân và đội ngũ, cụ thể bao gồm:
 \begin{itemize}
     \item \textbf{Hệ thống xác thực và quản lý tài khoản:} Triển khai các tính năng đăng ký, đăng nhập, đăng xuất và cập nhật thông tin cá nhân của người dùng, tích hợp giải pháp xác thực bảo mật thông qua dịch vụ điện toán đám mây Amazon Cognito.
-    \item \textbf{Quản lý Workspace:} Tạo lập, cập nhật thông tin và tổ chức các không gian làm việc để quản lý tập trung nhiều dự án liên quan.
+    \item \textbf{Quản lý Workspace:} Tạo lập, cập nhật thông tin, xóa và tổ chức các không gian làm việc để quản lý tập trung nhiều dự án liên quan.
     \item \textbf{Quản lý Board:} Tạo mới, cập nhật thông tin, xóa các bảng công việc theo dự án; triển khai tính năng tìm kiếm và thêm thành viên vào bảng công việc.
     \item \textbf{Quản lý danh sách công việc (List):} Tạo mới, đổi tên, thay đổi thứ tự sắp xếp và xóa các danh sách trong mỗi bảng nhằm phân loại trạng thái công việc (ví dụ: Cần làm, Đang làm, Đã hoàn thành).
     \item \textbf{Quản lý thẻ công việc (Card):} Thực hiện các thao tác CRUD (Tạo, Đọc, Cập nhật, Xóa) đối với thẻ công việc; hỗ trợ thêm mô tả chi tiết, gán thành viên chịu trách nhiệm, thiết lập thời hạn hoàn thành và hiển thị trạng thái cảnh báo trực quan khi công việc sắp đến hạn hoặc quá hạn.
@@ -46,4 +46,1557 @@ Hệ thống quản lý công việc hướng đến việc giải quyết nhu c
     \item \textbf{Cá nhân:} Người dùng có nhu cầu sắp xếp, lên kế hoạch và quản lý các công việc học tập, nghiên cứu hoặc làm việc cá nhân hàng ngày một cách khoa học, giúp tăng tính kỷ luật và hiệu suất cá nhân.
     \item \textbf{Nhóm làm việc và phòng ban:} Các đội ngũ phát triển dự án, nhóm nghiên cứu hoặc các phòng ban chức năng trong tổ chức cần một không gian cộng tác số thống nhất để phân công công việc, phối hợp thực hiện và cùng theo dõi tiến độ công việc một cách minh bạch, rõ ràng.
     \item \textbf{Quản lý dự án:} Những người chịu trách nhiệm điều phối và giám sát toàn bộ hoạt động của dự án, cần theo dõi tổng quan tiến độ của từng hạng mục công việc, kiểm soát thời hạn hoàn thành (deadlines) và tối ưu hóa việc phân bổ nguồn lực nhân sự.
+\end{itemize}
+
+\section{CHƯƠNG 2: CƠ SỞ LÝ THUYẾT}
+
+\subsection{Cách tiếp cận và hướng giải quyết}
+
+\subsubsection{Phương pháp phân tích bài toán}
+Bài toán được tiếp cận theo hướng phân tích từ trên xuống (top-down), bắt đầu từ việc nghiên cứu các hệ thống quản lý công việc phổ biến hiện có trên thị trường như Trello và Jira, từ đó xác định mô hình nghiệp vụ, các thực thể dữ liệu cốt lõi và luồng hoạt động của hệ thống. Qua nghiên cứu, mô hình Kanban được lựa chọn làm nền tảng tổ chức công việc do tính trực quan và khả năng phản ánh trạng thái công việc một cách rõ ràng theo các cột trạng thái (To Do, In Progress, Done).
+
+Mô hình dữ liệu nghiệp vụ được xác định xoay quanh sáu thực thể chính theo cấu trúc phân cấp:
+\begin{itemize}
+    \item \textbf{Workspace}: không gian làm việc tổng thể của người dùng, quản lý tập trung nhiều dự án liên quan.
+    \item \textbf{Board}: đại diện cho một dự án hoặc bảng công việc cụ thể bên trong Workspace.
+    \item \textbf{List}: các cột trạng thái bên trong Board, thể hiện giai đoạn thực hiện của công việc.
+    \item \textbf{Card}: nhiệm vụ cụ thể cần thực hiện, được đặt trong các List tương ứng.
+    \item \textbf{Checklist}: danh sách các công việc con nằm bên trong thẻ công việc (Card), hỗ trợ theo dõi chi tiết tiến trình thực hiện.
+    \item \textbf{ChecklistItem}: các hạng mục cụ thể bên trong Checklist, có thể được đánh dấu trạng thái hoàn thành.
+\end{itemize}
+
+\subsubsection{Hướng thiết kế giải pháp}
+Giải pháp được thiết kế theo kiến trúc client-server với sự tách biệt rõ ràng giữa Frontend và Backend thông qua giao tiếp RESTful API. Hướng tiếp cận này giúp hai thành phần có thể phát triển song song, dễ dàng bảo trì và mở rộng độc lập. Toàn bộ logic nghiệp vụ được tập trung xử lý tại Backend, trong khi Frontend chịu trách nhiệm trình bày giao diện và tương tác với người dùng.
+
+Đối với bài toán kéo thả (drag and drop), giải pháp sử dụng thuật toán quản lý vị trí (position) dựa trên trường số nguyên trong cơ sở dữ liệu. Khi người dùng di chuyển một thẻ công việc, hệ thống tính toán và cập nhật lại giá trị \texttt{position} của thẻ đó tương ứng với vị trí đích, đảm bảo tính nhất quán giữa thứ tự hiển thị trên giao diện và dữ liệu lưu trữ trong cơ sở dữ liệu.
+
+\subsubsection{Các quyết định kỹ thuật chính}
+Các quyết định kỹ thuật quan trọng được đưa ra trong quá trình thiết kế hệ thống bao gồm:
+\begin{itemize}
+    \item \textbf{Phân tách Frontend và Backend}: Frontend xây dựng bằng ReactJS, Backend xây dựng bằng Java Spring Boot, giao tiếp qua REST API, tạo ra sự linh hoạt cao trong phát triển và triển khai.
+    \item \textbf{Ủy quyền xác thực cho dịch vụ bên thứ ba}: Sử dụng Amazon Cognito để quản lý toàn bộ vòng đời người dùng (đăng ký, xác thực email, đăng nhập), giúp Backend tập trung vào logic nghiệp vụ thay vì tự xử lý xác thực.
+    \item \textbf{Lưu trữ token bằng HttpOnly Cookie}: Access token và refresh token được lưu trong HttpOnly cookie thay vì localStorage, ngăn chặn các cuộc tấn công XSS (Cross-Site Scripting).
+    \item \textbf{Cơ sở dữ liệu quan hệ PostgreSQL}: Phù hợp với mô hình dữ liệu có cấu trúc quan hệ rõ ràng và hỗ trợ tốt cho JPA/Hibernate trong Spring Boot.
+    \item \textbf{Triển khai trên nền tảng Cloud}: Ứng dụng được triển khai hoàn toàn lên môi trường điện toán đám mây thông qua hệ sinh thái các dịch vụ của AWS (bao gồm EC2, RDS, S3, CloudFront và ALB), giúp hệ thống tận dụng tối đa khả năng mở rộng linh hoạt, tối ưu chi phí hạ tầng và đảm bảo tính sẵn sàng cao.
+\end{itemize}
+
+\subsection{Các nền tảng và công nghệ sử dụng}
+
+\subsubsection{Các nền tảng liên quan đến ứng dụng}
+
+\paragraph{ReactJS}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/chap2/React.jpg}
+    \caption{Logo ReactJS}
+    \label{fig:reactjs_logo}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} ReactJS là thư viện JavaScript mã nguồn mở được phát triển bởi Meta (Facebook), chuyên dùng để xây dựng giao diện người dùng (UI) tương tác và có hiệu suất cao.
+    \item \textbf{Chức năng:} ReactJS hoạt động theo cơ chế component-based, cho phép chia nhỏ giao diện thành các thành phần độc lập, có thể tái sử dụng. Virtual DOM giúp cập nhật giao diện một cách hiệu quả bằng cách chỉ render lại những phần thực sự thay đổi, thay vì cập nhật toàn bộ cây DOM.
+    \item \textbf{Vai trò trong hệ thống:} ReactJS được sử dụng để xây dựng toàn bộ tầng giao diện (View layer) của hệ thống quản lý công việc, bao gồm các màn hình xác thực (đăng ký, đăng nhập), màn hình Dashboard hiển thị danh sách Workspace và Board, cũng như màn hình Board chi tiết với các chức năng quản lý List, Card và Drag and Drop.
+    \item \textbf{Lý do lựa chọn:} Đối với các dạng ứng dụng web trang đơn (Single Page Application - SPA), ReactJS là một thư viện phổ biến, được sử dụng rất nhiều bởi các lập trình viên nhờ tính linh hoạt và khả năng triển khai dễ dàng, nhanh chóng.
+\end{itemize}
+
+\paragraph{Java Spring Boot}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/chap2/SpringBoot.jpg}
+    \caption{Logo Java Spring Boot}
+    \label{fig:springboot_logo}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Spring Boot là framework phát triển ứng dụng Java được xây dựng trên nền tảng Spring Framework, cung cấp cơ chế tự động cấu hình (auto-configuration) giúp giảm thiểu thời gian thiết lập dự án và tập trung vào triển khai logic nghiệp vụ.
+    \item \textbf{Chức năng:} Spring Boot hỗ trợ xây dựng các ứng dụng RESTful API thông qua module Spring Web, quản lý kết nối cơ sở dữ liệu thông qua Spring Data JPA và Hibernate, đồng thời cung cấp cơ chế dependency injection giúp tổ chức code theo hướng lập trình hướng đối tượng rõ ràng.
+    \item \textbf{Vai trò trong hệ thống:} Spring Boot đóng vai trò là tầng Backend của hệ thống, xử lý toàn bộ logic nghiệp vụ, xây dựng và cung cấp các RESTful API cho Frontend tiêu thụ. Cấu trúc project được tổ chức theo mô hình phân lớp bao gồm: \texttt{controller}, \texttt{service}, \texttt{repository} và \texttt{config}.
+    \item \textbf{Lý do lựa chọn:} Spring Boot là một framework hỗ trợ công việc viết code cho các lập trình viên một cách mạnh mẽ và tối ưu. Kết hợp cùng với Java - một ngôn ngữ lập trình chặt chẽ, có tính ổn định cao, việc sử dụng Spring Boot giúp giảm thiểu tối đa các lỗi hệ thống có thể xảy ra trong quá trình vận hành.
+\end{itemize}
+
+\paragraph{PostgreSQL}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/chap2/PostgreSQL.png}
+    \caption{Logo PostgreSQL}
+    \label{fig:postgresql_logo}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} PostgreSQL là hệ quản trị cơ sở dữ liệu quan hệ mã nguồn mở mạnh mẽ, hỗ trợ đầy đủ các tính năng của SQL chuẩn cùng nhiều tính năng nâng cao như kiểu dữ liệu JSON, UUID, các ràng buộc phức tạp và transaction ACID.
+    \item \textbf{Chức năng:} PostgreSQL đảm bảo tính toàn vẹn dữ liệu thông qua các ràng buộc FK (foreign key), hỗ trợ các truy vấn phức tạp với nhiều bảng quan hệ, đồng thời cung cấp hiệu suất đọc/ghi ổn định phù hợp với các ứng dụng web thông thường.
+    \item \textbf{Vai trò trong hệ thống:} PostgreSQL được sử dụng làm hệ quản trị cơ sở dữ liệu chính của hệ thống, lưu trữ toàn bộ dữ liệu nghiệp vụ bao gồm thông tin người dùng, Workspace, Board, List, Card, Checklist và các bảng quan hệ trung gian. Kết nối với Backend thông qua Spring Data JPA và trình điều khiển PostgreSQL JDBC.
+\end{itemize}
+
+\subsubsection{Các nền tảng liên quan đến dịch vụ đám mây}
+
+\paragraph{Amazon Cognito}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Amazon Cognito là dịch vụ quản lý danh tính và xác thực người dùng do Amazon Web Services (AWS) cung cấp, hỗ trợ các luồng xác thực theo chuẩn OAuth 2.0 và OpenID Connect.
+    \item \textbf{Chức năng:} Amazon Cognito cung cấp hai thành phần chính: User Pool để quản lý người dùng và xác thực danh tính, và Identity Pool để cấp quyền truy cập tài nguyên AWS. Dịch vụ này tự động xử lý việc gửi email xác nhận, quản lý mật khẩu, làm mới token và bảo vệ tài khoản theo các chính sách bảo mật chuẩn.
+    \item \textbf{Vai trò trong hệ thống:} Amazon Cognito được tích hợp trực tiếp với tầng Backend thông qua AWS SDK for Java để xử lý toàn bộ luồng xác thực người dùng. Theo kiến trúc này, Client không gọi trực tiếp đến Cognito mà tương tác qua Backend; Backend sẽ giao tiếp với Cognito để đăng nhập, đăng ký và nhận JWT (access token, refresh token), sau đó trả về cho Client.
+\end{itemize}
+
+\paragraph{Amazon RDS}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Amazon RDS (Relational Database Service) là dịch vụ cơ sở dữ liệu quan hệ được quản lý hoàn toàn bởi AWS, hỗ trợ nhiều hệ quản trị cơ sở dữ liệu phổ biến trong đó có PostgreSQL.
+    \item \textbf{Chức năng:} Amazon RDS tự động hóa các tác vụ quản trị cơ sở dữ liệu như sao lưu định kỳ, vá lỗi phần mềm, phát hiện và khôi phục lỗi tự động (automatic failure detection and recovery) và mở rộng tài nguyên. Dịch vụ cũng cung cấp tính năng High Availability thông qua triển khai Multi-AZ, đảm bảo cơ sở dữ liệu luôn sẵn sàng phục vụ.
+    \item \textbf{Vai trò trong hệ thống:} Amazon RDS được dự kiến sử dụng để hosting cơ sở dữ liệu PostgreSQL trên môi trường đám mây, thay thế cho cơ sở dữ liệu cục bộ trong quá trình phát triển, nhằm chuẩn bị cho việc triển khai hệ thống lên môi trường Staging trong giai đoạn tiếp theo.
+\end{itemize}
+
+\paragraph{Amazon EC2 (Elastic Compute Cloud)}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Amazon EC2 là một dịch vụ web cốt lõi của AWS, cung cấp khả năng điện toán (compute capacity) an toàn và có thể thay đổi kích thước linh hoạt trên đám mây.
+    \item \textbf{Chức năng:} EC2 cho phép khởi tạo các máy chủ ảo (instances) để chạy các ứng dụng. Người dùng có toàn quyền kiểm soát cấu hình phần cứng ảo (CPU, RAM), hệ điều hành và cài đặt các phần mềm cần thiết trên đó.
+    \item \textbf{Vai trò trong hệ thống:} EC2 được sử dụng làm máy chủ (đặt trong mạng nội bộ - Private Subnet) để triển khai cả ứng dụng Backend (chạy Spring Boot) và Frontend (chạy ReactJS qua Nginx và Docker). Việc đặt EC2 trong mạng private giúp cách ly hoàn toàn các máy chủ khỏi Internet, tăng cường tối đa tính bảo mật.
+\end{itemize}
+
+\paragraph{Amazon ALB (Application Load Balancer)}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Amazon ALB là một dịch vụ cân bằng tải ở tầng ứng dụng (Layer 7) của AWS, chuyên phân phối lưu lượng truy cập HTTP và HTTPS một cách thông minh.
+    \item \textbf{Chức năng:} ALB có khả năng phân phối lưu lượng truy cập mạng từ bên ngoài đến nhiều máy chủ đích (như các EC2 instances). Nó cung cấp các tính năng như định tuyến linh hoạt, hỗ trợ bảo mật SSL/TLS và tự động kiểm tra sức khỏe (health check) của các máy chủ đích để loại bỏ các máy chủ đang gặp lỗi.
+    \item \textbf{Vai trò trong hệ thống:} ALB đóng vai trò là điểm truy cập (entry point) duy nhất cho toàn bộ hệ thống, tiếp nhận các request từ người dùng và phân phối tải đều đến các máy chủ EC2. Điều này giúp nâng cao tính sẵn sàng, cải thiện hiệu suất và hỗ trợ mở rộng hệ thống một cách dễ dàng khi lưu lượng truy cập tăng cao.
+\end{itemize}
+
+\paragraph{Amazon S3 (Simple Storage Service)}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Amazon S3 là dịch vụ lưu trữ đối tượng (object storage) do AWS cung cấp, mang lại khả năng lưu trữ và truy xuất lượng dữ liệu bất kỳ từ mọi nơi trên Internet với độ bền và tính bảo mật cao.
+    \item \textbf{Chức năng:} S3 cho phép lưu trữ không giới hạn các loại tệp tin tĩnh (static files) và dữ liệu phi cấu trúc. Nó cũng hỗ trợ tính năng lưu trữ website tĩnh (static website hosting) để phục vụ trực tiếp các tệp HTML, CSS, JavaScript cho các ứng dụng web.
+    \item \textbf{Vai trò trong hệ thống:} Trong dự án này, do Frontend đã được đưa lên máy chủ EC2, Amazon S3 được sử dụng chuyên biệt làm nơi lưu trữ an toàn cho các tài nguyên đa phương tiện do người dùng tải lên, ví dụ như hình ảnh đại diện (avatar) hoặc các tệp đính kèm trong thẻ công việc (Card).
+\end{itemize}
+
+\paragraph{Amazon CloudFront}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Amazon CloudFront là dịch vụ mạng phân phối nội dung (Content Delivery Network - CDN) tốc độ cao của AWS, giúp truyền tải dữ liệu và ứng dụng tới người dùng trên toàn cầu với độ trễ cực thấp.
+    \item \textbf{Chức năng:} CloudFront lưu trữ bộ nhớ đệm (caching) các nội dung tĩnh và động tại các vị trí biên (edge locations) trên khắp thế giới, giúp rút ngắn khoảng cách vật lý giữa người dùng và dữ liệu, từ đó cải thiện đáng kể tốc độ tải trang web.
+    \item \textbf{Vai trò trong hệ thống:} CloudFront được cấu hình để chỉ tương tác trực tiếp với Client và Amazon S3. Nó đóng vai trò trung gian phân phối các tệp tin đa phương tiện (từ S3) đến tay người dùng một cách tối ưu nhất thông qua bộ nhớ đệm (caching), đồng thời cung cấp giao thức HTTPS bảo mật và hạn chế truy cập công khai vào S3.
+\end{itemize}
+
+\paragraph{JWT (JSON Web Token)}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} JWT là tiêu chuẩn mở (RFC 7519) định nghĩa cách truyền tải thông tin an toàn giữa các bên dưới dạng một đối tượng JSON được ký số (digitally signed).
+    \item \textbf{Chức năng:} Một JWT bao gồm ba phần được mã hóa Base64 và ngăn cách bởi dấu chấm: Header (loại thuật toán ký), Payload (thông tin người dùng và thời hạn token) và Signature (chữ ký xác thực). Token có thể được xác minh mà không cần truy vấn cơ sở dữ liệu, giúp giảm tải cho hệ thống.
+    \item \textbf{Vai trò trong hệ thống:} JWT được Amazon Cognito phát hành và trả về cho Backend sau khi người dùng đăng nhập thành công. Backend sau đó trả JWT về cho Client để lưu trữ trong HttpOnly cookie. Backend sử dụng token này để xác thực chữ ký trên mỗi request gọi API tiếp theo nhằm đảm bảo tính an toàn.
+\end{itemize}
+
+\clearpage
+
+\section{CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}
+
+\subsection{Phân tích yêu cầu}
+
+\subsubsection{Yêu cầu chức năng}
+
+Các yêu cầu chức năng được xác định dựa trên phân tích nghiệp vụ quản lý công việc theo mô hình Kanban, bao gồm các nhóm chức năng chính sau:
+
+\textbf{Nhóm 1: Xác thực và quản lý tài khoản}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-01 & Đăng ký tài khoản & Người dùng nhập họ tên đầy đủ, địa chỉ email và mật khẩu để tạo tài khoản mới. Hệ thống gửi mã OTP xác nhận về email sau khi đăng ký thành công. \\
+\hline
+FR-02 & Xác nhận email & Người dùng nhập mã OTP để kích hoạt tài khoản. Hỗ trợ chức năng gửi lại mã nếu mã đã hết hạn. \\
+\hline
+FR-03 & Đăng nhập & Người dùng xác thực bằng email và mật khẩu. Sau khi xác thực thành công, access token và refresh token được lưu trong HttpOnly cookie. \\
+\hline
+FR-04 & Đăng xuất & Phiên làm việc được kết thúc, cookie xác thực bị xóa khỏi trình duyệt. \\
+\hline
+FR-05 & Làm mới phiên làm việc & Tự động làm mới access token bằng refresh token khi token hết hạn, đảm bảo phiên làm việc liên tục. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 1}
+\label{tab:fr_auth}
+\end{table}
+
+\textbf{Nhóm 2: Quản lý Workspace}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-06 & Tạo Workspace & Người dùng tạo không gian làm việc mới với tên, loại và mô tả. \\
+\hline
+FR-07 & Xem danh sách Workspace & Hệ thống hiển thị toàn bộ Workspace mà người dùng sở hữu hoặc là thành viên. \\
+\hline
+FR-08 & Cập nhật Workspace & Người dùng chỉnh sửa tên, mô tả của Workspace. \\
+\hline
+FR-09 & Quản lý thành viên Workspace & Thêm thành viên vào Workspace bằng địa chỉ email. \\
+\hline
+FR-30 & Xóa Workspace & Người dùng (chủ sở hữu) xóa vĩnh viễn Workspace cùng toàn bộ Board, List và Card bên trong. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 2}
+\label{tab:fr_workspace}
+\end{table}
+
+\textbf{Nhóm 3: Quản lý Board}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-10 & Tạo Board & Tạo bảng công việc mới trong Workspace với tiêu đề và hình nền tùy chọn. \\
+\hline
+FR-11 & Xem Board & Tải và hiển thị toàn bộ danh sách List và Card trong Board theo mô hình Kanban. \\
+\hline
+FR-12 & Cập nhật Board & Chỉnh sửa tiêu đề và hình nền của Board. \\
+\hline
+FR-13 & Quản lý thành viên Board & Thêm thành viên từ Workspace vào Board với vai trò nhất định (ADMIN hoặc MEMBER). \\
+\hline
+FR-31 & Xóa Board & Người dùng có quyền ADMIN xóa vĩnh viễn Board cùng toàn bộ List và Card bên trong. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 3}
+\label{tab:fr_board}
+\end{table}
+
+\textbf{Nhóm 4: Quản lý List}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-14 & Tạo List & Tạo cột danh sách công việc mới trong Board. \\
+\hline
+FR-15 & Cập nhật List & Đổi tên hoặc thay đổi vị trí của List trong Board. \\
+\hline
+FR-16 & Xóa List & Xóa List và toàn bộ Card bên trong. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 4}
+\label{tab:fr_list}
+\end{table}
+
+\textbf{Nhóm 5: Quản lý Card}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-17 & Tạo Card & Tạo thẻ công việc mới trong một List cụ thể với tiêu đề ban đầu. \\
+\hline
+FR-18 & Xem chi tiết Card & Mở modal hiển thị đầy đủ thông tin Card bao gồm tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn, thành viên và danh sách kiểm tra. \\
+\hline
+FR-19 & Cập nhật Card & Chỉnh sửa tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn và trạng thái hoàn thành của Card. \\
+\hline
+FR-20 & Xóa Card & Xóa thẻ công việc khỏi hệ thống. \\
+\hline
+FR-21 & Hiển thị trạng thái Due Date & Hiển thị cảnh báo trực quan ngay trên Card khi công việc sắp đến hạn hoặc đã quá hạn. \\
+\hline
+FR-22 & Gán thành viên vào Card & Gán hoặc hủy gán thành viên chịu trách nhiệm thực hiện Card. Avatar thành viên được hiển thị trực tiếp trên Card. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 5}
+\label{tab:fr_card}
+\end{table}
+
+\textbf{Nhóm 6: Kéo thả (Drag and Drop)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-23 & Kéo thả Card giữa các List & Di chuyển Card từ List này sang List khác; cập nhật \texttt{listId} và \texttt{position} đồng bộ với Backend. \\
+\hline
+FR-24 & Kéo thả Card trong cùng List & Thay đổi thứ tự các Card trong cùng một List. \\
+\hline
+FR-25 & Kéo thả List trong Board & Thay đổi thứ tự hiển thị của các List trong Board. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 6}
+\label{tab:fr_dnd}
+\end{table}
+
+\textbf{Nhóm 7: Quản lý Checklist}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{8.2cm}|}
+\hline
+\textbf{Mã} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-26 & Tạo Checklist & Tạo danh sách kiểm tra mới trong Card. \\
+\hline
+FR-27 & Cập nhật Checklist & Đổi tên Checklist. \\
+\hline
+FR-28 & Xóa Checklist & Xóa Checklist và toàn bộ ChecklistItem liên quan. \\
+\hline
+FR-29 & Quản lý ChecklistItem & Thêm, cập nhật trạng thái hoàn thành và xóa các hạng mục công việc con. Hiển thị thanh tiến độ (progress bar) theo tỷ lệ phần trăm hoàn thành. \\
+\hline
+\end{tabular}
+\caption{Yêu cầu chức năng nhóm 7}
+\label{tab:fr_checklist}
+\end{table}
+
+
+
+\subsubsection{Yêu cầu phi chức năng}
+
+\begin{itemize}
+    \item \textbf{Bảo mật:} Toàn bộ giao tiếp giữa Client và Backend được thực hiện qua HTTPS. Access token và refresh token được lưu trong HttpOnly cookie, ngăn chặn truy cập từ JavaScript phía Client (chống tấn công XSS). Xác thực người dùng được ủy thác cho Amazon Cognito. Các tài nguyên Backend và cơ sở dữ liệu được cách ly trong mạng nội bộ VPC.
+    \item \textbf{Hiệu năng:} Giao diện người dùng phải phản hồi tức thì sau các thao tác kéo thả và cập nhật dữ liệu thông qua cơ chế optimistic update. Thời gian phản hồi API trong điều kiện bình thường không vượt quá 2 giây.
+    \item \textbf{Tính sẵn sàng:} Hệ thống được triển khai trên hạ tầng AWS với cân bằng tải qua ALB, đảm bảo tính sẵn sàng cao và khả năng phục hồi khi có sự cố.
+    \item \textbf{Khả năng mở rộng:} Kiến trúc tách biệt Frontend và Backend cho phép mở rộng độc lập từng thành phần. Sử dụng Amazon RDS và EC2 giúp dễ dàng nâng cấp tài nguyên khi lưu lượng tăng.
+    \item \textbf{Tính nhất quán dữ liệu:} Mọi thao tác kéo thả cập nhật trường \texttt{position} trong cơ sở dữ liệu, đảm bảo thứ tự hiển thị nhất quán giữa Frontend và Backend sau mỗi phiên làm việc.
+    \item \textbf{Khả năng sử dụng:} Giao diện được thiết kế theo mô hình Kanban quen thuộc, hỗ trợ đầy đủ trên trình duyệt web hiện đại.
+\end{itemize}
+
+\subsection{Phân rã chức năng}
+
+\subsubsection{Xác thực và quản lý tài khoản}
+
+\textbf{FR-01: Đăng ký tài khoản}
+\begin{itemize}
+    \item \textit{Mục đích:} Cho phép người dùng mới tạo tài khoản trong hệ thống.
+    \item \textit{Đầu vào:} Họ tên đầy đủ (\texttt{fullName}), địa chỉ email (\texttt{email}), mật khẩu (\texttt{password}).
+    \item \textit{Đầu ra:} Tài khoản được khởi tạo trong Amazon Cognito; hệ thống gửi mã OTP xác nhận về email.
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/auth/sign-up} $\rightarrow$ Backend gọi Cognito API tạo người dùng $\rightarrow$ Cognito gửi OTP về email.
+\end{itemize}
+
+\textbf{FR-02: Xác nhận email}
+\begin{itemize}
+    \item \textit{Mục đích:} Kích hoạt tài khoản bằng cách xác minh địa chỉ email qua mã xác nhận.
+    \item \textit{Đầu vào:} Tên đăng nhập (\texttt{username} – địa chỉ email), mã xác nhận (\texttt{confirmationCode}) nhận qua email. Hỗ trợ gửi lại mã qua POST \texttt{/api/v1/auth/resend-code} với tham số \texttt{username}.
+    \item \textit{Đầu ra:} Tài khoản được kích hoạt; người dùng được chuyển hướng đến màn hình đăng nhập.
+    \item \textit{Luồng xử lý:} Client nhập mã xác nhận $\rightarrow$ Gửi POST \texttt{/api/v1/auth/confirm-sign-up} với \texttt{username} và \texttt{confirmationCode} $\rightarrow$ Backend gửi yêu cầu xác nhận đến Cognito $\rightarrow$ Cognito kích hoạt tài khoản $\rightarrow$ Trả về xác nhận thành công.
+\end{itemize}
+
+\textbf{FR-03: Đăng nhập}
+\begin{itemize}
+    \item \textit{Mục đích:} Xác thực danh tính người dùng và cấp phiên làm việc.
+    \item \textit{Đầu vào:} Địa chỉ email, mật khẩu.
+    \item \textit{Đầu ra:} Access token và refresh token được lưu trong HttpOnly cookie; người dùng được chuyển hướng đến Dashboard.
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/auth/sign-in} $\rightarrow$ Backend gọi Cognito xác thực $\rightarrow$ Cognito trả về JWT $\rightarrow$ Backend đặt token vào HttpOnly cookie $\rightarrow$ Chuyển hướng đến Dashboard.
+\end{itemize}
+
+\textbf{FR-04: Đăng xuất}
+\begin{itemize}
+    \item \textit{Mục đích:} Kết thúc phiên làm việc của người dùng.
+    \item \textit{Đầu vào:} Yêu cầu đăng xuất từ người dùng đang đăng nhập.
+    \item \textit{Đầu ra:} Cookie xác thực bị xóa khỏi trình duyệt; người dùng được chuyển hướng về trang đăng nhập.
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/auth/sign-out} $\rightarrow$ Backend xóa HttpOnly cookie $\rightarrow$ Trả về phản hồi thành công $\rightarrow$ Frontend chuyển hướng về trang đăng nhập.
+\end{itemize}
+
+\textbf{FR-05: Làm mới phiên làm việc}
+\begin{itemize}
+    \item \textit{Mục đích:} Duy trì phiên làm việc liên tục khi access token hết hạn.
+    \item \textit{Đầu vào:} Refresh token lưu trong HttpOnly cookie.
+    \item \textit{Đầu ra:} Access token mới được cấp và lưu vào cookie; phiên làm việc được duy trì.
+    \item \textit{Luồng xử lý:} Frontend phát hiện access token hết hạn $\rightarrow$ Tự động gửi POST \texttt{/api/v1/auth/refresh-token} $\rightarrow$ Backend gọi Cognito để làm mới token $\rightarrow$ Cập nhật cookie với access token mới.
+\end{itemize}
+
+\subsubsection{Quản lý Workspace}
+
+\textbf{FR-06: Tạo Workspace}
+\begin{itemize}
+    \item \textit{Mục đích:} Khởi tạo không gian làm việc mới để tổ chức các dự án liên quan.
+    \item \textit{Đầu vào:} Tên Workspace (\texttt{name}), loại Workspace (\texttt{categoryId}), mô tả tùy chọn (\texttt{description}).
+    \item \textit{Đầu ra:} Workspace mới được tạo và hiển thị trong Dashboard (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/workspaces} $\rightarrow$ Backend xác thực token $\rightarrow$ Tạo bản ghi Workspace trong PostgreSQL với \texttt{ownerId} là người dùng hiện tại $\rightarrow$ Trả về thông tin Workspace.
+\end{itemize}
+
+\textbf{FR-07: Xem danh sách Workspace}
+\begin{itemize}
+    \item \textit{Mục đích:} Hiển thị toàn bộ Workspace mà người dùng sở hữu hoặc tham gia.
+    \item \textit{Đầu vào:} Token xác thực của người dùng hiện tại; từ khóa tìm kiếm (\texttt{search}) tùy chọn để lọc theo tên Workspace.
+    \item \textit{Đầu ra:} Danh sách Workspace kèm thông tin tên, loại và vai trò của người dùng.
+    \item \textit{Luồng xử lý:} Client gửi GET \texttt{/api/v1/workspaces?search=\{keyword\}} $\rightarrow$ Backend truy vấn các Workspace liên kết với \texttt{userId}, áp dụng bộ lọc tên nếu có $\rightarrow$ Trả về danh sách.
+\end{itemize}
+
+\textbf{FR-08: Cập nhật Workspace}
+\begin{itemize}
+    \item \textit{Mục đích:} Chỉnh sửa thông tin của Workspace hiện có.
+    \item \textit{Đầu vào:} \texttt{workspaceId}, tên mới (\texttt{name}), mô tả mới (\texttt{description}).
+    \item \textit{Đầu ra:} Thông tin Workspace được cập nhật trong cơ sở dữ liệu (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi PATCH \texttt{/api/v1/workspaces/:id} $\rightarrow$ Backend kiểm tra quyền ADMIN/MEMBER $\rightarrow$ Cập nhật bản ghi $\rightarrow$ Trả về thông tin mới.
+\end{itemize}
+
+\textbf{FR-09: Quản lý thành viên Workspace}
+\begin{itemize}
+    \item \textit{Mục đích:} Thêm thành viên vào Workspace để cộng tác.
+    \item \textit{Đầu vào:} \texttt{workspaceId}, mảng ID người dùng (\texttt{userIds}), vai trò (\texttt{roleId}) tùy chọn.
+    \item \textit{Đầu ra:} Thành viên được thêm vào Workspace; bản ghi trong bảng \texttt{workspace\_member} được tạo.
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/workspace-members} với \texttt{workspaceId} và \texttt{userIds} $\rightarrow$ Backend xác thực quyền và kiểm tra người dùng tồn tại $\rightarrow$ Tạo bản ghi thành viên $\rightarrow$ Trả về kết quả.
+\end{itemize}
+
+\textbf{FR-30: Xóa Workspace}
+\begin{itemize}
+    \item \textit{Mục đích:} Xóa vĩnh viễn Workspace và toàn bộ dữ liệu liên quan (Board, List, Card) khỏi hệ thống.
+    \item \textit{Đầu vào:} \texttt{workspaceId}.
+    \item \textit{Đầu ra:} Workspace và toàn bộ dữ liệu con bị xóa khỏi cơ sở dữ liệu; Workspace không còn xuất hiện trong Dashboard (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi DELETE \texttt{/api/v1/workspaces/:id} $\rightarrow$ Backend kiểm tra quyền (chỉ chủ sở hữu mới được phép) $\rightarrow$ Xóa cascade toàn bộ Board, List, Card và các bản ghi thành viên liên quan $\rightarrow$ Trả về xác nhận xóa thành công.
+\end{itemize}
+
+\subsubsection{Quản lý Board}
+
+\textbf{FR-10: Tạo Board}
+\begin{itemize}
+    \item \textit{Mục đích:} Tạo bảng công việc mới đại diện cho một dự án cụ thể trong Workspace.
+    \item \textit{Đầu vào:} Tên Board (\texttt{name}), mã Workspace (\texttt{workspaceId}), URL hình nền (\texttt{backgroundUrl}) tùy chọn.
+    \item \textit{Đầu ra:} Board mới được tạo và hiển thị trong Workspace (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/boards} $\rightarrow$ Backend kiểm tra Workspace tồn tại và quyền truy cập $\rightarrow$ Tạo Board trong cơ sở dữ liệu $\rightarrow$ Trả về thông tin Board.
+\end{itemize}
+
+\textbf{FR-11: Xem Board}
+\begin{itemize}
+    \item \textit{Mục đích:} Tải và hiển thị toàn bộ nội dung Board theo mô hình Kanban.
+    \item \textit{Đầu vào:} \texttt{boardId}, token xác thực.
+    \item \textit{Đầu ra:} Dữ liệu Board bao gồm toàn bộ List và Card sắp xếp theo \texttt{position}.
+    \item \textit{Luồng xử lý:} Client gửi GET \texttt{/api/v1/boards/:id} $\rightarrow$ Backend xác thực quyền truy cập $\rightarrow$ Truy vấn PostgreSQL lấy Board, List và Card $\rightarrow$ Trả về JSON cấu trúc đầy đủ.
+\end{itemize}
+
+\textbf{FR-12: Cập nhật Board}
+\begin{itemize}
+    \item \textit{Mục đích:} Chỉnh sửa tên hoặc hình nền của Board.
+    \item \textit{Đầu vào:} \texttt{boardId}, tên mới (\texttt{name}), URL hình nền mới (\texttt{backgroundUrl}).
+    \item \textit{Đầu ra:} Thông tin Board được cập nhật (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi PATCH \texttt{/api/v1/boards/:id} $\rightarrow$ Backend kiểm tra quyền ADMIN/MEMBER $\rightarrow$ Cập nhật bản ghi $\rightarrow$ Trả về thông tin mới.
+\end{itemize}
+
+\textbf{FR-13: Quản lý thành viên Board}
+\begin{itemize}
+    \item \textit{Mục đích:} Thêm thành viên từ Workspace vào Board với vai trò nhất định.
+    \item \textit{Đầu vào:} Danh sách \texttt{userIds}, \texttt{boardId}, \texttt{roleId} (ADMIN hoặc MEMBER).
+    \item \textit{Đầu ra:} Thành viên được thêm vào Board; danh sách thành viên Board được cập nhật.
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/board-members} $\rightarrow$ Backend kiểm tra quyền ADMIN/MEMBER của người dùng hiện tại $\rightarrow$ Tạo bản ghi trong bảng \texttt{board\_member} $\rightarrow$ Trả về kết quả.
+\end{itemize}
+
+\textbf{FR-31: Xóa Board}
+\begin{itemize}
+    \item \textit{Mục đích:} Xóa vĩnh viễn Board và toàn bộ dữ liệu liên quan (List, Card, Checklist) khỏi hệ thống.
+    \item \textit{Đầu vào:} \texttt{boardId}.
+    \item \textit{Đầu ra:} Board và toàn bộ dữ liệu con bị xóa khỏi cơ sở dữ liệu; Board không còn xuất hiện trong Workspace (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi DELETE \texttt{/api/v1/boards/:id} $\rightarrow$ Backend kiểm tra quyền ADMIN của người dùng hiện tại trong Board $\rightarrow$ Xóa cascade toàn bộ List, Card, Checklist, ChecklistItem và các bản ghi thành viên liên quan $\rightarrow$ Trả về xác nhận xóa thành công.
+\end{itemize}
+
+\subsubsection{Quản lý List}
+
+\textbf{FR-14: Tạo List}
+\begin{itemize}
+    \item \textit{Mục đích:} Tạo cột danh sách công việc mới trong Board.
+    \item \textit{Đầu vào:} Tên List (\texttt{name}), mã Board (\texttt{boardId}), vị trí (\texttt{position}).
+    \item \textit{Đầu ra:} List mới được tạo và hiển thị trong Board (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/lists} $\rightarrow$ Backend xác thực quyền truy cập Board $\rightarrow$ Tạo bản ghi List với \texttt{position} được cung cấp $\rightarrow$ Trả về thông tin List.
+\end{itemize}
+
+\textbf{FR-15: Cập nhật List}
+\begin{itemize}
+    \item \textit{Mục đích:} Đổi tên hoặc thay đổi vị trí của List trong Board.
+    \item \textit{Đầu vào:} \texttt{listId}, tên mới (\texttt{name}) hoặc vị trí mới (\texttt{position}).
+    \item \textit{Đầu ra:} Thông tin List được cập nhật; giao diện Board phản ánh thay đổi (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi PATCH \texttt{/api/v1/lists/:id} $\rightarrow$ Backend xác thực quyền $\rightarrow$ Cập nhật bản ghi $\rightarrow$ Trả về dữ liệu mới.
+\end{itemize}
+
+\textbf{FR-16: Xóa List}
+\begin{itemize}
+    \item \textit{Mục đích:} Xóa List và toàn bộ Card bên trong khỏi Board.
+    \item \textit{Đầu vào:} \texttt{listId}.
+    \item \textit{Đầu ra:} List và tất cả Card con bị xóa khỏi cơ sở dữ liệu (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi DELETE \texttt{/api/v1/lists/:id} $\rightarrow$ Backend kiểm tra quyền ADMIN/MEMBER $\rightarrow$ Xóa cascade List và Card $\rightarrow$ Trả về xác nhận.
+\end{itemize}
+
+\subsubsection{Quản lý Card}
+
+\textbf{FR-17: Tạo Card}
+\begin{itemize}
+    \item \textit{Mục đích:} Tạo thẻ công việc mới trong một List cụ thể.
+    \item \textit{Đầu vào:} Tiêu đề Card (\texttt{title}), mã List (\texttt{listId}), vị trí (\texttt{position}).
+    \item \textit{Đầu ra:} Card mới được tạo và hiển thị trong List (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/cards} $\rightarrow$ Backend xác thực quyền truy cập Board $\rightarrow$ Tạo bản ghi Card với \texttt{position} được cung cấp $\rightarrow$ Trả về thông tin Card.
+\end{itemize}
+
+\textbf{FR-18: Xem chi tiết Card}
+\begin{itemize}
+    \item \textit{Mục đích:} Hiển thị đầy đủ thông tin của Card trong modal.
+    \item \textit{Đầu vào:} \texttt{cardId}.
+    \item \textit{Đầu ra:} Dữ liệu Card bao gồm tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn, thành viên gán và danh sách Checklist.
+    \item \textit{Luồng xử lý:} Client gửi GET \texttt{/api/v1/cards/:id} $\rightarrow$ Backend truy vấn Card cùng các quan hệ liên quan $\rightarrow$ Trả về dữ liệu đầy đủ $\rightarrow$ Frontend hiển thị modal.
+\end{itemize}
+
+\textbf{FR-19: Cập nhật Card}
+\begin{itemize}
+    \item \textit{Mục đích:} Chỉnh sửa thông tin chi tiết của Card.
+    \item \textit{Đầu vào:} \texttt{cardId}, các trường cần cập nhật: tiêu đề (\texttt{title}), mô tả (\texttt{description}), ngày bắt đầu (\texttt{startDate}), ngày đến hạn (\texttt{dueDate}), trạng thái (\texttt{isCompleted}).
+    \item \textit{Đầu ra:} Card được cập nhật trong cơ sở dữ liệu; giao diện phản ánh thay đổi (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi PATCH \texttt{/api/v1/cards/:id} $\rightarrow$ Backend kiểm tra quyền $\rightarrow$ Cập nhật bản ghi $\rightarrow$ Trả về dữ liệu Card mới.
+\end{itemize}
+
+\textbf{FR-20: Xóa Card}
+\begin{itemize}
+    \item \textit{Mục đích:} Xóa thẻ công việc khỏi hệ thống.
+    \item \textit{Đầu vào:} \texttt{cardId}.
+    \item \textit{Đầu ra:} Card bị xóa khỏi cơ sở dữ liệu và giao diện Board (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi DELETE \texttt{/api/v1/cards/:id} $\rightarrow$ Backend kiểm tra quyền $\rightarrow$ Xóa bản ghi Card $\rightarrow$ Trả về xác nhận.
+\end{itemize}
+
+\textbf{FR-21: Hiển thị trạng thái Due Date}
+\begin{itemize}
+    \item \textit{Mục đích:} Cảnh báo trực quan khi công việc sắp đến hạn hoặc đã quá hạn.
+    \item \textit{Đầu vào:} Trường \texttt{dueDate} và \texttt{isCompleted} của Card.
+    \item \textit{Đầu ra:} Nhãn màu sắc (vàng – sắp đến hạn, đỏ – quá hạn) hiển thị trực tiếp trên Card.
+    \item \textit{Luồng xử lý:} Frontend so sánh \texttt{dueDate} với thời gian hiện tại $\rightarrow$ Áp dụng class CSS tương ứng $\rightarrow$ Hiển thị nhãn trạng thái trên Card.
+\end{itemize}
+
+\textbf{FR-22: Gán thành viên vào Card}
+\begin{itemize}
+    \item \textit{Mục đích:} Chỉ định thành viên chịu trách nhiệm thực hiện Card.
+    \item \textit{Đầu vào:} \texttt{cardId}, \texttt{userId} của thành viên cần gán hoặc hủy gán.
+    \item \textit{Đầu ra:} Bản ghi trong bảng \texttt{card\_member} được tạo hoặc xóa; avatar thành viên hiển thị trên Card.
+    \item \textit{Luồng xử lý:} Gán: Client gửi POST \texttt{/api/v1/card-members} với \texttt{cardId} và \texttt{userId} $\rightarrow$ Backend kiểm tra thành viên thuộc Board $\rightarrow$ Tạo bản ghi \texttt{card\_member}. Hủy gán: Client gửi DELETE \texttt{/api/v1/card-members/\{id\}} với ID bản ghi \texttt{card\_member} $\rightarrow$ Backend xóa bản ghi $\rightarrow$ Trả về danh sách thành viên cập nhật.
+\end{itemize}
+
+\subsubsection{Kéo thả (Drag and Drop)}
+
+\textbf{FR-23: Kéo thả Card giữa các List}
+\begin{itemize}
+    \item \textit{Mục đích:} Di chuyển Card từ List này sang List khác để cập nhật trạng thái công việc.
+    \item \textit{Đầu vào:} \texttt{cardId}, \texttt{listId} đích, \texttt{position} mới.
+    \item \textit{Đầu ra:} Card được cập nhật \texttt{listId} và \texttt{position}; giao diện phản ánh thay đổi tức thì.
+    \item \textit{Luồng xử lý:} Người dùng thả Card vào List đích $\rightarrow$ Frontend cập nhật giao diện ngay lập tức (optimistic update) $\rightarrow$ Gửi PATCH \texttt{/api/v1/cards/:id} với \texttt{listId} và \texttt{position} mới $\rightarrow$ Backend cập nhật cơ sở dữ liệu.
+\end{itemize}
+
+\textbf{FR-24: Kéo thả Card trong cùng List}
+\begin{itemize}
+    \item \textit{Mục đích:} Thay đổi thứ tự các Card trong cùng một List.
+    \item \textit{Đầu vào:} \texttt{cardId}, \texttt{listId} đích, \texttt{position} mới.
+    \item \textit{Đầu ra:} Thứ tự Card được cập nhật; giao diện phản ánh thay đổi tức thì.
+    \item \textit{Luồng xử lý:} Người dùng kéo thả Card trong cùng List $\rightarrow$ Frontend tính \texttt{position} mới dựa trên \texttt{beforeId}/\texttt{afterId} $\rightarrow$ Cập nhật giao diện ngay $\rightarrow$ Gửi PATCH \texttt{/api/v1/cards/:id} với \texttt{position} mới $\rightarrow$ Backend lưu vào cơ sở dữ liệu.
+\end{itemize}
+
+\textbf{FR-25: Kéo thả List trong Board}
+\begin{itemize}
+    \item \textit{Mục đích:} Thay đổi thứ tự hiển thị của các List trong Board.
+    \item \textit{Đầu vào:} \texttt{listId}, \texttt{position} mới.
+    \item \textit{Đầu ra:} Thứ tự List được cập nhật; giao diện Board phản ánh thay đổi tức thì.
+    \item \textit{Luồng xử lý:} Người dùng kéo thả List $\rightarrow$ Frontend tính \texttt{position} mới $\rightarrow$ Cập nhật giao diện ngay $\rightarrow$ Gửi PATCH \texttt{/api/v1/lists/:id} $\rightarrow$ Backend cập nhật cơ sở dữ liệu.
+\end{itemize}
+
+\subsubsection{Quản lý Checklist}
+
+\textbf{FR-26: Tạo Checklist}
+\begin{itemize}
+    \item \textit{Mục đích:} Tạo danh sách kiểm tra mới trong Card để theo dõi công việc con.
+    \item \textit{Đầu vào:} Tên Checklist (\texttt{name}), mã Card (\texttt{cardId}), vị trí (\texttt{position}).
+    \item \textit{Đầu ra:} Checklist mới được tạo và hiển thị trong modal Card (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi POST \texttt{/api/v1/checklists} $\rightarrow$ Backend xác thực quyền truy cập $\rightarrow$ Tạo bản ghi Checklist $\rightarrow$ Trả về thông tin Checklist.
+\end{itemize}
+
+\textbf{FR-27: Cập nhật Checklist}
+\begin{itemize}
+    \item \textit{Mục đích:} Đổi tên Checklist.
+    \item \textit{Đầu vào:} \texttt{checklistId}, tên mới (\texttt{name}).
+    \item \textit{Đầu ra:} Tên Checklist được cập nhật (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi PATCH \texttt{/api/v1/checklists/:id} $\rightarrow$ Backend cập nhật bản ghi $\rightarrow$ Trả về thông tin mới.
+\end{itemize}
+
+\textbf{FR-28: Xóa Checklist}
+\begin{itemize}
+    \item \textit{Mục đích:} Xóa Checklist và toàn bộ ChecklistItem liên quan.
+    \item \textit{Đầu vào:} \texttt{checklistId}.
+    \item \textit{Đầu ra:} Checklist và các ChecklistItem bị xóa khỏi cơ sở dữ liệu (HTTP 200).
+    \item \textit{Luồng xử lý:} Client gửi DELETE \texttt{/api/v1/checklists/:id} $\rightarrow$ Backend xóa cascade Checklist và ChecklistItem $\rightarrow$ Trả về xác nhận.
+\end{itemize}
+
+\textbf{FR-29: Quản lý ChecklistItem}
+\begin{itemize}
+    \item \textit{Mục đích:} Thêm, cập nhật và xóa các hạng mục công việc con; theo dõi tiến độ hoàn thành.
+    \item \textit{Đầu vào:} Tạo mới: tên (\texttt{name}), \texttt{checklistId}, vị trí (\texttt{position}), thời hạn (\texttt{dueDate}) tùy chọn. Cập nhật: tên (\texttt{name}), trạng thái hoàn thành (\texttt{isCompleted}), vị trí (\texttt{position}). Xóa: ID bản ghi ChecklistItem.
+    \item \textit{Đầu ra:} ChecklistItem được quản lý; thanh tiến độ (progress bar) phản ánh tỷ lệ phần trăm hoàn thành.
+    \item \textit{Luồng xử lý:} Thêm: POST \texttt{/api/v1/checklist-items}. Cập nhật: PATCH \texttt{/api/v1/checklist-items/\{id\}}. Xóa: DELETE \texttt{/api/v1/checklist-items/\{id\}} $\rightarrow$ Backend cập nhật cơ sở dữ liệu $\rightarrow$ Frontend tính toán lại tỷ lệ hoàn thành và cập nhật thanh tiến độ.
+\end{itemize}
+
+\subsection{Phân tích dữ liệu}
+
+\subsubsection{Các thực thể chính}
+
+Hệ thống xoay quanh sáu thực thể nghiệp vụ chính được tổ chức theo cấu trúc phân cấp:
+
+\begin{itemize}
+    \item \textbf{User (Người dùng):} Đại diện cho tài khoản người dùng trong hệ thống. Thông tin danh tính và xác thực được quản lý bởi Amazon Cognito; hệ thống nội bộ lưu trữ thông tin bổ sung như họ tên, ảnh đại diện và mã định danh Cognito.
+    \item \textbf{Workspace (Không gian làm việc):} Đơn vị tổ chức cấp cao nhất, quản lý tập trung nhiều Board liên quan. Mỗi Workspace có một người sở hữu (owner) và nhiều thành viên.
+    \item \textbf{Board (Bảng công việc):} Đại diện cho một dự án cụ thể trong Workspace. Mỗi Board chứa nhiều List và có danh sách thành viên riêng.
+    \item \textbf{List (Danh sách):} Cột trạng thái trong Board, thể hiện giai đoạn thực hiện của công việc. Thứ tự các List được quản lý qua trường \texttt{position}.
+    \item \textbf{Card (Thẻ công việc):} Đơn vị công việc cơ bản, chứa thông tin chi tiết về nhiệm vụ cần thực hiện. Card thuộc về một List và có thứ tự xác định bằng \texttt{position}.
+    \item \textbf{Checklist:} Danh sách kiểm tra trong Card, hỗ trợ theo dõi các công việc con. Mỗi Checklist có nhiều ChecklistItem.
+    \item \textbf{ChecklistItem:} Hạng mục cụ thể trong Checklist, có thể được đánh dấu hoàn thành hoặc chưa hoàn thành, và có thể thiết lập thời hạn riêng.
+\end{itemize}
+
+\subsubsection{Quan hệ giữa các thực thể}
+
+\begin{itemize}
+    \item Một \textbf{User} có thể sở hữu nhiều \textbf{Workspace} và là thành viên của nhiều \textbf{Workspace} và \textbf{Board} khác.
+    \item Một \textbf{Workspace} chứa nhiều \textbf{Board} và có nhiều \textbf{User} làm thành viên (quan hệ nhiều-nhiều qua bảng \texttt{workspace\_member}).
+    \item Một \textbf{Board} chứa nhiều \textbf{List} và có nhiều \textbf{User} làm thành viên với các vai trò khác nhau (quan hệ nhiều-nhiều qua bảng \texttt{board\_member}).
+    \item Một \textbf{List} chứa nhiều \textbf{Card}; các Card được sắp xếp theo thứ tự \texttt{position}.
+    \item Một \textbf{Card} có thể chứa nhiều \textbf{Checklist} và được gán cho nhiều \textbf{User} (quan hệ nhiều-nhiều qua bảng \texttt{card\_member}).
+    \item Một \textbf{Checklist} chứa nhiều \textbf{ChecklistItem}.
+\end{itemize}
+
+\subsection{Luồng dữ liệu}
+
+\subsubsection{Luồng xác thực người dùng}
+
+\begin{enumerate}
+    \item Người dùng nhập thông tin đăng nhập trên giao diện ReactJS.
+    \item Frontend gửi POST \texttt{/api/v1/auth/sign-in} đến Backend qua ALB.
+    \item Backend gọi Amazon Cognito API để xác thực thông tin đăng nhập.
+    \item Cognito xác thực và trả về access token (JWT) cùng refresh token cho Backend.
+    \item Backend đặt các token vào HttpOnly cookie và trả về phản hồi thành công (HTTP 200).
+    \item Frontend nhận phản hồi và chuyển hướng người dùng đến Dashboard.
+    \item Với mỗi request API tiếp theo, Backend đọc token từ cookie, xác minh chữ ký JWT và xử lý yêu cầu nếu hợp lệ.
+\end{enumerate}
+
+\subsubsection{Luồng xử lý kéo thả Card}
+
+\begin{enumerate}
+    \item Người dùng kéo Card và thả vào vị trí mới (trong cùng List hoặc sang List khác).
+    \item Frontend tính toán \texttt{position} mới dựa trên vị trí của các Card lân cận (\texttt{beforeId}/\texttt{afterId}).
+    \item Giao diện cập nhật tức thì (optimistic update) mà không cần chờ phản hồi từ Backend.
+    \item Frontend gửi PATCH \texttt{/api/v1/cards/:id} với \texttt{position} mới và \texttt{listId} mới (nếu chuyển List).
+    \item Backend cập nhật bản ghi Card trong PostgreSQL.
+    \item Nếu có lỗi từ Backend, Frontend hoàn tác thay đổi trên giao diện.
+\end{enumerate}
+
+\subsubsection{Luồng tải dữ liệu Board}
+
+\begin{enumerate}
+    \item Người dùng truy cập màn hình Board.
+    \item Frontend gửi GET \texttt{/api/v1/boards/:id} đến Backend.
+    \item Backend xác thực token, kiểm tra quyền truy cập Board của người dùng.
+    \item Backend truy vấn PostgreSQL để lấy toàn bộ List và Card trong Board, sắp xếp theo \texttt{position}.
+    \item Backend trả về JSON chứa cấu trúc Board đầy đủ.
+    \item Frontend render giao diện Kanban với các List và Card theo đúng thứ tự.
+\end{enumerate}
+
+\subsection{Thiết kế cơ sở dữ liệu}
+
+Cơ sở dữ liệu PostgreSQL được thiết kế bao gồm các kiểu liệt kê (ENUM), bảng tra cứu và bảng nghiệp vụ. Mỗi bảng được mô tả chi tiết qua cấu trúc cột, kiểu dữ liệu và ràng buộc tương ứng.
+
+\subsubsection{Kiểu liệt kê}
+
+Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để chuẩn hóa các vai trò người dùng trong toàn bộ hệ thống.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Giá trị} & \textbf{Mô tả} \\
+\hline
+\texttt{ADMIN} & Quản trị viên, có toàn quyền quản lý trong Workspace hoặc Board. \\
+\hline
+\texttt{MEMBER} & Thành viên thông thường. \\
+\hline
+\texttt{VIEWER} & Người xem, chỉ có quyền đọc dữ liệu. \\
+\hline
+\end{tabular}
+\caption{Kiểu liệt kê \texttt{role\_name\_enum}}
+\label{tab:enum_role}
+\end{table}
+
+\subsubsection{Bảng tra cứu}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & INT & Khóa chính, NOT NULL & Mã vai trò. \\
+\hline
+\texttt{name} & \texttt{role\_name\_enum} & NOT NULL, UNIQUE & Tên vai trò (ADMIN, MEMBER, VIEWER). \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{roles}}
+\label{tab:roles}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & INT & Khóa chính, NOT NULL & Mã hình ảnh. \\
+\hline
+\texttt{key} & TEXT & NOT NULL & Đường dẫn tương đối đến tệp hình nền Board. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{images}}
+\label{tab:images}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & INT & Khóa chính & Mã loại Workspace. \\
+\hline
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên loại Workspace (ví dụ: Sales CRM, IT, Education...). \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{workspace\_categories}}
+\label{tab:workspace_categories}
+\end{table}
+
+\subsubsection{Bảng nghiệp vụ}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh nội bộ. \\
+\hline
+\texttt{cognito\_id} & VARCHAR(255) & NOT NULL, UNIQUE & Mã định danh từ Amazon Cognito. \\
+\hline
+\texttt{full\_name} & VARCHAR(255) & NOT NULL & Họ tên đầy đủ. \\
+\hline
+\texttt{email} & VARCHAR(255) & NOT NULL, UNIQUE & Địa chỉ email. \\
+\hline
+\texttt{avatar\_url} & VARCHAR(255) & NULL & Đường dẫn ảnh đại diện lưu trên S3. \\
+\hline
+\texttt{bio} & TEXT & NULL & Giới thiệu bản thân. \\
+\hline
+\texttt{phone} & VARCHAR(255) & NULL & Số điện thoại. \\
+\hline
+\texttt{address} & VARCHAR(255) & NULL & Địa chỉ. \\
+\hline
+\texttt{deleted\_at} & TIMESTAMP & NULL & Thời điểm xóa mềm tài khoản. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{users}}
+\label{tab:users}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên Workspace. \\
+\hline
+\texttt{description} & VARCHAR(255) & NULL & Mô tả Workspace. \\
+\hline
+\texttt{category\_id} & INT & NOT NULL, FK $\rightarrow$ \texttt{workspace\_categories} & Loại Workspace. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Workspace. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{workspaces}}
+\label{tab:workspaces}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Thành viên được thêm vào Workspace. \\
+\hline
+\texttt{workspace\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{workspaces} & Workspace chứa thành viên. \\
+\hline
+\texttt{role\_id} & INT & NOT NULL, FK $\rightarrow$ \texttt{roles} & Vai trò của thành viên trong Workspace. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người thêm thành viên. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm thêm thành viên. \\
+\hline
+\multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{workspace\_id})} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên Board. \\
+\hline
+\texttt{background\_url} & TEXT & NULL & Đường dẫn hình nền. \\
+\hline
+\texttt{workspace\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{workspaces} & Workspace chứa Board. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Board. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{workspace\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{workspaces}}
+\label{tab:workspace_members}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Thành viên được thêm vào Board. \\
+\hline
+\texttt{board\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{boards} & Board chứa thành viên. \\
+\hline
+\texttt{role\_id} & INT & NOT NULL, FK $\rightarrow$ \texttt{roles} & Vai trò trong Board (ADMIN, MEMBER, VIEWER). \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người thêm thành viên. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm thêm thành viên. \\
+\hline
+\multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{board\_id})} \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{board\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{boards}}
+\label{tab:board_members}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên List. \\
+\hline
+\texttt{position} & TEXT & NOT NULL & Giá trị vị trí dùng để sắp xếp và xử lý kéo thả. \\
+\hline
+\texttt{board\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{boards} & Board chứa List. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo List. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{lists}}
+\label{tab:lists}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{title} & VARCHAR(255) & NOT NULL & Tiêu đề Card. \\
+\hline
+\texttt{description} & TEXT & NULL & Mô tả chi tiết. \\
+\hline
+\texttt{position} & TEXT & NOT NULL & Giá trị vị trí dùng để sắp xếp và xử lý kéo thả. \\
+\hline
+\texttt{list\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{lists} & List chứa Card. \\
+\hline
+\texttt{start\_date} & TIMESTAMP & NULL & Ngày bắt đầu. \\
+\hline
+\texttt{due\_date} & TIMESTAMP & NULL & Ngày đến hạn. \\
+\hline
+\texttt{is\_completed} & BOOLEAN & DEFAULT FALSE & Trạng thái hoàn thành của Card. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Card. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{cards}}
+\label{tab:cards}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Thành viên được gán vào Card. \\
+\hline
+\texttt{card\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{cards} & Card được gán thành viên. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người gán thành viên. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm gán thành viên. \\
+\hline
+\multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{card\_id})} \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{card\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{cards}}
+\label{tab:card_members}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên Checklist. \\
+\hline
+\texttt{position} & TEXT & NOT NULL & Vị trí hiển thị trong Card. \\
+\hline
+\texttt{card\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{cards} & Card chứa Checklist. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Checklist. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{checklists}}
+\label{tab:checklists}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\hline
+\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\hline
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên hạng mục công việc con. \\
+\hline
+\texttt{position} & TEXT & NOT NULL & Vị trí hiển thị trong Checklist. \\
+\hline
+\texttt{is\_completed} & BOOLEAN & NOT NULL, DEFAULT FALSE & Trạng thái hoàn thành của hạng mục. \\
+\hline
+\texttt{due\_date} & TIMESTAMP & NULL & Thời hạn riêng của hạng mục. \\
+\hline
+\texttt{checklist\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{checklists} & Checklist chứa hạng mục. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo hạng mục. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\hline
+\texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
+\hline
+\texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
+\hline
+\multicolumn{4}{|l|}{Ràng buộc CHECK: \texttt{is\_completed IN (true, false)}} \\
+\hline
+\end{tabular}
+\caption{Bảng \texttt{checklist\_items}}
+\label{tab:checklist_items}
+\end{table}
+
+\subsection{Thiết kế tổng thể hệ thống}
+
+Hệ thống được triển khai trên nền tảng điện toán đám mây AWS với sự bao bọc trong một Mạng riêng ảo (VPC) nhằm tối ưu hóa tính bảo mật. Kiến trúc tổng thể được thiết kế với 9 thành phần chính và sự tương tác chặt chẽ như sau:
+
+\begin{itemize}
+    \item \textbf{Client:} Đại diện cho trình duyệt web của người dùng cuối, là nơi giao diện ứng dụng được hiển thị và thực hiện các tương tác với hệ thống.
+
+    \item \textbf{Amazon CloudFront:} Đóng vai trò là mạng phân phối nội dung (CDN). CloudFront \textit{chỉ tương tác trực tiếp với Client và Amazon S3}, có nhiệm vụ tăng tốc độ tải các tệp tin tĩnh (hình ảnh, tài liệu) từ S3 đến người dùng một cách tối ưu thông qua bộ nhớ đệm (caching), giảm chi phí sử dụng S3.
+
+    \item \textbf{Amazon S3:} Được sử dụng chuyên biệt làm kho lưu trữ các tệp đa phương tiện do người dùng tải lên (ví dụ: avatar, tệp đính kèm trong thẻ công việc). Tầng Backend đảm nhận hoàn toàn việc tải tệp tin lên S3 bằng cách tương tác trực tiếp với dịch vụ này; Client không có quyền đẩy trực tiếp tệp tin lên S3.
+
+    \item \textbf{Amazon VPC (Virtual Private Cloud):} Cung cấp một môi trường mạng nội bộ bị cách ly với Internet. Toàn bộ các máy chủ EC2 (cả Frontend và Backend) cũng như cơ sở dữ liệu RDS đều được đặt bên trong VPC này (phân vùng private).
+
+    \item \textbf{Amazon ALB (Application Load Balancer):} Là điểm truy cập (entry point) công khai duy nhất nhận lưu lượng truy cập từ Internet vào VPC. ALB tiếp nhận mọi request từ Client và phân phối tải vào các máy chủ EC2 (Frontend hoặc Backend) ở bên trong mạng private.
+
+    \item \textbf{EC2 (Frontend – Nginx + Docker + React):} Ứng dụng ReactJS được đóng gói bằng Docker và triển khai thông qua web server Nginx trên máy chủ ảo EC2. Máy chủ này là một EC2 private, chỉ nhận lưu lượng HTTP/HTTPS từ ALB chuyển vào thay vì tiếp xúc trực tiếp với Internet.
+
+    \item \textbf{EC2 (Backend – Spring Boot):} Máy chủ chạy ứng dụng API Spring Boot, xử lý các logic nghiệp vụ. Tương tự như Frontend, máy chủ này cũng là một EC2 private và chỉ nhận request nội bộ từ ALB.
+
+    \item \textbf{Amazon Cognito:} Dịch vụ quản lý định danh. Trong kiến trúc này, Cognito chỉ tương tác trực tiếp với tầng Backend. Thay vì Client gọi trực tiếp Cognito, Backend sẽ chịu trách nhiệm gọi API của Cognito để thực hiện xác thực người dùng và nhận JWT.
+
+    \item \textbf{Amazon RDS (PostgreSQL):} Hệ quản trị cơ sở dữ liệu quan hệ được triển khai trong phân vùng mạng nội bộ sâu nhất. Chỉ duy nhất tầng Backend (EC2 chạy Spring Boot) mới được phép tương tác trực tiếp với RDS để thực hiện truy xuất và lưu trữ dữ liệu; mọi nỗ lực truy cập từ các thành phần khác đều bị từ chối hoàn toàn.
+\end{itemize}
+
+Luồng hoạt động tổng thể của hệ thống diễn ra như sau:
+\begin{enumerate}
+    \item \textbf{Tải giao diện ứng dụng:} Client gửi request $\rightarrow$ ALB $\rightarrow$ EC2 (Frontend – Nginx + React) $\rightarrow$ Trả về giao diện cho người dùng.
+    \item \textbf{Tải tài nguyên tĩnh (hình ảnh, tệp):} Client $\rightarrow$ CloudFront $\rightarrow$ S3 $\rightarrow$ Trả về Client.
+    \item \textbf{Xử lý nghiệp vụ và xác thực:} Client gọi API $\rightarrow$ ALB $\rightarrow$ EC2 (Backend – Spring Boot). Tại đây, nếu là tác vụ đăng nhập hoặc đăng ký, EC2 Backend sẽ giao tiếp với Cognito. Đối với các tác vụ liên quan đến dữ liệu hệ thống, EC2 Backend sẽ giao tiếp trực tiếp với RDS (PostgreSQL). Kết quả xử lý cuối cùng được Backend trả về qua ALB đến Client.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{"./images/chap2/Nello System Architech.png"}
+    \caption{Kiến trúc tổng thể của hệ thống Nello}
+    \label{fig:nello_system_architech_chap3}
+\end{figure}
+
+\clearpage
+
+\section{CHƯƠNG 4: TRIỂN KHAI VÀ KẾT QUẢ}
+
+\subsection{Các chức năng đã hoàn thành}
+
+Sau 8 tuần thực hiện (từ 30/03 đến 24/05/2026), các chức năng cốt lõi của hệ thống quản lý công việc Nello đã được hoàn thiện trên cả tầng Backend và Frontend. Nội dung dưới đây trình bày chi tiết từng nhóm chức năng đã triển khai thành công.
+
+\textbf{Module 1: Xác thực và Quản lý tài khoản}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-01 & Đăng ký tài khoản & Tạo tài khoản qua Amazon Cognito; hệ thống gửi mã OTP xác nhận về email sau khi đăng ký. \\
+\hline
+FR-02 & Xác nhận email & Kích hoạt tài khoản bằng mã OTP 6 chữ số; hỗ trợ gửi lại mã với bộ đếm thời gian. \\
+\hline
+FR-03 & Đăng nhập & Xác thực bằng email và mật khẩu; lưu access token và refresh token vào HttpOnly cookie. \\
+\hline
+FR-04 & Đăng xuất & Xóa cookie xác thực, kết thúc phiên làm việc của người dùng. \\
+\hline
+FR-05 & Làm mới phiên làm việc & Tự động gia hạn access token bằng refresh token khi token hết hạn. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module Xác thực}
+\label{tab:done_auth}
+\end{table}
+
+\textbf{Module 2: Quản lý Workspace}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-06 & Tạo Workspace & Tạo không gian làm việc với tên và loại; người tạo được tự động gán vai trò ADMIN. \\
+\hline
+FR-07 & Xem danh sách Workspace & Hiển thị Workspace trong sidebar Dashboard; hỗ trợ lọc theo từ khóa tên. \\
+\hline
+FR-09 & Quản lý thành viên Workspace & Mời thành viên bằng địa chỉ email thông qua tính năng tìm kiếm người dùng. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module Workspace}
+\label{tab:done_workspace}
+\end{table}
+
+\textbf{Module 3: Quản lý Board}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-10 & Tạo Board & Tạo bảng công việc với tiêu đề và hình nền tùy chọn từ bộ 8 ảnh nền cố định. \\
+\hline
+FR-11 & Xem Board & Tải và hiển thị toàn bộ List và Card theo mô hình Kanban, sắp xếp theo \texttt{position}. \\
+\hline
+FR-13 & Quản lý thành viên Board & Thêm thành viên từ Workspace vào Board với vai trò ADMIN hoặc MEMBER. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module Board}
+\label{tab:done_board}
+\end{table}
+
+\textbf{Module 4: Quản lý List}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-14 & Tạo List & Tạo cột danh sách công việc mới trong Board thông qua form inline. \\
+\hline
+FR-15 & Cập nhật List & Đổi tên List bằng cách nhấp trực tiếp; cập nhật vị trí thông qua kéo thả. \\
+\hline
+FR-16 & Xóa List & Xóa List và toàn bộ Card bên trong sau khi xác nhận qua modal. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module List}
+\label{tab:done_list}
+\end{table}
+
+\textbf{Module 5: Quản lý Card}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-17 & Tạo Card & Tạo thẻ công việc mới trong một List cụ thể thông qua form inline. \\
+\hline
+FR-18 & Xem chi tiết Card & Modal hiển thị tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn, thành viên và danh sách Checklist. \\
+\hline
+FR-19 & Cập nhật Card & Chỉnh sửa thông tin và đánh dấu trạng thái hoàn thành trực tiếp trong modal. \\
+\hline
+FR-20 & Xóa Card & Xóa thẻ công việc khỏi hệ thống. \\
+\hline
+FR-21 & Hiển thị trạng thái Due Date & Badge màu vàng khi sắp đến hạn và màu đỏ khi quá hạn, hiển thị trực tiếp trên Card. \\
+\hline
+FR-22 & Gán thành viên vào Card & Gán hoặc hủy gán thành viên chịu trách nhiệm; avatar hiển thị trực tiếp trên Card. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module Card}
+\label{tab:done_card}
+\end{table}
+
+\textbf{Module 6: Kéo thả (Drag and Drop)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-23 & Kéo thả Card giữa các List & Di chuyển Card sang List khác; cập nhật \texttt{listId} và \texttt{position} đồng bộ qua optimistic update. \\
+\hline
+FR-24 & Kéo thả Card trong cùng List & Thay đổi thứ tự các Card trong một List. \\
+\hline
+FR-25 & Kéo thả List trong Board & Thay đổi thứ tự hiển thị các List trong Board. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module Kéo thả}
+\label{tab:done_dnd}
+\end{table}
+
+\textbf{Module 7: Quản lý Checklist}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1.5cm}|p{4cm}|p{8.5cm}|}
+\hline
+\textbf{Mã FR} & \textbf{Tên chức năng} & \textbf{Mô tả} \\
+\hline
+FR-26 & Tạo Checklist & Tạo danh sách kiểm tra mới trong Card để theo dõi công việc con. \\
+\hline
+FR-27 & Cập nhật Checklist & Đổi tên Checklist trực tiếp trong modal Card. \\
+\hline
+FR-28 & Xóa Checklist & Xóa Checklist và toàn bộ ChecklistItem liên quan (cascade delete). \\
+\hline
+FR-29 & Quản lý ChecklistItem & Thêm, đổi tên, đánh dấu hoàn thành các hạng mục con; hiển thị progress bar theo phần trăm. \\
+\hline
+\end{tabular}
+\caption{Chức năng đã hoàn thành — Module Checklist}
+\label{tab:done_checklist}
+\end{table}
+
+\subsection{Kết quả đạt được}
+
+\subsubsection{Thống kê tổng quát}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6cm}|p{8cm}|}
+\hline
+\textbf{Hạng mục} & \textbf{Kết quả} \\
+\hline
+Thời gian thực hiện & 8 tuần (30/03/2026 – 24/05/2026) \\
+\hline
+Số nhóm API endpoint hoàn thành & 14 nhóm (toàn bộ Backend) \\
+\hline
+Số màn hình Frontend & 6 màn hình chính \\
+\hline
+Số test case đã kiểm thử & Hơn 30 test case \\
+\hline
+Trạng thái Backend & Hoàn chỉnh \\
+\hline
+Trạng thái Frontend & Hoàn chỉnh các chức năng cốt lõi \\
+\hline
+Môi trường triển khai & Local development \\
+\hline
+\end{tabular}
+\caption{Tổng hợp kết quả thực hiện}
+\label{tab:results_summary}
+\end{table}
+
+\subsubsection{Kết quả kiểm thử theo module}
+
+Quá trình kiểm thử được thực hiện theo từng tuần phát triển. Phần lớn các test case tập trung vào luồng thành công (happy case) và một số trường hợp lỗi cơ bản; việc kiểm thử các trường hợp biên và luồng lỗi nâng cao chưa được thực hiện đầy đủ.
+
+\textbf{Module Authentication (W3) — 14 test case}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{2.5cm}|}
+\hline
+\textbf{Mã TC} & \textbf{Kịch bản} & \textbf{Kết quả} \\
+\hline
+TC01–TC03 & Đăng ký: hợp lệ, trùng email, thiếu trường bắt buộc & Pass \\
+\hline
+TC04–TC05 & Xác nhận OTP: mã đúng, mã sai & Pass \\
+\hline
+TC06–TC09 & Đăng nhập: hợp lệ, sai mật khẩu, chưa xác nhận email, kiểm tra cookie & Pass \\
+\hline
+TC10–TC12 & Làm mới token: hợp lệ, thiếu token, token hết hạn & Pass \\
+\hline
+TC13–TC14 & Gửi lại mã: user hợp lệ, user không tồn tại & Pass \\
+\hline
+\end{tabular}
+\caption{Kết quả kiểm thử module Authentication}
+\label{tab:test_auth}
+\end{table}
+
+\textbf{Module Workspace \& Board (W4) — 16 test case}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{2.5cm}|}
+\hline
+\textbf{Mã TC} & \textbf{Kịch bản} & \textbf{Kết quả} \\
+\hline
+TC01–TC05 & Workspace: tạo mới, thiếu tên, token không hợp lệ, lấy danh sách, danh sách rỗng & Pass \\
+\hline
+TC06–TC08 & Board: tạo mới, Workspace không tồn tại, không có quyền & Pass \\
+\hline
+TC09–TC12 & Board: cập nhật, không tồn tại, xóa, xóa không có quyền & Pass \\
+\hline
+TC13–TC16 & List: tạo mới, Board không tồn tại, cập nhật, lấy danh sách & Pass \\
+\hline
+\end{tabular}
+\caption{Kết quả kiểm thử module Workspace \& Board}
+\label{tab:test_workspace_board}
+\end{table}
+
+\textbf{Module Card \& Checklist (W5) — 9 test case}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{2.5cm}|}
+\hline
+\textbf{Mã TC} & \textbf{Kịch bản} & \textbf{Kết quả} \\
+\hline
+TC17–TC22 & Card: tạo mới, lấy chi tiết, cập nhật, di chuyển (drag-drop), xóa, lấy danh sách theo Board & Pass \\
+\hline
+TC23–TC25 & Checklist: tạo mới, tạo ChecklistItem, cập nhật trạng thái hoàn thành & Pass \\
+\hline
+\end{tabular}
+\caption{Kết quả kiểm thử module Card \& Checklist}
+\label{tab:test_card_checklist}
+\end{table}
+
+\textbf{Kiểm thử tích hợp Frontend (W6) — 9 test case}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{2.5cm}|}
+\hline
+\textbf{Mã TC} & \textbf{Kịch bản} & \textbf{Kết quả} \\
+\hline
+TC01–TC03 & Luồng xác thực: đăng ký → xác nhận OTP → đăng nhập & Pass \\
+\hline
+TC04–TC06 & Xác thực lỗi: user đã tồn tại, sai mật khẩu, mã OTP sai & Pass \\
+\hline
+TC07–TC09 & Dashboard: tải giao diện, tạo Workspace, tạo Board & Pass \\
+\hline
+\end{tabular}
+\caption{Kết quả kiểm thử tích hợp Frontend (W6)}
+\label{tab:test_frontend_w6}
+\end{table}
+
+\textbf{Kiểm thử giao diện Board (W7) — 8 test case}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{2.5cm}|}
+\hline
+\textbf{Mã TC} & \textbf{Kịch bản} & \textbf{Kết quả} \\
+\hline
+TC01–TC02 & Workspace Detail: tải giao diện, mời thành viên & Pass \\
+\hline
+TC04–TC08 & Board Kanban: tải Board, tạo List, tạo Card, xóa Card, xóa List & Pass \\
+\hline
+\end{tabular}
+\caption{Kết quả kiểm thử giao diện Board (W7)}
+\label{tab:test_board_ui}
+\end{table}
+
+\subsubsection{Các màn hình giao diện đã hoàn thành}
+
+Hệ thống Frontend bao gồm 6 màn hình chính đã được phát triển và kiểm thử:
+
+\begin{enumerate}
+    \item \textbf{Màn hình Đăng ký (\texttt{/sign-up}):} Form nhập họ tên, email, mật khẩu với validation phía Client; thông báo lỗi khi tài khoản đã tồn tại; tự động chuyển hướng sang màn hình xác nhận OTP sau khi đăng ký.
+
+% TODO-IMG: Chương 4 — Màn hình Đăng ký (/sign-up)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/screen-signup.png}
+    \caption{Màn hình Đăng ký tài khoản}
+    \label{fig:screen_signup}
+\end{figure}
+
+    \item \textbf{Màn hình Xác nhận OTP (\texttt{/confirm-sign-up}):} Ô nhập mã OTP 6 chữ số; nút gửi lại mã có bộ đếm thời gian; thông báo lỗi khi mã không hợp lệ; chuyển hướng về đăng nhập sau khi xác nhận.
+
+% TODO-IMG: Chương 4 — Màn hình Xác nhận OTP (/confirm-sign-up)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/screen-confirm-otp.png}
+    \caption{Màn hình Xác nhận OTP}
+    \label{fig:screen_confirm_otp}
+\end{figure}
+
+    \item \textbf{Màn hình Đăng nhập (\texttt{/sign-in}):} Form email và mật khẩu; thông báo lỗi khi thông tin không đúng; lưu token vào HttpOnly cookie; chuyển hướng đến Dashboard.
+
+% TODO-IMG: Chương 4 — Màn hình Đăng nhập (/sign-in)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/screen-signin.png}
+    \caption{Màn hình Đăng nhập}
+    \label{fig:screen_signin}
+\end{figure}
+
+    \item \textbf{Dashboard:} Hiển thị danh sách Workspace trong sidebar; hiển thị Board theo từng Workspace dưới dạng thumbnail với ảnh nền; xử lý trạng thái trống khi chưa có dữ liệu; tự động làm mới token khi phiên hết hạn.
+
+% TODO-IMG: Chương 4 — Màn hình Dashboard
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/screen-dashboard.png}
+    \caption{Màn hình Dashboard}
+    \label{fig:screen_dashboard}
+\end{figure}
+
+    \item \textbf{Màn hình Chi tiết Workspace (\texttt{/workspaces/:id}):} Thông tin Workspace, danh sách Board, danh sách thành viên với vai trò; modal mời thành viên bằng email.
+
+% TODO-IMG: Chương 4 — Màn hình Chi tiết Workspace (/workspaces/:id)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/screen-workspace-detail.png}
+    \caption{Màn hình Chi tiết Workspace}
+    \label{fig:screen_workspace_detail}
+\end{figure}
+
+    \item \textbf{Màn hình Board Kanban (\texttt{/boards/:id}):} Giao diện Kanban với các List theo dạng cột ngang; hiển thị Card trong từng List; form inline tạo List và Card; modal chi tiết Card; tính năng kéo thả List và Card; quản lý thành viên Board; badge cảnh báo Due Date; avatar thành viên trên Card.
+
+% TODO-IMG: Chương 4 — Màn hình Board Kanban (/boards/:id)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/screen-board-kanban.png}
+    \caption{Màn hình Board Kanban}
+    \label{fig:screen_board_kanban}
+\end{figure}
+
+\end{enumerate}
+
+\subsection{Hình ảnh minh họa}
+
+% TODO-IMG: Chương 4 — Minh họa tính năng kéo thả Card giữa các List
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/feature-drag-drop.png}
+    \caption{Tính năng kéo thả Card giữa các List}
+    \label{fig:feature_drag_drop}
+\end{figure}
+
+% TODO-IMG: Chương 4 — Minh họa modal Chi tiết Card (Checklist, Due Date, Members)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/chap4/feature-card-detail.png}
+    \caption{Modal Chi tiết Card với Checklist, Due Date và thành viên}
+    \label{fig:feature_card_detail}
+\end{figure}
+
+\subsection{Đánh giá kết quả}
+
+\subsubsection{Ưu điểm}
+
+Qua quá trình phát triển và kiểm thử, hệ thống quản lý công việc Nello đạt được một số ưu điểm nổi bật:
+
+\begin{itemize}
+    \item \textbf{Kiến trúc phân tách rõ ràng:} Frontend (ReactJS) và Backend (Spring Boot) hoàn toàn độc lập, giao tiếp qua RESTful API chuẩn hóa, tạo điều kiện bảo trì và mở rộng từng thành phần một cách linh hoạt.
+    \item \textbf{Bảo mật theo tiêu chuẩn:} Toàn bộ xác thực được ủy thác cho Amazon Cognito. Token lưu trong HttpOnly cookie giúp bảo vệ khỏi tấn công XSS; tài nguyên Backend và cơ sở dữ liệu được cô lập trong mạng nội bộ VPC.
+    \item \textbf{Trải nghiệm người dùng trực quan:} Giao diện Kanban quen thuộc với hỗ trợ kéo thả và cơ chế optimistic update cho phép người dùng thấy phản hồi tức thì mà không cần chờ phản hồi từ Backend.
+    \item \textbf{Codebase chất lượng:} Áp dụng DTO và validation, xử lý ngoại lệ tập trung (Exception Handler), định dạng response chuẩn hóa trên toàn bộ API.
+    \item \textbf{Thiết kế cơ sở dữ liệu hợp lý:} Áp dụng cascade delete, ràng buộc UNIQUE, trường \texttt{position} kiểu TEXT linh hoạt phù hợp với thuật toán sắp xếp kéo thả.
+\end{itemize}
+
+\subsubsection{Hạn chế}
+
+Bên cạnh các kết quả đạt được, hệ thống còn tồn tại một số hạn chế cần được khắc phục trong giai đoạn tiếp theo:
+
+\begin{itemize}
+    \item \textbf{Một số chức năng chưa hoàn thiện:} Các API Backend cho phép cập nhật và xóa Workspace (FR-08, FR-30) và cập nhật Board (FR-12) đã được triển khai đầy đủ; tuy nhiên, giao diện Frontend tương ứng chưa được xây dựng. Người dùng hiện không thể thực hiện các thao tác này qua giao diện web mà chỉ có thể gọi API trực tiếp.
+    \item \textbf{Kiểm thử chưa bao phủ đầy đủ các trường hợp biên và luồng lỗi:} Phần lớn các test case được thực hiện tập trung vào luồng thành công (happy case) và một số lỗi cơ bản. Các kịch bản lỗi nâng cao như dữ liệu vượt giới hạn, truy cập đồng thời, mất kết nối hoặc dữ liệu không nhất quán chưa được kiểm thử, dẫn đến nguy cơ tồn tại lỗi tiềm ẩn trong các điều kiện sử dụng thực tế.
+    \item \textbf{Lỗi kéo thả ở vị trí đầu/cuối:} Thuật toán tính \texttt{position} dựa trên \texttt{beforeId}/\texttt{afterId} chưa xử lý đầy đủ các trường hợp biên khi kéo Card hoặc List về vị trí đầu tiên hoặc cuối cùng, dẫn đến sai lệch thứ tự hiển thị sau một số thao tác liên tiếp.
+    \item \textbf{Phân quyền VIEWER chưa hoàn thiện:} Vai trò VIEWER được định nghĩa trong hệ thống nhưng chưa được áp dụng đầy đủ ở cả tầng Backend (kiểm tra quyền tại API endpoint) và tầng Frontend (ẩn/vô hiệu hóa các thao tác chỉnh sửa).
+    \item \textbf{Chưa triển khai lên môi trường Staging:} Hệ thống hiện chỉ hoạt động trên môi trường phát triển cục bộ. Nguyên nhân chính là do xung đột cấu hình HttpOnly cookie khi Frontend và Backend được triển khai trên các domain khác nhau, đòi hỏi phải điều chỉnh chính sách \texttt{SameSite} và CORS.
+    \item \textbf{Chưa có tính năng đồng bộ thời gian thực:} Hệ thống hoạt động theo mô hình request-response thuần túy. Khi một thành viên thực hiện thay đổi, các thành viên khác đang xem cùng Board cần tải lại trang thủ công để cập nhật dữ liệu, ảnh hưởng đến trải nghiệm cộng tác.
+\end{itemize}
+
+\clearpage
+
+\section{CHƯƠNG 5: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
+
+\subsection{Kết luận}
+
+\subsubsection{Các công việc đã thực hiện}
+
+Trong khuôn khổ học phần Project I, toàn bộ quá trình nghiên cứu, thiết kế và phát triển hệ thống quản lý công việc Nello đã được thực hiện trong 8 tuần liên tục, từ ngày 30/03/2026 đến ngày 24/05/2026. Các công việc chính đã hoàn thành bao gồm:
+
+\begin{itemize}
+    \item \textbf{Phân tích và thiết kế hệ thống:} Xác định yêu cầu chức năng và phi chức năng; thiết kế kiến trúc tổng thể theo mô hình client-server; thiết kế cơ sở dữ liệu quan hệ gồm 12 bảng với các ràng buộc toàn vẹn dữ liệu đầy đủ; thiết kế luồng xác thực dựa trên Amazon Cognito và JWT.
+    \item \textbf{Phát triển Backend:} Xây dựng hoàn chỉnh 14 nhóm RESTful API endpoint bằng Java Spring Boot, bao phủ toàn bộ 7 module nghiệp vụ: Xác thực, Người dùng, Workspace, Board, List, Card, Checklist và Card Member. Áp dụng mô hình phân lớp \texttt{controller} -- \texttt{service} -- \texttt{repository}, xử lý ngoại lệ tập trung, chuẩn hóa định dạng response và tích hợp Spring Data JPA với PostgreSQL.
+    \item \textbf{Phát triển Frontend:} Xây dựng 6 màn hình giao diện bằng ReactJS bao gồm luồng xác thực đầy đủ (đăng ký, xác nhận OTP, đăng nhập), Dashboard quản lý Workspace và Board, màn hình chi tiết Workspace và màn hình Kanban Board. Triển khai thành công tính năng kéo thả với cơ chế optimistic update và quản lý trạng thái phức tạp.
+    \item \textbf{Kiểm thử:} Thực hiện hơn 30 test case theo từng tuần phát triển, bao phủ cả luồng thành công (happy case) và các trường hợp lỗi cơ bản trên tất cả các module.
+    \item \textbf{Thiết kế hạ tầng đám mây:} Thiết kế và lập kế hoạch triển khai kiến trúc AWS hoàn chỉnh bao gồm VPC, EC2, RDS, S3, CloudFront, ALB và Amazon Cognito theo mô hình bảo mật nhiều lớp.
+\end{itemize}
+
+\subsubsection{Các mục tiêu đã đạt được}
+
+Đối chiếu với các mục tiêu đề ra ban đầu, các kết quả đạt được như sau:
+
+\begin{itemize}
+    \item \textbf{Xây dựng nền tảng quản lý khoa học:} Hoàn thành. Hệ thống hỗ trợ đầy đủ việc tổ chức công việc theo cấu trúc phân cấp Workspace $\rightarrow$ Board $\rightarrow$ List $\rightarrow$ Card, đáp ứng nhu cầu quản lý dự án đa cấp.
+    \item \textbf{Quản lý thẻ công việc chi tiết:} Hoàn thành. Card hỗ trợ đầy đủ các thuộc tính gồm tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn, gán thành viên và danh sách kiểm tra (Checklist) với thanh tiến độ trực quan.
+    \item \textbf{Tích hợp cơ chế tương tác trực quan:} Hoàn thành. Tính năng kéo thả hoạt động ổn định cho cả List và Card trong Board, với phản hồi giao diện tức thì thông qua cơ chế optimistic update.
+    \item \textbf{Đồng bộ dữ liệu và cộng tác:} Hoàn thành một phần. Các cập nhật về trạng thái công việc, phân công nhân sự và thời hạn được đồng bộ hóa với Backend sau mỗi thao tác; tuy nhiên, đồng bộ thời gian thực giữa các thành viên đang xem cùng một Board chưa được triển khai.
+\end{itemize}
+
+\subsubsection{Các kết quả đạt được}
+
+Sau 8 tuần triển khai, hệ thống Nello đã đạt được những kết quả cụ thể sau:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6cm}|p{8cm}|}
+\hline
+\textbf{Hạng mục} & \textbf{Kết quả} \\
+\hline
+Số API endpoint hoàn thành & 14 nhóm (toàn bộ Backend) \\
+\hline
+Số màn hình Frontend & 6 màn hình chính \\
+\hline
+Số test case đã kiểm thử & Hơn 30 test case \\
+\hline
+Tỷ lệ test case pass & 90\% \\
+\hline
+Trạng thái Backend & Hoàn chỉnh \\
+\hline
+Trạng thái Frontend & Hoàn chỉnh các chức năng cốt lõi \\
+\hline
+Môi trường triển khai & Local development \\
+\hline
+\end{tabular}
+\caption{Tổng hợp kết quả học phần Project I}
+\label{tab:final_summary}
+\end{table}
+
+Hệ thống đã chứng minh tính khả thi của việc xây dựng một ứng dụng quản lý công việc theo mô hình Kanban với kiến trúc phân tách Frontend/Backend, tích hợp dịch vụ đám mây AWS và đảm bảo các tiêu chuẩn bảo mật cơ bản.
+
+\subsection{Các vấn đề còn tồn tại}
+
+\subsubsection{Chức năng chưa hoàn thiện}
+
+Một số chức năng đã được thiết kế và triển khai ở tầng Backend nhưng giao diện Frontend tương ứng chưa được xây dựng:
+
+\begin{itemize}
+    \item \textbf{Cập nhật và xóa Workspace (FR-08, FR-30):} API Backend đã hoàn chỉnh; tuy nhiên, giao diện cho phép người dùng chỉnh sửa tên, mô tả và xóa Workspace chưa được triển khai trên Frontend.
+    \item \textbf{Cập nhật Board (FR-12):} Chức năng chỉnh sửa tiêu đề và hình nền Board đã có API nhưng chưa có giao diện thực hiện.
+    \item \textbf{Xóa Board (FR-31):} API xóa Board đã sẵn sàng nhưng chưa được tích hợp vào giao diện người dùng.
+\end{itemize}
+
+Ngoài ra, một số tính năng đã được xác định là cần thiết nhưng nằm ngoài phạm vi thực hiện của học phần:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Tính năng} & \textbf{Mô tả} \\
+\hline
+Quản lý nhãn dán (Tag) & Tạo, gắn, tìm kiếm và lọc Card theo Tag màu sắc. \\
+\hline
+Hệ thống thông báo & Thông báo khi Card được giao, khi gần đến hạn hoặc khi được mời vào Workspace/Board. \\
+\hline
+Nhật ký hoạt động & Ghi nhận lịch sử tạo, cập nhật, xóa dữ liệu; hiển thị timeline hoạt động trong Card. \\
+\hline
+Xem lịch (Calendar View) & Hiển thị Card theo due date trên giao diện lịch tháng. \\
+\hline
+Upload tệp đính kèm & Đính kèm tệp tin vào Card thông qua Amazon S3. \\
+\hline
+Đồng bộ thời gian thực & Cập nhật tự động giao diện khi thành viên khác thay đổi dữ liệu trong cùng Board. \\
+\hline
+\end{tabular}
+\caption{Các tính năng chưa được triển khai}
+\label{tab:unimplemented_features}
+\end{table}
+
+\subsubsection{Hạn chế kỹ thuật}
+
+\begin{itemize}
+    \item \textbf{Lỗi kéo thả ở vị trí đầu/cuối danh sách:} Thuật toán tính \texttt{position} dựa trên \texttt{beforeId}/\texttt{afterId} chưa xử lý đầy đủ các trường hợp biên khi kéo Card hoặc List về vị trí đầu tiên (không tồn tại \texttt{beforeId}) hoặc vị trí cuối cùng (không tồn tại \texttt{afterId}), dẫn đến sai lệch thứ tự hiển thị sau một số thao tác kéo thả liên tiếp.
+    \item \textbf{Phân quyền VIEWER chưa hoàn thiện:} Vai trò VIEWER được định nghĩa trong cơ sở dữ liệu nhưng chưa được kiểm soát đầy đủ ở tầng Backend (thiếu middleware kiểm tra quyền trên các write operation) và tầng Frontend (chưa ẩn hoặc vô hiệu hóa các nút thao tác chỉnh sửa tương ứng).
+    \item \textbf{Chưa triển khai lên môi trường Staging:} Hệ thống hiện chỉ vận hành trên môi trường phát triển cục bộ. Vấn đề kỹ thuật cốt lõi là xung đột cấu hình HttpOnly cookie khi Frontend và Backend được đặt trên các domain khác nhau, đòi hỏi phải điều chỉnh chính sách \texttt{SameSite} và cấu hình CORS phù hợp với môi trường production.
+    \item \textbf{Chưa có đồng bộ thời gian thực:} Hệ thống hoạt động theo mô hình request-response thuần túy. Khi một thành viên thực hiện thay đổi, các thành viên khác đang xem cùng Board cần tải lại trang thủ công để nhận cập nhật mới nhất.
+    \item \textbf{Kiểm thử chưa bao phủ đầy đủ:} Phần lớn test case tập trung vào luồng thành công và một số lỗi cơ bản. Các kịch bản nâng cao như dữ liệu vượt giới hạn, truy cập đồng thời, mất kết nối mạng và dữ liệu không nhất quán chưa được kiểm thử, tiềm ẩn nguy cơ lỗi trong môi trường thực tế.
+\end{itemize}
+
+\subsection{Phương hướng phát triển}
+
+\subsubsection{Ưu tiên cao — Hoàn thiện hệ thống hiện tại}
+
+\begin{itemize}
+    \item \textbf{Sửa lỗi thuật toán kéo thả:} Rà soát và hoàn thiện thuật toán tính \texttt{beforeId}/\texttt{afterId}, đảm bảo xử lý đúng tất cả các trường hợp biên bao gồm kéo vào đầu danh sách, cuối danh sách và danh sách trống; đồng thời đảm bảo tính nhất quán giữa trạng thái Frontend và dữ liệu Backend.
+    \item \textbf{Hoàn thiện phân quyền VIEWER:} Bổ sung kiểm tra vai trò tại các API endpoint write operation ở tầng Backend và ẩn hoặc vô hiệu hóa các thành phần giao diện thao tác tương ứng khi người dùng có vai trò VIEWER.
+    \item \textbf{Giải quyết vấn đề triển khai Staging:} Lựa chọn và triển khai chiến lược quản lý token phù hợp với môi trường cross-domain, bao gồm cấu hình \texttt{SameSite=None; Secure} cho cookie hoặc chuyển sang cơ chế lưu token trong \texttt{Authorization} header, sau đó tiến hành triển khai hệ thống lên môi trường Staging trên hạ tầng AWS đã thiết kế.
+    \item \textbf{Hoàn thiện giao diện cập nhật và xóa Workspace/Board:} Xây dựng các màn hình và modal giao diện tương ứng cho các API FR-08, FR-12, FR-30, FR-31 đã có sẵn ở Backend.
+\end{itemize}
+
+\subsubsection{Ưu tiên trung bình — Mở rộng tính năng}
+
+\begin{itemize}
+    \item \textbf{Đồng bộ thời gian thực (Realtime Websocket):} Tích hợp Spring WebSocket với giao thức STOMP vào Backend và SockJS/STOMP client vào Frontend để đẩy sự kiện cập nhật dữ liệu (tạo, cập nhật, xóa Card; thay đổi Checklist; kéo thả) đến toàn bộ thành viên đang hoạt động trên cùng Board, nâng cao đáng kể trải nghiệm cộng tác nhóm.
+    \item \textbf{Quản lý nhãn dán (Tag):} Triển khai tính năng tạo, chỉnh sửa và xóa Tag với màu sắc tùy chọn; gắn nhiều Tag cho một Card; tìm kiếm và lọc Card theo Tag trong Board.
+    \item \textbf{Hệ thống thông báo (Notification):} Xây dựng cơ chế thông báo trong ứng dụng khi Card được giao cho người dùng, khi công việc sắp đến hạn hoặc đã quá hạn, và khi được mời vào Workspace hoặc Board.
+\end{itemize}
+
+\subsubsection{Ưu tiên thấp — Phát triển dài hạn}
+
+\begin{itemize}
+    \item \textbf{Nhật ký hoạt động (Activity Log):} Ghi nhận lịch sử toàn bộ thao tác tạo, cập nhật và xóa dữ liệu; hiển thị timeline hoạt động theo thời gian thực trong modal Card Detail và màn hình Board.
+    \item \textbf{Các chế độ xem thay thế:} Phát triển Calendar View hiển thị Card theo due date trên lịch tháng và Timeline View trình bày tiến trình công việc theo dòng thời gian, giúp người dùng có thêm góc nhìn tổng quan về tiến độ dự án.
+    \item \textbf{Upload tệp đính kèm:} Tích hợp khả năng đính kèm tệp tin vào Card thông qua Amazon S3, hỗ trợ xem trước và tải xuống trực tiếp từ giao diện Card Detail.
+    \item \textbf{Tối ưu hóa hiệu năng:} Khi mở rộng quy mô, bổ sung cơ chế phân trang (pagination) cho các danh sách lớn, áp dụng caching với Redis cho các truy vấn thường xuyên và tối ưu hóa query PostgreSQL với index phù hợp.
 \end{itemize}

@@ -346,6 +346,8 @@ Không được mô tả một chức năng ở Chương 4 nếu chức năng đ
 
 ## Khi được yêu cầu viết một chương
 
+Các chương cần bắt đầu ở một page mới (\clearpage khi kết thúc 1 chương)
+
 Chỉ sinh nội dung của chương được yêu cầu.
 
 Không sinh lại các chương khác.

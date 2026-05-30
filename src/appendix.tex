@@ -1,0 +1,641 @@
+\clearpage
+\appendix
+
+% ============================================================
+% PHỤ LỤC A: DANH SÁCH API ENDPOINT ĐẦY ĐỦ
+% ============================================================
+\section{PHỤ LỤC A: DANH SÁCH API ENDPOINT ĐẦY ĐỦ}
+\label{appendix:api}
+
+Bảng dưới đây liệt kê toàn bộ API endpoint đã được triển khai, gồm 14 nhóm chức năng với tổng số hơn 40 endpoint. Tất cả endpoint đều có tiền tố \texttt{/api/v1}.
+
+\begin{longtable}{|l|l|p{5.5cm}|p{4.5cm}|}
+\hline
+\rowcolor{gray!20}
+\textbf{Module} & \textbf{Method} & \textbf{Endpoint} & \textbf{Mô tả} \\
+\hline
+\endfirsthead
+\hline
+\rowcolor{gray!20}
+\textbf{Module} & \textbf{Method} & \textbf{Endpoint} & \textbf{Mô tả} \\
+\hline
+\endhead
+\hline
+\multicolumn{4}{r}{\textit{(tiếp theo trang sau)}} \\
+\endfoot
+\hline
+\caption{Danh sách API endpoint đầy đủ của hệ thống}
+\label{tab:api_full}
+\endlastfoot
+% --- Authentication ---
+Authentication & POST & /auth/sign-up & Đăng ký tài khoản mới \\
+\hline
+Authentication & POST & /auth/confirm-sign-up & Xác nhận OTP kích hoạt tài khoản \\
+\hline
+Authentication & POST & /auth/sign-in & Đăng nhập, nhận JWT qua HttpOnly Cookie \\
+\hline
+Authentication & POST & /auth/refresh-token & Làm mới access token \\
+\hline
+Authentication & POST & /auth/resend-code & Gửi lại mã OTP \\
+\hline
+% --- User ---
+User & GET & /users & Tìm kiếm user theo email hoặc tên \\
+\hline
+User & GET & /users/me & Lấy thông tin user hiện tại từ token \\
+\hline
+% --- Workspace ---
+Workspace & POST & /workspaces & Tạo workspace mới \\
+\hline
+Workspace & GET & /workspaces & Lấy danh sách workspace của user \\
+\hline
+Workspace & GET & /workspaces/:id & Lấy chi tiết workspace \\
+\hline
+Workspace & GET & /workspaces/:id/boards & Lấy danh sách board thuộc workspace \\
+\hline
+Workspace & GET & /workspaces/:id/members & Lấy danh sách thành viên workspace \\
+\hline
+% --- Workspace Member ---
+Workspace Member & POST & /workspaces-members/:id & Mời thành viên vào workspace \\
+\hline
+% --- Board ---
+Board & POST & /boards & Tạo board trong workspace \\
+\hline
+Board & GET & /boards/:id & Lấy chi tiết board kèm lists và cards \\
+\hline
+Board & PUT & /boards/:id & Cập nhật tên board \\
+\hline
+Board & DELETE & /boards/:id & Xóa board \\
+\hline
+% --- Board Member ---
+Board Member & POST & /boards-members & Thêm thành viên vào board \\
+\hline
+Board Member & GET & /board-members & Tìm kiếm thành viên trong board \\
+\hline
+% --- List ---
+List & POST & /lists & Tạo list trong board \\
+\hline
+List & PATCH & /lists/:id & Cập nhật tên hoặc vị trí list \\
+\hline
+List & DELETE & /lists/:id & Xóa list (cascade xóa cards) \\
+\hline
+List & GET & /lists?boardId= & Lấy danh sách list theo thứ tự vị trí \\
+\hline
+% --- Card ---
+Card & POST & /cards & Tạo card trong list \\
+\hline
+Card & GET & /cards/:id & Lấy chi tiết card \\
+\hline
+Card & PATCH & /cards/:id & Cập nhật thông tin hoặc di chuyển card \\
+\hline
+Card & DELETE & /cards/:id & Xóa card \\
+\hline
+Card & GET & /cards?boardId= & Lấy danh sách card theo board \\
+\hline
+% --- Checklist ---
+Checklist & POST & /checklists & Tạo checklist trong card \\
+\hline
+Checklist & PATCH & /checklists/:id & Cập nhật tên hoặc vị trí checklist \\
+\hline
+Checklist & DELETE & /checklists/:id & Xóa checklist (cascade xóa items) \\
+\hline
+Checklist & GET & /checklists?cardId= & Lấy danh sách checklist kèm items \\
+\hline
+% --- Checklist Item ---
+Checklist Item & POST & /checklist-items & Tạo item trong checklist \\
+\hline
+Checklist Item & PATCH & /checklist-items/:id & Cập nhật hoặc đánh dấu hoàn thành \\
+\hline
+Checklist Item & DELETE & /checklist-items/:id & Xóa item \\
+\hline
+% --- Card Member ---
+Card Member & POST & /card-members & Gán thành viên vào card \\
+\hline
+Card Member & DELETE & /card-members/:id & Hủy gán thành viên khỏi card \\
+\hline
+% --- Phụ trợ ---
+Image & GET & /images & Lấy danh sách 8 ảnh nền board \\
+\hline
+WorkspaceCategory & GET & /workspace-categories & Lấy 8 danh mục workspace \\
+\hline
+Role & GET & /roles & Lấy danh sách vai trò (ADMIN, MEMBER, VIEWER) \\
+\hline
+\end{longtable}
+
+\clearpage
+
+% ============================================================
+% PHỤ LỤC B: CHI TIẾT BẢNG CƠ SỞ DỮ LIỆU
+% ============================================================
+\section{PHỤ LỤC B: CHI TIẾT BẢNG CƠ SỞ DỮ LIỆU}
+\label{appendix:db}
+
+Hệ thống sử dụng PostgreSQL với 13 bảng dữ liệu, quản lý migration bằng Flyway (\texttt{V1\_\_init.sql}). Khóa chính của các bảng nghiệp vụ sử dụng kiểu UUID; các bảng tham chiếu dùng INT.
+
+\subsubsection*{Bảng \texttt{roles}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & INT & PRIMARY KEY \\
+\hline
+name & role\_name\_enum & UNIQUE NOT NULL — ADMIN, MEMBER, VIEWER \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{images}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & INT & PRIMARY KEY \\
+\hline
+key & TEXT & NOT NULL — đường dẫn ảnh nền board \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{workspace\_categories}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & INT & PRIMARY KEY \\
+\hline
+name & VARCHAR(255) & NOT NULL \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{users}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+cognito\_id & VARCHAR(255) & NOT NULL, UNIQUE \\
+\hline
+full\_name & VARCHAR(255) & NOT NULL \\
+\hline
+email & VARCHAR(255) & NOT NULL, UNIQUE \\
+\hline
+avatar\_url & VARCHAR(255) & nullable \\
+\hline
+bio & TEXT & nullable \\
+\hline
+phone & VARCHAR(255) & nullable \\
+\hline
+address & VARCHAR(255) & nullable \\
+\hline
+deleted\_at & TIMESTAMP & Soft delete \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{workspaces}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+name & VARCHAR(255) & NOT NULL \\
+\hline
+description & VARCHAR(255) & nullable \\
+\hline
+category\_id & INT & FK $\rightarrow$ workspace\_categories(id) \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+updated\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{workspace\_members}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+user\_id & UUID & FK $\rightarrow$ users(id) ON DELETE CASCADE \\
+\hline
+workspace\_id & UUID & FK $\rightarrow$ workspaces(id) ON DELETE CASCADE \\
+\hline
+role\_id & INT & FK $\rightarrow$ roles(id) ON DELETE CASCADE \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\multicolumn{3}{|l|}{UNIQUE (user\_id, workspace\_id)} \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{boards}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+name & VARCHAR(255) & NOT NULL \\
+\hline
+background\_url & TEXT & nullable \\
+\hline
+workspace\_id & UUID & FK $\rightarrow$ workspaces(id) \textbf{ON DELETE CASCADE} \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+updated\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{board\_members}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+user\_id & UUID & FK $\rightarrow$ users(id) ON DELETE CASCADE \\
+\hline
+board\_id & UUID & FK $\rightarrow$ boards(id) ON DELETE CASCADE \\
+\hline
+role\_id & INT & FK $\rightarrow$ roles(id) ON DELETE CASCADE \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\multicolumn{3}{|l|}{UNIQUE (user\_id, board\_id)} \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{lists}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+name & VARCHAR(255) & NOT NULL \\
+\hline
+board\_id & UUID & FK $\rightarrow$ boards(id) \textbf{ON DELETE CASCADE} \\
+\hline
+position & TEXT & NOT NULL — fractional indexing \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+updated\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{cards}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+title & VARCHAR(255) & NOT NULL \\
+\hline
+description & TEXT & nullable \\
+\hline
+start\_date & TIMESTAMP & nullable \\
+\hline
+due\_date & TIMESTAMP & nullable \\
+\hline
+is\_completed & BOOLEAN & DEFAULT FALSE \\
+\hline
+position & TEXT & NOT NULL — fractional indexing \\
+\hline
+list\_id & UUID & FK $\rightarrow$ lists(id) \textbf{ON DELETE CASCADE} \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+updated\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{card\_members}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+user\_id & UUID & FK $\rightarrow$ users(id) ON DELETE CASCADE \\
+\hline
+card\_id & UUID & FK $\rightarrow$ cards(id) ON DELETE CASCADE \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\multicolumn{3}{|l|}{UNIQUE (user\_id, card\_id)} \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{checklists}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+name & VARCHAR(255) & NOT NULL \\
+\hline
+card\_id & UUID & FK $\rightarrow$ cards(id) \textbf{ON DELETE CASCADE} \\
+\hline
+position & TEXT & NOT NULL \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+updated\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection*{Bảng \texttt{checklist\_items}}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor{gray!20}
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} \\
+\hline
+id & UUID & PRIMARY KEY \\
+\hline
+name & VARCHAR(255) & NOT NULL \\
+\hline
+checklist\_id & UUID & FK $\rightarrow$ checklists(id) \textbf{ON DELETE CASCADE} \\
+\hline
+position & TEXT & NOT NULL \\
+\hline
+is\_completed & BOOLEAN & NOT NULL DEFAULT FALSE \\
+\hline
+due\_date & TIMESTAMP & nullable \\
+\hline
+created\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+updated\_by & UUID & FK $\rightarrow$ users(id) ON DELETE SET NULL \\
+\hline
+created\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+updated\_at & TIMESTAMP & DEFAULT NOW() \\
+\hline
+\end{tabularx}
+\end{table}
+
+\clearpage
+
+% ============================================================
+% PHỤ LỤC C: DANH SÁCH KỊCH BẢN KIỂM THỬ
+% ============================================================
+\section{PHỤ LỤC C: DANH SÁCH KỊCH BẢN KIỂM THỬ}
+\label{appendix:testcases}
+
+Hệ thống đã được kiểm thử qua 5 đợt, bao phủ tổng cộng hơn 50 kịch bản kiểm thử. Toàn bộ kịch bản đều đạt kết quả Pass tại thời điểm kết thúc học phần.
+
+\subsection*{Module Authentication (W3) — 14 kịch bản}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{gray!20}
+\textbf{Mã TC} & \textbf{Kịch bản kiểm thử} & \textbf{Kết quả} \\
+\hline
+TC01 & Đăng ký tài khoản với thông tin hợp lệ & Pass \\
+\hline
+TC02 & Đăng ký với email đã tồn tại trong hệ thống & Pass \\
+\hline
+TC03 & Đăng ký với thiếu trường bắt buộc & Pass \\
+\hline
+TC04 & Xác nhận OTP với mã đúng & Pass \\
+\hline
+TC05 & Xác nhận OTP với mã sai & Pass \\
+\hline
+TC06 & Đăng nhập với thông tin hợp lệ & Pass \\
+\hline
+TC07 & Đăng nhập với mật khẩu sai & Pass \\
+\hline
+TC08 & Đăng nhập với tài khoản chưa xác nhận email & Pass \\
+\hline
+TC09 & Kiểm tra token được lưu vào HttpOnly Cookie & Pass \\
+\hline
+TC10 & Làm mới access token với refresh token hợp lệ & Pass \\
+\hline
+TC11 & Làm mới token khi thiếu refresh token & Pass \\
+\hline
+TC12 & Làm mới token khi token đã hết hạn & Pass \\
+\hline
+TC13 & Gửi lại mã OTP cho user hợp lệ & Pass \\
+\hline
+TC14 & Gửi lại mã OTP cho user không tồn tại & Pass \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection*{Module Workspace \& Board (W4) — 16 kịch bản}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{gray!20}
+\textbf{Mã TC} & \textbf{Kịch bản kiểm thử} & \textbf{Kết quả} \\
+\hline
+TC01 & Tạo workspace với thông tin hợp lệ & Pass \\
+\hline
+TC02 & Tạo workspace với tên trống & Pass \\
+\hline
+TC03 & Tạo workspace với token xác thực sai & Pass \\
+\hline
+TC04 & Lấy danh sách workspace của user hiện tại & Pass \\
+\hline
+TC05 & Lấy danh sách workspace khi chưa có workspace nào & Pass \\
+\hline
+TC06 & Tạo board trong workspace hợp lệ & Pass \\
+\hline
+TC07 & Tạo board trong workspace không tồn tại & Pass \\
+\hline
+TC08 & Tạo board khi user không có quyền trong workspace & Pass \\
+\hline
+TC09 & Cập nhật tên board & Pass \\
+\hline
+TC10 & Cập nhật board không tồn tại & Pass \\
+\hline
+TC11 & Xóa board & Pass \\
+\hline
+TC12 & Xóa board khi không có quyền & Pass \\
+\hline
+TC13 & Tạo list trong board hợp lệ & Pass \\
+\hline
+TC14 & Tạo list trong board không tồn tại & Pass \\
+\hline
+TC15 & Cập nhật tên list & Pass \\
+\hline
+TC16 & Lấy danh sách list theo board & Pass \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection*{Module Card \& Checklist (W5) — 9 kịch bản}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{gray!20}
+\textbf{Mã TC} & \textbf{Kịch bản kiểm thử} & \textbf{Kết quả} \\
+\hline
+TC17 & Tạo card trong list hợp lệ & Pass \\
+\hline
+TC18 & Lấy chi tiết card & Pass \\
+\hline
+TC19 & Cập nhật thông tin card (title, description, dueDate) & Pass \\
+\hline
+TC20 & Di chuyển card giữa các List (drag-and-drop) & Pass \\
+\hline
+TC21 & Xóa card & Pass \\
+\hline
+TC22 & Lấy danh sách card theo board & Pass \\
+\hline
+TC23 & Tạo checklist trong card & Pass \\
+\hline
+TC24 & Tạo checklist item trong checklist & Pass \\
+\hline
+TC25 & Cập nhật trạng thái hoàn thành của checklist item & Pass \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection*{Frontend Integration (W6) — 9 kịch bản}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{gray!20}
+\textbf{Mã TC} & \textbf{Kịch bản kiểm thử} & \textbf{Kết quả} \\
+\hline
+TC01 & Luồng xác thực đầy đủ: Đăng ký $\rightarrow$ Xác nhận OTP $\rightarrow$ Đăng nhập & Pass \\
+\hline
+TC02 & Thông báo lỗi khi đăng ký với user đã tồn tại & Pass \\
+\hline
+TC03 & Thông báo lỗi khi đăng nhập với mật khẩu sai & Pass \\
+\hline
+TC04 & Thông báo lỗi khi xác nhận OTP sai & Pass \\
+\hline
+TC05 & Tải màn hình Dashboard và hiển thị danh sách workspace & Pass \\
+\hline
+TC06 & Tạo workspace mới từ Dashboard & Pass \\
+\hline
+TC07 & Tạo board mới trong workspace & Pass \\
+\hline
+TC08 & Xử lý empty state khi chưa có workspace & Pass \\
+\hline
+TC09 & Auto refresh token khi access token hết hạn & Pass \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection*{Board UI (W7) — 8 kịch bản}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{gray!20}
+\textbf{Mã TC} & \textbf{Kịch bản kiểm thử} & \textbf{Kết quả} \\
+\hline
+TC01 & Tải màn hình Workspace Detail và hiển thị danh sách board và thành viên & Pass \\
+\hline
+TC02 & Mời thành viên vào workspace qua modal & Pass \\
+\hline
+TC03 & Tải màn hình Board Kanban với đầy đủ List và Card & Pass \\
+\hline
+TC04 & Tạo List mới trong Board & Pass \\
+\hline
+TC05 & Tạo Card mới trong List & Pass \\
+\hline
+TC06 & Xóa Card với modal xác nhận & Pass \\
+\hline
+TC07 & Xóa List với modal xác nhận & Pass \\
+\hline
+TC08 & Mở Card Detail Modal và hiển thị Checklist, Due Date, Members & Pass \\
+\hline
+\end{tabularx}
+\end{table}
+
+\clearpage
