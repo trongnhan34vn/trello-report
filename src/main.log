@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.30)  31 MAY 2026 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.30)  31 MAY 2026 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -370,327 +370,348 @@ File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 <./images/chap2/React.jpg, id=43, 1204.5pt x 677.53125pt>
 File: ./images/chap2/React.jpg Graphic file (type jpg)
 <use ./images/chap2/React.jpg>
-Package pdftex.def Info: ./images/chap2/React.jpg  used on input line 96.
+Package pdftex.def Info: ./images/chap2/React.jpg  used on input line 94.
 (pdftex.def)             Requested size: 195.0pt x 109.67882pt.
  [11]
 <./images/chap2/SpringBoot.jpg, id=47, 803.0pt x 445.665pt>
 File: ./images/chap2/SpringBoot.jpg Graphic file (type jpg)
 <use ./images/chap2/SpringBoot.jpg>
-Package pdftex.def Info: ./images/chap2/SpringBoot.jpg  used on input line 111.
+Package pdftex.def Info: ./images/chap2/SpringBoot.jpg  used on input line 109.
 (pdftex.def)             Requested size: 195.0pt x 108.22664pt.
  [12 <./images/chap2/React.jpg>]
 <./images/chap2/PostgreSQL.png, id=52, 1284.8pt x 722.7pt>
 File: ./images/chap2/PostgreSQL.png Graphic file (type png)
 <use ./images/chap2/PostgreSQL.png>
-Package pdftex.def Info: ./images/chap2/PostgreSQL.png  used on input line 126.
+Package pdftex.def Info: ./images/chap2/PostgreSQL.png  used on input line 124.
 (pdftex.def)             Requested size: 195.0pt x 109.6795pt.
- [13 <./images/chap2/SpringBoot.jpg>] [14 <./images/chap2/PostgreSQL.png (PNG copy)>] [15] [16] [17]
-<./images/chap2/Docker.png, id=68, 1005.49565pt x 844.45924pt>
+ [13 <./images/chap2/SpringBoot.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+[14 <./images/chap2/PostgreSQL.png (PNG copy)>] [15] [16]
+<./images/chap2/Docker.png, id=65, 1005.49565pt x 844.45924pt>
 File: ./images/chap2/Docker.png Graphic file (type png)
 <use ./images/chap2/Docker.png>
-Package pdftex.def Info: ./images/chap2/Docker.png  used on input line 199.
+Package pdftex.def Info: ./images/chap2/Docker.png  used on input line 195.
 (pdftex.def)             Requested size: 195.0pt x 163.76047pt.
+ [17]
 <./images/chap2/Nginx.jpg, id=70, 1505.625pt x 725.71124pt>
 File: ./images/chap2/Nginx.jpg Graphic file (type jpg)
 <use ./images/chap2/Nginx.jpg>
-Package pdftex.def Info: ./images/chap2/Nginx.jpg  used on input line 212.
+Package pdftex.def Info: ./images/chap2/Nginx.jpg  used on input line 208.
 (pdftex.def)             Requested size: 195.0pt x 93.98035pt.
- [18 <./images/chap2/Docker.png>] [19 <./images/chap2/Nginx.jpg>]
-Underfull \hbox (badness 1117) in paragraph at lines 246--246
+ [18 <./images/chap2/Docker.png> <./images/chap2/Nginx.jpg>] [19]
+Underfull \hbox (badness 1117) in paragraph at lines 242--242
 []|\T5/cmr/m/n/12 L†m mÓi phi∂n l†m
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 250--250
+Underfull \hbox (badness 1603) in paragraph at lines 246--246
 []|\T5/cmr/m/n/12 C™p nh™t hÁ sÏ c°
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 234--253
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 230--249
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []|\T5/cmr/m/n/12 Xem danh s°ch
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 269--270
+Underfull \hbox (badness 2875) in paragraph at lines 265--266
 []|\T5/cmr/m/n/12 Ng˜Ìi dÚng chønh s˚a t∂n, mÊ t£ cıa
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 271--271
+Underfull \hbox (badness 1158) in paragraph at lines 267--267
 []|\T5/cmr/m/n/12 Qu£n l˛ th†nh vi∂n
  []
 
 
-Underfull \hbox (badness 1221) in paragraph at lines 273--274
+Underfull \hbox (badness 1221) in paragraph at lines 269--270
 []|\T5/cmr/m/n/12 Ng˜Ìi dÚng (chı s h˙u) x‚a vænh viπn
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 261--276
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 257--272
  [][] 
  []
 
 [20
 
 ]
-Underfull \hbox (badness 1158) in paragraph at lines 294--294
+Underfull \hbox (badness 1158) in paragraph at lines 290--290
 []|\T5/cmr/m/n/12 Qu£n l˛ th†nh vi∂n
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 284--299
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 280--295
  [][] 
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 307--318
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 303--314
  [][] 
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 326--341
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 322--337
  [][] 
  []
 
 [21]
-Underfull \hbox (badness 2707) in paragraph at lines 355--355
+Underfull \hbox (badness 2707) in paragraph at lines 351--351
 []|\T5/cmr/m/n/12 K≤o th£ List trong
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 349--358
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 345--354
  [][] 
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 366--379
+Overfull \hbox (45.93854pt too wide) in paragraph at lines 362--375
  [][] 
  []
 
 [22]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 399--420
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 395--416
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 423--444
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 419--440
 [] 
  []
 
 [23]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 447--468
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 443--464
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 471--492
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 467--488
 [] 
  []
 
 [24]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 495--516
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 491--512
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 519--540
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 515--536
 [] 
  []
 
 [25]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 543--564
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 539--560
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 567--588
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 563--584
 [] 
  []
 
 [26]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 591--612
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 587--608
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 615--636
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 611--632
 [] 
  []
 
 [27]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 639--660
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 635--656
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 663--684
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 659--680
 [] 
  []
 
 [28]
-Underfull \hbox (badness 7397) in paragraph at lines 695--696
+Underfull \hbox (badness 7397) in paragraph at lines 691--692
 []|\T5/cmr/m/n/12 Ng˜Ìi dÚng c‚ vai tr· AD-MIN/MEMBER trong
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 []|\T5/cmr/m/n/12 Ng˜Ìi dÚng c‚ quy∑n AD-MIN/MEMBER trong
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 687--708
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 683--704
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 711--732
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 707--728
 [] 
  []
 
 [29]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 735--756
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 731--752
 [] 
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 775--776
+Underfull \hbox (badness 1668) in paragraph at lines 771--772
 \T5/cmr/m/n/12 4. Back-end ki∫m tra quy∑n v† t˜ c°ch th†nh vi∂n
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 759--780
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 755--776
 [] 
  []
 
 [30]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 783--804
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 779--800
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 807--828
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 803--824
 [] 
  []
 
 [31]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 831--852
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 827--848
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 855--876
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 851--872
 [] 
  []
 
 [32]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 879--900
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 875--896
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 903--924
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 899--920
 [] 
  []
 
 [33]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 927--948
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 923--944
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 951--972
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 947--968
 [] 
  []
 
 [34]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 975--996
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 971--992
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 999--1020
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 995--1016
 [] 
  []
 
 [35]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1023--1044
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1019--1040
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1047--1068
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1043--1064
 [] 
  []
 
 [36]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1071--1092
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1067--1088
 [] 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1095--1116
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1091--1112
 [] 
  []
 
 [37]
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1119--1140
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1115--1136
 [] 
  []
 
 [38]
-Overfull \hbox (6.18936pt too wide) in paragraph at lines 1163--1164
+Overfull \hbox (6.18936pt too wide) in paragraph at lines 1159--1160
 []\T5/cmr/m/n/12 MÎt \T5/cmr/bx/n/12 List \T5/cmr/m/n/12 ch˘a nhi∑u \T5/cmr/bx/n/12 Card\T5/cmr/m/n/12 ; c°c Card ^^_˜Òc s≠p x∏p theo th˘ t¸ \T5/cmtt/m/n/12 position\T5/cmr/m/n/12 . 
  []
 
 <./images/chap3/Auth Flow.png, id=139, 1699.34875pt x 932.48375pt>
 File: ./images/chap3/Auth Flow.png Graphic file (type png)
 <use ./images/chap3/Auth Flow.png>
-Package pdftex.def Info: ./images/chap3/Auth Flow.png  used on input line 1174.
+Package pdftex.def Info: ./images/chap3/Auth Flow.png  used on input line 1170.
 (pdftex.def)             Requested size: 195.0pt x 106.9986pt.
 [39]
 <./images/DatabaseDesign.png, id=143, 3834.325pt x 3521.155pt>
 File: ./images/DatabaseDesign.png Graphic file (type png)
 <use ./images/DatabaseDesign.png>
-Package pdftex.def Info: ./images/DatabaseDesign.png  used on input line 1195.
+Package pdftex.def Info: ./images/DatabaseDesign.png  used on input line 1191.
 (pdftex.def)             Requested size: 195.0pt x 179.02312pt.
  [40 <./images/chap3/Auth Flow.png (PNG copy)>]
-Overfull \hbox (1.07063pt too wide) in paragraph at lines 1231--1231
+Overfull \hbox (1.07063pt too wide) in paragraph at lines 1227--1227
 []|\T5/cmtt/m/n/12 role_name_enum| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1231--1231
+Underfull \hbox (badness 10000) in paragraph at lines 1227--1227
 []|\T5/cmr/m/n/12 NOT NULL,
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1225--1234
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1221--1230
  [][] 
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1240--1249
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1236--1245
  [][] 
  []
 
 [41 <./images/DatabaseDesign.png (PNG copy)>]
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1261--1261
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1257--1257
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 5105) in paragraph at lines 1261--1262
+Underfull \hbox (badness 5105) in paragraph at lines 1257--1258
 \T5/cmr/m/n/12 Sales CRM, IT, Ed-u-ca-
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1255--1264
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1251--1260
  [][] 
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1274--1274
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1274--1274
+[]|\T5/cmr/m/n/12 NOT NULL,
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1276--1276
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
@@ -709,297 +730,282 @@ Overfull \hbox (0.76651pt too wide) in paragraph at lines 1280--1280
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1282--1282
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1282--1282
-[]|\T5/cmr/m/n/12 NOT NULL,
- []
-
-
 Overfull \hbox (0.76651pt too wide) in paragraph at lines 1284--1284
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1288--1288
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1286--1286
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1290--1290
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Underfull \hbox (badness 1983) in paragraph at lines 1292--1293
+Underfull \hbox (badness 1983) in paragraph at lines 1288--1289
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m x‚a m∑m t†i
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1294--1294
+Underfull \hbox (badness 1168) in paragraph at lines 1290--1290
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1296--1296
+Underfull \hbox (badness 1168) in paragraph at lines 1292--1292
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1296--1297
+Underfull \hbox (badness 1264) in paragraph at lines 1292--1293
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1272--1299
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1268--1295
  [][] 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1311--1311
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1307--1307
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1313--1313
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1309--1309
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (23.88521pt too wide) in paragraph at lines 1315--1315
+Overfull \hbox (23.88521pt too wide) in paragraph at lines 1311--1311
 \T5/cmtt/m/n/12 workspace_categories| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
+Underfull \hbox (badness 10000) in paragraph at lines 1315--1315
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1321--1321
+Underfull \hbox (badness 1168) in paragraph at lines 1317--1317
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1323--1323
+Underfull \hbox (badness 1168) in paragraph at lines 1319--1319
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1323--1324
+Underfull \hbox (badness 1264) in paragraph at lines 1319--1320
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1305--1326
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1301--1322
  [][] 
  []
 
 [42]
-Underfull \hbox (badness 1168) in paragraph at lines 1346--1346
+Underfull \hbox (badness 1168) in paragraph at lines 1342--1342
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1332--1351
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1328--1347
  [][] 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1363--1363
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1359--1359
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (1.07063pt too wide) in paragraph at lines 1365--1365
+Overfull \hbox (1.07063pt too wide) in paragraph at lines 1361--1361
 []|\T5/cmtt/m/n/12 background_url| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
+Underfull \hbox (badness 10000) in paragraph at lines 1367--1367
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1373--1373
+Underfull \hbox (badness 1168) in paragraph at lines 1369--1369
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1375--1375
+Underfull \hbox (badness 1168) in paragraph at lines 1371--1371
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1375--1376
+Underfull \hbox (badness 1264) in paragraph at lines 1371--1372
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1357--1378
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1353--1374
  [][] 
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
+Underfull \hbox (badness 10000) in paragraph at lines 1390--1391
 []|\T5/cmr/m/n/12 Vai tr· trong Board
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
+Underfull \hbox (badness 10000) in paragraph at lines 1390--1391
 \T5/cmr/m/n/12 (AD-MIN, MEM-BER,
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1398--1398
+Underfull \hbox (badness 1168) in paragraph at lines 1394--1394
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1384--1403
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1380--1399
  [][] 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1415--1415
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1411--1411
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1423--1423
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1419
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1425--1425
+Underfull \hbox (badness 1168) in paragraph at lines 1421--1421
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1427--1427
+Underfull \hbox (badness 1168) in paragraph at lines 1423--1423
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1427--1428
+Underfull \hbox (badness 1264) in paragraph at lines 1423--1424
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1409--1430
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1405--1426
  [][] 
  []
 
 [44]
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1442--1442
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1438--1438
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1458--1458
+Underfull \hbox (badness 10000) in paragraph at lines 1454--1454
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1460--1460
+Underfull \hbox (badness 1168) in paragraph at lines 1456--1456
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1462--1462
+Underfull \hbox (badness 1168) in paragraph at lines 1458--1458
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1462--1463
+Underfull \hbox (badness 1264) in paragraph at lines 1458--1459
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1436--1465
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1432--1461
  [][] 
  []
 
 [45]
-Underfull \hbox (badness 1168) in paragraph at lines 1483--1483
+Underfull \hbox (badness 1168) in paragraph at lines 1479--1479
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1471--1488
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1467--1484
  [][] 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1500--1500
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1496--1496
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1508--1508
+Underfull \hbox (badness 10000) in paragraph at lines 1504--1504
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1510--1510
+Underfull \hbox (badness 1168) in paragraph at lines 1506--1506
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1512--1512
+Underfull \hbox (badness 1168) in paragraph at lines 1508--1508
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1512--1513
+Underfull \hbox (badness 1264) in paragraph at lines 1508--1509
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1494--1515
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1490--1511
  [][] 
  []
 
 [46]
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1527--1527
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1523--1523
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 1527--1528
+Underfull \hbox (badness 1199) in paragraph at lines 1523--1524
 []|\T5/cmr/m/n/12 T∂n h§ng mˆc cÊng viªc
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1531--1531
+Underfull \hbox (badness 1168) in paragraph at lines 1527--1527
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1539--1539
+Underfull \hbox (badness 10000) in paragraph at lines 1535--1535
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1541--1541
+Underfull \hbox (badness 1168) in paragraph at lines 1537--1537
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1543--1543
+Underfull \hbox (badness 1168) in paragraph at lines 1539--1539
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1543--1544
+Underfull \hbox (badness 1264) in paragraph at lines 1539--1540
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1521--1548
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1517--1544
  [][] 
  []
 
@@ -1007,25 +1013,25 @@ Overfull \hbox (72.56491pt too wide) in paragraph at lines 1521--1548
 <./images/chap2/Nello System Architech.png, id=179, 1703.36375pt x 930.47626pt>
 File: ./images/chap2/Nello System Architech.png Graphic file (type png)
 <use ./images/chap2/Nello System Architech.png>
-Package pdftex.def Info: ./images/chap2/Nello System Architech.png  used on input line 1585.
+Package pdftex.def Info: ./images/chap2/Nello System Architech.png  used on input line 1581.
 (pdftex.def)             Requested size: 390.0pt x 213.03958pt.
  [50 <./images/chap2/Nello System Architech.png (PNG copy)>]
+Overfull \hbox (1.07799pt too wide) in alignment at lines 1594--1598
+ [] [] [] 
+ []
+
+
 Overfull \hbox (1.07799pt too wide) in alignment at lines 1598--1602
  [] [] [] 
  []
 
 
-Overfull \hbox (1.07799pt too wide) in alignment at lines 1602--1606
+Overfull \hbox (1.07799pt too wide) in alignment at lines 1602--1604
  [] [] [] 
  []
 
 
-Overfull \hbox (1.07799pt too wide) in alignment at lines 1606--1608
- [] [] [] 
- []
-
-
-Overfull \hbox (1.07799pt too wide) in alignment at lines 1608--1680
+Overfull \hbox (1.07799pt too wide) in alignment at lines 1604--1676
  [] [] [] 
  []
 
@@ -1033,109 +1039,109 @@ Overfull \hbox (1.07799pt too wide) in alignment at lines 1608--1680
 ignored: Infinite glue shrinkage found in box being split [51
 
 ]
-Overfull \hbox (33.53854pt too wide) in paragraph at lines 1688--1707
+Overfull \hbox (33.53854pt too wide) in paragraph at lines 1684--1703
  [][] 
  []
 
 
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1719--1734
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1715--1730
  [][] 
  []
 
 [52]
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1742--1755
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1738--1751
  [][] 
  []
 
 
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1763--1772
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1759--1768
  [][] 
  []
 
 
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1780--1791
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1776--1787
  [][] 
  []
 
 [53]
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1799--1808
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1795--1804
  [][] 
  []
 
 LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 1817.
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 1813.
 <./images/chap4/screen-signup.png, id=192, 1914.15125pt x 913.4125pt>
 File: ./images/chap4/screen-signup.png Graphic file (type png)
 <use ./images/chap4/screen-signup.png>
-Package pdftex.def Info: ./images/chap4/screen-signup.png  used on input line 1822.
+Package pdftex.def Info: ./images/chap4/screen-signup.png  used on input line 1818.
 (pdftex.def)             Requested size: 390.0pt x 186.09396pt.
 [54]
 <./images/chap4/screen-confirm-otp.png, id=197, 1906.12125pt x 908.39375pt>
 File: ./images/chap4/screen-confirm-otp.png Graphic file (type png)
 <use ./images/chap4/screen-confirm-otp.png>
-Package pdftex.def Info: ./images/chap4/screen-confirm-otp.png  used on input line 1832.
+Package pdftex.def Info: ./images/chap4/screen-confirm-otp.png  used on input line 1828.
 (pdftex.def)             Requested size: 390.0pt x 185.86154pt.
 <./images/chap4/screen-signin.png, id=198, 1916.15875pt x 910.40125pt>
 File: ./images/chap4/screen-signin.png Graphic file (type png)
 <use ./images/chap4/screen-signin.png>
-Package pdftex.def Info: ./images/chap4/screen-signin.png  used on input line 1842.
+Package pdftex.def Info: ./images/chap4/screen-signin.png  used on input line 1838.
 (pdftex.def)             Requested size: 390.0pt x 185.28598pt.
  [55 <./images/chap4/screen-signup.png> <./images/chap4/screen-confirm-otp.png>]
 <./images/chap4/screen-dashboard.png, id=204, 1916.15875pt x 909.3975pt>
 File: ./images/chap4/screen-dashboard.png Graphic file (type png)
 <use ./images/chap4/screen-dashboard.png>
-Package pdftex.def Info: ./images/chap4/screen-dashboard.png  used on input line 1852.
+Package pdftex.def Info: ./images/chap4/screen-dashboard.png  used on input line 1848.
 (pdftex.def)             Requested size: 390.0pt x 185.0817pt.
 <./images/chap4/screen-workspace-detail.png, id=205, 1915.155pt x 913.4125pt>
 File: ./images/chap4/screen-workspace-detail.png Graphic file (type png)
 <use ./images/chap4/screen-workspace-detail.png>
-Package pdftex.def Info: ./images/chap4/screen-workspace-detail.png  used on input line 1862.
+Package pdftex.def Info: ./images/chap4/screen-workspace-detail.png  used on input line 1858.
 (pdftex.def)             Requested size: 390.0pt x 185.9964pt.
  [56 <./images/chap4/screen-signin.png> <./images/chap4/screen-dashboard.png>]
 <./images/chap4/screen-board-kanban.png, id=211, 1917.1625pt x 907.39pt>
 File: ./images/chap4/screen-board-kanban.png Graphic file (type png)
 <use ./images/chap4/screen-board-kanban.png>
-Package pdftex.def Info: ./images/chap4/screen-board-kanban.png  used on input line 1872.
+Package pdftex.def Info: ./images/chap4/screen-board-kanban.png  used on input line 1868.
 (pdftex.def)             Requested size: 390.0pt x 184.5762pt.
 <./images/chap4/feature-drag-drop.png, id=212, 1927.2pt x 1084.05pt>
 File: ./images/chap4/feature-drag-drop.png Graphic file (type png)
 <use ./images/chap4/feature-drag-drop.png>
-Package pdftex.def Info: ./images/chap4/feature-drag-drop.png  used on input line 1884.
+Package pdftex.def Info: ./images/chap4/feature-drag-drop.png  used on input line 1880.
 (pdftex.def)             Requested size: 390.0pt x 219.37006pt.
  [57 <./images/chap4/screen-workspace-detail.png> <./images/chap4/screen-board-kanban.png>]
 <./images/chap4/feature-card-detail.png, id=218, 1656.1875pt x 902.37125pt>
 File: ./images/chap4/feature-card-detail.png Graphic file (type png)
 <use ./images/chap4/feature-card-detail.png>
-Package pdftex.def Info: ./images/chap4/feature-card-detail.png  used on input line 1892.
+Package pdftex.def Info: ./images/chap4/feature-card-detail.png  used on input line 1888.
 (pdftex.def)             Requested size: 390.0pt x 212.48412pt.
  [58 <./images/chap4/feature-drag-drop.png> <./images/chap4/feature-card-detail.png>] [59] [60]
-Overfull \hbox (24.82755pt too wide) in paragraph at lines 1925--1925
+Overfull \hbox (24.82755pt too wide) in paragraph at lines 1921--1921
 []\T5/cmr/bx/n/17.28 CH◊ÃNG 5: KòT LUäN VÄ H◊ŒNG PHÅT
  []
 
 
-Overfull \hbox (33.53854pt too wide) in paragraph at lines 1935--1956
+Overfull \hbox (33.53854pt too wide) in paragraph at lines 1931--1952
  [][] 
  []
 
 [61
 
 ]
-Underfull \hbox (badness 4036) in paragraph at lines 1990--1990
+Underfull \hbox (badness 4036) in paragraph at lines 1986--1986
 []|\T5/cmr/m/n/12 Qu£n l˛ nh¢n d°n
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 2000--2000
+Underfull \hbox (badness 4132) in paragraph at lines 1996--1996
 []|\T5/cmr/m/n/12 ^^^Áng bÎ thÌi gian
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1986--2003
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1982--1999
  [][] 
  []
 
-[62] [63]) (./references.tex
+[62] [63] [64]) (./references.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 []\T5/cmr/m/n/12 Amazon Web Ser-vices. \T5/cmr/m/it/12 Ama-zon Cog-
  []
@@ -1150,7 +1156,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 \T5/cmtt/m/n/12 https://docs.aws.amazon.com/cognito/latest/developerguide\T5/cmr/m/n/12 .
  []
 
-[64]
+
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 []\T5/cmr/m/n/12 Amazon Web Ser-vices. \T5/cmr/m/it/12 Ama-zon EC2 User
  []
@@ -1205,7 +1211,9 @@ Underfull \hbox (badness 1668) in paragraph at lines 25--26
 \T5/cmr/m/n/12 2024. Truy c™p t§i: \T5/cmtt/m/n/12 https://www.atlassian.com/software/jira\T5/cmr/m/n/12 .
  []
 
-) (./appendix.tex [65]
+) (./appendix.tex [65
+
+]
 Overfull \hbox (95.16985pt too wide) in alignment at lines 12--17
  [] [] [] [] 
  []
@@ -1327,7 +1335,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,12n,83p,1061b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on main.pdf (77 pages, 19695205 bytes).
+Output written on main.pdf (77 pages, 19693637 bytes).
 PDF statistics:
  312 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
