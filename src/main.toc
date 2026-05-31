@@ -44,10 +44,10 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Quan hệ giữa các thực thể}{35}{}%
 \contentsline {subsection}{\numberline {3.4}Luồng dữ liệu}{35}{}%
 \contentsline {subsubsection}{\numberline {3.4.1}Luồng xác thực người dùng}{35}{}%
-\contentsline {subsubsection}{\numberline {3.4.2}Luồng xử lý kéo thả Card}{35}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Luồng xử lý kéo thả Card}{36}{}%
 \contentsline {subsubsection}{\numberline {3.4.3}Luồng tải dữ liệu Board}{36}{}%
 \contentsline {subsection}{\numberline {3.5}Thiết kế cơ sở dữ liệu}{36}{}%
-\contentsline {subsubsection}{\numberline {3.5.1}Kiểu liệt kê}{36}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}Kiểu liệt kê}{37}{}%
 \contentsline {subsubsection}{\numberline {3.5.2}Bảng tra cứu}{37}{}%
 \contentsline {subsubsection}{\numberline {3.5.3}Bảng nghiệp vụ}{38}{}%
 \contentsline {subsection}{\numberline {3.6}Thiết kế tổng thể hệ thống}{44}{}%

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1780195537.96713 "/Users/nhannguyen/Documents/ITProject/Trello/reports/src/main.tex" "main.pdf" "main" 1780195540.55475 0
+["pdflatex"] 1780205332.62561 "/Users/nhannguyen/Documents/ITProject/Trello/reports/src/main.tex" "main.pdf" "main" 1780205335.34807 0
   "/Users/nhannguyen/Documents/ITProject/Trello/reports/src/main.tex" 1780161233.34656 456 0686e4b3e98966adea0848961252ca97 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -60,7 +60,7 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1780108050 3636772 3fd2c6c042e8837460fab447d3b2ccd4 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "appendix.tex" 1780158277.1052 18765 05f6be27ac0d1446bde4b4d4e6fe35b1 ""
-  "content.tex" 1780195534.95452 114301 92b8e93404c51b9c378f62d49cdd0be8 ""
+  "content.tex" 1780205329.46933 114495 8f71b068f70c11d87e692e70604ffcf2 ""
   "cover.tex" 1780158515.56012 859 90192def6dd9400252f48dddc8136eae ""
   "images/base/logo.png" 1780109103.87976 5371 e3ad904828cf1e7808d1d7870702b76c ""
   "images/chap2/Docker.png" 1780194325.78324 131206 63ea7c863fd07fe959b6e53befa85be1 ""
@@ -69,6 +69,7 @@
   "images/chap2/PostgreSQL.png" 1780154435.49275 111955 169f095fc5e62f334ea31d4e6b3544ab ""
   "images/chap2/React.jpg" 1780153962.4675 37751 269741cb0f65ded1775f8af6800a5525 ""
   "images/chap2/SpringBoot.jpg" 1780156086.4525 24751 3059c55a119f5027237c3f8077236858 ""
+  "images/chap3/Auth Flow.png" 1780205220.06186 1001578 84a564f5d36295b3ad9757b1d62e23d9 ""
   "images/chap4/feature-card-detail.png" 1780157702.21806 3136778 d41427b48020210655a07d1a0db3b537 ""
   "images/chap4/feature-drag-drop.png" 1780156291.56342 2873897 695b2e5779ee23ef4fb91592fbdc1d69 ""
   "images/chap4/screen-board-kanban.png" 1780155204.04571 7963553 0673e5b2d18eb1044552d449225fa7ae ""
@@ -77,11 +78,11 @@
   "images/chap4/screen-signin.png" 1780155203.98221 188466 368edd1a35176a479ff61759f4180551 ""
   "images/chap4/screen-signup.png" 1780155203.97302 217207 ab2cfdd6124a22ab9453d456f7ab38ae ""
   "images/chap4/screen-workspace-detail.png" 1780155204.00779 635211 7598dff7e9c177fcddf8b23d5b1026db ""
-  "main.aux" 1780195540.49656 20202 de47e188a665c839f753198e6cb851be "pdflatex"
-  "main.lof" 1780195540.49804 1272 540e416995941f148f65c73fb811a976 "pdflatex"
-  "main.lot" 1780195540.49806 3918 1f15ae779cb64094341c15ebffa10981 "pdflatex"
+  "main.aux" 1780205335.29049 20391 24e2c70effbdf9cb30bb070b96cb43d7 "pdflatex"
+  "main.lof" 1780205335.29195 1370 03ccf6f7ff86eca37d100ce21b9602c7 "pdflatex"
+  "main.lot" 1780205335.29199 3918 9cdc7ab5ed61a98515cf1e1af7031afa "pdflatex"
   "main.tex" 1780161233.34656 456 0686e4b3e98966adea0848961252ca97 ""
-  "main.toc" 1780195540.498 6574 437396ade29ef8886baaa1a1275789b7 "pdflatex"
+  "main.toc" 1780205335.29192 6574 0e9e05ed4827ab0b583e25d0da6813f6 "pdflatex"
   "references.tex" 1780161536.14694 1650 e373047c779cdfa109236b5d3f844677 ""
   "thanks.tex" 1780140451.20674 909 7af922cce8a00065f32aae014e4a9dad ""
   (generated)
