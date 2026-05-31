@@ -47,7 +47,10 @@ Hệ thống quản lý công việc hướng đến việc giải quyết nhu c
     \item \textbf{Nhóm làm việc và phòng ban:} Các đội ngũ phát triển dự án, nhóm nghiên cứu hoặc các phòng ban chức năng trong tổ chức cần một không gian cộng tác số thống nhất để phân công công việc, phối hợp thực hiện và cùng theo dõi tiến độ công việc một cách minh bạch, rõ ràng.
     \item \textbf{Quản lý dự án:} Những người chịu trách nhiệm điều phối và giám sát toàn bộ hoạt động của dự án, cần theo dõi tổng quan tiến độ của từng hạng mục công việc, kiểm soát thời hạn hoàn thành (deadlines) và tối ưu hóa việc phân bổ nguồn lực nhân sự.
 \end{itemize}
+\clearpage
 
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
 \section{CHƯƠNG 2: CƠ SỞ LÝ THUYẾT}
 
 \subsection{Cách tiếp cận và hướng giải quyết}
@@ -85,44 +88,54 @@ Các quyết định kỹ thuật quan trọng được đưa ra trong quá trì
 \subsubsection{Các nền tảng liên quan đến ứng dụng}
 
 \paragraph{ReactJS}
+
+\begin{itemize}
+    \item \textbf{Giới thiệu:} ReactJS là thư viện JavaScript mã nguồn mở được phát triển bởi Meta (Facebook), chuyên dùng để xây dựng giao diện người dùng (UI) tương tác và có hiệu suất cao.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./images/chap2/React.jpg}
     \caption{Logo ReactJS}
     \label{fig:reactjs_logo}
 \end{figure}
-\begin{itemize}
-    \item \textbf{Giới thiệu:} ReactJS là thư viện JavaScript mã nguồn mở được phát triển bởi Meta (Facebook), chuyên dùng để xây dựng giao diện người dùng (UI) tương tác và có hiệu suất cao.
     \item \textbf{Chức năng:} ReactJS hoạt động theo cơ chế component-based, cho phép chia nhỏ giao diện thành các thành phần độc lập, có thể tái sử dụng. Virtual DOM giúp cập nhật giao diện một cách hiệu quả bằng cách chỉ render lại những phần thực sự thay đổi, thay vì cập nhật toàn bộ cây DOM.
     \item \textbf{Vai trò trong hệ thống:} ReactJS được sử dụng để xây dựng toàn bộ tầng giao diện (View layer) của hệ thống quản lý công việc, bao gồm các màn hình xác thực (đăng ký, đăng nhập), màn hình Dashboard hiển thị danh sách Workspace và Board, cũng như màn hình Board chi tiết với các chức năng quản lý List, Card và Drag and Drop.
     \item \textbf{Lý do lựa chọn:} Đối với các dạng ứng dụng web trang đơn (Single Page Application - SPA), ReactJS là một thư viện phổ biến, được sử dụng rất nhiều bởi các lập trình viên nhờ tính linh hoạt và khả năng triển khai dễ dàng, nhanh chóng.
 \end{itemize}
 
 \paragraph{Java Spring Boot}
+
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Spring Boot là framework phát triển ứng dụng Java được xây dựng trên nền tảng Spring Framework, cung cấp cơ chế tự động cấu hình (auto-configuration) giúp giảm thiểu thời gian thiết lập dự án và tập trung vào triển khai logic nghiệp vụ.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./images/chap2/SpringBoot.jpg}
     \caption{Logo Java Spring Boot}
     \label{fig:springboot_logo}
 \end{figure}
-\begin{itemize}
-    \item \textbf{Giới thiệu:} Spring Boot là framework phát triển ứng dụng Java được xây dựng trên nền tảng Spring Framework, cung cấp cơ chế tự động cấu hình (auto-configuration) giúp giảm thiểu thời gian thiết lập dự án và tập trung vào triển khai logic nghiệp vụ.
     \item \textbf{Chức năng:} Spring Boot hỗ trợ xây dựng các ứng dụng RESTful API thông qua module Spring Web, quản lý kết nối cơ sở dữ liệu thông qua Spring Data JPA và Hibernate, đồng thời cung cấp cơ chế dependency injection giúp tổ chức code theo hướng lập trình hướng đối tượng rõ ràng.
     \item \textbf{Vai trò trong hệ thống:} Spring Boot đóng vai trò là tầng Backend của hệ thống, xử lý toàn bộ logic nghiệp vụ, xây dựng và cung cấp các RESTful API cho Frontend tiêu thụ. Cấu trúc project được tổ chức theo mô hình phân lớp bao gồm: \texttt{controller}, \texttt{service}, \texttt{repository} và \texttt{config}.
     \item \textbf{Lý do lựa chọn:} Spring Boot là một framework hỗ trợ công việc viết code cho các lập trình viên một cách mạnh mẽ và tối ưu. Kết hợp cùng với Java - một ngôn ngữ lập trình chặt chẽ, có tính ổn định cao, việc sử dụng Spring Boot giúp giảm thiểu tối đa các lỗi hệ thống có thể xảy ra trong quá trình vận hành.
 \end{itemize}
 
 \paragraph{PostgreSQL}
+
+\begin{itemize}
+    \item \textbf{Giới thiệu:} PostgreSQL là hệ quản trị cơ sở dữ liệu quan hệ mã nguồn mở mạnh mẽ, hỗ trợ đầy đủ các tính năng của SQL chuẩn cùng nhiều tính năng nâng cao như kiểu dữ liệu JSON, UUID, các ràng buộc phức tạp và transaction ACID.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./images/chap2/PostgreSQL.png}
     \caption{Logo PostgreSQL}
     \label{fig:postgresql_logo}
 \end{figure}
-\begin{itemize}
-    \item \textbf{Giới thiệu:} PostgreSQL là hệ quản trị cơ sở dữ liệu quan hệ mã nguồn mở mạnh mẽ, hỗ trợ đầy đủ các tính năng của SQL chuẩn cùng nhiều tính năng nâng cao như kiểu dữ liệu JSON, UUID, các ràng buộc phức tạp và transaction ACID.
     \item \textbf{Chức năng:} PostgreSQL đảm bảo tính toàn vẹn dữ liệu thông qua các ràng buộc FK (foreign key), hỗ trợ các truy vấn phức tạp với nhiều bảng quan hệ, đồng thời cung cấp hiệu suất đọc/ghi ổn định phù hợp với các ứng dụng web thông thường.
     \item \textbf{Vai trò trong hệ thống:} PostgreSQL được sử dụng làm hệ quản trị cơ sở dữ liệu chính của hệ thống, lưu trữ toàn bộ dữ liệu nghiệp vụ bao gồm thông tin người dùng, Workspace, Board, List, Card, Checklist và các bảng quan hệ trung gian. Kết nối với Backend thông qua Spring Data JPA và trình điều khiển PostgreSQL JDBC.
+\end{itemize}
+
+\paragraph{Mô hình MVC (Model -- View -- Controller)}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} MVC là mẫu kiến trúc phần mềm (architectural pattern) phân tách ứng dụng thành ba thành phần độc lập: \textbf{Model} chịu trách nhiệm quản lý dữ liệu và logic nghiệp vụ; \textbf{View} đảm nhận việc trình bày dữ liệu ra giao diện người dùng; \textbf{Controller} đóng vai trò trung gian, tiếp nhận yêu cầu từ người dùng, điều phối Model xử lý và trả kết quả về View.
+    \item \textbf{Chức năng:} Mô hình MVC thúc đẩy nguyên tắc tách biệt mối quan tâm (Separation of Concerns), giúp từng thành phần có thể phát triển, kiểm thử và bảo trì một cách độc lập. Sự phân tách này làm giảm độ phức tạp của mã nguồn, tăng khả năng tái sử dụng và hỗ trợ làm việc song song giữa các thành viên trong nhóm phát triển.
+    \item \textbf{Vai trò trong hệ thống:} Mô hình MVC được áp dụng ở tầng Backend (Spring Boot). Trong đó, \textbf{Controller} là tầng tiếp nhận các HTTP request từ Frontend và điều phối xử lý; \textbf{Model} bao gồm các Entity JPA ánh xạ trực tiếp đến bảng dữ liệu PostgreSQL và các lớp DTO truyền dữ liệu giữa các tầng; \textbf{View} trong ngữ cảnh RESTful API được thay thế bởi phản hồi JSON chuẩn hóa trả về cho Frontend. Cấu trúc project được tổ chức thành các package \texttt{controller}, \texttt{service}, \texttt{repository} và \texttt{model} nhất quán theo nguyên tắc này.
 \end{itemize}
 
 \subsubsection{Các nền tảng liên quan đến dịch vụ đám mây}
@@ -174,6 +187,34 @@ Các quyết định kỹ thuật quan trọng được đưa ra trong quá trì
     \item \textbf{Giới thiệu:} JWT là tiêu chuẩn mở (RFC 7519) định nghĩa cách truyền tải thông tin an toàn giữa các bên dưới dạng một đối tượng JSON được ký số (digitally signed).
     \item \textbf{Chức năng:} Một JWT bao gồm ba phần được mã hóa Base64 và ngăn cách bởi dấu chấm: Header (loại thuật toán ký), Payload (thông tin người dùng và thời hạn token) và Signature (chữ ký xác thực). Token có thể được xác minh mà không cần truy vấn cơ sở dữ liệu, giúp giảm tải cho hệ thống.
     \item \textbf{Vai trò trong hệ thống:} JWT được Amazon Cognito phát hành và trả về cho Backend sau khi người dùng đăng nhập thành công. Backend sau đó trả JWT về cho Client để lưu trữ trong HttpOnly cookie. Backend sử dụng token này để xác thực chữ ký trên mỗi request gọi API tiếp theo nhằm đảm bảo tính an toàn.
+\end{itemize}
+
+\subsubsection{Các nền tảng khác}
+
+\paragraph{Docker}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Docker là nền tảng container hóa mã nguồn mở cho phép đóng gói ứng dụng cùng toàn bộ các phụ thuộc (thư viện, cấu hình, runtime) vào một đơn vị độc lập gọi là container. Container Docker có thể chạy nhất quán trên mọi môi trường từ máy phát triển đến máy chủ sản xuất.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/chap2/Docker.png}
+    \caption{Logo Docker}
+    \label{fig:docker_logo}
+\end{figure}
+    \item \textbf{Chức năng:} Docker cung cấp cơ chế cô lập tiến trình thông qua namespace và cgroup của nhân Linux, giúp nhiều container chạy song song trên cùng một máy chủ mà không xung đột tài nguyên. Dockerfile cho phép định nghĩa môi trường build theo dạng khai báo, đảm bảo tính tái tạo (reproducibility) của quá trình build.
+    \item \textbf{Vai trò trong hệ thống:} Ứng dụng Frontend (ReactJS) được đóng gói thành Docker image và triển khai trên máy chủ EC2. Docker đảm bảo môi trường chạy ứng dụng nhất quán giữa môi trường phát triển cục bộ và môi trường triển khai trên AWS, đồng thời đơn giản hóa quy trình cập nhật phiên bản ứng dụng.
+\end{itemize}
+
+\paragraph{Nginx}
+\begin{itemize}
+    \item \textbf{Giới thiệu:} Nginx là web server hiệu năng cao và reverse proxy mã nguồn mở, nổi tiếng với khả năng xử lý đồng thời lượng lớn kết nối với mức tiêu thụ tài nguyên thấp nhờ kiến trúc hướng sự kiện bất đồng bộ (event-driven, asynchronous).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/chap2/Nginx.jpg}
+    \caption{Logo Nginx}
+    \label{fig:nginx_logo}
+\end{figure}
+    \item \textbf{Chức năng:} Nginx đảm nhiệm các vai trò phục vụ tệp tĩnh (static file serving), reverse proxy chuyển tiếp request đến ứng dụng phía sau, cấu hình HTTPS và gzip compression để giảm kích thước phản hồi. Ngoài ra, Nginx hỗ trợ cấu hình định tuyến linh hoạt thông qua file cấu hình theo cú pháp khai báo.
+    \item \textbf{Vai trò trong hệ thống:} Nginx được cài đặt bên trong Docker container trên máy chủ EC2 Frontend, đóng vai trò là web server phục vụ các tệp tĩnh của ứng dụng ReactJS (HTML, CSS, JavaScript). Ngoài ra, Nginx xử lý định tuyến phía client (client-side routing) bằng cách chuyển hướng mọi request về file \texttt{index.html}, đảm bảo ứng dụng Single Page Application hoạt động đúng khi người dùng truy cập trực tiếp vào các đường dẫn con.
 \end{itemize}
 
 \clearpage
@@ -834,6 +875,8 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{workspace\_id})} \\
 \hline
 \end{tabular}
+\caption{Bảng \texttt{workspace\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{workspaces}}
+\label{tab:workspace_members}
 \end{table}
 
 \begin{table}[H]
@@ -859,8 +902,8 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
 \hline
 \end{tabular}
-\caption{Bảng \texttt{workspace\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{workspaces}}
-\label{tab:workspace_members}
+\caption{Bảng \texttt{boards}}
+\label{tab:boards}
 \end{table}
 
 \begin{table}[H]
