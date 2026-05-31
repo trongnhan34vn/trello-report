@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.30)  31 MAY 2026 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.30)  31 MAY 2026 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,7 +350,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [3
 
 ] (./main.lot
-LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 8.
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 15.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/vntex/t5cmtt.fd
 File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ))
@@ -396,205 +396,200 @@ File: ./images/chap2/Nginx.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./images/chap2/Nginx.jpg  used on input line 212.
 (pdftex.def)             Requested size: 195.0pt x 93.98035pt.
  [19 <./images/chap2/Docker.png>] [20 <./images/chap2/Nginx.jpg>]
-Underfull \hbox (badness 1117) in paragraph at lines 246--246
-[]|\T5/cmr/m/n/12 L†m mÓi phi∂n l†m
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+[]|\T5/cmr/m/n/12 MÌi th†nh vi∂n v†o
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 234--249
- [][] 
+Underfull \hbox (badness 3323) in paragraph at lines 246--247
+[]|\T5/cmr/m/n/12 ADMIN th∂m ng˜Ìi dÚng kh°c v†o
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--263
-[]|\T5/cmr/m/n/12 Xem danh s°ch
- []
-
-
-Underfull \hbox (badness 2875) in paragraph at lines 265--266
-[]|\T5/cmr/m/n/12 Ng˜Ìi dÚng chønh s˚a t∂n, mÊ t£ cıa
- []
-
-
-Underfull \hbox (badness 1158) in paragraph at lines 267--267
-[]|\T5/cmr/m/n/12 Qu£n l˛ th†nh vi∂n
- []
-
-
-Underfull \hbox (badness 1221) in paragraph at lines 269--270
-[]|\T5/cmr/m/n/12 Ng˜Ìi dÚng (chı s h˙u) x‚a vænh viπn
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 257--272
+Overfull \hbox (74.3913pt too wide) in paragraph at lines 232--263
  [][] 
  []
 
 [21
 
 ]
-Underfull \hbox (badness 1158) in paragraph at lines 290--290
-[]|\T5/cmr/m/n/12 Qu£n l˛ th†nh vi∂n
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 280--295
- [][] 
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 303--314
- [][] 
- []
-
-
-Underfull \hbox (badness 2111) in paragraph at lines 334--334
-[]|\T5/cmr/m/n/12 Hi∫n th‡ tr§ng th°i
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 322--339
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 284--305
  [][] 
  []
 
 [22]
-Underfull \hbox (badness 2707) in paragraph at lines 355--355
-[]|\T5/cmr/m/n/12 K≤o th£ List trong
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+\T5/cmr/m/n/12 Ng˜Ìi dÚng y∂u c¶u g˚i l§i OTP: GÂi end-point
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 347--358
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 311--332
  [][] 
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 366--379
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 338--359
  [][] 
  []
 
-[23] [24]
-Overfull \hbox (76.06145pt too wide) in paragraph at lines 413--414
-[]\T5/cmr/m/it/12 LuÁng x˚ l˛: \T5/cmr/m/n/12 Client nh™p m¢ x°c nh™n $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 G˚i POST \T5/cmtt/m/n/12 /api/v1/auth/confirm-sign-up
+[23]
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 365--386
+ [][] 
  []
 
-[25] [26]
-Overfull \hbox (0.57272pt too wide) in paragraph at lines 455--456
-[]\T5/cmr/m/it/12 LuÁng x˚ l˛: \T5/cmr/m/n/12 Client g˚i GET \T5/cmtt/m/n/12 /api/v1/workspaces?search={keyword}
- []
-
-
-Overfull \hbox (6.14497pt too wide) in paragraph at lines 469--470
-[]\T5/cmr/m/it/12 ^^^¶u v†o: \T5/cmtt/m/n/12 workspaceId\T5/cmr/m/n/12 , m£ng ID ng˜Ìi dÚng (\T5/cmtt/m/n/12 userIds\T5/cmr/m/n/12 ), vai tr· (\T5/cmtt/m/n/12 roleId\T5/cmr/m/n/12 )
+[24]
+Underfull \hbox (badness 3612) in paragraph at lines 410--411
+\T5/cmr/m/n/12 2. Truy c™p trang chi ti∏t, t£i thÊng tin qua \T5/cmtt/m/n/12 GET
  []
 
 
-Overfull \hbox (33.42302pt too wide) in paragraph at lines 471--472
-[]\T5/cmr/m/it/12 LuÁng x˚ l˛: \T5/cmr/m/n/12 Client g˚i POST \T5/cmtt/m/n/12 /api/v1/workspace-members \T5/cmr/m/n/12 vÓi \T5/cmtt/m/n/12 workspaceId
+Underfull \hbox (badness 10000) in paragraph at lines 412--412
+[]|\T5/cmr/m/n/12 LuÁng chΩnh (C™p
+ []
+
+
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 392--419
+ [][] 
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+\T5/cmr/m/n/12 3. G˚i y∂u c¶u mÌi qua \T5/cmtt/m/n/12 POST
+ []
+
+
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 425--446
+ [][] 
+ []
+
+[26]
+Underfull \hbox (badness 1472) in paragraph at lines 466--467
+[]|\T5/cmr/m/n/12 Board ^^_˜Òc t§o/c™p nh™t/x‚a; danh s°ch Board trong
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--472
+[]|\T5/cmr/m/n/12 LuÁng chΩnh (C™p
+ []
+
+
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 452--479
+ [][] 
  []
 
 [27]
-Overfull \hbox (5.00084pt too wide) in paragraph at lines 503--504
-[]\T5/cmr/m/it/12 ^^^¶u v†o: \T5/cmtt/m/n/12 boardId\T5/cmr/m/n/12 , t∂n mÓi (\T5/cmtt/m/n/12 name\T5/cmr/m/n/12 ), URL hºnh n∑n mÓi (\T5/cmtt/m/n/12 backgroundUrl\T5/cmr/m/n/12 ). 
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 485--510
+ [][] 
  []
 
-[28] [29] [30]
-Overfull \hbox (19.04875pt too wide) in paragraph at lines 597--598
-\T5/cmtt/m/n/12 card_member\T5/cmr/m/n/12 . Hıy g°n: Client g˚i DELETE \T5/cmtt/m/n/12 /api/v1/card-members/{id}
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
+[]|\T5/cmr/m/n/12 LuÁng chΩnh (C™p
+ []
+
+
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 516--541
+ [][] 
+ []
+
+[29]
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 547--568
+ [][] 
+ []
+
+[30]
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 574--595
+ [][] 
  []
 
 [31]
-Overfull \hbox (36.26833pt too wide) in paragraph at lines 607--608
-\T5/cmr/m/n/12 giao diªn ngay l™p t˘c (op-ti-mistic up-date) $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 G˚i PATCH \T5/cmtt/m/n/12 /api/v1/cards/:id
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
+\T5/cmr/m/n/12 3. G˚i y∂u c¶u g°n th†nh vi∂n qua \T5/cmtt/m/n/12 POST
+ []
+
+
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 601--622
+ [][] 
  []
 
 [32]
-Overfull \hbox (16.29807pt too wide) in paragraph at lines 657--658
-[]\T5/cmr/m/it/12 LuÁng x˚ l˛: \T5/cmr/m/n/12 Th∂m: POST \T5/cmtt/m/n/12 /api/v1/checklist-items\T5/cmr/m/n/12 . C™p nh™t: PATCH
+Underfull \hbox (badness 4144) in paragraph at lines 644--645
+[]|\T5/cmr/m/n/12 1. Tºm ki∏m th†nh vi∂n thuÎc Workspace qua \T5/cmtt/m/n/12 GET
  []
 
 
-Overfull \hbox (68.77272pt too wide) in paragraph at lines 657--658
-\T5/cmtt/m/n/12 /api/v1/checklist-items/{id}\T5/cmr/m/n/12 . X‚a: DELETE \T5/cmtt/m/n/12 /api/v1/checklist-items/{id}
+Overfull \hbox (61.9913pt too wide) in paragraph at lines 628--649
+ [][] 
  []
 
 [33] [34]
-Overfull \hbox (6.18936pt too wide) in paragraph at lines 682--683
+Overfull \hbox (6.18936pt too wide) in paragraph at lines 675--676
 []\T5/cmr/m/n/12 MÎt \T5/cmr/bx/n/12 List \T5/cmr/m/n/12 ch˘a nhi∑u \T5/cmr/bx/n/12 Card\T5/cmr/m/n/12 ; c°c Card ^^_˜Òc s≠p x∏p theo th˘ t¸ \T5/cmtt/m/n/12 position\T5/cmr/m/n/12 . 
  []
 
-<./images/chap3/Auth Flow.png, id=128, 1699.34875pt x 932.48375pt>
+[35]
+Overfull \hbox (51.27692pt too wide) in paragraph at lines 692--693
+[]\T5/cmr/m/n/12 Ng˜Ìi dÚng nh™p m¢ OTP, Fron-tend g˚i \T5/cmtt/m/n/12 POST /api/v1/auth/confirm-sign-up\T5/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (51.00058pt too wide) in paragraph at lines 698--699
+[]\T5/cmr/m/n/12 Ng˜Ìi dÚng nh™p email v† m™t kh©u, Fron-tend g˚i \T5/cmtt/m/n/12 POST /api/v1/auth/sign-in\T5/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (32.87305pt too wide) in paragraph at lines 699--700
+[]\T5/cmr/m/n/12 Backend gÂi Cog-nito \T5/cmtt/m/n/12 initiateAuth() \T5/cmr/m/n/12 vÓi ph˜Ïng th˘c \T5/cmtt/m/n/12 USER_PASSWORD_AUTH\T5/cmr/m/n/12 . 
+ []
+
+<./images/chap3/Auth Flow.png, id=129, 1699.34875pt x 932.48375pt>
 File: ./images/chap3/Auth Flow.png Graphic file (type png)
 <use ./images/chap3/Auth Flow.png>
-Package pdftex.def Info: ./images/chap3/Auth Flow.png  used on input line 693.
-(pdftex.def)             Requested size: 195.0pt x 106.9986pt.
-[35 <./images/chap3/Auth Flow.png (PNG copy)>] [36]
-Overfull \hbox (1.07063pt too wide) in paragraph at lines 765--765
+Package pdftex.def Info: ./images/chap3/Auth Flow.png  used on input line 708.
+(pdftex.def)             Requested size: 390.0pt x 213.99721pt.
+[36 <./images/chap3/Auth Flow.png (PNG copy)>] [37]
+Overfull \hbox (1.07063pt too wide) in paragraph at lines 775--775
 []|\T5/cmtt/m/n/12 role_name_enum| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 765--765
+Underfull \hbox (badness 10000) in paragraph at lines 775--775
 []|\T5/cmr/m/n/12 NOT NULL,
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 759--768
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 769--778
  [][] 
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 774--783
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 784--793
  [][] 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 795--795
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 805--805
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 5105) in paragraph at lines 795--796
+Underfull \hbox (badness 5105) in paragraph at lines 805--806
 \T5/cmr/m/n/12 Sales CRM, IT, Ed-u-ca-
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 789--798
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 799--808
  [][] 
  []
 
-
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 812--812
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 812--812
-[]|\T5/cmr/m/n/12 NOT NULL,
- []
-
-
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 814--814
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 816--816
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 816--816
-[]|\T5/cmr/m/n/12 NOT NULL,
- []
-
-
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 818--818
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
+[38]
 Overfull \hbox (0.76651pt too wide) in paragraph at lines 822--822
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]|\T5/cmr/m/n/12 NOT NULL,
  []
 
 
@@ -603,253 +598,268 @@ Overfull \hbox (0.76651pt too wide) in paragraph at lines 824--824
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 826--827
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 826--826
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--826
+[]|\T5/cmr/m/n/12 NOT NULL,
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 828--828
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 832--832
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 834--834
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 836--837
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m x‚a m∑m t†i
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 828--828
+Underfull \hbox (badness 1168) in paragraph at lines 838--838
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 830--830
+Underfull \hbox (badness 1168) in paragraph at lines 840--840
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 830--831
+Underfull \hbox (badness 1264) in paragraph at lines 840--841
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 806--833
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 816--843
  [][] 
  []
 
-[37]
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 845--845
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 855--855
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 847--847
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 857--857
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Overfull \hbox (23.88521pt too wide) in paragraph at lines 849--849
+Overfull \hbox (23.88521pt too wide) in paragraph at lines 859--859
 \T5/cmtt/m/n/12 workspace_categories| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--853
+Underfull \hbox (badness 10000) in paragraph at lines 863--863
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 855--855
+Underfull \hbox (badness 1168) in paragraph at lines 865--865
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 857--857
+Underfull \hbox (badness 1168) in paragraph at lines 867--867
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 857--858
+Underfull \hbox (badness 1264) in paragraph at lines 867--868
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 839--860
- [][] 
- []
-
-[38]
-Underfull \hbox (badness 1168) in paragraph at lines 880--880
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 866--885
- [][] 
- []
-
-
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 897--897
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Overfull \hbox (1.07063pt too wide) in paragraph at lines 899--899
-[]|\T5/cmtt/m/n/12 background_url| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 905--905
-[]|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 907--907
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 909--909
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Underfull \hbox (badness 1264) in paragraph at lines 909--910
-[]|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
- []
-
-
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 891--912
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 849--870
  [][] 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 928--929
-[]|\T5/cmr/m/n/12 Vai tr· trong Board
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 928--929
-\T5/cmr/m/n/12 (AD-MIN, MEM-BER,
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 932--932
+Underfull \hbox (badness 1168) in paragraph at lines 890--890
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 918--937
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 876--895
  [][] 
  []
 
 
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 949--949
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 907--907
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 957--957
+Overfull \hbox (1.07063pt too wide) in paragraph at lines 909--909
+[]|\T5/cmtt/m/n/12 background_url| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 915--915
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 959--959
+Underfull \hbox (badness 1168) in paragraph at lines 917--917
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 961--961
+Underfull \hbox (badness 1168) in paragraph at lines 919--919
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 961--962
+Underfull \hbox (badness 1264) in paragraph at lines 919--920
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 943--964
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 901--922
  [][] 
  []
 
 [40]
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 976--976
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
+[]|\T5/cmr/m/n/12 Vai tr· trong Board
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
+\T5/cmr/m/n/12 (AD-MIN, MEM-BER,
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 942--942
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 928--947
+ [][] 
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 959--959
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 992--992
+Underfull \hbox (badness 10000) in paragraph at lines 967--967
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 994--994
+Underfull \hbox (badness 1168) in paragraph at lines 969--969
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 996--996
+Underfull \hbox (badness 1168) in paragraph at lines 971--971
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 996--997
+Underfull \hbox (badness 1264) in paragraph at lines 971--972
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 970--999
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 953--974
  [][] 
  []
 
 [41]
-Underfull \hbox (badness 1168) in paragraph at lines 1017--1017
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1005--1022
- [][] 
- []
-
-
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1034--1034
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 986--986
 []|\T5/cmr/m/n/12 VARCHAR(255)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1042--1042
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1002
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1044--1044
+Underfull \hbox (badness 1168) in paragraph at lines 1004--1004
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1046--1046
+Underfull \hbox (badness 1168) in paragraph at lines 1006--1006
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1046--1047
+Underfull \hbox (badness 1264) in paragraph at lines 1006--1007
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1028--1049
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 980--1009
  [][] 
  []
 
 [42]
-Overfull \hbox (0.76651pt too wide) in paragraph at lines 1061--1061
-[]|\T5/cmr/m/n/12 VARCHAR(255)| 
- []
-
-
-Underfull \hbox (badness 1199) in paragraph at lines 1061--1062
-[]|\T5/cmr/m/n/12 T∂n h§ng mˆc cÊng viªc
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 1065--1065
+Underfull \hbox (badness 1168) in paragraph at lines 1027--1027
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1073
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1015--1032
+ [][] 
+ []
+
+
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1044--1044
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1052
 []|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 1054--1054
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 1056--1056
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 1056--1057
+[]|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
+ []
+
+
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1038--1059
+ [][] 
+ []
+
+[43]
+Overfull \hbox (0.76651pt too wide) in paragraph at lines 1071--1071
+[]|\T5/cmr/m/n/12 VARCHAR(255)| 
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 1071--1072
+[]|\T5/cmr/m/n/12 T∂n h§ng mˆc cÊng viªc
  []
 
 
@@ -858,207 +868,187 @@ Underfull \hbox (badness 1168) in paragraph at lines 1075--1075
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 1077--1077
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1083
+[]|\T5/cmr/m/n/12 NULL, FK $\OMS/cmsy/m/n/12 !$
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 1085--1085
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 1077--1078
+Underfull \hbox (badness 1168) in paragraph at lines 1087--1087
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 1087--1088
 []|\T5/cmr/m/n/12 ThÌi ^^_i∫m c™p nh™t g¶n
  []
 
 
-Overfull \hbox (72.56491pt too wide) in paragraph at lines 1055--1082
+Overfull \hbox (72.56491pt too wide) in paragraph at lines 1065--1092
  [][] 
  []
 
-[43] [44] [45]
-<./images/chap2/Nello System Architech.png, id=164, 1703.36375pt x 930.47626pt>
+[44] [45] [46]
+<./images/chap2/Nello System Architech.png, id=167, 1703.36375pt x 930.47626pt>
 File: ./images/chap2/Nello System Architech.png Graphic file (type png)
 <use ./images/chap2/Nello System Architech.png>
-Package pdftex.def Info: ./images/chap2/Nello System Architech.png  used on input line 1119.
+Package pdftex.def Info: ./images/chap2/Nello System Architech.png  used on input line 1129.
 (pdftex.def)             Requested size: 390.0pt x 213.03958pt.
- [46 <./images/chap2/Nello System Architech.png (PNG copy)>]
-Underfull \hbox (badness 1117) in paragraph at lines 1148--1148
-[]|\T5/cmr/m/n/12 L†m mÓi phi∂n l†m
+ [47 <./images/chap2/Nello System Architech.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1148--1149
+[]|\T5/cmr/bx/n/12 Ho†n
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1136--1151
+Overfull \hbox (56.51212pt too wide) in paragraph at lines 1146--1179
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1165--1165
-[]|\T5/cmr/m/n/12 Xem danh s°ch
- []
-
-
-Underfull \hbox (badness 1158) in paragraph at lines 1167--1167
-[]|\T5/cmr/m/n/12 Qu£n l˛ th†nh vi∂n
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1159--1170
- [][] 
- []
-
-
-Underfull \hbox (badness 1158) in paragraph at lines 1186--1186
-[]|\T5/cmr/m/n/12 Qu£n l˛ th†nh vi∂n
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1178--1189
- [][] 
- []
-
-[47
+[48
 
 ]
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1197--1208
- [][] 
+Overfull \hbox (7.5627pt too wide) in paragraph at lines 1195--1196
+\T5/cmtt/m/n/12 initiateAuth() \T5/cmr/m/n/12 v† end-point \T5/cmtt/m/n/12 POST /api/v1/auth/refresh-token \T5/cmr/m/n/12 ^^_∫ t¸ ^^_Îng
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 1228--1228
-[]|\T5/cmr/m/n/12 Hi∫n th‡ tr§ng th°i
+Overfull \hbox (31.26802pt too wide) in paragraph at lines 1199--1200
+\T5/cmr/m/n/12 thÊng tin ng˜Ìi dÚng hiªn t§i v† \T5/cmtt/m/n/12 PUT /api/v1/users \T5/cmr/m/n/12 nh™n \T5/cmtt/m/n/12 UpdateProfileRequest
  []
 
 
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1216--1233
- [][] 
+Overfull \hbox (2.46104pt too wide) in paragraph at lines 1203--1204
+[]\T5/cmr/m/n/12 Backend ^^_¢ tri∫n khai c°c end-point ^^_Âc d˙ liªu: \T5/cmtt/m/n/12 GET /api/v1/workspaces
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 1249--1249
-[]|\T5/cmr/m/n/12 K≤o th£ List trong
- []
-
-
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1241--1252
- [][] 
- []
-
-[48]
-Overfull \hbox (45.93854pt too wide) in paragraph at lines 1260--1273
- [][] 
- []
-
-
-Underfull \hbox (badness 2556) in paragraph at lines 1289--1289
-[]|\T5/cmr/m/n/12 SË nh‚m API end-point ho†n
- []
-
-
-Overfull \hbox (33.53854pt too wide) in paragraph at lines 1283--1302
- [][] 
+Overfull \hbox (91.77261pt too wide) in paragraph at lines 1203--1204
+\T5/cmr/m/n/12 (danh s°ch), \T5/cmtt/m/n/12 GET /api/v1/workspaces/:id \T5/cmr/m/n/12 (chi ti∏t), \T5/cmtt/m/n/12 GET /api/v1/workspaces/:id/boards
  []
 
 [49]
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1314--1329
- [][] 
+Overfull \hbox (1.96957pt too wide) in paragraph at lines 1227--1228
+[]\T5/cmr/m/n/12 Backend tri∫n khai ^^_¶y ^^_ı CRUD cho c£ Check-list (\T5/cmtt/m/n/12 /api/v1/checklists\T5/cmr/m/n/12 )
  []
 
 
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1337--1350
- [][] 
+Overfull \hbox (10.33485pt too wide) in paragraph at lines 1227--1228
+\T5/cmr/m/n/12 v† Check-lis-tItem (\T5/cmtt/m/n/12 /api/v1/checklist-items\T5/cmr/m/n/12 ), bao gÁm tr˜Ìng \T5/cmtt/m/n/12 is_completed
  []
 
 
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1358--1367
- [][] 
+Overfull \hbox (122.29851pt too wide) in paragraph at lines 1231--1232
+[]\T5/cmr/m/n/12 Backend tri∫n khai \T5/cmtt/m/n/12 POST /api/v1/card-members \T5/cmr/m/n/12 ^^_∫ g°n v† \T5/cmtt/m/n/12 DELETE /api/v1/card-members/:id
  []
 
 [50]
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1375--1386
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1247--1262
  [][] 
  []
 
 
-Overfull \hbox (17.48578pt too wide) in paragraph at lines 1394--1403
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1270--1283
+ [][] 
+ []
+
+
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1291--1300
+ [][] 
+ []
+
+[51]
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1308--1319
+ [][] 
+ []
+
+
+Overfull \hbox (17.48578pt too wide) in paragraph at lines 1327--1336
  [][] 
  []
 
 LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 1412.
-<./images/chap4/screen-signup.png, id=182, 1914.15125pt x 913.4125pt>
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 1345.
+<./images/chap4/screen-signup.png, id=185, 1914.15125pt x 913.4125pt>
 File: ./images/chap4/screen-signup.png Graphic file (type png)
 <use ./images/chap4/screen-signup.png>
-Package pdftex.def Info: ./images/chap4/screen-signup.png  used on input line 1417.
+Package pdftex.def Info: ./images/chap4/screen-signup.png  used on input line 1350.
 (pdftex.def)             Requested size: 390.0pt x 186.09396pt.
-[51]
-<./images/chap4/screen-confirm-otp.png, id=186, 1906.12125pt x 908.39375pt>
+[52]
+<./images/chap4/screen-confirm-otp.png, id=189, 1906.12125pt x 908.39375pt>
 File: ./images/chap4/screen-confirm-otp.png Graphic file (type png)
 <use ./images/chap4/screen-confirm-otp.png>
-Package pdftex.def Info: ./images/chap4/screen-confirm-otp.png  used on input line 1427.
+Package pdftex.def Info: ./images/chap4/screen-confirm-otp.png  used on input line 1360.
 (pdftex.def)             Requested size: 390.0pt x 185.86154pt.
-<./images/chap4/screen-signin.png, id=187, 1916.15875pt x 910.40125pt>
+<./images/chap4/screen-signin.png, id=190, 1916.15875pt x 910.40125pt>
 File: ./images/chap4/screen-signin.png Graphic file (type png)
 <use ./images/chap4/screen-signin.png>
-Package pdftex.def Info: ./images/chap4/screen-signin.png  used on input line 1437.
+Package pdftex.def Info: ./images/chap4/screen-signin.png  used on input line 1370.
 (pdftex.def)             Requested size: 390.0pt x 185.28598pt.
- [52 <./images/chap4/screen-signup.png> <./images/chap4/screen-confirm-otp.png>]
-<./images/chap4/screen-dashboard.png, id=193, 1916.15875pt x 909.3975pt>
+ [53 <./images/chap4/screen-signup.png> <./images/chap4/screen-confirm-otp.png>]
+<./images/chap4/screen-dashboard.png, id=196, 1916.15875pt x 909.3975pt>
 File: ./images/chap4/screen-dashboard.png Graphic file (type png)
 <use ./images/chap4/screen-dashboard.png>
-Package pdftex.def Info: ./images/chap4/screen-dashboard.png  used on input line 1447.
+Package pdftex.def Info: ./images/chap4/screen-dashboard.png  used on input line 1380.
 (pdftex.def)             Requested size: 390.0pt x 185.0817pt.
-<./images/chap4/screen-workspace-detail.png, id=194, 1915.155pt x 913.4125pt>
+<./images/chap4/screen-workspace-detail.png, id=197, 1915.155pt x 913.4125pt>
 File: ./images/chap4/screen-workspace-detail.png Graphic file (type png)
 <use ./images/chap4/screen-workspace-detail.png>
-Package pdftex.def Info: ./images/chap4/screen-workspace-detail.png  used on input line 1457.
+Package pdftex.def Info: ./images/chap4/screen-workspace-detail.png  used on input line 1390.
 (pdftex.def)             Requested size: 390.0pt x 185.9964pt.
- [53 <./images/chap4/screen-signin.png> <./images/chap4/screen-dashboard.png>]
-<./images/chap4/screen-board-kanban.png, id=200, 1917.1625pt x 907.39pt>
+ [54 <./images/chap4/screen-signin.png> <./images/chap4/screen-dashboard.png>]
+<./images/chap4/screen-board-kanban.png, id=204, 1917.1625pt x 907.39pt>
 File: ./images/chap4/screen-board-kanban.png Graphic file (type png)
 <use ./images/chap4/screen-board-kanban.png>
-Package pdftex.def Info: ./images/chap4/screen-board-kanban.png  used on input line 1467.
+Package pdftex.def Info: ./images/chap4/screen-board-kanban.png  used on input line 1400.
 (pdftex.def)             Requested size: 390.0pt x 184.5762pt.
-<./images/chap4/feature-drag-drop.png, id=201, 1927.2pt x 1084.05pt>
+<./images/chap4/feature-drag-drop.png, id=205, 1927.2pt x 1084.05pt>
 File: ./images/chap4/feature-drag-drop.png Graphic file (type png)
 <use ./images/chap4/feature-drag-drop.png>
-Package pdftex.def Info: ./images/chap4/feature-drag-drop.png  used on input line 1479.
+Package pdftex.def Info: ./images/chap4/feature-drag-drop.png  used on input line 1412.
 (pdftex.def)             Requested size: 390.0pt x 219.37006pt.
- [54 <./images/chap4/screen-workspace-detail.png> <./images/chap4/screen-board-kanban.png>]
-<./images/chap4/feature-card-detail.png, id=208, 1656.1875pt x 902.37125pt>
+ [55 <./images/chap4/screen-workspace-detail.png> <./images/chap4/screen-board-kanban.png>]
+<./images/chap4/feature-card-detail.png, id=211, 1656.1875pt x 902.37125pt>
 File: ./images/chap4/feature-card-detail.png Graphic file (type png)
 <use ./images/chap4/feature-card-detail.png>
-Package pdftex.def Info: ./images/chap4/feature-card-detail.png  used on input line 1487.
+Package pdftex.def Info: ./images/chap4/feature-card-detail.png  used on input line 1420.
 (pdftex.def)             Requested size: 390.0pt x 212.48412pt.
- [55 <./images/chap4/feature-drag-drop.png> <./images/chap4/feature-card-detail.png>] [56] [57]
-Overfull \hbox (24.82755pt too wide) in paragraph at lines 1521--1521
+ [56 <./images/chap4/feature-drag-drop.png> <./images/chap4/feature-card-detail.png>] [57] [58]
+Overfull \hbox (24.82755pt too wide) in paragraph at lines 1454--1454
 []\T5/cmr/bx/n/17.28 CH◊ÃNG 5: KòT LUäN VÄ H◊ŒNG PHÅT
  []
 
-[58
+[59
 
 ]
-Overfull \hbox (33.53854pt too wide) in paragraph at lines 1554--1573
+Overfull \hbox (33.53854pt too wide) in paragraph at lines 1487--1506
  [][] 
  []
 
-[59]
-Underfull \hbox (badness 4036) in paragraph at lines 1599--1599
+[60]
+Underfull \hbox (badness 4036) in paragraph at lines 1532--1532
 []|\T5/cmr/m/n/12 Qu£n l˛ nh¢n d°n
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 1605--1605
+Underfull \hbox (badness 3919) in paragraph at lines 1538--1538
 []|\T5/cmr/m/n/12 Xem l‡ch (Cal-en-dar
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 1609--1609
+Underfull \hbox (badness 4132) in paragraph at lines 1542--1542
 []|\T5/cmr/m/n/12 ^^^Áng bÎ thÌi gian
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 1595--1612
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 1528--1545
  [][] 
  []
 
-[60] [61]) (./references.tex
+[61] [62] [63]) (./references.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 []\T5/cmr/m/n/12 Amazon Web Ser-vices. \T5/cmr/m/it/12 Ama-zon Cog-
  []
@@ -1073,7 +1063,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 \T5/cmtt/m/n/12 https://docs.aws.amazon.com/cognito/latest/developerguide\T5/cmr/m/n/12 .
  []
 
-[62]
+
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 []\T5/cmr/m/n/12 Amazon Web Ser-vices. \T5/cmr/m/it/12 Ama-zon EC2 User
  []
@@ -1128,7 +1118,7 @@ Underfull \hbox (badness 1668) in paragraph at lines 25--26
 \T5/cmr/m/n/12 2024. Truy c™p t§i: \T5/cmtt/m/n/12 https://www.atlassian.com/software/jira\T5/cmr/m/n/12 .
  []
 
-) (./appendix.tex [63]
+[64]) (./appendix.tex [65]
 Overfull \hbox (95.16985pt too wide) in alignment at lines 12--17
  [] [] [] [] 
  []
@@ -1204,9 +1194,9 @@ Overfull \hbox (95.16985pt too wide) in alignment at lines 29--122
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [64
+ignored: Infinite glue shrinkage found in box being split [66
 
-] [65] [66
+] [67] [68
 
 ]
 Underfull \hbox (badness 1946) in paragraph at lines 261--261
@@ -1223,19 +1213,19 @@ Underfull \hbox (badness 1762) in paragraph at lines 261--261
 []|\T5/cmr/m/n/12 FK $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 users(id) ON DELETE SET
  []
 
-[67]
+[69]
 Underfull \hbox (badness 10000) in paragraph at lines 288--288
 []|\T5/cmr/m/n/12 FK $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 workspaces(id) \T5/cmr/bx/n/12 ON
  []
 
-[68]
+[70]
 Underfull \hbox (badness 4660) in paragraph at lines 340--340
 []|\T5/cmr/m/n/12 FK $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 boards(id) \T5/cmr/bx/n/12 ON DELETE
  []
 
-[69] [70] [71] [72
+[71] [72] [73] [74
 
-] [73] [74]) (./main.aux)
+] [75] [76]) (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1243,17 +1233,17 @@ L3 programming layer <2026-01-19>
  ) 
 Here is how much of TeX's memory you used:
  3294 strings out of 467525
- 51900 string characters out of 5418982
+ 51844 string characters out of 5418982
  496300 words of memory out of 5000000
  32155 multiletter control sequences out of 15000+600000
  638768 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,83p,1061b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on main.pdf (75 pages, 19150501 bytes).
+Output written on main.pdf (77 pages, 19153572 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 311 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
