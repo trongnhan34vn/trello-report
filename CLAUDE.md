@@ -259,10 +259,17 @@ Liệt kê toàn bộ chức năng của hệ thống.
 
 Đối với mỗi chức năng cần mô tả:
 
-- Mục đích
-- Đầu vào
-- Đầu ra
-- Luồng xử lý
+| Thuộc tính     | Nội dung                                                                                        |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| Use Case ID    | FR-01                                                                                          |
+| Tên Use Case   | Đăng nhập                                                                                       |
+| Actor          | Người dùng                                                                                      |
+| Mục tiêu       | Truy cập hệ thống                                                                               |
+| Tiền điều kiện | Người dùng đã có tài khoản                                                                      |
+| Hậu điều kiện  | Đăng nhập thành công                                                                            |
+| Luồng chính    | 1. Nhập email và mật khẩu<br>2. Nhấn Đăng nhập<br>3. Hệ thống xác thực<br>4. Hiển thị Dashboard |
+| Luồng thay thế | Sai tài khoản hoặc mật khẩu                                                                     |
+
 
 ### Phân tích dữ liệu
 

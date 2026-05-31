@@ -1,78 +1,74 @@
-\contentsline {section}{Lời cảm ơn}{6}{}%
-\contentsline {section}{\numberline {1}CHƯƠNG 1: GIỚI THIỆU ĐỀ TÀI}{7}{}%
-\contentsline {subsection}{\numberline {1.1}Giới thiệu đề tài}{7}{}%
-\contentsline {subsection}{\numberline {1.2}Tính cấp thiết của đề tài}{7}{}%
-\contentsline {subsection}{\numberline {1.3}Mục tiêu đề tài}{8}{}%
-\contentsline {subsection}{\numberline {1.4}Phạm vi đề tài}{8}{}%
-\contentsline {subsection}{\numberline {1.5}Đối tượng sử dụng}{9}{}%
-\contentsline {section}{\numberline {2}CHƯƠNG 2: CƠ SỞ LÝ THUYẾT}{11}{}%
-\contentsline {subsection}{\numberline {2.1}Cách tiếp cận và hướng giải quyết}{11}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Phương pháp phân tích bài toán}{11}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}Hướng thiết kế giải pháp}{11}{}%
-\contentsline {subsubsection}{\numberline {2.1.3}Các quyết định kỹ thuật chính}{12}{}%
-\contentsline {subsection}{\numberline {2.2}Các nền tảng và công nghệ sử dụng}{12}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Các nền tảng liên quan đến ứng dụng}{12}{}%
-\contentsline {paragraph}{\numberline {2.2.1.1}ReactJS}{12}{}%
-\contentsline {paragraph}{\numberline {2.2.1.2}Java Spring Boot}{13}{}%
-\contentsline {paragraph}{\numberline {2.2.1.3}PostgreSQL}{14}{}%
-\contentsline {paragraph}{\numberline {2.2.1.4}Mô hình MVC (Model -- View -- Controller)}{15}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Các nền tảng liên quan đến dịch vụ đám mây}{16}{}%
-\contentsline {paragraph}{\numberline {2.2.2.1}Amazon Cognito}{16}{}%
-\contentsline {paragraph}{\numberline {2.2.2.2}Amazon RDS}{16}{}%
-\contentsline {paragraph}{\numberline {2.2.2.3}Amazon EC2 (Elastic Compute Cloud)}{17}{}%
-\contentsline {paragraph}{\numberline {2.2.2.4}Amazon ALB (Application Load Balancer)}{17}{}%
-\contentsline {paragraph}{\numberline {2.2.2.5}Amazon S3 (Simple Storage Service)}{17}{}%
-\contentsline {paragraph}{\numberline {2.2.2.6}Amazon CloudFront}{18}{}%
-\contentsline {paragraph}{\numberline {2.2.2.7}JWT (JSON Web Token)}{18}{}%
-\contentsline {subsubsection}{\numberline {2.2.3}Các nền tảng khác}{19}{}%
-\contentsline {paragraph}{\numberline {2.2.3.1}Docker}{19}{}%
-\contentsline {paragraph}{\numberline {2.2.3.2}Nginx}{19}{}%
-\contentsline {section}{\numberline {3}CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}{21}{}%
-\contentsline {subsection}{\numberline {3.1}Phân tích yêu cầu}{21}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Yêu cầu chức năng}{21}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Yêu cầu phi chức năng}{24}{}%
-\contentsline {subsection}{\numberline {3.2}Phân rã chức năng}{25}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Xác thực và quản lý tài khoản}{25}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Quản lý Workspace}{26}{}%
-\contentsline {subsubsection}{\numberline {3.2.3}Quản lý Board}{28}{}%
-\contentsline {subsubsection}{\numberline {3.2.4}Quản lý List}{29}{}%
-\contentsline {subsubsection}{\numberline {3.2.5}Quản lý Card}{30}{}%
-\contentsline {subsubsection}{\numberline {3.2.6}Kéo thả (Drag and Drop)}{32}{}%
-\contentsline {subsubsection}{\numberline {3.2.7}Quản lý Checklist}{33}{}%
-\contentsline {subsection}{\numberline {3.3}Phân tích dữ liệu}{34}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Các thực thể chính}{34}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Quan hệ giữa các thực thể}{35}{}%
-\contentsline {subsection}{\numberline {3.4}Luồng dữ liệu}{35}{}%
-\contentsline {subsubsection}{\numberline {3.4.1}Luồng xác thực người dùng}{35}{}%
-\contentsline {subsubsection}{\numberline {3.4.2}Luồng xử lý kéo thả Card}{36}{}%
-\contentsline {subsubsection}{\numberline {3.4.3}Luồng tải dữ liệu Board}{36}{}%
-\contentsline {subsection}{\numberline {3.5}Thiết kế cơ sở dữ liệu}{36}{}%
-\contentsline {subsubsection}{\numberline {3.5.1}Kiểu liệt kê}{37}{}%
-\contentsline {subsubsection}{\numberline {3.5.2}Bảng tra cứu}{37}{}%
-\contentsline {subsubsection}{\numberline {3.5.3}Bảng nghiệp vụ}{38}{}%
-\contentsline {subsection}{\numberline {3.6}Thiết kế tổng thể hệ thống}{44}{}%
-\contentsline {section}{\numberline {4}CHƯƠNG 4: TRIỂN KHAI VÀ KẾT QUẢ}{47}{}%
-\contentsline {subsection}{\numberline {4.1}Các chức năng đã hoàn thành}{47}{}%
-\contentsline {subsection}{\numberline {4.2}Kết quả đạt được}{49}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Thống kê tổng quát}{49}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}Kết quả kiểm thử theo module}{50}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}Các màn hình giao diện đã hoàn thành}{51}{}%
-\contentsline {subsection}{\numberline {4.3}Hình ảnh minh họa}{55}{}%
-\contentsline {subsection}{\numberline {4.4}Đánh giá kết quả}{56}{}%
-\contentsline {subsubsection}{\numberline {4.4.1}Ưu điểm}{56}{}%
-\contentsline {subsubsection}{\numberline {4.4.2}Hạn chế}{56}{}%
-\contentsline {section}{\numberline {5}CHƯƠNG 5: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{58}{}%
-\contentsline {subsection}{\numberline {5.1}Kết luận}{58}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Các công việc đã thực hiện}{58}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Các mục tiêu đã đạt được}{58}{}%
-\contentsline {subsubsection}{\numberline {5.1.3}Các kết quả đạt được}{59}{}%
-\contentsline {subsection}{\numberline {5.2}Các vấn đề còn tồn tại}{60}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Chức năng chưa hoàn thiện}{60}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Hạn chế kỹ thuật}{60}{}%
-\contentsline {subsection}{\numberline {5.3}Phương hướng phát triển}{61}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Ưu tiên cao — Hoàn thiện hệ thống hiện tại}{61}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Ưu tiên trung bình — Mở rộng tính năng}{62}{}%
-\contentsline {subsubsection}{\numberline {5.3.3}Ưu tiên thấp — Phát triển dài hạn}{62}{}%
-\contentsline {section}{\numberline {A}PHỤ LỤC A: DANH SÁCH API ENDPOINT ĐẦY ĐỦ}{64}{}%
-\contentsline {section}{\numberline {B}PHỤ LỤC B: CHI TIẾT BẢNG CƠ SỞ DỮ LIỆU}{66}{}%
-\contentsline {section}{\numberline {C}PHỤ LỤC C: DANH SÁCH KỊCH BẢN KIỂM THỬ}{72}{}%
+\contentsline {section}{Lời cảm ơn}{5}{}%
+\contentsline {section}{\numberline {1}CHƯƠNG 1: GIỚI THIỆU ĐỀ TÀI}{6}{}%
+\contentsline {subsection}{\numberline {1.1}Giới thiệu đề tài}{6}{}%
+\contentsline {subsection}{\numberline {1.2}Tính cấp thiết của đề tài}{6}{}%
+\contentsline {subsection}{\numberline {1.3}Mục tiêu đề tài}{7}{}%
+\contentsline {subsection}{\numberline {1.4}Phạm vi đề tài}{7}{}%
+\contentsline {subsection}{\numberline {1.5}Đối tượng sử dụng}{8}{}%
+\contentsline {section}{\numberline {2}CHƯƠNG 2: CƠ SỞ LÝ THUYẾT}{10}{}%
+\contentsline {subsection}{\numberline {2.1}Cách tiếp cận và hướng giải quyết}{10}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Phương pháp phân tích bài toán}{10}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Hướng thiết kế giải pháp}{10}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}Các quyết định kỹ thuật chính}{11}{}%
+\contentsline {subsection}{\numberline {2.2}Các nền tảng và công nghệ sử dụng}{11}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Các nền tảng liên quan đến ứng dụng}{11}{}%
+\contentsline {paragraph}{\numberline {2.2.1.1}ReactJS}{11}{}%
+\contentsline {paragraph}{\numberline {2.2.1.2}Java Spring Boot}{12}{}%
+\contentsline {paragraph}{\numberline {2.2.1.3}PostgreSQL}{13}{}%
+\contentsline {paragraph}{\numberline {2.2.1.4}Mô hình MVC (Model -- View -- Controller)}{14}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Các nền tảng liên quan đến dịch vụ đám mây}{15}{}%
+\contentsline {paragraph}{\numberline {2.2.2.1}Amazon Cognito}{15}{}%
+\contentsline {paragraph}{\numberline {2.2.2.2}Amazon RDS}{15}{}%
+\contentsline {paragraph}{\numberline {2.2.2.3}Amazon EC2 (Elastic Compute Cloud)}{16}{}%
+\contentsline {paragraph}{\numberline {2.2.2.4}Amazon ALB (Application Load Balancer)}{16}{}%
+\contentsline {paragraph}{\numberline {2.2.2.5}Amazon S3 (Simple Storage Service)}{16}{}%
+\contentsline {paragraph}{\numberline {2.2.2.6}Amazon CloudFront}{17}{}%
+\contentsline {paragraph}{\numberline {2.2.2.7}JWT (JSON Web Token)}{17}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}Các nền tảng khác}{18}{}%
+\contentsline {paragraph}{\numberline {2.2.3.1}Docker}{18}{}%
+\contentsline {paragraph}{\numberline {2.2.3.2}Nginx}{18}{}%
+\contentsline {section}{\numberline {3}CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}{20}{}%
+\contentsline {subsection}{\numberline {3.1}Phân tích yêu cầu}{20}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Yêu cầu chức năng}{20}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Yêu cầu phi chức năng}{23}{}%
+\contentsline {subsection}{\numberline {3.2}Phân rã chức năng}{23}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Xác thực và quản lý tài khoản}{23}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Quản lý Workspace}{27}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Quản lý Board}{29}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Quản lý List}{32}{}%
+\contentsline {subsubsection}{\numberline {3.2.5}Quản lý Card}{33}{}%
+\contentsline {subsubsection}{\numberline {3.2.6}Kéo thả (Drag and Drop)}{36}{}%
+\contentsline {subsubsection}{\numberline {3.2.7}Quản lý Checklist}{37}{}%
+\contentsline {subsection}{\numberline {3.3}Phân tích dữ liệu}{38}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Các thực thể chính}{38}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Quan hệ giữa các thực thể}{39}{}%
+\contentsline {subsection}{\numberline {3.4}Luồng dữ liệu}{40}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Luồng xác thực người dùng}{40}{}%
+\contentsline {subsection}{\numberline {3.5}Thiết kế cơ sở dữ liệu}{40}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}Kiểu liệt kê}{41}{}%
+\contentsline {subsubsection}{\numberline {3.5.2}Bảng tra cứu}{41}{}%
+\contentsline {subsubsection}{\numberline {3.5.3}Bảng nghiệp vụ}{42}{}%
+\contentsline {subsection}{\numberline {3.6}Thiết kế tổng thể hệ thống}{48}{}%
+\contentsline {section}{\numberline {4}CHƯƠNG 4: TRIỂN KHAI VÀ KẾT QUẢ}{51}{}%
+\contentsline {subsection}{\numberline {4.1}Các chức năng đã hoàn thành}{51}{}%
+\contentsline {subsection}{\numberline {4.2}Kết quả đạt được}{52}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Thống kê tổng quát}{52}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Kết quả kiểm thử theo module}{52}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Các màn hình giao diện đã hoàn thành}{54}{}%
+\contentsline {subsection}{\numberline {4.3}Hình ảnh minh họa}{58}{}%
+\contentsline {subsection}{\numberline {4.4}Đánh giá kết quả}{59}{}%
+\contentsline {subsubsection}{\numberline {4.4.1}Ưu điểm}{59}{}%
+\contentsline {subsubsection}{\numberline {4.4.2}Hạn chế}{59}{}%
+\contentsline {section}{\numberline {5}CHƯƠNG 5: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{61}{}%
+\contentsline {subsection}{\numberline {5.1}Kết luận}{61}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Kết quả đạt được}{61}{}%
+\contentsline {subsection}{\numberline {5.2}Các vấn đề còn tồn tại}{62}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Chức năng chưa hoàn thiện}{62}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Hạn chế kỹ thuật}{62}{}%
+\contentsline {subsection}{\numberline {5.3}Phương hướng phát triển}{63}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Ưu tiên cao — Hoàn thiện hệ thống hiện tại}{63}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Ưu tiên trung bình — Mở rộng tính năng}{64}{}%
+\contentsline {subsubsection}{\numberline {5.3.3}Ưu tiên thấp — Phát triển dài hạn}{64}{}%
+\contentsline {section}{\numberline {A}PHỤ LỤC A: DANH SÁCH API ENDPOINT ĐẦY ĐỦ}{66}{}%
+\contentsline {section}{\numberline {B}PHỤ LỤC B: CHI TIẾT BẢNG CƠ SỞ DỮ LIỆU}{68}{}%
+\contentsline {section}{\numberline {C}PHỤ LỤC C: DANH SÁCH KỊCH BẢN KIỂM THỬ}{74}{}%

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1780205332.62561 "/Users/nhannguyen/Documents/ITProject/Trello/reports/src/main.tex" "main.pdf" "main" 1780205335.34807 0
+["pdflatex"] 1780223899.77794 "/Users/nhannguyen/Documents/ITProject/Trello/reports/src/main.tex" "main.pdf" "main" 1780223902.65406 0
   "/Users/nhannguyen/Documents/ITProject/Trello/reports/src/main.tex" 1780161233.34656 456 0686e4b3e98966adea0848961252ca97 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -60,8 +60,9 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1780108050 3636772 3fd2c6c042e8837460fab447d3b2ccd4 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "appendix.tex" 1780158277.1052 18765 05f6be27ac0d1446bde4b4d4e6fe35b1 ""
-  "content.tex" 1780205329.46933 114495 8f71b068f70c11d87e692e70604ffcf2 ""
+  "content.tex" 1780223899.47913 118587 7115db8ef26edc366c55a5ba4e663aeb ""
   "cover.tex" 1780158515.56012 859 90192def6dd9400252f48dddc8136eae ""
+  "images/DatabaseDesign.png" 1780214909.67898 539363 9210be684abd1d37000456bc5fdfe7c6 ""
   "images/base/logo.png" 1780109103.87976 5371 e3ad904828cf1e7808d1d7870702b76c ""
   "images/chap2/Docker.png" 1780194325.78324 131206 63ea7c863fd07fe959b6e53befa85be1 ""
   "images/chap2/Nello System Architech.png" 1780108760.11108 1328861 5b0180683818147d654f3e0dfc2aa58c ""
@@ -78,11 +79,11 @@
   "images/chap4/screen-signin.png" 1780155203.98221 188466 368edd1a35176a479ff61759f4180551 ""
   "images/chap4/screen-signup.png" 1780155203.97302 217207 ab2cfdd6124a22ab9453d456f7ab38ae ""
   "images/chap4/screen-workspace-detail.png" 1780155204.00779 635211 7598dff7e9c177fcddf8b23d5b1026db ""
-  "main.aux" 1780205335.29049 20391 24e2c70effbdf9cb30bb070b96cb43d7 "pdflatex"
-  "main.lof" 1780205335.29195 1370 03ccf6f7ff86eca37d100ce21b9602c7 "pdflatex"
-  "main.lot" 1780205335.29199 3918 9cdc7ab5ed61a98515cf1e1af7031afa "pdflatex"
+  "main.aux" 1780223902.58811 18925 6eee768cc28979be6935b9455ea7855d "pdflatex"
+  "main.lof" 1780223902.5896 1467 ef2df0ad7739fc8bebc0ca714fbb7f22 "pdflatex"
+  "main.lot" 1780223902.58962 3240 68dc8f2efaf4d1741c09ea5e2781ad90 "pdflatex"
   "main.tex" 1780161233.34656 456 0686e4b3e98966adea0848961252ca97 ""
-  "main.toc" 1780205335.29192 6574 0e9e05ed4827ab0b583e25d0da6813f6 "pdflatex"
+  "main.toc" 1780223902.58957 6201 ab40d3e086f91efb91316b925da0563d "pdflatex"
   "references.tex" 1780161536.14694 1650 e373047c779cdfa109236b5d3f844677 ""
   "thanks.tex" 1780140451.20674 909 7af922cce8a00065f32aae014e4a9dad ""
   (generated)

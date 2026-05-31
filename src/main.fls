@@ -161,12 +161,17 @@ INPUT ./images/chap2/Nginx.jpg
 INPUT ./images/chap2/Nginx.jpg
 INPUT ./images/chap2/Nginx.jpg
 INPUT ./images/chap2/Nginx.jpg
+INPUT ./images/chap3/Auth Flow.png
+INPUT ./images/chap3/Auth Flow.png
+INPUT ./images/chap3/Auth Flow.png
+INPUT ./images/chap3/Auth Flow.png
+INPUT ./images/chap3/Auth Flow.png
+INPUT ./images/DatabaseDesign.png
+INPUT ./images/DatabaseDesign.png
+INPUT ./images/DatabaseDesign.png
+INPUT ./images/DatabaseDesign.png
+INPUT ./images/DatabaseDesign.png
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/vntex/vnr/vnti12.tfm
-INPUT ./images/chap3/Auth Flow.png
-INPUT ./images/chap3/Auth Flow.png
-INPUT ./images/chap3/Auth Flow.png
-INPUT ./images/chap3/Auth Flow.png
-INPUT ./images/chap3/Auth Flow.png
 INPUT ./images/chap2/Nello System Architech.png
 INPUT ./images/chap2/Nello System Architech.png
 INPUT ./images/chap2/Nello System Architech.png
