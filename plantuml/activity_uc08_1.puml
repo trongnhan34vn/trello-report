@@ -1,0 +1,39 @@
+@startuml activity_uc08_1
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-08.1: Gán thành viên vào Card
+
+start
+
+:Người dùng mở Card Detail Modal;
+:Mở chức năng quản lý thành viên Card;
+:Gửi yêu cầu GET /api/v1/boards-members?boardId=&search=\n(lấy danh sách thành viên Board);
+:Hiển thị danh sách thành viên Board\n(chưa được gán vào Card này);
+:Người dùng chọn thành viên cần gán;
+:Gửi yêu cầu POST /api/v1/card-members\n(kèm cardId, userId);
+
+if (Gán thành công?) then (Không)
+    :Hiển thị thông báo lỗi\n(thành viên đã được gán hoặc không thuộc Board);
+    stop
+else (Có)
+    :Thêm thành viên vào danh sách phụ trách Card;
+    :Cập nhật danh sách thành viên trên giao diện Card;
+endif
+
+stop
+
+@enduml

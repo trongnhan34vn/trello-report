@@ -1,0 +1,36 @@
+@startuml activity_uc07_3
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-07.3: Xóa Checklist
+
+start
+
+:Người dùng mở Card Detail Modal;
+:Chọn tùy chọn "Xóa Checklist";
+:Hiển thị hộp thoại xác nhận xóa;
+
+if (Người dùng xác nhận xóa?) then (Có)
+    :Gửi yêu cầu DELETE /api/v1/checklists/:id;
+    :Backend xóa Checklist (cascade: ChecklistItem);
+    :Xóa Checklist khỏi giao diện Card;
+else (Không)
+    :Hủy thao tác;
+endif
+
+stop
+
+@enduml

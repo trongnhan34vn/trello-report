@@ -1,0 +1,45 @@
+@startuml sequence_sd05
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-05: Luồng tạo List
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> BACKEND : POST /api/v1/lists\n{boardId, title, position}
+
+BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
+
+alt JWT không hợp lệ hoặc hết hạn
+    BACKEND --> CLIENT : HTTP 401 Unauthorized
+else JWT hợp lệ
+    BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = ?
+
+    alt Không là thành viên Board
+        DB --> BACKEND : null
+        BACKEND --> CLIENT : HTTP 403 Forbidden
+    else Là thành viên Board
+        DB --> BACKEND : member record
+
+        BACKEND -> DB : INSERT INTO lists\n(id, title, board_id, position)
+        DB --> BACKEND : list record
+
+        BACKEND --> CLIENT : HTTP 201 Created\n{listId, title, boardId, position}
+    end
+end
+
+@enduml

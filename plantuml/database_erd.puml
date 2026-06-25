@@ -1,0 +1,176 @@
+@startuml database_erd
+
+skinparam linetype ortho
+skinparam roundcorner 4
+skinparam defaultFontSize 11
+skinparam nodesep 25
+skinparam ranksep 35
+skinparam padding 3
+
+skinparam entity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    AttributeFontColor #1e1e2e
+    HeaderBackgroundColor #dce3f5
+    HeaderFontColor #1a3a7a
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 9
+}
+skinparam backgroundColor #f4f6fb
+
+' ── Hàng 1: Lookup tables ──────────────────────
+
+together {
+    entity "roles" as roles {
+        * id : INT <<PK>>
+        --
+        name : role_name_enum
+    }
+
+    entity "workspace_categories" as wcat {
+        * id : INT <<PK>>
+        --
+        name : VARCHAR(255)
+    }
+
+    entity "images" as images {
+        * id : INT <<PK>>
+        --
+        key : TEXT
+    }
+}
+
+' ── Hàng 2: users ──────────────────────────────
+
+entity "users" as users {
+    * id : UUID <<PK>>
+    --
+    cognito_id : VARCHAR(255)
+    full_name : VARCHAR(255)
+    email : VARCHAR(255)
+    avatar_url : VARCHAR(255)
+}
+
+' ── Hàng 3: workspaces + workspace_members ─────
+
+together {
+    entity "workspaces" as ws {
+        * id : UUID <<PK>>
+        --
+        name : VARCHAR(255)
+        category_id : INT <<FK>>
+    }
+
+    entity "workspace_members" as wsm {
+        * id : UUID <<PK>>
+        --
+        user_id : UUID <<FK>>
+        workspace_id : UUID <<FK>>
+        role_id : INT <<FK>>
+    }
+}
+
+' ── Hàng 4: boards + board_members ────────────
+
+together {
+    entity "boards" as boards {
+        * id : UUID <<PK>>
+        --
+        name : VARCHAR(255)
+        background_url : TEXT
+        workspace_id : UUID <<FK>>
+    }
+
+    entity "board_members" as bm {
+        * id : UUID <<PK>>
+        --
+        user_id : UUID <<FK>>
+        board_id : UUID <<FK>>
+        role_id : INT <<FK>>
+    }
+}
+
+' ── Hàng 5: lists ──────────────────────────────
+
+entity "lists" as lists {
+    * id : UUID <<PK>>
+    --
+    name : VARCHAR(255)
+    position : TEXT
+    board_id : UUID <<FK>>
+}
+
+' ── Hàng 6: cards + card_members ───────────────
+
+together {
+    entity "cards" as cards {
+        * id : UUID <<PK>>
+        --
+        title : VARCHAR(255)
+        description : TEXT
+        due_date : TIMESTAMP
+        is_completed : BOOLEAN
+        position : TEXT
+        list_id : UUID <<FK>>
+    }
+
+    entity "card_members" as cm {
+        * id : UUID <<PK>>
+        --
+        user_id : UUID <<FK>>
+        card_id : UUID <<FK>>
+    }
+}
+
+' ── Hàng 7: checklists + checklist_items ───────
+
+together {
+    entity "checklists" as cl {
+        * id : UUID <<PK>>
+        --
+        name : VARCHAR(255)
+        position : TEXT
+        card_id : UUID <<FK>>
+    }
+
+    entity "checklist_items" as cli {
+        * id : UUID <<PK>>
+        --
+        name : VARCHAR(255)
+        position : TEXT
+        is_completed : BOOLEAN
+        due_date : TIMESTAMP
+        checklist_id : UUID <<FK>>
+    }
+}
+
+' ── Relationships ───────────────────────────────
+
+wcat   ||--o{ ws    : "category_id"
+
+ws     ||--o{ wsm   : "workspace_id"
+users  ||--o{ wsm   : "user_id"
+roles  ||--o{ wsm   : "role_id"
+
+ws     ||--o{ boards : "workspace_id"
+
+boards ||--o{ bm    : "board_id"
+users  ||--o{ bm    : "user_id"
+roles  ||--o{ bm    : "role_id"
+
+boards ||--o{ lists : "board_id"
+
+lists  ||--o{ cards : "list_id"
+
+cards  ||--o{ cm    : "card_id"
+users  ||--o{ cm    : "user_id"
+
+cards  ||--o{ cl    : "card_id"
+
+cl     ||--o{ cli   : "checklist_id"
+
+@enduml

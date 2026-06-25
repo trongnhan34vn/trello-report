@@ -1,0 +1,37 @@
+@startuml activity_uc06_1
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-06.1: Tạo Card
+
+start
+
+:Người dùng đang xem Board (Kanban View);
+:Nhấn nút "Thêm Card" trong một List;
+:Nhập tiêu đề Card;
+
+if (Tiêu đề hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Gửi yêu cầu POST /api/v1/cards\n(kèm listId, title, position);
+    :Backend lưu Card trong List;
+    :Hiển thị Card mới dưới cuối cột List;
+endif
+
+stop
+
+@enduml

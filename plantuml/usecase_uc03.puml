@@ -1,0 +1,52 @@
+@startuml usecase_uc03
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-03: Quản lý Workspace" {
+    usecase "UC-03.1\nTạo Workspace" as UC031
+    usecase "UC-03.2\nXem danh sách Workspace" as UC032
+    usecase "UC-03.3\nXem chi tiết Workspace" as UC033
+    usecase "UC-03.4\nMời thành viên\nvào Workspace" as UC034
+    usecase "UC-03.5\nXem danh sách\nthành viên Workspace" as UC035
+}
+
+user --> UC031
+user --> UC032
+user --> UC033
+user --> UC034
+user --> UC035
+
+UC033 ..> UC032 : <<include>>
+UC034 ..> UC033 : <<extend>>
+UC035 ..> UC033 : <<extend>>
+
+@enduml

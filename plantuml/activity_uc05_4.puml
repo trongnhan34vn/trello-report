@@ -1,0 +1,37 @@
+@startuml activity_uc05_4
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-05.4: Sắp xếp thứ tự List
+
+start
+
+:Người dùng đang xem Board (Kanban View);
+:Kéo thả (drag-and-drop) List sang vị trí mới;
+:Frontend tính toán position mới (string-based);
+:Cập nhật giao diện tức thì (optimistic update);
+:Gửi yêu cầu PATCH /api/v1/lists/:id\n(cập nhật position);
+
+if (Cập nhật thành công?) then (Không)
+    :Rollback giao diện về vị trí cũ;
+    :Hiển thị thông báo lỗi;
+else (Có)
+    :Giữ nguyên thứ tự mới trên giao diện;
+endif
+
+stop
+
+@enduml

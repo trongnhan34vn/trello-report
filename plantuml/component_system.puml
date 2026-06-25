@@ -1,0 +1,63 @@
+@startuml component_system
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam arrowColor #4a6fa5
+skinparam componentStyle rectangle
+
+skinparam component {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+}
+skinparam package {
+    BackgroundColor #f0f4ff
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+}
+skinparam database {
+    BackgroundColor #ffffff
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam cloud {
+    BackgroundColor #ffffff
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+
+title Biểu đồ thành phần hệ thống Nello
+
+actor "Người dùng\n(Browser)" as USER
+
+package "Frontend  (ReactJS)" as FE_PKG {
+    [Giao diện xác thực\n(Auth Pages)] as UI_AUTH
+    [Giao diện Workspace\n& Dashboard] as UI_WS
+    [Giao diện Kanban\n(Board / List / Card)] as UI_KANBAN
+}
+
+package "Backend  (Spring Boot)" as BE_PKG {
+    [Controller Layer\n(/api/v1/**)] as CTRL
+    [Service Layer\n(Business Logic)] as SVC
+    [Repository Layer\n(Spring Data JPA)] as REPO
+}
+
+database "PostgreSQL\n(AWS RDS)" as DB
+
+cloud "AWS Cognito\n(Identity Provider)" as COGNITO
+
+storage "AWS S3\n(File Storage)" as S3
+
+USER -right-> FE_PKG : HTTPS
+
+FE_PKG -right-> CTRL : REST API\n(JSON + HttpOnly Cookie)
+
+CTRL -down-> SVC
+SVC -down-> REPO
+
+REPO -right-> DB : JDBC / JPA
+SVC -right-> COGNITO : AWS SDK\n(Auth / JWT)
+SVC -right-> S3 : AWS SDK\n(Upload)
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml activity_uc01_5
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-01.5: Làm mới access token
+
+start
+
+:Người dùng đang sử dụng hệ thống;
+:Access token hết hạn;
+:Tự động gửi yêu cầu POST /api/v1/auth/refresh-token\n(dùng refresh_token trong cookie);
+
+if (Refresh token hợp lệ?) then (Không)
+    :Xóa cookie;
+    :Chuyển hướng về trang Đăng nhập;
+    stop
+else (Có)
+    :Cognito cấp access_token mới;
+    :Cập nhật HttpOnly Cookie;
+    :Tiếp tục sử dụng hệ thống;
+endif
+
+stop
+
+@enduml

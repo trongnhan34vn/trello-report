@@ -1,0 +1,39 @@
+@startuml activity_uc02_2
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-02.2: Chỉnh sửa thông tin cá nhân
+
+start
+
+:Người dùng truy cập trang thông tin cá nhân;
+:Nhấn nút "Chỉnh sửa";
+:Gửi yêu cầu GET /api/v1/users/me\n(tải thông tin hiện tại);
+:Hiển thị form chỉnh sửa\n(avatar, bio, phone, address);
+:Nhập nội dung chỉnh sửa;
+
+if (Dữ liệu nhập hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi validation;
+    stop
+else (Có)
+    :Gửi yêu cầu PATCH /api/v1/users/me\n(cập nhật thông tin);
+    :Backend lưu thông tin mới;
+    :Hiển thị thông báo cập nhật thành công;
+endif
+
+stop
+
+@enduml

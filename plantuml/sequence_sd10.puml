@@ -1,0 +1,43 @@
+@startuml sequence_sd10
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-10: Luồng di chuyển List (Drag-and-Drop)
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> CLIENT : Người dùng kéo thả List\nsang vị trí mới trong Board
+
+note over CLIENT : Optimistic Update:\nCập nhật giao diện tức thì\ntrước khi nhận phản hồi
+
+CLIENT -> BACKEND : PATCH /api/v1/lists/:id\n{position}
+
+BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
+
+BACKEND -> DB : UPDATE lists\nSET position = ?\nWHERE id = ?
+
+alt Cập nhật thành công
+    DB --> BACKEND : updated list record
+    BACKEND --> CLIENT : HTTP 200 OK\n{listId, position}
+    CLIENT -> CLIENT : Xác nhận vị trí mới\n(giữ nguyên UI)
+else Cập nhật thất bại (lỗi server / hết hạn phiên)
+    DB --> BACKEND : error
+    BACKEND --> CLIENT : HTTP 4xx / 5xx
+    CLIENT -> CLIENT : Rollback UI:\nkhôi phục List về vị trí cũ
+end
+
+@enduml

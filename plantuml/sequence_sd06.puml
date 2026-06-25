@@ -1,0 +1,52 @@
+@startuml sequence_sd06
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-06: Luồng tạo Card
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> BACKEND : POST /api/v1/cards\n{listId, title, position}
+
+BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
+
+alt JWT không hợp lệ hoặc hết hạn
+    BACKEND --> CLIENT : HTTP 401 Unauthorized
+else JWT hợp lệ
+    BACKEND -> DB : SELECT * FROM lists\nWHERE id = listId
+
+    alt List không tồn tại
+        DB --> BACKEND : null
+        BACKEND --> CLIENT : HTTP 404 Not Found
+    else List tồn tại
+        DB --> BACKEND : list record (boardId)
+
+        BACKEND -> DB : SELECT * FROM board_members\nWHERE boardId = ? AND userId = ?
+        DB --> BACKEND : member record
+
+        alt Không có quyền trong Board
+            BACKEND --> CLIENT : HTTP 403 Forbidden
+        else Có quyền
+            BACKEND -> DB : INSERT INTO cards\n(listId, title, position, isCompleted=false)
+            DB --> BACKEND : card record
+
+            BACKEND --> CLIENT : HTTP 201 Created\n{cardId, title, listId, position}
+        end
+    end
+end
+
+@enduml

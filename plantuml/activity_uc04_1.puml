@@ -1,0 +1,39 @@
+@startuml activity_uc04_1
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-04.1: Tạo Board
+
+start
+
+:Người dùng truy cập trang chi tiết Workspace;
+:Gửi yêu cầu GET /api/v1/images\n(lấy danh sách ảnh nền);
+:Nhấn nút "Tạo Board mới";
+:Mở form tạo Board;
+:Nhập tên Board, chọn ảnh nền (1 trong 8 ảnh);
+
+if (Dữ liệu nhập hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi validation;
+    stop
+else (Có)
+    :Gửi yêu cầu POST /api/v1/boards\n(kèm workspaceId, imageId);
+    :Backend tạo Board trong Workspace;
+    :Chuyển hướng đến Board vừa tạo (Kanban View);
+endif
+
+stop
+
+@enduml

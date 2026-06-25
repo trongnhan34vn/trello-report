@@ -1,0 +1,38 @@
+@startuml activity_uc06_3
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-06.3: Cập nhật Card
+
+start
+
+:Người dùng mở Card Detail Modal;
+:Chọn chỉnh sửa thông tin Card;
+:Hiển thị form chỉnh sửa Card;
+:Chỉnh sửa thông tin\n(title, description, startDate, dueDate);
+
+if (Dữ liệu nhập hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Gửi yêu cầu PATCH /api/v1/cards/:id;
+    :Backend cập nhật thông tin Card;
+    :Hiển thị thông báo cập nhật thành công;
+endif
+
+stop
+
+@enduml

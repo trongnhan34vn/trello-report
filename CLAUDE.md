@@ -240,59 +240,281 @@ Mô tả kiến trúc đang áp dụng.
 
 ---
 
-## Chương 3. Phân tích và thiết kế hệ thống
+# Chương 3. Phân tích và thiết kế hệ thống
 
-Bao gồm:
+## 3.1. Phân tích hệ thống
 
-### Phân tích yêu cầu
+### 3.1.1. Khảo sát và xác định yêu cầu
 
-- Yêu cầu chức năng
-- Yêu cầu phi chức năng
+#### Mục đích
 
-### Thiết kế tổng thể hệ thống
+* Xác định hệ thống cần làm gì.
+* Xác định phạm vi bài toán.
 
-Mô tả kiến trúc tổng thể.
+#### Nội dung
 
-### Phân rã chức năng
+* Yêu cầu chức năng (Functional Requirements)
+* Yêu cầu phi chức năng (Non-functional Requirements)
 
-Liệt kê toàn bộ chức năng của hệ thống.
+#### Biểu đồ
 
-Đối với mỗi chức năng cần mô tả:
-
-| Thuộc tính     | Nội dung                                                                                        |
-| -------------- | ----------------------------------------------------------------------------------------------- |
-| Use Case ID    | FR-01                                                                                          |
-| Tên Use Case   | Đăng nhập                                                                                       |
-| Actor          | Người dùng                                                                                      |
-| Mục tiêu       | Truy cập hệ thống                                                                               |
-| Tiền điều kiện | Người dùng đã có tài khoản                                                                      |
-| Hậu điều kiện  | Đăng nhập thành công                                                                            |
-| Luồng chính    | 1. Nhập email và mật khẩu<br>2. Nhấn Đăng nhập<br>3. Hệ thống xác thực<br>4. Hiển thị Dashboard |
-| Luồng thay thế | Sai tài khoản hoặc mật khẩu                                                                     |
-
-
-### Phân tích dữ liệu
-
-Mô tả:
-
-- Các thực thể
-- Thuộc tính
-- Quan hệ dữ liệu
-
-### Luồng dữ liệu
-
-Mô tả luồng xử lý của các chức năng chính.
-
-### Thiết kế cơ sở dữ liệu
-
-Trình bày:
-
-- Bảng dữ liệu
-- Khóa chính
-- Khóa ngoại
-- Quan hệ giữa các bảng
+Không bắt buộc.
 
 ---
+
+### 3.1.2. Xác định tác nhân và chức năng hệ thống
+
+#### Mục đích
+
+* Xác định ai sử dụng hệ thống.
+* Xác định các chức năng hệ thống cung cấp.
+
+#### Biểu đồ
+
+**Use Case Diagram**
+
+#### Trả lời câu hỏi
+
+> Hệ thống phải làm gì?
+
+#### Ví dụ
+
+```text
+User
+ ├─ Create Workspace
+ ├─ Create Board
+ ├─ Create List
+ ├─ Create Card
+ └─ Assign Member
+```
+
+---
+
+### 3.1.3. Đặc tả Use Case
+
+#### Mục đích
+
+Mô tả chi tiết từng Use Case.
+
+#### Biểu đồ
+
+Không bắt buộc.
+
+#### Nội dung
+
+* Actor
+* Preconditions
+* Main Flow
+* Alternative Flow
+* Postconditions
+
+---
+
+### 3.1.4. Phân tích luồng nghiệp vụ
+
+#### Mục đích
+
+Mô tả trình tự xử lý của một chức năng.
+
+#### Biểu đồ
+
+**Activity Diagram**
+
+#### Trả lời câu hỏi
+
+> Chức năng diễn ra như thế nào?
+
+#### Ví dụ
+
+```text
+Create Card
+    ↓
+Validate Input
+    ↓
+Save Database
+    ↓
+Notify Success
+```
+
+---
+
+### 3.1.5. Phân tích dữ liệu
+
+#### Mục đích
+
+Xác định dữ liệu cần lưu trữ.
+
+#### Biểu đồ
+
+**ERD (Entity Relationship Diagram)**
+
+#### Trả lời câu hỏi
+
+> Hệ thống quản lý những dữ liệu gì?
+
+#### Ví dụ
+
+```text
+Workspace
+Board
+List
+Card
+User
+```
+
+---
+
+## 3.2. Thiết kế hệ thống
+
+### 3.2.1. Thiết kế kiến trúc tổng thể
+
+#### Mục đích
+
+Xác định các thành phần lớn của hệ thống.
+
+#### Biểu đồ
+
+**Component Diagram** hoặc **Architecture Diagram**
+
+#### Trả lời câu hỏi
+
+> Hệ thống được chia thành các module nào?
+
+#### Ví dụ
+
+```text
+Client
+   |
+Server
+   |
+Database
+```
+
+---
+
+### 3.2.2. Thiết kế tương tác giữa các thành phần
+
+#### Mục đích
+
+Mô tả cách các đối tượng giao tiếp với nhau.
+
+#### Biểu đồ
+
+**Sequence Diagram**
+
+#### Trả lời câu hỏi
+
+> Ai gọi ai và theo thứ tự nào?
+
+#### Ví dụ
+
+```text
+User
+  |
+Controller
+  |
+Service
+  |
+Repository
+  |
+Database
+```
+
+---
+
+### 3.2.3. Thiết kế lớp
+
+#### Mục đích
+
+Thiết kế cấu trúc mã nguồn hướng đối tượng.
+
+#### Biểu đồ
+
+**Class Diagram**
+
+#### Trả lời câu hỏi
+
+> Chương trình sẽ gồm những class nào?
+
+#### Ví dụ
+
+```text
+User
+Board
+Card
+Notification
+```
+
+---
+
+### 3.2.4. Thiết kế cơ sở dữ liệu
+
+#### Mục đích
+
+Chuyển mô hình dữ liệu thành các bảng vật lý.
+
+#### Biểu đồ
+
+Có thể sử dụng lại ERD hoặc mô tả bảng dữ liệu.
+
+#### Nội dung
+
+* Tên bảng
+* Khóa chính (Primary Key)
+* Khóa ngoại (Foreign Key)
+* Kiểu dữ liệu
+
+---
+
+### 3.2.5. Thiết kế giao diện
+
+#### Mục đích
+
+Thiết kế các màn hình tương tác với người dùng.
+
+#### Biểu đồ
+
+Không bắt buộc UML.
+
+#### Nội dung
+
+* Mockup
+* Wireframe
+* Screenshot giao diện
+
+---
+
+# Tóm tắt các biểu đồ
+
+| Mục                       | Biểu đồ           | Trả lời câu hỏi          |
+| ------------------------- | ----------------- | ------------------------ |
+| Xác định chức năng        | Use Case Diagram  | Hệ thống làm gì?         |
+| Phân tích luồng nghiệp vụ | Activity Diagram  | Chức năng chạy thế nào?  |
+| Phân tích dữ liệu         | ERD               | Lưu dữ liệu gì?          |
+| Thiết kế kiến trúc        | Component Diagram | Chia module thế nào?     |
+| Thiết kế tương tác        | Sequence Diagram  | Ai gọi ai?               |
+| Thiết kế đối tượng        | Class Diagram     | Có những class nào?      |
+| Thiết kế giao diện        | Wireframe/UI      | Người dùng nhìn thấy gì? |
+
+---
+
+# Bộ biểu đồ tối thiểu cho đồ án phần mềm
+
+## Phân tích hệ thống
+
+* Use Case Diagram
+* Activity Diagram
+
+## Thiết kế hệ thống
+
+* ERD
+* Component Diagram
+* Sequence Diagram
+* Class Diagram
+* Thiết kế giao diện
+
+Đây là bộ tài liệu phổ biến trong các đồ án và khóa luận CNTT, giúp thể hiện đầy đủ quá trình từ **Requirements Analysis → System Analysis → System Design**.
+
 
 ## Chương 4. Triển khai và kết quả
 

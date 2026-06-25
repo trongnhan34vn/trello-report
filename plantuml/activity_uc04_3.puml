@@ -1,0 +1,37 @@
+@startuml activity_uc04_3
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-04.3: Cập nhật tên Board
+
+start
+
+:Người dùng đang xem Board;
+:Nhấn vào tiêu đề Board để chỉnh sửa;
+:Nhập tên Board mới;
+
+if (Tên hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Gửi yêu cầu PUT /api/v1/boards/:id\n(cập nhật title);
+    :Backend lưu tên Board mới;
+    :Hiển thị thông báo cập nhật thành công;
+endif
+
+stop
+
+@enduml

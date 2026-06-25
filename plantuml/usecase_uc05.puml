@@ -1,0 +1,50 @@
+@startuml usecase_uc05
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-05: Quản lý List" {
+    usecase "UC-05.1\nTạo List" as UC051
+    usecase "UC-05.2\nĐổi tên List" as UC052
+    usecase "UC-05.3\nXóa List" as UC053
+    usecase "UC-05.4\nSắp xếp thứ tự List" as UC054
+}
+
+user --> UC051
+user --> UC052
+user --> UC053
+user --> UC054
+
+UC052 ..> UC051 : <<extend>>
+UC053 ..> UC051 : <<extend>>
+UC054 ..> UC051 : <<extend>>
+
+@enduml

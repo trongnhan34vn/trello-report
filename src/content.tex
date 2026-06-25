@@ -217,9 +217,11 @@ MVC là mẫu kiến trúc phần mềm (architectural pattern) phân tách ứn
 
 \section{CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}
 
-\subsection{Phân tích yêu cầu}
+\subsection{Phân tích hệ thống}
 
-\subsubsection{Yêu cầu chức năng}
+\subsubsection{Khảo sát và xác định yêu cầu}
+
+\paragraph{Yêu cầu chức năng} \mbox{}\\
 
 Các yêu cầu chức năng được xác định dựa trên phân tích nghiệp vụ quản lý công việc theo mô hình Kanban, bao gồm các nhóm chức năng chính sau:
 
@@ -378,7 +380,7 @@ FR-29 & Quản lý ChecklistItem & Thêm, cập nhật trạng thái hoàn thàn
 
 
 
-\subsubsection{Yêu cầu phi chức năng}
+\paragraph{Yêu cầu phi chức năng} \mbox{}\\
 
 \begin{itemize}
     \item \textbf{Bảo mật:} Toàn bộ giao tiếp giữa Client và Backend được thực hiện qua HTTP/HTTPS. Access token và refresh token được lưu trong HttpOnly cookie, ngăn chặn truy cập từ JavaScript phía Client (chống tấn công XSS). Xác thực người dùng được ủy thác cho Amazon Cognito. Các tài nguyên Backend và cơ sở dữ liệu được cách ly trong mạng nội bộ VPC.
@@ -388,755 +390,1435 @@ FR-29 & Quản lý ChecklistItem & Thêm, cập nhật trạng thái hoàn thàn
     \item \textbf{Khả năng sử dụng:} Giao diện được thiết kế theo mô hình Kanban quen thuộc, hỗ trợ đầy đủ trên trình duyệt web hiện đại.
 \end{itemize}
 
-\subsection{Phân rã chức năng}
+\subsubsection{Xác định tác nhân và chức năng hệ thống}
 
-\subsubsection{Xác thực và quản lý tài khoản}
+\paragraph{Biểu đồ Use Case tổng quát} \mbox{}\\
 
+Biểu đồ Use Case tổng quát mô tả toàn bộ các nhóm chức năng chính mà người dùng có thể thực hiện trong hệ thống. Hệ thống có duy nhất một tác nhân là \textbf{Người dùng}, bao gồm mọi đối tượng tương tác với hệ thống từ giai đoạn chưa xác thực đến đã đăng nhập. Quyền thực thi từng chức năng phụ thuộc vào trạng thái xác thực và vai trò (ADMIN, MEMBER, VIEWER) của người dùng trong Workspace hoặc Board tương ứng.
+
+Các nhóm chức năng chính bao gồm:
+\begin{itemize}
+    \item Quản lý xác thực
+    \item Quản lý người dùng
+    \item Quản lý Workspace
+    \item Quản lý Board
+    \item Quản lý List
+    \item Quản lý Card
+    \item Quản lý Checklist
+    \item Quản lý thành viên Card
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{images/chap3/usecase_overview.png}
+\caption{Biểu đồ Use Case tổng quát hệ thống Nello}
+\label{fig:usecase_overview}
+\end{figure}
+
+\paragraph{Phân rã Use Case} \mbox{}\\
+
+Mỗi nhóm chức năng trong biểu đồ tổng quát được phân rã thành các use case thành phần cụ thể như sau:
+
+\textbf{UC-01: Quản lý xác thực} -- Bao gồm đăng ký tài khoản, xác nhận OTP, gửi lại OTP, đăng nhập và làm mới access token.
+
+\textbf{UC-02: Quản lý người dùng} -- Bao gồm xem thông tin cá nhân và chỉnh sửa thông tin cá nhân.
+
+\textbf{UC-03: Quản lý Workspace} -- Bao gồm tạo, xem danh sách, xem chi tiết Workspace, mời thành viên và xem danh sách thành viên.
+
+\textbf{UC-04: Quản lý Board} -- Bao gồm tạo, xem, cập nhật, xóa Board và thêm thành viên vào Board.
+
+\textbf{UC-05: Quản lý List} -- Bao gồm tạo, đổi tên, xóa List và sắp xếp thứ tự List.
+
+\textbf{UC-06: Quản lý Card} -- Bao gồm tạo, xem, cập nhật, đánh dấu hoàn thành, di chuyển và xóa Card.
+
+\textbf{UC-07: Quản lý Checklist} -- Bao gồm tạo, cập nhật, xóa Checklist; tạo, cập nhật, đánh dấu hoàn thành và xóa Checklist Item.
+
+\textbf{UC-08: Quản lý thành viên Card} -- Bao gồm gán và hủy gán thành viên vào Card.
+
+\paragraph{Danh sách Use Case} \mbox{}\\
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{11cm}|}
+\hline
+\textbf{Mã Use Case} & \textbf{Tên Use Case} \\
+\hline
+UC-01.1 & Đăng ký tài khoản \\
+\hline
+UC-01.2 & Xác nhận tài khoản bằng OTP \\
+\hline
+UC-01.3 & Gửi lại mã OTP \\
+\hline
+UC-01.4 & Đăng nhập \\
+\hline
+UC-01.5 & Làm mới access token \\
+\hline
+UC-02.1 & Xem thông tin cá nhân \\
+\hline
+UC-02.2 & Chỉnh sửa thông tin cá nhân \\
+\hline
+UC-03.1 & Tạo Workspace \\
+\hline
+UC-03.2 & Xem danh sách Workspace \\
+\hline
+UC-03.3 & Xem chi tiết Workspace \\
+\hline
+UC-03.4 & Mời thành viên vào Workspace \\
+\hline
+UC-03.5 & Xem danh sách thành viên Workspace \\
+\hline
+UC-04.1 & Tạo Board \\
+\hline
+UC-04.2 & Xem chi tiết Board \\
+\hline
+UC-04.3 & Cập nhật tên Board \\
+\hline
+UC-04.4 & Xóa Board \\
+\hline
+UC-04.5 & Thêm thành viên vào Board \\
+\hline
+UC-05.1 & Tạo List \\
+\hline
+UC-05.2 & Đổi tên List \\
+\hline
+UC-05.3 & Xóa List \\
+\hline
+UC-05.4 & Sắp xếp thứ tự List \\
+\hline
+UC-06.1 & Tạo Card \\
+\hline
+UC-06.2 & Xem chi tiết Card \\
+\hline
+UC-06.3 & Cập nhật Card \\
+\hline
+UC-06.4 & Đánh dấu Card hoàn thành \\
+\hline
+UC-06.5 & Di chuyển Card giữa các List \\
+\hline
+UC-06.6 & Xóa Card \\
+\hline
+UC-07.1 & Tạo Checklist \\
+\hline
+UC-07.2 & Cập nhật Checklist \\
+\hline
+UC-07.3 & Xóa Checklist \\
+\hline
+UC-07.4 & Tạo Checklist Item \\
+\hline
+UC-07.5 & Cập nhật Checklist Item \\
+\hline
+UC-07.6 & Đánh dấu Checklist Item hoàn thành \\
+\hline
+UC-07.7 & Xóa Checklist Item \\
+\hline
+UC-08.1 & Gán thành viên vào Card \\
+\hline
+UC-08.2 & Hủy gán thành viên khỏi Card \\
+\hline
+\end{tabular}
+\caption{Danh sách Use Case}
+\label{tab:usecase_list}
+\end{table}
+
+\subsubsection{Đặc tả Use Case}
+
+\textbf{UC-01: Quản lý xác thực}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc01.png}
+\caption{Biểu đồ Use Case UC-01: Quản lý xác thực}
+\label{fig:usecase_uc01}
+\end{figure}
+
+\vspace{0.3cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-01 \\
+Mã Use Case & UC-01.1 \\
 \hline
 Tên Use Case & Đăng ký tài khoản \\
 \hline
-Actor & Người dùng chưa có tài khoản \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Cho phép người dùng mới tạo tài khoản trong hệ thống. \\
+Mô tả tóm tắt & Người dùng mới tạo tài khoản trong hệ thống thông qua Amazon Cognito. \\
 \hline
-Tiền điều kiện & Người dùng chưa có tài khoản trong hệ thống. \\
+Điều kiện & Người dùng chưa có tài khoản trong hệ thống. \\
 \hline
-Hậu điều kiện & Tài khoản được khởi tạo trong Amazon Cognito; email OTP xác nhận được gửi. \\
+Luồng chính & 1. Người dùng truy cập trang đăng ký.\newline 2. Hệ thống hiển thị form nhập họ tên, email và mật khẩu.\newline 3. Người dùng điền thông tin và nhấn Đăng ký.\newline 4. Hệ thống gọi Amazon Cognito tạo tài khoản.\newline 5. Cognito gửi mã OTP xác nhận về địa chỉ email.\newline 6. Nếu email đã tồn tại, hệ thống trả về lỗi HTTP 409. \\
 \hline
-Luồng chính & 1. Người dùng nhập họ tên, email và mật khẩu.\newline 2. Người dùng nhấn Đăng ký.\newline 3. Hệ thống gọi Cognito tạo tài khoản.\newline 4. Cognito gửi mã OTP về email. \\
-\hline
-Luồng thay thế & Email đã tồn tại trong hệ thống: Hệ thống trả về lỗi HTTP 409.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Email đã tồn tại: Hệ thống trả về lỗi HTTP 409.\newline Mật khẩu không đáp ứng yêu cầu bảo mật: Hệ thống hiển thị thông báo lỗi tại trường mật khẩu.\newline Lỗi kết nối Amazon Cognito: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-02 \\
+Mã Use Case & UC-01.2 \\
 \hline
-Tên Use Case & Xác nhận email \\
+Tên Use Case & Xác nhận tài khoản bằng OTP \\
 \hline
-Actor & Người dùng đã đăng ký nhưng chưa xác nhận email \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Kích hoạt tài khoản bằng cách xác minh địa chỉ email qua mã OTP. \\
+Mô tả tóm tắt & Người dùng nhập mã OTP nhận được qua email để kích hoạt tài khoản. \\
 \hline
-Tiền điều kiện & Tài khoản đã được tạo; mã OTP đã được gửi về email. \\
+Điều kiện & Tài khoản đã được tạo; mã OTP đã được gửi về email. \\
 \hline
-Hậu điều kiện & Tài khoản được kích hoạt; người dùng được chuyển hướng đến trang đăng nhập. \\
+Luồng chính & 1. Người dùng nhập mã OTP nhận được qua email.\newline 2. Người dùng nhấn Xác nhận.\newline 3. Hệ thống gửi yêu cầu xác nhận đến Amazon Cognito.\newline 4. Cognito kích hoạt tài khoản.\newline 5. Hệ thống chuyển hướng người dùng về trang đăng nhập.\newline 6. Nếu mã OTP sai hoặc hết hạn, hệ thống hiển thị thông báo lỗi. \\
 \hline
-Luồng chính & 1. Người dùng nhập mã OTP nhận được qua email.\newline 2. Người dùng nhấn Xác nhận.\newline 3. Hệ thống gửi yêu cầu xác nhận đến Cognito.\newline 4. Cognito kích hoạt tài khoản.\newline 5. Người dùng được chuyển hướng về trang đăng nhập. \\
-\hline
-Luồng thay thế & Mã OTP sai hoặc hết hạn: Hệ thống trả về lỗi; người dùng có thể yêu cầu gửi lại mã.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Mã OTP sai hoặc hết hạn: Hệ thống hiển thị thông báo lỗi, cho phép người dùng yêu cầu gửi lại mã.\newline Lỗi kết nối Amazon Cognito: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-03 \\
+Mã Use Case & UC-01.3 \\
+\hline
+Tên Use Case & Gửi lại mã OTP \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng yêu cầu hệ thống gửi lại mã OTP khi mã cũ đã hết hạn hoặc chưa nhận được. \\
+\hline
+Điều kiện & Tài khoản đã đăng ký nhưng chưa xác nhận; mã OTP đã hết hạn hoặc chưa nhận được. \\
+\hline
+Luồng chính & 1. Người dùng nhấn Gửi lại mã OTP trên trang xác nhận.\newline 2. Hệ thống gọi Amazon Cognito để gửi lại mã OTP.\newline 3. Cognito gửi mã OTP mới về email.\newline 4. Hệ thống thông báo gửi lại thành công.\newline 5. Nếu quá số lần yêu cầu cho phép, hệ thống hiển thị thông báo lỗi. \\
+\hline
+Luồng thay thế & Vượt quá số lần yêu cầu gửi lại cho phép: Hệ thống hiển thị thông báo giới hạn và yêu cầu đợi.\newline Lỗi kết nối Amazon Cognito: Hệ thống trả về lỗi HTTP 500. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-01.4 \\
 \hline
 Tên Use Case & Đăng nhập \\
 \hline
-Actor & Người dùng đã có tài khoản \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Xác thực danh tính người dùng và cấp phiên làm việc. \\
+Mô tả tóm tắt & Người dùng xác thực danh tính bằng email và mật khẩu để truy cập hệ thống. \\
 \hline
-Tiền điều kiện & Người dùng đã có tài khoản và đã xác nhận email. \\
+Điều kiện & Người dùng đã có tài khoản và đã xác nhận email. \\
 \hline
-Hậu điều kiện & Access token và refresh token được lưu trong HttpOnly cookie; người dùng được chuyển hướng đến Dashboard. \\
+Luồng chính & 1. Người dùng truy cập trang đăng nhập.\newline 2. Hệ thống hiển thị form nhập email và mật khẩu.\newline 3. Người dùng nhập thông tin và nhấn Đăng nhập.\newline 4. Backend gọi Amazon Cognito để xác thực thông tin.\newline 5. Cognito trả về JWT (access token và refresh token).\newline 6. Backend lưu token vào HttpOnly cookie và chuyển hướng người dùng đến Dashboard.\newline 7. Nếu email hoặc mật khẩu sai, hệ thống hiển thị thông báo lỗi. \\
 \hline
-Luồng chính & 1. Người dùng nhập email và mật khẩu.\newline 2. Người dùng nhấn Đăng nhập.\newline 3. Backend gọi Cognito xác thực.\newline 4. Cognito trả về JWT.\newline 5. Backend đặt token vào HttpOnly cookie.\newline 6. Người dùng được chuyển hướng đến Dashboard. \\
+Luồng thay thế & Email hoặc mật khẩu không đúng: Hệ thống hiển thị thông báo lỗi xác thực.\newline Tài khoản chưa xác nhận email: Hệ thống yêu cầu xác nhận email trước khi đăng nhập.\newline Lỗi kết nối Amazon Cognito: Hệ thống trả về lỗi HTTP 500. \\
 \hline
-Luồng thay thế & Email hoặc mật khẩu không đúng: Hệ thống trả về thông báo lỗi xác thực.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-01.5 \\
+\hline
+Tên Use Case & Làm mới access token \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Hệ thống tự động làm mới access token bằng refresh token khi token hết hạn. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập; access token đã hết hạn; refresh token còn hiệu lực. \\
+\hline
+Luồng chính & 1. Hệ thống phát hiện access token hết hạn khi xử lý request.\newline 2. Hệ thống sử dụng refresh token trong HttpOnly cookie để gọi endpoint làm mới token.\newline 3. Backend gọi Amazon Cognito để cấp access token mới.\newline 4. Backend cập nhật HttpOnly cookie với access token mới.\newline 5. Request gốc của người dùng được thực hiện lại.\newline 6. Nếu refresh token hết hạn, hệ thống yêu cầu người dùng đăng nhập lại. \\
+\hline
+Luồng thay thế & Refresh token đã hết hạn: Hệ thống xóa cookie và yêu cầu người dùng đăng nhập lại.\newline Lỗi kết nối Amazon Cognito: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
 
+\textbf{UC-02: Quản lý người dùng}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc02.png}
+\caption{Biểu đồ Use Case UC-02: Quản lý người dùng}
+\label{fig:usecase_uc02}
+\end{figure}
+
+\vspace{0.3cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-04 \\
+Mã Use Case & UC-02.1 \\
 \hline
-Tên Use Case & Đăng xuất \\
+Tên Use Case & Xem thông tin cá nhân \\
 \hline
-Actor & Người dùng đã đăng nhập \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Kết thúc phiên làm việc của người dùng. \\
+Mô tả tóm tắt & Người dùng xem thông tin hồ sơ cá nhân của mình trong hệ thống. \\
 \hline
-Tiền điều kiện & Người dùng đang có phiên làm việc hợp lệ. \\
+Điều kiện & Người dùng đã đăng nhập thành công. \\
 \hline
-Hậu điều kiện & Cookie xác thực bị xóa khỏi trình duyệt; người dùng được chuyển hướng về trang đăng nhập. \\
+Luồng chính & 1. Người dùng truy cập trang thông tin cá nhân.\newline 2. Hệ thống gọi API GET /api/v1/users/me với access token.\newline 3. Backend trích xuất thông tin người dùng từ JWT và truy vấn cơ sở dữ liệu.\newline 4. Hệ thống hiển thị họ tên, email, ảnh đại diện và các thông tin cá nhân khác. \\
 \hline
-Luồng chính & 1. Người dùng nhấn nút Đăng xuất.\newline 2. Backend xóa HttpOnly cookie.\newline 3. Người dùng được chuyển hướng về trang đăng nhập. \\
+Luồng thay thế & Access token không hợp lệ hoặc hết hạn: Hệ thống chuyển hướng về trang đăng nhập.\newline Lỗi truy vấn cơ sở dữ liệu: Hệ thống trả về lỗi HTTP 500. \\
 \hline
-Luồng thay thế & Lỗi không xác định: Trả về lỗi HTTP 500. \\
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-02.2 \\
+\hline
+Tên Use Case & Chỉnh sửa thông tin cá nhân \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng cập nhật các thông tin cá nhân như họ tên, ảnh đại diện, số điện thoại và địa chỉ. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và đang ở trang thông tin cá nhân. \\
+\hline
+Luồng chính & 1. Người dùng truy cập trang thông tin cá nhân.\newline 2. Người dùng chọn chỉnh sửa và thay đổi các trường thông tin.\newline 3. Người dùng xác nhận lưu.\newline 4. Hệ thống gọi API cập nhật và lưu thông tin mới vào cơ sở dữ liệu.\newline 5. Hệ thống hiển thị thông báo cập nhật thành công. \\
+\hline
+Luồng thay thế & Thông tin nhập không hợp lệ (họ tên bị bỏ trống): Hệ thống hiển thị thông báo lỗi và yêu cầu nhập lại. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
 
+\textbf{UC-03: Quản lý Workspace}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc03.png}
+\caption{Biểu đồ Use Case UC-03: Quản lý Workspace}
+\label{fig:usecase_uc03}
+\end{figure}
+
+\vspace{0.3cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-05 \\
-\hline
-Tên Use Case & Làm mới phiên làm việc \\
-\hline
-Actor & Hệ thống (tự động) \\
-\hline
-Mục tiêu & Duy trì phiên làm việc liên tục khi access token hết hạn. \\
-\hline
-Tiền điều kiện & Người dùng đang đăng nhập; access token đã hết hạn nhưng refresh token còn hợp lệ. \\
-\hline
-Hậu điều kiện & Access token mới được cấp và lưu vào cookie; phiên làm việc được duy trì. \\
-\hline
-Luồng chính & 1. Frontend phát hiện access token hết hạn.\newline 2. Frontend tự động gửi yêu cầu làm mới với refresh token.\newline 3. Backend gọi Cognito để làm mới token.\newline 4. Cookie được cập nhật với access token mới. \\
-\hline
-Luồng thay thế & Refresh token hết hạn: Người dùng bị đăng xuất và chuyển hướng về trang đăng nhập.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-32 \\
-\hline
-Tên Use Case & Đổi mật khẩu \\
-\hline
-Actor & Người dùng đã đăng nhập \\
-\hline
-Mục tiêu & Cho phép người dùng thay đổi mật khẩu tài khoản hiện tại. \\
-\hline
-Tiền điều kiện & Người dùng đã đăng nhập và có phiên làm việc hợp lệ. \\
-\hline
-Hậu điều kiện & Mật khẩu mới được cập nhật trong Amazon Cognito. \\
-\hline
-Luồng chính & 1. Người dùng truy cập popup đổi mật khẩu.\newline 2. Người dùng nhập mật khẩu hiện tại và mật khẩu mới.\newline 3. Hệ thống xác thực mật khẩu hiện tại với Cognito.\newline 4. Cognito cập nhật mật khẩu mới.\newline 5. Hệ thống hiển thị thông báo đổi mật khẩu thành công. \\
-\hline
-Luồng thay thế & Mật khẩu hiện tại không đúng: Hệ thống trả về thông báo lỗi xác thực.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-33 \\
-\hline
-Tên Use Case & Cập nhật hồ sơ cá nhân \\
-\hline
-Actor & Người dùng đã đăng nhập \\
-\hline
-Mục tiêu & Cho phép người dùng chỉnh sửa thông tin hồ sơ cá nhân. \\
-\hline
-Tiền điều kiện & Người dùng đã đăng nhập và có phiên làm việc hợp lệ. \\
-\hline
-Hậu điều kiện & Thông tin hồ sơ được cập nhật trong cơ sở dữ liệu; giao diện phản ánh thay đổi. \\
-\hline
-Luồng chính & 1. Người dùng truy cập trang hồ sơ cá nhân.\newline 2. Người dùng chỉnh sửa thông tin (phone, địa chỉ, giới thiệu bản thân).\newline 3. Người dùng nhấn Lưu.\newline 4. Backend xác thực dữ liệu và cập nhật bản ghi.\newline 5. Hệ thống hiển thị thông báo cập nhật thành công. \\
-\hline
-Luồng thay thế & Dữ liệu không hợp lệ (tên trống): Hệ thống trả về thông báo lỗi.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\subsubsection{Quản lý Workspace}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-06 \\
+Mã Use Case & UC-03.1 \\
 \hline
 Tên Use Case & Tạo Workspace \\
 \hline
-Actor & Người dùng đã đăng nhập \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Khởi tạo không gian làm việc mới để tổ chức các dự án liên quan. \\
+Mô tả tóm tắt & Người dùng tạo không gian làm việc mới để quản lý các Board liên quan. \\
 \hline
-Tiền điều kiện & Người dùng đã đăng nhập. \\
+Điều kiện & Người dùng đã đăng nhập thành công. \\
 \hline
-Hậu điều kiện & Workspace mới được tạo; người dùng tự động trở thành ADMIN của Workspace. \\
+Luồng chính & 1. Người dùng chọn chức năng tạo Workspace.\newline 2. Hệ thống hiển thị form nhập tên, loại và mô tả Workspace.\newline 3. Người dùng điền thông tin và nhấn Tạo.\newline 4. Hệ thống gọi API POST /api/v1/workspaces.\newline 5. Backend tạo Workspace và tự động thêm người tạo làm thành viên với vai trò ADMIN.\newline 6. Hệ thống hiển thị Workspace mới trong danh sách.\newline 7. Nếu tên Workspace bị bỏ trống, hệ thống trả về lỗi HTTP 400. \\
 \hline
-Luồng chính & 1. Người dùng nhập tên, loại và mô tả Workspace.\newline 2. Người dùng nhấn Tạo.\newline 3. Backend xác thực token và kiểm tra tên không trống.\newline 4. Backend tạo bản ghi Workspace trong cơ sở dữ liệu.\newline 5. Backend tự động thêm người dùng vào Workspace với vai trò ADMIN.\newline 6. Workspace mới hiển thị trong Dashboard. \\
-\hline
-Luồng thay thế & Tên Workspace trống: Hệ thống trả về lỗi HTTP 400.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tên Workspace bị bỏ trống: Hệ thống trả về lỗi HTTP 400.\newline Lỗi không xác định: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-07 \\
+Mã Use Case & UC-03.2 \\
 \hline
 Tên Use Case & Xem danh sách Workspace \\
 \hline
-Actor & Người dùng đã đăng nhập \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Hiển thị toàn bộ Workspace mà người dùng sở hữu hoặc tham gia. \\
+Mô tả tóm tắt & Người dùng xem toàn bộ danh sách Workspace mà mình sở hữu hoặc là thành viên. \\
 \hline
-Tiền điều kiện & Người dùng đã đăng nhập. \\
+Điều kiện & Người dùng đã đăng nhập thành công. \\
 \hline
-Hậu điều kiện & Danh sách Workspace được hiển thị trong Dashboard. \\
+Luồng chính & 1. Người dùng truy cập trang Dashboard.\newline 2. Hệ thống gọi API GET /api/v1/workspaces.\newline 3. Backend truy vấn danh sách Workspace mà người dùng sở hữu hoặc là thành viên.\newline 4. Hệ thống hiển thị danh sách Workspace kèm tên và mô tả. \\
 \hline
-Luồng chính & 1. Người dùng truy cập Dashboard.\newline 2. Frontend gửi yêu cầu lấy danh sách Workspace.\newline 3. Backend truy vấn các Workspace liên kết với người dùng.\newline 4. Danh sách Workspace được hiển thị. \\
+Luồng thay thế & Người dùng chưa có Workspace nào: Hệ thống hiển thị giao diện trống kèm gợi ý tạo Workspace mới. \\
 \hline
-Luồng thay thế & Không có Workspace: Hệ thống hiển thị trạng thái trống.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-03.3 \\
+\hline
+Tên Use Case & Xem chi tiết Workspace \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng xem thông tin chi tiết và danh sách Board trong một Workspace. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Workspace. \\
+\hline
+Luồng chính & 1. Người dùng chọn một Workspace từ danh sách.\newline 2. Hệ thống gọi API GET /api/v1/workspaces/:id.\newline 3. Backend kiểm tra quyền truy cập của người dùng.\newline 4. Hệ thống hiển thị tên, mô tả, loại Workspace và danh sách Board bên trong.\newline 5. Nếu Workspace không tồn tại hoặc người dùng không có quyền, hệ thống trả về lỗi HTTP 404 hoặc HTTP 403. \\
+\hline
+Luồng thay thế & Workspace không tồn tại: Hệ thống trả về lỗi HTTP 404.\newline Người dùng không có quyền truy cập: Hệ thống trả về lỗi HTTP 403. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-03.4 \\
+\hline
+Tên Use Case & Mời thành viên vào Workspace \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng có vai trò ADMIN mời người dùng khác tham gia vào Workspace. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và có vai trò ADMIN trong Workspace. \\
+\hline
+Luồng chính & 1. Người dùng truy cập trang quản lý thành viên Workspace.\newline 2. Người dùng tìm kiếm thành viên cần mời theo email.\newline 3. Người dùng chọn thành viên từ kết quả tìm kiếm và nhấn Mời.\newline 4. Hệ thống gọi API POST /api/v1/workspaces-members/:workspaceId.\newline 5. Backend kiểm tra người dùng tồn tại và chưa là thành viên.\newline 6. Backend thêm người dùng vào Workspace với vai trò MEMBER.\newline 7. Hệ thống cập nhật danh sách thành viên.\newline 8. Nếu người dùng đã là thành viên, hệ thống hiển thị thông báo lỗi. \\
+\hline
+Luồng thay thế & Người dùng được mời không tồn tại trong hệ thống: Hệ thống hiển thị thông báo lỗi.\newline Người dùng đã là thành viên của Workspace: Hệ thống hiển thị thông báo trùng lặp.\newline Người dùng không có quyền ADMIN: Hệ thống trả về lỗi HTTP 403. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-03.5 \\
+\hline
+Tên Use Case & Xem danh sách thành viên Workspace \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng xem danh sách các thành viên hiện có trong Workspace cùng vai trò của từng người. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Workspace. \\
+\hline
+Luồng chính & 1. Người dùng truy cập trang thành viên của Workspace.\newline 2. Hệ thống gọi API GET /api/v1/workspaces/:id/members.\newline 3. Backend truy vấn danh sách thành viên cùng vai trò trong Workspace.\newline 4. Hệ thống hiển thị danh sách thành viên kèm tên, email và vai trò. \\
+\hline
+Luồng thay thế & Workspace không tồn tại: Hệ thống trả về lỗi HTTP 404.\newline Người dùng không có quyền truy cập: Hệ thống trả về lỗi HTTP 403. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
 
+\textbf{UC-04: Quản lý Board}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc04.png}
+\caption{Biểu đồ Use Case UC-04: Quản lý Board}
+\label{fig:usecase_uc04}
+\end{figure}
+
+\vspace{0.3cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-08 \\
-\hline
-Tên Use Case & Cập nhật Workspace \\
-\hline
-Actor & Người dùng có vai trò ADMIN trong Workspace \\
-\hline
-Mục tiêu & Chỉnh sửa thông tin của Workspace hiện có. \\
-\hline
-Tiền điều kiện & Người dùng có vai trò ADMIN trong Workspace. \\
-\hline
-Hậu điều kiện & Thông tin Workspace được cập nhật trong cơ sở dữ liệu. \\
-\hline
-Luồng chính & 1. Người dùng mở cài đặt Workspace.\newline 2. Người dùng chỉnh sửa tên hoặc mô tả.\newline 3. Người dùng nhấn Lưu.\newline 4. Backend kiểm tra quyền ADMIN.\newline 5. Bản ghi được cập nhật.\newline 6. Giao diện phản ánh thay đổi. \\
-\hline
-Luồng thay thế & Người dùng không có quyền ADMIN: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-09 \\
-\hline
-Tên Use Case & Quản lý thành viên Workspace \\
-\hline
-Actor & Người dùng có vai trò ADMIN trong Workspace \\
-\hline
-Mục tiêu & Thêm thành viên vào Workspace để cộng tác. \\
-\hline
-Tiền điều kiện & Người dùng có vai trò ADMIN; người được mời đã có tài khoản trong hệ thống. \\
-\hline
-Hậu điều kiện & Thành viên được thêm vào Workspace với vai trò MEMBER. \\
-\hline
-Luồng chính & 1. Người dùng tìm kiếm thành viên qua email hoặc tên.\newline 2. Người dùng chọn thành viên cần thêm.\newline 3. Backend kiểm tra người dùng tồn tại và chưa là thành viên.\newline 4. Bản ghi thành viên được tạo.\newline 5. Danh sách thành viên được cập nhật. \\
-\hline
-Luồng thay thế & Người dùng đã là thành viên: Hệ thống trả về thông báo lỗi.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-30 \\
-\hline
-Tên Use Case & Xóa Workspace \\
-\hline
-Actor & Chủ sở hữu Workspace \\
-\hline
-Mục tiêu & Xóa vĩnh viễn Workspace và toàn bộ dữ liệu liên quan. \\
-\hline
-Tiền điều kiện & Người dùng là chủ sở hữu của Workspace. \\
-\hline
-Hậu điều kiện & Workspace và toàn bộ Board, List, Card con bị xóa khỏi hệ thống. \\
-\hline
-Luồng chính & 1. Người dùng mở cài đặt Workspace.\newline 2. Người dùng chọn xóa Workspace.\newline 3. Người dùng xác nhận thao tác.\newline 4. Backend kiểm tra quyền (chỉ chủ sở hữu mới được phép).\newline 5. Xóa cascade toàn bộ Board, List, Card và bản ghi thành viên.\newline 6. Workspace không còn xuất hiện trong Dashboard. \\
-\hline
-Luồng thay thế & Người dùng không phải chủ sở hữu: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\subsubsection{Quản lý Board}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-10 \\
+Mã Use Case & UC-04.1 \\
 \hline
 Tên Use Case & Tạo Board \\
 \hline
-Actor & Người dùng có vai trò ADMIN/MEMBER trong Workspace \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Tạo bảng công việc mới đại diện cho một dự án cụ thể trong Workspace. \\
+Mô tả tóm tắt & Người dùng tạo bảng công việc mới trong Workspace để quản lý các List và Card theo mô hình Kanban. \\
 \hline
-Tiền điều kiện & Người dùng có quyền ADMIN/MEMBER trong Workspace. \\
+Điều kiện & Người dùng đã đăng nhập và có vai trò ADMIN trong Workspace. \\
 \hline
-Hậu điều kiện & Board mới được tạo và hiển thị trong Workspace. \\
+Luồng chính & 1. Người dùng chọn chức năng tạo Board trong Workspace.\newline 2. Hệ thống hiển thị form nhập tên và chọn hình nền Board.\newline 3. Người dùng điền tên, chọn hình nền và nhấn Tạo.\newline 4. Hệ thống gọi API POST /api/v1/boards với workspaceId, title và backgroundUrl.\newline 5. Backend kiểm tra quyền ADMIN của người dùng trong Workspace.\newline 6. Backend tạo Board và trả về thông tin Board mới.\newline 7. Hệ thống hiển thị Board mới trong danh sách Workspace.\newline 8. Nếu người dùng không có quyền ADMIN, hệ thống trả về lỗi HTTP 403. \\
 \hline
-Luồng chính & 1. Người dùng chọn tạo Board mới trong Workspace.\newline 2. Người dùng nhập tên và chọn hình nền.\newline 3. Backend kiểm tra Workspace tồn tại và quyền truy cập.\newline 4. Board được tạo trong cơ sở dữ liệu.\newline 5. Board mới hiển thị trong Workspace. \\
-\hline
-Luồng thay thế & Workspace không tồn tại: HTTP 404. Người dùng không có quyền: HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Người dùng không có quyền ADMIN trong Workspace: Hệ thống trả về lỗi HTTP 403.\newline Tên Board bị bỏ trống: Hệ thống trả về lỗi HTTP 400. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-11 \\
+Mã Use Case & UC-04.2 \\
 \hline
-Tên Use Case & Xem Board \\
+Tên Use Case & Xem chi tiết Board \\
 \hline
-Actor & Người dùng là thành viên của Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Tải và hiển thị toàn bộ nội dung Board theo mô hình Kanban. \\
+Mô tả tóm tắt & Người dùng tải và xem toàn bộ nội dung Board bao gồm danh sách List và Card theo mô hình Kanban. \\
 \hline
-Tiền điều kiện & Người dùng là thành viên của Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & Toàn bộ List và Card được hiển thị theo thứ tự position. \\
+Luồng chính & 1. Người dùng chọn Board từ danh sách.\newline 2. Hệ thống gọi API GET /api/v1/boards/:id.\newline 3. Backend kiểm tra quyền của người dùng trong Board.\newline 4. Hệ thống tải và hiển thị toàn bộ List và Card theo mô hình Kanban.\newline 5. Nếu Board không tồn tại hoặc người dùng không có quyền, hệ thống trả về lỗi HTTP 404 hoặc HTTP 403. \\
 \hline
-Luồng chính & 1. Người dùng nhấn vào Board.\newline 2. Frontend gửi yêu cầu lấy dữ liệu Board.\newline 3. Backend xác thực quyền truy cập.\newline 4. Backend truy vấn Board, List và Card.\newline 5. Dữ liệu được hiển thị dạng Kanban. \\
-\hline
-Luồng thay thế & Board không tồn tại: HTTP 404. \newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Board không tồn tại: Hệ thống trả về lỗi HTTP 404.\newline Người dùng không có quyền truy cập Board: Hệ thống trả về lỗi HTTP 403. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-12 \\
+Mã Use Case & UC-04.3 \\
 \hline
-Tên Use Case & Cập nhật Board \\
+Tên Use Case & Cập nhật tên Board \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Chỉnh sửa tên hoặc hình nền của Board. \\
+Mô tả tóm tắt & Người dùng thay đổi tên của Board. \\
 \hline
-Tiền điều kiện & Người dùng có quyền ADMIN hoặc MEMBER trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và có vai trò ADMIN trong Board. \\
 \hline
-Hậu điều kiện & Thông tin Board được cập nhật trong cơ sở dữ liệu. \\
+Luồng chính & 1. Người dùng chọn chỉnh sửa tên Board.\newline 2. Hệ thống hiển thị ô nhập tên mới.\newline 3. Người dùng nhập tên mới và xác nhận.\newline 4. Hệ thống gọi API PUT /api/v1/boards/:id với tên mới.\newline 5. Backend cập nhật tên Board trong cơ sở dữ liệu.\newline 6. Hệ thống hiển thị tên Board đã cập nhật. \\
 \hline
-Luồng chính & 1. Người dùng mở cài đặt Board.\newline 2. Người dùng chỉnh sửa tên hoặc hình nền.\newline 3. Người dùng nhấn Lưu.\newline 4. Backend kiểm tra quyền.\newline 5. Bản ghi được cập nhật.\newline 6. Giao diện phản ánh thay đổi. \\
-\hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tên mới bị bỏ trống: Hệ thống không cho phép cập nhật.\newline Người dùng không có quyền ADMIN: Hệ thống trả về lỗi HTTP 403. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-13 \\
-\hline
-Tên Use Case & Quản lý thành viên Board \\
-\hline
-Actor & Người dùng có vai trò ADMIN trong Board \\
-\hline
-Mục tiêu & Thêm thành viên của ứng dụng vào Board với vai trò nhất định. \\
-\hline
-Tiền điều kiện & Người dùng có quyền ADMIN trong Board; người được mời là thành viên của Workspace. \\
-\hline
-Hậu điều kiện & Thành viên được thêm vào Board với vai trò được chỉ định. \\
-\hline
-Luồng chính & 1. Người dùng mở quản lý thành viên Board.\newline 2. Người dùng tìm kiếm thành viên.\newline 3. Người dùng chọn thành viên và vai trò.\newline 4. Backend kiểm tra quyền và tư cách thành viên Workspace.\newline 5. Bản ghi trong bảng board\_member được tạo.\newline 6. Danh sách thành viên được cập nhật. \\
-\hline
-Luồng thay thế & Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-31 \\
+Mã Use Case & UC-04.4 \\
 \hline
 Tên Use Case & Xóa Board \\
 \hline
-Actor & Người dùng có vai trò ADMIN trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Xóa vĩnh viễn Board và toàn bộ dữ liệu liên quan. \\
+Mô tả tóm tắt & Người dùng xóa vĩnh viễn Board cùng toàn bộ List và Card bên trong. \\
 \hline
-Tiền điều kiện & Người dùng có vai trò ADMIN trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và có vai trò ADMIN trong Board. \\
 \hline
-Hậu điều kiện & Board và toàn bộ List, Card, Checklist con bị xóa khỏi hệ thống. \\
+Luồng chính & 1. Người dùng chọn xóa Board.\newline 2. Hệ thống hiển thị hộp thoại xác nhận xóa.\newline 3. Người dùng xác nhận thao tác.\newline 4. Hệ thống gọi API DELETE /api/v1/boards/:id.\newline 5. Backend xóa Board và toàn bộ List, Card bên trong theo cơ chế cascade delete.\newline 6. Hệ thống chuyển hướng người dùng về trang Workspace.\newline 7. Nếu người dùng không có quyền ADMIN, hệ thống trả về lỗi HTTP 403. \\
 \hline
-Luồng chính & 1. Người dùng mở cài đặt Board.\newline 2. Người dùng chọn xóa Board.\newline 3. Người dùng xác nhận thao tác.\newline 4. Backend kiểm tra quyền ADMIN.\newline 5. Xóa cascade toàn bộ List, Card, Checklist, ChecklistItem và bản ghi thành viên.\newline 6. Board không còn xuất hiện trong Workspace. \\
-\hline
-Luồng thay thế & Người dùng không có quyền ADMIN: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Người dùng không có quyền ADMIN trong Board: Hệ thống trả về lỗi HTTP 403.\newline Board không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
-\subsubsection{Quản lý List}
-
+\vspace{0.5cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-14 \\
+Mã Use Case & UC-04.5 \\
+\hline
+Tên Use Case & Thêm thành viên vào Board \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng có vai trò ADMIN thêm thành viên từ Workspace vào Board với vai trò nhất định. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và có vai trò ADMIN trong Board; thành viên cần thêm phải là thành viên của Workspace. \\
+\hline
+Luồng chính & 1. Người dùng truy cập trang quản lý thành viên Board.\newline 2. Người dùng tìm kiếm thành viên trong Workspace và chọn người cần thêm.\newline 3. Người dùng chọn vai trò (ADMIN, MEMBER hoặc VIEWER) và nhấn Thêm.\newline 4. Hệ thống gọi API POST /api/v1/boards-members với userIds, boardId và roleId.\newline 5. Backend kiểm tra thành viên thuộc Workspace và chưa có trong Board.\newline 6. Backend thêm thành viên vào Board với vai trò được chỉ định.\newline 7. Hệ thống cập nhật danh sách thành viên Board. \\
+\hline
+Luồng thay thế & Thành viên không thuộc Workspace: Hệ thống không cho phép thêm vào Board.\newline Thành viên đã có trong Board: Hệ thống hiển thị thông báo trùng lặp.\newline Người dùng không có quyền ADMIN: Hệ thống trả về lỗi HTTP 403. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{UC-05: Quản lý List}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc05.png}
+\caption{Biểu đồ Use Case UC-05: Quản lý List}
+\label{fig:usecase_uc05}
+\end{figure}
+
+\vspace{0.3cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-05.1 \\
 \hline
 Tên Use Case & Tạo List \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Tạo cột danh sách công việc mới trong Board. \\
+Mô tả tóm tắt & Người dùng tạo cột danh sách công việc mới trong Board. \\
 \hline
-Tiền điều kiện & Người dùng có quyền ADMIN hoặc MEMBER trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & List mới được tạo và hiển thị trong Board. \\
+Luồng chính & 1. Người dùng chọn thêm List mới trong Board.\newline 2. Hệ thống hiển thị ô nhập tên List.\newline 3. Người dùng nhập tên và nhấn Thêm.\newline 4. Hệ thống gọi API POST /api/v1/lists với boardId và title.\newline 5. Backend tạo List mới và trả về listId, title, boardId.\newline 6. Hệ thống hiển thị List mới ở cuối Board.\newline 7. Nếu tên bị bỏ trống, hệ thống không cho phép tạo. \\
 \hline
-Luồng chính & 1. Người dùng nhấn thêm List mới.\newline 2. Người dùng nhập tên List.\newline 3. Backend xác thực quyền truy cập Board.\newline 4. Bản ghi List được tạo với position được cung cấp.\newline 5. List mới hiển thị trong Board. \\
-\hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tên List bị bỏ trống: Hệ thống không cho phép tạo.\newline Board không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-15 \\
+Mã Use Case & UC-05.2 \\
 \hline
-Tên Use Case & Cập nhật List \\
+Tên Use Case & Đổi tên List \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Đổi tên hoặc thay đổi vị trí của List trong Board. \\
+Mô tả tóm tắt & Người dùng thay đổi tên của một List trong Board. \\
 \hline
-Tiền điều kiện & List tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & Thông tin List được cập nhật; giao diện Board phản ánh thay đổi. \\
+Luồng chính & 1. Người dùng nhấp vào tên List hiện tại.\newline 2. Hệ thống chuyển sang chế độ chỉnh sửa tên.\newline 3. Người dùng nhập tên mới và xác nhận.\newline 4. Hệ thống gọi API PATCH /api/v1/lists/:id với tên mới.\newline 5. Backend cập nhật tên List trong cơ sở dữ liệu.\newline 6. Hệ thống hiển thị tên List đã cập nhật. \\
 \hline
-Luồng chính & 1. Người dùng chỉnh sửa tên List hoặc kéo thả để thay đổi vị trí.\newline 2. Backend xác thực quyền.\newline 3. Bản ghi được cập nhật.\newline 4. Giao diện phản ánh thay đổi. \\
-\hline
-Luồng thay thế & List không tồn tại: Hệ thống trả về HTTP 404.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tên mới bị bỏ trống: Hệ thống không cho phép cập nhật.\newline List không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-16 \\
+Mã Use Case & UC-05.3 \\
 \hline
 Tên Use Case & Xóa List \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Xóa List và toàn bộ Card bên trong khỏi Board. \\
+Mô tả tóm tắt & Người dùng xóa List và toàn bộ Card bên trong. \\
 \hline
-Tiền điều kiện & List tồn tại; người dùng có quyền ADMIN hoặc MEMBER trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & List và tất cả Card con bị xóa khỏi cơ sở dữ liệu. \\
+Luồng chính & 1. Người dùng chọn xóa List.\newline 2. Hệ thống hiển thị hộp thoại xác nhận.\newline 3. Người dùng xác nhận thao tác.\newline 4. Hệ thống gọi API DELETE /api/v1/lists/:id.\newline 5. Backend xóa List và toàn bộ Card bên trong theo cơ chế cascade delete.\newline 6. Hệ thống cập nhật giao diện Board. \\
 \hline
-Luồng chính & 1. Người dùng chọn xóa List.\newline 2. Người dùng xác nhận thao tác.\newline 3. Backend kiểm tra quyền.\newline 4. Xóa cascade List và Card.\newline 5. Giao diện Board được cập nhật. \\
-\hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & List không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
-\subsubsection{Quản lý Card}
-
+\vspace{0.5cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-17 \\
+Mã Use Case & UC-05.4 \\
+\hline
+Tên Use Case & Sắp xếp thứ tự List \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng kéo thả để thay đổi thứ tự hiển thị của các List trong Board. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
+\hline
+Luồng chính & 1. Người dùng nhấn giữ và kéo List sang vị trí mong muốn.\newline 2. Frontend tính toán giá trị position mới dựa trên thuật toán fractional indexing.\newline 3. Giao diện cập nhật thứ tự List ngay lập tức (optimistic update).\newline 4. Hệ thống gọi API PATCH /api/v1/lists/:id với position mới.\newline 5. Backend cập nhật trường position trong cơ sở dữ liệu. \\
+\hline
+Luồng thay thế & Lỗi xảy ra khi cập nhật position: Hệ thống hoàn tác về thứ tự cũ và hiển thị thông báo lỗi. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{UC-06: Quản lý Card}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc06.png}
+\caption{Biểu đồ Use Case UC-06: Quản lý Card}
+\label{fig:usecase_uc06}
+\end{figure}
+
+\vspace{0.3cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-06.1 \\
 \hline
 Tên Use Case & Tạo Card \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Tạo thẻ công việc mới trong một List cụ thể. \\
+Mô tả tóm tắt & Người dùng tạo thẻ công việc mới trong một List. \\
 \hline
-Tiền điều kiện & List tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & Card mới được tạo và hiển thị trong List. \\
+Luồng chính & 1. Người dùng chọn thêm Card trong một List.\newline 2. Hệ thống hiển thị ô nhập tiêu đề Card.\newline 3. Người dùng nhập tiêu đề và nhấn Thêm.\newline 4. Hệ thống gọi API POST /api/v1/cards với listId, title và position.\newline 5. Backend kiểm tra quyền người dùng trong Board.\newline 6. Backend tạo Card và trả về cardId, title, listId, position.\newline 7. Hệ thống hiển thị Card mới ở cuối List. \\
 \hline
-Luồng chính & 1. Người dùng nhấn thêm Card trong List.\newline 2. Người dùng nhập tiêu đề Card.\newline 3. Backend xác thực quyền truy cập Board.\newline 4. Bản ghi Card được tạo với position được cung cấp.\newline 5. Card mới hiển thị trong List. \\
-\hline
-Luồng thay thế & List không tồn tại: HTTP 404. Người dùng không có quyền: HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tiêu đề Card bị bỏ trống: Hệ thống không cho phép tạo.\newline List không tồn tại: Hệ thống trả về lỗi HTTP 404.\newline Người dùng không có quyền trong Board: Hệ thống trả về lỗi HTTP 403. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-18 \\
+Mã Use Case & UC-06.2 \\
 \hline
 Tên Use Case & Xem chi tiết Card \\
 \hline
-Actor & Người dùng là thành viên của Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Hiển thị đầy đủ thông tin của Card trong modal. \\
+Mô tả tóm tắt & Người dùng xem đầy đủ thông tin chi tiết của một Card bao gồm mô tả, ngày tháng, thành viên và checklist. \\
 \hline
-Tiền điều kiện & Card tồn tại; người dùng có quyền truy cập Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & Thông tin Card được hiển thị đầy đủ trong modal. \\
+Luồng chính & 1. Người dùng nhấp vào Card.\newline 2. Hệ thống gọi API GET /api/v1/cards/:id.\newline 3. Backend trả về đầy đủ thông tin Card bao gồm tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn, trạng thái hoàn thành, thành viên phụ trách và danh sách Checklist.\newline 4. Hệ thống hiển thị modal chi tiết Card. \\
 \hline
-Luồng chính & 1. Người dùng nhấn vào Card.\newline 2. Frontend gửi yêu cầu lấy chi tiết Card.\newline 3. Backend truy vấn Card cùng các quan hệ liên quan.\newline 4. Modal hiển thị đầy đủ tiêu đề, mô tả, ngày, thành viên và Checklist. \\
-\hline
-Luồng thay thế & Card không tồn tại: Hệ thống trả về HTTP 404.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Card không tồn tại: Hệ thống trả về lỗi HTTP 404.\newline Người dùng không có quyền trong Board: Hệ thống trả về lỗi HTTP 403. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-19 \\
+Mã Use Case & UC-06.3 \\
 \hline
 Tên Use Case & Cập nhật Card \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Chỉnh sửa thông tin chi tiết của Card. \\
+Mô tả tóm tắt & Người dùng chỉnh sửa thông tin của Card bao gồm tiêu đề, mô tả, ngày bắt đầu và ngày đến hạn. \\
 \hline
-Tiền điều kiện & Card tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & Card được cập nhật trong cơ sở dữ liệu; giao diện phản ánh thay đổi. \\
+Luồng chính & 1. Người dùng mở modal chi tiết Card.\newline 2. Người dùng chỉnh sửa các trường thông tin cần thiết (tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn).\newline 3. Hệ thống gọi API PATCH /api/v1/cards/:id với các trường đã thay đổi.\newline 4. Backend cập nhật Card trong cơ sở dữ liệu.\newline 5. Hệ thống hiển thị thông tin Card đã cập nhật. \\
 \hline
-Luồng chính & 1. Người dùng mở chi tiết Card.\newline 2. Người dùng chỉnh sửa tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn hoặc trạng thái.\newline 3. Backend kiểm tra quyền.\newline 4. Bản ghi được cập nhật.\newline 5. Giao diện phản ánh thay đổi. \\
-\hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tiêu đề bị bỏ trống: Hệ thống không cho phép lưu.\newline Lỗi không xác định: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-20 \\
+Mã Use Case & UC-06.4 \\
+\hline
+Tên Use Case & Đánh dấu Card hoàn thành \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng cập nhật trạng thái hoàn thành của Card. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
+\hline
+Luồng chính & 1. Người dùng mở modal chi tiết Card.\newline 2. Người dùng tích vào ô đánh dấu hoàn thành.\newline 3. Hệ thống gọi API PATCH /api/v1/cards/:id với isCompleted = true.\newline 4. Backend cập nhật trạng thái hoàn thành trong cơ sở dữ liệu.\newline 5. Hệ thống hiển thị trạng thái hoàn thành trên Card và trong modal. \\
+\hline
+Luồng thay thế & Lỗi xảy ra khi cập nhật: Hệ thống hoàn tác về trạng thái cũ và hiển thị thông báo lỗi. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-06.5 \\
+\hline
+Tên Use Case & Di chuyển Card giữa các List \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng kéo thả Card sang List khác hoặc thay đổi vị trí trong cùng một List. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
+\hline
+Luồng chính & 1. Người dùng nhấn giữ và kéo Card sang List mới hoặc vị trí khác trong cùng List.\newline 2. Frontend tính toán listId đích và giá trị position mới.\newline 3. Giao diện cập nhật vị trí Card ngay lập tức (optimistic update).\newline 4. Hệ thống gọi API PATCH /api/v1/cards/:id với listId mới và position mới.\newline 5. Backend cập nhật listId và position của Card trong cơ sở dữ liệu. \\
+\hline
+Luồng thay thế & Lỗi xảy ra khi cập nhật position: Hệ thống hoàn tác Card về vị trí cũ và hiển thị thông báo lỗi. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-06.6 \\
 \hline
 Tên Use Case & Xóa Card \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Xóa thẻ công việc khỏi hệ thống. \\
+Mô tả tóm tắt & Người dùng xóa Card và toàn bộ Checklist, ChecklistItem, CardMember liên quan. \\
 \hline
-Tiền điều kiện & Card tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board. \\
 \hline
-Hậu điều kiện & Card bị xóa khỏi cơ sở dữ liệu và giao diện Board. \\
+Luồng chính & 1. Người dùng mở modal chi tiết Card và chọn xóa.\newline 2. Hệ thống hiển thị hộp thoại xác nhận.\newline 3. Người dùng xác nhận thao tác.\newline 4. Hệ thống gọi API DELETE /api/v1/cards/:id.\newline 5. Backend xóa Card và toàn bộ dữ liệu liên quan theo cơ chế cascade delete.\newline 6. Hệ thống đóng modal và cập nhật giao diện Board. \\
 \hline
-Luồng chính & 1. Người dùng chọn xóa Card.\newline 2. Người dùng xác nhận thao tác.\newline 3. Backend kiểm tra quyền.\newline 4. Bản ghi Card bị xóa.\newline 5. Giao diện Board được cập nhật. \\
-\hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Card không tồn tại: Hệ thống trả về lỗi HTTP 404.\newline Lỗi không xác định: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
 
+\textbf{UC-07: Quản lý Checklist}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc07.png}
+\caption{Biểu đồ Use Case UC-07: Quản lý Checklist}
+\label{fig:usecase_uc07}
+\end{figure}
+
+\vspace{0.3cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-22 \\
-\hline
-Tên Use Case & Gán thành viên vào Card \\
-\hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
-\hline
-Mục tiêu & Chỉ định thành viên chịu trách nhiệm thực hiện Card. \\
-\hline
-Tiền điều kiện & Thành viên là thành viên của Board. \\
-\hline
-Hậu điều kiện & Bản ghi trong bảng card\_member được tạo hoặc xóa; avatar thành viên hiển thị trên Card. \\
-\hline
-Luồng chính & 1. Người dùng mở chi tiết Card.\newline 2. Người dùng chọn thành viên cần gán.\newline 3. Backend kiểm tra thành viên thuộc Board.\newline 4. Bản ghi card\_member được tạo.\newline 5. Avatar thành viên hiển thị trên Card. \\
-\hline
-Luồng thay thế & Hủy gán: Người dùng nhấn xóa thành viên khỏi Card; bản ghi card\_member bị xóa.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\subsubsection{Kéo thả (Drag and Drop)}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-23 \\
-\hline
-Tên Use Case & Kéo thả Card \\
-\hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
-\hline
-Mục tiêu & Di chuyển Card sang List khác hoặc sắp xếp lại thứ tự Card trong cùng một List. \\
-\hline
-Tiền điều kiện & Người dùng có quyền trong Board; Board đang được hiển thị. \\
-\hline
-Hậu điều kiện & Card được cập nhật position (và listId nếu di chuyển sang List khác); giao diện phản ánh thay đổi tức thì. \\
-\hline
-Luồng chính & 1. Người dùng kéo Card đến vị trí đích (trong cùng List hoặc sang List khác).\newline 2. Frontend cập nhật giao diện ngay lập tức (optimistic update).\newline 3. Frontend gửi PATCH /api/v1/cards/:id với position mới (kèm listId nếu di chuyển sang List khác).\newline 4. Backend cập nhật cơ sở dữ liệu. \\
-\hline
-Luồng thay thế & Yêu cầu API thất bại: Giao diện hoàn nguyên về trạng thái ban đầu.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\vspace{0.5cm}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-24 \\
-\hline
-Tên Use Case & Kéo thả List trong Board \\
-\hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
-\hline
-Mục tiêu & Thay đổi thứ tự hiển thị của các List trong Board. \\
-\hline
-Tiền điều kiện & Người dùng có quyền trong Board; Board đang được hiển thị. \\
-\hline
-Hậu điều kiện & Thứ tự List được cập nhật; giao diện Board phản ánh thay đổi tức thì. \\
-\hline
-Luồng chính & 1. Người dùng kéo List và thả vào vị trí mới.\newline 2. Frontend tính toán position mới.\newline 3. Frontend cập nhật giao diện ngay (optimistic update).\newline 4. Frontend gửi PATCH /api/v1/lists/:id với position mới.\newline 5. Backend cập nhật cơ sở dữ liệu. \\
-\hline
-Luồng thay thế & Yêu cầu API thất bại: Giao diện hoàn nguyên về trạng thái ban đầu.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
-\hline
-\end{tabular}
-
-\subsubsection{Quản lý Checklist}
-
-\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
-\hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
-\hline
-Use Case ID & FR-26 \\
+Mã Use Case & UC-07.1 \\
 \hline
 Tên Use Case & Tạo Checklist \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Tạo danh sách kiểm tra mới trong Card để theo dõi công việc con. \\
+Mô tả tóm tắt & Người dùng tạo danh sách kiểm tra mới bên trong một Card. \\
 \hline
-Tiền điều kiện & Card tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; Card đang mở. \\
 \hline
-Hậu điều kiện & Checklist mới được tạo và hiển thị trong modal Card. \\
+Luồng chính & 1. Người dùng chọn thêm Checklist trong modal Card.\newline 2. Hệ thống hiển thị ô nhập tên Checklist.\newline 3. Người dùng nhập tên và nhấn Thêm.\newline 4. Hệ thống gọi API POST /api/v1/checklists với cardId, name và position.\newline 5. Backend tạo Checklist và trả về thông tin.\newline 6. Hệ thống hiển thị Checklist mới trong modal Card. \\
 \hline
-Luồng chính & 1. Người dùng mở chi tiết Card.\newline 2. Người dùng nhấn thêm Checklist.\newline 3. Người dùng nhập tên Checklist.\newline 4. Backend xác thực quyền.\newline 5. Bản ghi Checklist được tạo.\newline 6. Checklist hiển thị trong modal Card. \\
-\hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tên Checklist bị bỏ trống: Hệ thống không cho phép tạo.\newline Card không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-27 \\
+Mã Use Case & UC-07.2 \\
 \hline
 Tên Use Case & Cập nhật Checklist \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Đổi tên Checklist. \\
+Mô tả tóm tắt & Người dùng thay đổi tên của Checklist. \\
 \hline
-Tiền điều kiện & Checklist tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; Checklist tồn tại. \\
 \hline
-Hậu điều kiện & Tên Checklist được cập nhật. \\
+Luồng chính & 1. Người dùng nhấp vào tên Checklist để chỉnh sửa.\newline 2. Người dùng nhập tên mới và xác nhận.\newline 3. Hệ thống gọi API PATCH /api/v1/checklists/:id với tên mới.\newline 4. Backend cập nhật tên Checklist trong cơ sở dữ liệu.\newline 5. Hệ thống hiển thị tên Checklist đã cập nhật. \\
 \hline
-Luồng chính & 1. Người dùng nhấn chỉnh sửa tên Checklist.\newline 2. Người dùng nhập tên mới.\newline 3. Backend cập nhật bản ghi.\newline 4. Giao diện phản ánh thay đổi. \\
-\hline
-Luồng thay thế & Tên trống: Không cho phép lưu.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Tên mới bị bỏ trống: Hệ thống không cho phép cập nhật.\newline Checklist không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
-
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-28 \\
+Mã Use Case & UC-07.3 \\
 \hline
 Tên Use Case & Xóa Checklist \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Xóa Checklist và toàn bộ ChecklistItem liên quan. \\
+Mô tả tóm tắt & Người dùng xóa Checklist và toàn bộ ChecklistItem bên trong. \\
 \hline
-Tiền điều kiện & Checklist tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; Checklist tồn tại. \\
 \hline
-Hậu điều kiện & Checklist và các ChecklistItem bị xóa khỏi cơ sở dữ liệu. \\
+Luồng chính & 1. Người dùng chọn xóa Checklist.\newline 2. Hệ thống hiển thị hộp thoại xác nhận.\newline 3. Người dùng xác nhận thao tác.\newline 4. Hệ thống gọi API DELETE /api/v1/checklists/:id.\newline 5. Backend xóa Checklist và toàn bộ ChecklistItem bên trong theo cơ chế cascade delete.\newline 6. Hệ thống cập nhật modal Card. \\
 \hline
-Luồng chính & 1. Người dùng nhấn xóa Checklist.\newline 2. Người dùng xác nhận thao tác.\newline 3. Backend xóa cascade Checklist và ChecklistItem.\newline 4. Giao diện modal Card được cập nhật. \\
+Luồng thay thế & Checklist không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
-Luồng thay thế & Người dùng không có quyền: Hệ thống trả về HTTP 403.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-07.4 \\
+\hline
+Tên Use Case & Tạo Checklist Item \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng thêm hạng mục công việc con mới vào Checklist. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; Checklist tồn tại. \\
+\hline
+Luồng chính & 1. Người dùng chọn thêm hạng mục trong Checklist.\newline 2. Hệ thống hiển thị ô nhập tên và ngày đến hạn.\newline 3. Người dùng nhập thông tin và nhấn Thêm.\newline 4. Hệ thống gọi API POST /api/v1/checklist-items với checklistId, name, position và dueDate.\newline 5. Backend tạo ChecklistItem với isCompleted = false.\newline 6. Hệ thống hiển thị hạng mục mới và cập nhật thanh tiến độ. \\
+\hline
+Luồng thay thế & Tên hạng mục bị bỏ trống: Hệ thống không cho phép thêm.\newline Checklist không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-07.5 \\
+\hline
+Tên Use Case & Cập nhật Checklist Item \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng chỉnh sửa tên hoặc ngày đến hạn của một hạng mục trong Checklist. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; ChecklistItem tồn tại. \\
+\hline
+Luồng chính & 1. Người dùng nhấp vào tên hạng mục để chỉnh sửa.\newline 2. Người dùng thay đổi tên hoặc ngày đến hạn.\newline 3. Người dùng xác nhận thay đổi.\newline 4. Hệ thống gọi API PATCH /api/v1/checklist-items/:id với thông tin mới.\newline 5. Backend cập nhật ChecklistItem trong cơ sở dữ liệu.\newline 6. Hệ thống hiển thị thông tin đã cập nhật. \\
+\hline
+Luồng thay thế & Tên mới bị bỏ trống: Hệ thống không cho phép cập nhật.\newline ChecklistItem không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-07.6 \\
+\hline
+Tên Use Case & Đánh dấu Checklist Item hoàn thành \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng tích hoặc bỏ tích trạng thái hoàn thành của một hạng mục, thanh tiến độ được cập nhật tự động. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; ChecklistItem tồn tại. \\
+\hline
+Luồng chính & 1. Người dùng tích vào ô bên cạnh tên hạng mục.\newline 2. Hệ thống gọi API PATCH /api/v1/checklist-items/:id với isCompleted = true (hoặc false nếu bỏ tích).\newline 3. Backend cập nhật trạng thái hoàn thành trong cơ sở dữ liệu.\newline 4. Frontend tính lại tỷ lệ hoàn thành và cập nhật thanh tiến độ. \\
+\hline
+Luồng thay thế & Lỗi xảy ra khi cập nhật: Hệ thống hoàn tác về trạng thái cũ, thanh tiến độ không thay đổi. \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-07.7 \\
+\hline
+Tên Use Case & Xóa Checklist Item \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng xóa một hạng mục khỏi Checklist. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; ChecklistItem tồn tại. \\
+\hline
+Luồng chính & 1. Người dùng chọn xóa hạng mục.\newline 2. Hệ thống gọi API DELETE /api/v1/checklist-items/:id.\newline 3. Backend xóa ChecklistItem khỏi cơ sở dữ liệu.\newline 4. Frontend tính lại tỷ lệ hoàn thành và cập nhật thanh tiến độ. \\
+\hline
+Luồng thay thế & ChecklistItem không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
 \hline
 \end{tabular}
 
 \vspace{0.5cm}
 
+\textbf{UC-08: Quản lý thành viên Card}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/chap3/usecase_uc08.png}
+\caption{Biểu đồ Use Case UC-08: Quản lý thành viên Card}
+\label{fig:usecase_uc08}
+\end{figure}
+
+\vspace{0.3cm}
 \noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
 \hline
-\textbf{Thuộc tính} & \textbf{Nội dung} \\
+\textbf{Thành phần} & \textbf{Nội dung} \\
 \hline
-Use Case ID & FR-29 \\
+Mã Use Case & UC-08.1 \\
 \hline
-Tên Use Case & Quản lý ChecklistItem \\
+Tên Use Case & Gán thành viên vào Card \\
 \hline
-Actor & Người dùng có vai trò ADMIN hoặc MEMBER trong Board \\
+Tác nhân chính & Người dùng \\
 \hline
-Mục tiêu & Thêm, cập nhật và xóa các hạng mục công việc con; theo dõi tiến độ hoàn thành. \\
+Mô tả tóm tắt & Người dùng gán một thành viên Board làm người phụ trách cho Card. \\
 \hline
-Tiền điều kiện & Checklist tồn tại; người dùng có quyền trong Board. \\
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; Card đang mở. \\
 \hline
-Hậu điều kiện & ChecklistItem được quản lý; thanh tiến độ phản ánh tỷ lệ phần trăm hoàn thành. \\
+Luồng chính & 1. Người dùng chọn chức năng gán thành viên trong modal Card.\newline 2. Hệ thống hiển thị danh sách thành viên Board có thể gán.\newline 3. Người dùng chọn thành viên cần gán.\newline 4. Hệ thống gọi API POST /api/v1/card-members với userId và cardId.\newline 5. Backend kiểm tra thành viên chưa được gán vào Card này.\newline 6. Backend tạo bản ghi CardMember.\newline 7. Hệ thống hiển thị avatar thành viên trực tiếp trên Card. \\
 \hline
-Luồng chính & 1. Thêm: Người dùng nhấn thêm item, nhập tên và nhấn Lưu; hệ thống gọi POST /api/v1/checklist-items.\newline 2. Cập nhật: Người dùng tích hoàn thành hoặc chỉnh sửa tên; hệ thống gọi PATCH /api/v1/checklist-items/:id.\newline 3. Xóa: Người dùng nhấn xóa item; hệ thống gọi DELETE /api/v1/checklist-items/:id.\newline 4. Frontend tính lại tỷ lệ hoàn thành và cập nhật thanh tiến độ. \\
-\hline
-Luồng thay thế & Tên item trống: Không cho phép thêm.\newline Lỗi không xác định: Trả về lỗi HTTP 500. \\
+Luồng thay thế & Thành viên đã được gán vào Card: Hệ thống hiển thị thông báo trùng lặp.\newline Thành viên không thuộc Board: Hệ thống không cho phép gán.\newline Lỗi không xác định: Hệ thống trả về lỗi HTTP 500. \\
 \hline
 \end{tabular}
 
-\subsection{Phân tích dữ liệu}
+\vspace{0.5cm}
+\noindent\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Nội dung} \\
+\hline
+Mã Use Case & UC-08.2 \\
+\hline
+Tên Use Case & Hủy gán thành viên khỏi Card \\
+\hline
+Tác nhân chính & Người dùng \\
+\hline
+Mô tả tóm tắt & Người dùng hủy gán thành viên khỏi Card, loại bỏ trách nhiệm phụ trách. \\
+\hline
+Điều kiện & Người dùng đã đăng nhập và là thành viên của Board; thành viên đã được gán vào Card. \\
+\hline
+Luồng chính & 1. Người dùng mở modal Card và truy cập danh sách thành viên đã gán.\newline 2. Người dùng chọn thành viên cần hủy gán.\newline 3. Hệ thống gọi API DELETE /api/v1/card-members/:id.\newline 4. Backend xóa bản ghi CardMember.\newline 5. Hệ thống cập nhật danh sách thành viên và xóa avatar khỏi Card. \\
+\hline
+Luồng thay thế & Bản ghi CardMember không tồn tại: Hệ thống trả về lỗi HTTP 404. \\
+\hline
+\end{tabular}
 
-\subsubsection{Các thực thể chính}
+\vspace{0.5cm}
+
+\subsubsection{Phân tích luồng nghiệp vụ}
+
+Biểu đồ hoạt động (Activity Diagram) được sử dụng để mô tả trình tự và luồng xử lý của từng chức năng trong hệ thống. Khác với biểu đồ Use Case chỉ trả lời ``Hệ thống làm gì?'', biểu đồ hoạt động trả lời ``Chức năng đó diễn ra như thế nào?'', thể hiện chi tiết các bước xử lý, nhánh điều kiện và luồng thay thế khi xảy ra lỗi.
+
+Phần này trình bày 36 biểu đồ hoạt động, mỗi biểu đồ tương ứng với một use case thành phần (UC-01.1 đến UC-08.2), mô tả chi tiết luồng nghiệp vụ của từng chức năng trong hệ thống Nello.
+
+% ── UC-01 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-01: Quản lý xác thực} \mbox{}\\
+
+Nhóm chức năng xác thực bao gồm năm luồng nghiệp vụ: đăng ký tài khoản, xác nhận OTP, gửi lại OTP, đăng nhập và làm mới token. Tất cả các luồng này đều ủy quyền xử lý xác thực cho dịch vụ Amazon Cognito.
+
+\medskip\noindent\textbf{UC-01.1: Đăng ký tài khoản}\medskip
+
+Người dùng nhập thông tin đăng ký; hệ thống xác thực dữ liệu đầu vào, sau đó ủy quyền cho Amazon Cognito tạo tài khoản tạm thời và gửi mã OTP qua email để tiến hành xác nhận.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_1.png}
+\caption{Biểu đồ hoạt động UC-01.1: Đăng ký tài khoản}
+\label{fig:activity_uc01_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-01.2: Xác nhận tài khoản bằng OTP}\medskip
+
+Người dùng nhập mã OTP nhận được qua email; hệ thống gửi yêu cầu xác nhận đến Cognito, kích hoạt tài khoản nếu mã hợp lệ và chuyển hướng đến trang đăng nhập.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_2.png}
+\caption{Biểu đồ hoạt động UC-01.2: Xác nhận tài khoản bằng OTP}
+\label{fig:activity_uc01_2}
+\end{figure}
+
+\medskip\noindent\textbf{UC-01.3: Gửi lại mã OTP}\medskip
+
+Khi mã OTP hết hạn hoặc không nhận được, người dùng yêu cầu gửi lại; hệ thống gọi Cognito để phát hành mã OTP mới và gửi về email đã đăng ký.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_3.png}
+\caption{Biểu đồ hoạt động UC-01.3: Gửi lại mã OTP}
+\label{fig:activity_uc01_3}
+\end{figure}
+
+\medskip\noindent\textbf{UC-01.4: Đăng nhập}\medskip
+
+Người dùng nhập thông tin đăng nhập; Cognito xác thực và cấp cặp JWT (access token, refresh token) được lưu vào HttpOnly Cookie, sau đó chuyển hướng đến Dashboard.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_4.png}
+\caption{Biểu đồ hoạt động UC-01.4: Đăng nhập}
+\label{fig:activity_uc01_4}
+\end{figure}
+
+\medskip\noindent\textbf{UC-01.5: Làm mới access token}\medskip
+
+Khi access token hết hạn, hệ thống tự động gửi refresh token đến Cognito để lấy access token mới; nếu refresh token không còn hợp lệ, phiên làm việc bị hủy và người dùng được chuyển về trang đăng nhập.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_5.png}
+\caption{Biểu đồ hoạt động UC-01.5: Làm mới access token}
+\label{fig:activity_uc01_5}
+\end{figure}
+
+% ── UC-02 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-02: Quản lý người dùng} \mbox{}\\
+
+Nhóm chức năng quản lý người dùng gồm hai luồng: xem và chỉnh sửa thông tin cá nhân. Cả hai luồng đều yêu cầu token hợp lệ để xác thực danh tính người dùng.
+
+\medskip\noindent\textbf{UC-02.1: Xem thông tin cá nhân}\medskip
+
+Hệ thống xác thực token, gọi API lấy thông tin hồ sơ và hiển thị đầy đủ thông tin cá nhân của người dùng đang đăng nhập.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc02_1.png}
+\caption{Biểu đồ hoạt động UC-02.1: Xem thông tin cá nhân}
+\label{fig:activity_uc02_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-02.2: Chỉnh sửa thông tin cá nhân}\medskip
+
+Người dùng tải thông tin hiện tại, chỉnh sửa trên form và gửi yêu cầu cập nhật; hệ thống kiểm tra tính hợp lệ, lưu thay đổi và thông báo kết quả.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc02_2.png}
+\caption{Biểu đồ hoạt động UC-02.2: Chỉnh sửa thông tin cá nhân}
+\label{fig:activity_uc02_2}
+\end{figure}
+
+% ── UC-03 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-03: Quản lý Workspace} \mbox{}\\
+
+Nhóm chức năng quản lý Workspace gồm năm luồng: tạo, xem danh sách, xem chi tiết, mời thành viên và xem danh sách thành viên. Người tạo Workspace được tự động gán vai trò quản trị viên.
+
+\medskip\noindent\textbf{UC-03.1: Tạo Workspace}\medskip
+
+Người dùng nhập tên, chọn danh mục và mô tả; hệ thống tạo Workspace và gán người tạo vai trò ADMIN, sau đó chuyển hướng đến trang chi tiết vừa tạo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc03_1.png}
+\caption{Biểu đồ hoạt động UC-03.1: Tạo Workspace}
+\label{fig:activity_uc03_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-03.2: Xem danh sách Workspace}\medskip
+
+Hệ thống tải toàn bộ Workspace mà người dùng sở hữu hoặc là thành viên và hiển thị trên trang Dashboard.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc03_2.png}
+\caption{Biểu đồ hoạt động UC-03.2: Xem danh sách Workspace}
+\label{fig:activity_uc03_2}
+\end{figure}
+
+\medskip\noindent\textbf{UC-03.3: Xem chi tiết Workspace}\medskip
+
+Hệ thống kiểm tra quyền truy cập và trả về thông tin Workspace gồm tên, danh mục, mô tả, danh sách Board và thành viên.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc03_3.png}
+\caption{Biểu đồ hoạt động UC-03.3: Xem chi tiết Workspace}
+\label{fig:activity_uc03_3}
+\end{figure}
+
+\medskip\noindent\textbf{UC-03.4: Mời thành viên vào Workspace}\medskip
+
+Quản trị viên nhập email người dùng cần mời; hệ thống xác minh email tồn tại trong hệ thống, thêm thành viên với vai trò MEMBER và thông báo kết quả.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc03_4.png}
+\caption{Biểu đồ hoạt động UC-03.4: Mời thành viên vào Workspace}
+\label{fig:activity_uc03_4}
+\end{figure}
+
+\medskip\noindent\textbf{UC-03.5: Xem danh sách thành viên Workspace}\medskip
+
+Hệ thống xác thực quyền truy cập và trả về danh sách thành viên Workspace kèm vai trò và thông tin cá nhân tương ứng.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc03_5.png}
+\caption{Biểu đồ hoạt động UC-03.5: Xem danh sách thành viên Workspace}
+\label{fig:activity_uc03_5}
+\end{figure}
+
+% ── UC-04 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-04: Quản lý Board} \mbox{}\\
+
+Nhóm chức năng quản lý Board gồm năm luồng: tạo, xem chi tiết, cập nhật tên, xóa và thêm thành viên. Các thao tác thay đổi cấu trúc Board yêu cầu người dùng có vai trò quản trị viên.
+
+\medskip\noindent\textbf{UC-04.1: Tạo Board}\medskip
+
+Người dùng nhập tên và chọn ảnh nền từ danh sách có sẵn; hệ thống khởi tạo Board trong Workspace và chuyển hướng đến giao diện Kanban.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc04_1.png}
+\caption{Biểu đồ hoạt động UC-04.1: Tạo Board}
+\label{fig:activity_uc04_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-04.2: Xem chi tiết Board}\medskip
+
+Hệ thống kiểm tra quyền truy cập, tải toàn bộ dữ liệu Board bao gồm các List và Card, rồi hiển thị theo dạng Kanban.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc04_2.png}
+\caption{Biểu đồ hoạt động UC-04.2: Xem chi tiết Board}
+\label{fig:activity_uc04_2}
+\end{figure}
+
+\medskip\noindent\textbf{UC-04.3: Cập nhật tên Board}\medskip
+
+Người dùng chỉnh sửa tiêu đề Board trực tiếp trên giao diện; hệ thống xác thực và lưu tên mới, thông báo cập nhật thành công.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc04_3.png}
+\caption{Biểu đồ hoạt động UC-04.3: Cập nhật tên Board}
+\label{fig:activity_uc04_3}
+\end{figure}
+
+\medskip\noindent\textbf{UC-04.4: Xóa Board}\medskip
+
+Sau khi xác nhận xóa, hệ thống xóa Board cùng toàn bộ dữ liệu liên quan (List, Card, Checklist) theo cơ chế cascade và chuyển hướng về trang Workspace.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc04_4.png}
+\caption{Biểu đồ hoạt động UC-04.4: Xóa Board}
+\label{fig:activity_uc04_4}
+\end{figure}
+
+\medskip\noindent\textbf{UC-04.5: Thêm thành viên vào Board}\medskip
+
+Quản trị viên chọn thành viên từ danh sách Workspace và gán vai trò; hệ thống thêm thành viên vào Board với quyền hạn tương ứng.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc04_5.png}
+\caption{Biểu đồ hoạt động UC-04.5: Thêm thành viên vào Board}
+\label{fig:activity_uc04_5}
+\end{figure}
+
+% ── UC-05 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-05: Quản lý List} \mbox{}\\
+
+Nhóm chức năng quản lý List gồm bốn luồng: tạo, đổi tên, xóa và sắp xếp thứ tự. Tính năng sắp xếp áp dụng optimistic update để đảm bảo trải nghiệm tương tác tức thì.
+
+\medskip\noindent\textbf{UC-05.1: Tạo List}\medskip
+
+Người dùng nhập tên List mới; hệ thống lưu List với vị trí cuối cùng trong Board và hiển thị cột mới trên giao diện Kanban.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc05_1.png}
+\caption{Biểu đồ hoạt động UC-05.1: Tạo List}
+\label{fig:activity_uc05_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-05.2: Đổi tên List}\medskip
+
+Người dùng chỉnh sửa tiêu đề List trực tiếp; hệ thống xác thực và cập nhật tên mới lên giao diện và cơ sở dữ liệu.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc05_2.png}
+\caption{Biểu đồ hoạt động UC-05.2: Đổi tên List}
+\label{fig:activity_uc05_2}
+\end{figure}
+
+\medskip\noindent\textbf{UC-05.3: Xóa List}\medskip
+
+Sau khi xác nhận, hệ thống xóa List và toàn bộ dữ liệu liên quan (Card, Checklist, ChecklistItem) theo cơ chế cascade, đồng thời xóa cột tương ứng khỏi giao diện Kanban.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc05_3.png}
+\caption{Biểu đồ hoạt động UC-05.3: Xóa List}
+\label{fig:activity_uc05_3}
+\end{figure}
+
+\medskip\noindent\textbf{UC-05.4: Sắp xếp thứ tự List}\medskip
+
+Người dùng kéo thả List sang vị trí mới; giao diện cập nhật tức thì (optimistic update) và đồng bộ với máy chủ; nếu thất bại, giao diện tự động khôi phục về thứ tự cũ.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc05_4.png}
+\caption{Biểu đồ hoạt động UC-05.4: Sắp xếp thứ tự List}
+\label{fig:activity_uc05_4}
+\end{figure}
+
+% ── UC-06 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-06: Quản lý Card} \mbox{}\\
+
+Nhóm chức năng quản lý Card gồm sáu luồng: tạo, xem chi tiết, cập nhật, đánh dấu hoàn thành, di chuyển giữa các List và xóa. Card là thực thể trung tâm của hệ thống, liên kết với Checklist và thành viên phụ trách.
+
+\medskip\noindent\textbf{UC-06.1: Tạo Card}\medskip
+
+Người dùng nhập tiêu đề Card trong một List; hệ thống lưu Card với vị trí cuối cùng trong List và hiển thị Card mới trên cột Kanban.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc06_1.png}
+\caption{Biểu đồ hoạt động UC-06.1: Tạo Card}
+\label{fig:activity_uc06_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-06.2: Xem chi tiết Card}\medskip
+
+Hệ thống kiểm tra quyền truy cập và trả về đầy đủ thông tin Card gồm tiêu đề, mô tả, ngày hạn, Checklist và danh sách thành viên phụ trách, hiển thị trong Card Detail Modal.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc06_2.png}
+\caption{Biểu đồ hoạt động UC-06.2: Xem chi tiết Card}
+\label{fig:activity_uc06_2}
+\end{figure}
+
+\medskip\noindent\textbf{UC-06.3: Cập nhật Card}\medskip
+
+Người dùng chỉnh sửa các trường thông tin của Card (tiêu đề, mô tả, ngày bắt đầu, ngày đến hạn); hệ thống xác thực dữ liệu và lưu thay đổi.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc06_3.png}
+\caption{Biểu đồ hoạt động UC-06.3: Cập nhật Card}
+\label{fig:activity_uc06_3}
+\end{figure}
+
+\medskip\noindent\textbf{UC-06.4: Đánh dấu Card hoàn thành}\medskip
+
+Người dùng nhấn nút đánh dấu hoàn thành; hệ thống cập nhật trạng thái \texttt{isCompleted = true} và phản ánh thay đổi trên giao diện Card.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc06_4.png}
+\caption{Biểu đồ hoạt động UC-06.4: Đánh dấu Card hoàn thành}
+\label{fig:activity_uc06_4}
+\end{figure}
+
+\medskip\noindent\textbf{UC-06.5: Di chuyển Card giữa các List}\medskip
+
+Người dùng kéo thả Card sang List đích; giao diện cập nhật tức thì (optimistic update) và đồng bộ vị trí mới với máy chủ; nếu thất bại, Card được khôi phục về vị trí ban đầu.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc06_5.png}
+\caption{Biểu đồ hoạt động UC-06.5: Di chuyển Card giữa các List}
+\label{fig:activity_uc06_5}
+\end{figure}
+
+\medskip\noindent\textbf{UC-06.6: Xóa Card}\medskip
+
+Sau khi xác nhận, hệ thống xóa Card và toàn bộ dữ liệu liên quan (Checklist, ChecklistItem, CardMember) theo cơ chế cascade.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc06_6.png}
+\caption{Biểu đồ hoạt động UC-06.6: Xóa Card}
+\label{fig:activity_uc06_6}
+\end{figure}
+
+% ── UC-07 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-07: Quản lý Checklist} \mbox{}\\
+
+Nhóm chức năng quản lý Checklist gồm bảy luồng: tạo, cập nhật và xóa Checklist; tạo, cập nhật, đánh dấu hoàn thành và xóa Checklist Item. Thanh tiến độ (progress bar) được cập nhật tức thì sau mỗi thay đổi trạng thái Item.
+
+\medskip\noindent\textbf{UC-07.1: Tạo Checklist}\medskip
+
+Người dùng nhập tên Checklist trong Card Detail Modal; hệ thống lưu Checklist và hiển thị ngay trong giao diện Card.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_1.png}
+\caption{Biểu đồ hoạt động UC-07.1: Tạo Checklist}
+\label{fig:activity_uc07_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-07.2: Cập nhật Checklist}\medskip
+
+Người dùng chỉnh sửa tên Checklist; hệ thống lưu thông tin mới và cập nhật giao diện.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_2.png}
+\caption{Biểu đồ hoạt động UC-07.2: Cập nhật Checklist}
+\label{fig:activity_uc07_2}
+\end{figure}
+
+\medskip\noindent\textbf{UC-07.3: Xóa Checklist}\medskip
+
+Sau khi xác nhận, hệ thống xóa Checklist và toàn bộ ChecklistItem bên trong theo cơ chế cascade.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_3.png}
+\caption{Biểu đồ hoạt động UC-07.3: Xóa Checklist}
+\label{fig:activity_uc07_3}
+\end{figure}
+
+\medskip\noindent\textbf{UC-07.4: Tạo Checklist Item}\medskip
+
+Người dùng nhập tên Item trong một Checklist; hệ thống lưu Item với vị trí cuối cùng và hiển thị ngay trong danh sách.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_4.png}
+\caption{Biểu đồ hoạt động UC-07.4: Tạo Checklist Item}
+\label{fig:activity_uc07_4}
+\end{figure}
+
+\medskip\noindent\textbf{UC-07.5: Cập nhật Checklist Item}\medskip
+
+Người dùng chỉnh sửa tên hoặc ngày đến hạn của Item; hệ thống xác thực và lưu thay đổi lên cơ sở dữ liệu.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_5.png}
+\caption{Biểu đồ hoạt động UC-07.5: Cập nhật Checklist Item}
+\label{fig:activity_uc07_5}
+\end{figure}
+
+\medskip\noindent\textbf{UC-07.6: Đánh dấu Checklist Item hoàn thành}\medskip
+
+Người dùng tick checkbox của Item; hệ thống cập nhật trạng thái \texttt{isCompleted} và làm mới thanh tiến độ của Checklist tương ứng.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_6.png}
+\caption{Biểu đồ hoạt động UC-07.6: Đánh dấu Checklist Item hoàn thành}
+\label{fig:activity_uc07_6}
+\end{figure}
+
+\medskip\noindent\textbf{UC-07.7: Xóa Checklist Item}\medskip
+
+Sau khi xác nhận, hệ thống xóa Item và cập nhật thanh tiến độ của Checklist phản ánh số lượng Item còn lại.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc07_7.png}
+\caption{Biểu đồ hoạt động UC-07.7: Xóa Checklist Item}
+\label{fig:activity_uc07_7}
+\end{figure}
+
+% ── UC-08 ──────────────────────────────────────────────────────────────────
+
+\paragraph{UC-08: Quản lý thành viên Card} \mbox{}\\
+
+Nhóm chức năng quản lý thành viên Card gồm hai luồng: gán và hủy gán thành viên phụ trách. Hệ thống chỉ cho phép gán thành viên đã có trong Board, ngăn trùng lặp.
+
+\medskip\noindent\textbf{UC-08.1: Gán thành viên vào Card}\medskip
+
+Hệ thống tải danh sách thành viên Board chưa được gán vào Card; người dùng chọn thành viên và hệ thống thêm vào danh sách phụ trách, cập nhật giao diện Card ngay lập tức.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc08_1.png}
+\caption{Biểu đồ hoạt động UC-08.1: Gán thành viên vào Card}
+\label{fig:activity_uc08_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-08.2: Hủy gán thành viên khỏi Card}\medskip
+
+Người dùng chọn thành viên cần gỡ bỏ khỏi Card; hệ thống xóa quan hệ gán và cập nhật danh sách phụ trách trên giao diện.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc08_2.png}
+\caption{Biểu đồ hoạt động UC-08.2: Hủy gán thành viên khỏi Card}
+\label{fig:activity_uc08_2}
+\end{figure}
+
+\subsubsection{Phân tích dữ liệu}
+
+\paragraph{Các thực thể chính} \mbox{}\\
 
 Hệ thống xoay quanh sáu thực thể nghiệp vụ chính được tổ chức theo cấu trúc phân cấp:
 
@@ -1150,7 +1832,7 @@ Hệ thống xoay quanh sáu thực thể nghiệp vụ chính được tổ ch�
     \item \textbf{ChecklistItem:} Hạng mục cụ thể trong Checklist, có thể được đánh dấu hoàn thành hoặc chưa hoàn thành, và có thể thiết lập thời hạn riêng.
 \end{itemize}
 
-\subsubsection{Quan hệ giữa các thực thể}
+\paragraph{Quan hệ giữa các thực thể} \mbox{}\\
 
 \begin{itemize}
     \item Một \textbf{User} có thể sở hữu nhiều \textbf{Workspace} và là thành viên của nhiều \textbf{Workspace} và \textbf{Board} khác.
@@ -1161,115 +1843,342 @@ Hệ thống xoay quanh sáu thực thể nghiệp vụ chính được tổ ch�
     \item Một \textbf{Checklist} chứa nhiều \textbf{ChecklistItem}.
 \end{itemize}
 
-\subsection{Luồng dữ liệu}
+\subsection{Thiết kế hệ thống}
 
-\subsubsection{Luồng xác thực người dùng}
+\subsubsection{Thiết kế kiến trúc tổng thể}
+
+Hệ thống Nello áp dụng kiến trúc \textbf{Client-Server phân tách hoàn toàn} (decoupled Frontend/Backend). Frontend và Backend là hai ứng dụng độc lập, giao tiếp với nhau thông qua RESTful API. Toàn bộ logic nghiệp vụ được xử lý tập trung tại Backend; Frontend chịu trách nhiệm trình bày giao diện và tương tác người dùng.
+
+\paragraph{Phân tầng hệ thống} \mbox{}\\
+
+Hệ thống được tổ chức thành ba tầng chính:
+
+\begin{itemize}
+    \item \textbf{Frontend (ReactJS):} Ứng dụng chạy trên trình duyệt, bao gồm ba nhóm giao diện chính: xác thực (Auth Pages), quản lý Workspace và Dashboard, và giao diện Kanban (Board/List/Card). Frontend giao tiếp với Backend qua REST API sử dụng JSON, token được lưu trong HttpOnly Cookie.
+
+    \item \textbf{Backend (Spring Boot):} Cung cấp toàn bộ RESTful API tại base path \texttt{/api/v1}. Kiến trúc nội bộ Backend tuân theo mô hình phân lớp gồm ba tầng:
+    \begin{itemize}
+        \item \textbf{Controller Layer:} Tiếp nhận HTTP request, kiểm tra JWT từ cookie, ủy quyền xử lý cho Service Layer và trả về HTTP response chuẩn hóa.
+        \item \textbf{Service Layer:} Chứa toàn bộ logic nghiệp vụ, điều phối giữa Repository và các dịch vụ ngoài (Cognito, S3).
+        \item \textbf{Repository Layer:} Truy xuất và lưu trữ dữ liệu thông qua Spring Data JPA, giao tiếp trực tiếp với PostgreSQL qua JDBC.
+    \end{itemize}
+
+    \item \textbf{Dịch vụ ngoài (AWS):} Gồm Amazon Cognito (xác thực người dùng và cấp JWT), PostgreSQL trên AWS RDS (cơ sở dữ liệu chính), và Amazon S3 (lưu trữ tệp đa phương tiện).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.75\textheight, keepaspectratio]{images/chap3/component_system.png}
+\caption{Biểu đồ thành phần hệ thống Nello}
+\label{fig:component_system}
+\end{figure}
+
+\paragraph{Kiến trúc triển khai} \mbox{}\\
+
+Hệ thống được triển khai trên nền tảng AWS với toàn bộ máy chủ và cơ sở dữ liệu đặt trong một Virtual Private Cloud (VPC) riêng biệt, cách ly hoàn toàn với Internet. Các thành phần triển khai chính gồm:
+
+\begin{itemize}
+    \item \textbf{Amazon ALB (Application Load Balancer):} Điểm vào (entry point) duy nhất nhận lưu lượng từ Internet, phân phối request đến EC2 Frontend hoặc EC2 Backend trong mạng private.
+
+    \item \textbf{EC2 (Frontend):} Ứng dụng ReactJS được đóng gói bằng Docker và phục vụ qua Nginx. Chỉ nhận lưu lượng từ ALB, không tiếp xúc trực tiếp với Internet.
+
+    \item \textbf{EC2 (Backend):} Ứng dụng Spring Boot xử lý API. Chỉ nhận request nội bộ từ ALB và giao tiếp với RDS và Cognito.
+
+    \item \textbf{Amazon RDS (PostgreSQL):} Cơ sở dữ liệu quan hệ trong mạng private sâu nhất, chỉ Backend mới được phép truy cập.
+
+    \item \textbf{Amazon CloudFront + S3:} CloudFront đóng vai trò CDN phân phối tài nguyên tĩnh từ S3 đến người dùng với độ trễ thấp.
+\end{itemize}
+
+Luồng hoạt động chính gồm ba hướng: (1) Tải giao diện: Client $\to$ ALB $\to$ EC2 Frontend; (2) Tài nguyên tĩnh: Client $\to$ CloudFront $\to$ S3; (3) Xử lý nghiệp vụ: Client $\to$ ALB $\to$ EC2 Backend $\to$ RDS hoặc Cognito.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{./images/chap3/Auth Flow.png}
-    \caption{Luồng xác thực người dùng}
-    \label{fig:auth_flow}
+    \includegraphics[width=\textwidth]{"./images/chap2/Nello System Architech.png"}
+    \caption{Kiến trúc triển khai hệ thống Nello trên AWS}
+    \label{fig:nello_system_architech_chap3}
 \end{figure}
 
-\begin{enumerate}
-    \item Người dùng nhập thông tin đăng nhập trên giao diện ReactJS.
-    \item Frontend gửi POST \texttt{/api/v1/auth/sign-in} đến Backend qua ALB.
-    \item Backend gọi Amazon Cognito API để xác thực thông tin đăng nhập.
-    \item Cognito xác thực và trả về access token (JWT) cùng refresh token cho Backend.
-    \item Backend đặt các token vào HttpOnly cookie và trả về phản hồi thành công (HTTP 200).
-    \item Frontend nhận phản hồi và chuyển hướng người dùng đến Dashboard.
-    \item Với mỗi request API tiếp theo, Backend đọc token từ cookie, xác minh chữ ký JWT và xử lý yêu cầu nếu hợp lệ.
-\end{enumerate}
+% ─────────────────────────────────────────────────────────────────────────────
 
-\subsection{Thiết kế cơ sở dữ liệu}
+\subsubsection{Thiết kế tương tác giữa các thành phần}
 
-Cơ sở dữ liệu PostgreSQL được thiết kế bao gồm các kiểu liệt kê (ENUM), bảng tra cứu và bảng nghiệp vụ. Mỗi bảng được mô tả chi tiết qua cấu trúc cột, kiểu dữ liệu và ràng buộc tương ứng.
+Biểu đồ tuần tự (Sequence Diagram) mô tả cách các thành phần trong hệ thống giao tiếp với nhau theo thứ tự thời gian. Phần này trình bày mười luồng tương tác tiêu biểu, bao quát toàn bộ vòng đời sử dụng hệ thống Nello: từ xác thực tài khoản, khởi tạo không gian làm việc, vận hành bảng Kanban, đến các thao tác kéo thả nâng cao với kỹ thuật optimistic update.
+
+% ── SD-01 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-01: Luồng đăng ký tài khoản} \mbox{}\\
+
+Đăng ký là luồng hai bước: bước đầu Backend gọi Cognito để tạo tài khoản tạm thời và Cognito tự động gửi mã OTP qua email; bước hai người dùng nhập OTP và Backend gọi Cognito xác nhận để kích hoạt tài khoản. Toàn bộ trạng thái tài khoản (\texttt{UNCONFIRMED} / \texttt{CONFIRMED}) được quản lý bởi Cognito, Backend không lưu trữ mật khẩu.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./images/DatabaseDesign.png}
-    \caption{Thiết kế cơ sở dữ liệu}
-    \label{fig:database_design}
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd01.png}
+\caption{Biểu đồ tuần tự SD-01: Luồng đăng ký tài khoản}
+\label{fig:sequence_sd01}
 \end{figure}
 
-\subsubsection{Kiểu liệt kê}
+% ── SD-02 ─────────────────────────────────────────────────────────────────────
 
-Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để chuẩn hóa các vai trò người dùng trong toàn bộ hệ thống.
+\paragraph{SD-02: Luồng đăng nhập} \mbox{}\\
+
+Backend đóng vai trò trung gian — thay vì Client gọi trực tiếp Cognito, toàn bộ quá trình xác thực được Backend điều phối qua AWS SDK. Sau khi Cognito xác thực thành công, Backend tìm kiếm user trong PostgreSQL theo \texttt{cognito\_id}; nếu chưa tồn tại (lần đăng nhập đầu tiên), Backend tự động tạo mới bản ghi user. JWT nhận được được lưu vào HttpOnly Cookie để bảo vệ khỏi tấn công XSS.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd02.png}
+\caption{Biểu đồ tuần tự SD-02: Luồng đăng nhập}
+\label{fig:sequence_sd02}
+\end{figure}
+
+% ── SD-03 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-03: Luồng tạo Workspace} \mbox{}\\
+
+Workspace là đơn vị tổ chức cấp cao nhất trong hệ thống. Sau khi Backend xác thực JWT, hệ thống thực hiện hai thao tác ghi tuần tự: tạo bản ghi Workspace và tự động ghi nhận người tạo là thành viên với vai trò \texttt{OWNER} trong bảng \texttt{workspace\_members}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd03.png}
+\caption{Biểu đồ tuần tự SD-03: Luồng tạo Workspace}
+\label{fig:sequence_sd03}
+\end{figure}
+
+% ── SD-04 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-04: Luồng tạo Board} \mbox{}\\
+
+Board được tạo trong phạm vi một Workspace. Backend kiểm tra người dùng có phải thành viên của Workspace trước khi cho phép tạo Board. Sau khi Board được tạo, người tạo được ghi nhận tự động là thành viên Board với vai trò \texttt{OWNER}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd04.png}
+\caption{Biểu đồ tuần tự SD-04: Luồng tạo Board}
+\label{fig:sequence_sd04}
+\end{figure}
+
+% ── SD-05 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-05: Luồng tạo List} \mbox{}\\
+
+List là các cột trong giao diện Kanban. Backend kiểm tra quyền thành viên Board trước khi thực hiện INSERT. Trường \texttt{position} sử dụng giá trị chuỗi phân số (fractional indexing) để hỗ trợ sắp xếp linh hoạt mà không cần cập nhật lại toàn bộ danh sách.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd05.png}
+\caption{Biểu đồ tuần tự SD-05: Luồng tạo List}
+\label{fig:sequence_sd05}
+\end{figure}
+
+% ── SD-06 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-06: Luồng tạo Card} \mbox{}\\
+
+Card là đơn vị công việc cơ bản trong hệ thống. Backend thực hiện hai bước kiểm tra tuần tự trước khi ghi: xác minh List đích tồn tại và xác minh người dùng có quyền trong Board tương ứng. Cơ chế phân quyền này đảm bảo mọi thao tác tạo dữ liệu đều được kiểm soát chặt chẽ.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd06.png}
+\caption{Biểu đồ tuần tự SD-06: Luồng tạo Card}
+\label{fig:sequence_sd06}
+\end{figure}
+
+% ── SD-07 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-07: Luồng tải chi tiết Board} \mbox{}\\
+
+Đây là luồng đọc dữ liệu lồng nhau phức tạp nhất trong hệ thống. Backend thực hiện tuần tự: kiểm tra Board tồn tại, kiểm tra quyền truy cập của người dùng, sau đó truy vấn danh sách List và Card theo thứ tự \texttt{position}. Toàn bộ dữ liệu được trả về trong một response để Frontend có thể render ngay giao diện Kanban.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd07.png}
+\caption{Biểu đồ tuần tự SD-07: Luồng tải chi tiết Board}
+\label{fig:sequence_sd07}
+\end{figure}
+
+% ── SD-08 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-08: Luồng thêm thành viên vào Board} \mbox{}\\
+
+Luồng gồm hai giai đoạn: tìm kiếm user theo email và thêm vào Board. Backend xác minh người yêu cầu có quyền trong Board, kiểm tra user đích tồn tại và chưa là thành viên trước khi thực hiện INSERT vào bảng \texttt{board\_members}; nếu đã là thành viên, hệ thống trả về lỗi \texttt{409 Conflict} để tránh trùng lặp.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd08.png}
+\caption{Biểu đồ tuần tự SD-08: Luồng thêm thành viên vào Board}
+\label{fig:sequence_sd08}
+\end{figure}
+
+% ── SD-09 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-09: Luồng di chuyển Card (Drag-and-Drop)} \mbox{}\\
+
+Luồng này minh họa kỹ thuật \textbf{optimistic update} — giao diện được cập nhật tức thì ngay khi người dùng kéo thả Card, trước khi nhận phản hồi từ Backend, nhằm tối ưu trải nghiệm người dùng. Nếu yêu cầu cập nhật thất bại (lỗi mạng, hết hạn phiên...), Frontend tự động rollback giao diện về trạng thái trước đó.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd09.png}
+\caption{Biểu đồ tuần tự SD-09: Luồng di chuyển Card (Drag-and-Drop)}
+\label{fig:sequence_sd09}
+\end{figure}
+
+% ── SD-10 ─────────────────────────────────────────────────────────────────────
+
+\paragraph{SD-10: Luồng di chuyển List (Drag-and-Drop)} \mbox{}\\
+
+Tương tự SD-09, luồng di chuyển List cũng áp dụng kỹ thuật \textbf{optimistic update}. Khi người dùng kéo thả một List sang vị trí khác trong Board, Frontend cập nhật giao diện ngay lập tức trong khi Backend cập nhật trường \texttt{position} vào cơ sở dữ liệu. Nếu thao tác thất bại, UI được rollback về trạng thái ban đầu.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/sequence_sd10.png}
+\caption{Biểu đồ tuần tự SD-10: Luồng di chuyển List (Drag-and-Drop)}
+\label{fig:sequence_sd10}
+\end{figure}
+
+\subsubsection{Thiết kế cơ sở dữ liệu}
+
+Cơ sở dữ liệu của hệ thống Nello sử dụng PostgreSQL, bao gồm 13 bảng được tổ chức thành ba nhóm: bảng tra cứu (lookup tables), bảng tham chiếu (reference tables) và bảng nghiệp vụ (business tables). Khóa chính của các bảng nghiệp vụ sử dụng kiểu UUID để đảm bảo tính duy nhất toàn cục; các bảng tra cứu sử dụng INT. Cơ chế xóa theo tầng (cascade delete) được áp dụng nhất quán theo chuỗi: Workspace $\rightarrow$ Board $\rightarrow$ List $\rightarrow$ Card $\rightarrow$ Checklist $\rightarrow$ ChecklistItem.
+
+\paragraph{Sơ đồ quan hệ} \mbox{}\\
+
+\clearpage
+\begin{figure}[p]
+    \centering
+    \vspace*{-5cm}
+    \noindent\makebox[\textwidth][c]{\includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{./images/DB_Design.png}}
+    \caption{Sơ đồ quan hệ cơ sở dữ liệu hệ thống Nello}
+    \label{fig:erd}
+\end{figure}
+\clearpage
+
+Sơ đồ quan hệ thể hiện toàn bộ cấu trúc dữ liệu của hệ thống với 13 bảng được tổ chức thành ba nhóm chính: bảng tra cứu dùng chung, chuỗi phân cấp nghiệp vụ và bảng trung gian quản lý thành viên. \\
+
+\textbf{Nhóm 1: Bảng tra cứu dùng chung}
+
+\begin{itemize}
+    \item \textbf{\texttt{roles} -- \texttt{workspace\_members} / \texttt{board\_members} (1--N):} Bảng \texttt{roles} lưu ba vai trò \texttt{ADMIN}, \texttt{MEMBER}, \texttt{VIEWER}. Cả hai bảng \texttt{workspace\_members} và \texttt{board\_members} đều tham chiếu đến \texttt{roles} qua khóa ngoại \texttt{role\_id}, đảm bảo tính nhất quán của hệ thống phân quyền trong toàn hệ thống.
+    \item \textbf{\texttt{workspace\_categories} -- \texttt{workspaces} (1--N):} Mỗi Workspace bắt buộc phải thuộc một loại được định nghĩa sẵn trong \texttt{workspace\_categories} thông qua khóa ngoại \texttt{category\_id}. Một loại Workspace có thể được gán cho nhiều Workspace khác nhau.
+    \item \textbf{\texttt{images} -- \texttt{boards}:} Bảng \texttt{images} cung cấp danh sách 8 ảnh nền cố định. Board lưu đường dẫn ảnh được chọn vào trường \texttt{background\_url}.
+\end{itemize}
+
+\textbf{Nhóm 2: Chuỗi phân cấp nghiệp vụ} \\
+
+Hệ thống tổ chức dữ liệu theo chuỗi phân cấp từ trên xuống dưới: \texttt{users} $\rightarrow$ \texttt{workspaces} $\rightarrow$ \texttt{boards} $\rightarrow$ \texttt{lists} $\rightarrow$ \texttt{cards} $\rightarrow$ \texttt{checklists} $\rightarrow$ \texttt{checklist\_items}. Mỗi cấp đều áp dụng ràng buộc \texttt{ON DELETE CASCADE}, nghĩa là khi một bản ghi ở cấp trên bị xóa, toàn bộ dữ liệu ở các cấp dưới sẽ bị xóa theo.
+
+\begin{itemize}
+    \item \textbf{\texttt{users} -- \texttt{workspaces} (1--N):} Mỗi Workspace được tạo bởi một người dùng xác định qua \texttt{created\_by}. Trường \texttt{updated\_by} ghi lại người thực hiện cập nhật gần nhất, cả hai đều là khóa ngoại tham chiếu \texttt{users.id}.
+    \item \textbf{\texttt{workspaces} -- \texttt{boards} (1--N):} Mỗi Board thuộc về đúng một Workspace qua khóa ngoại \texttt{workspace\_id}. Khi Workspace bị xóa, toàn bộ Board bên trong bị xóa theo (CASCADE).
+    \item \textbf{\texttt{boards} -- \texttt{lists} (1--N):} Mỗi List thuộc về đúng một Board qua khóa ngoại \texttt{board\_id}. Thứ tự hiển thị của các List được quản lý qua trường \texttt{position} theo thuật toán fractional indexing.
+    \item \textbf{\texttt{lists} -- \texttt{cards} (1--N):} Mỗi Card thuộc về đúng một List qua khóa ngoại \texttt{list\_id}. Card có thể được di chuyển giữa các List trong cùng Board bằng cách cập nhật \texttt{list\_id}.
+    \item \textbf{\texttt{cards} -- \texttt{checklists} (1--N):} Mỗi Checklist gắn với một Card duy nhất qua khóa ngoại \texttt{card\_id}. Một Card có thể chứa nhiều Checklist, thứ tự hiển thị được quản lý qua \texttt{position}.
+    \item \textbf{\texttt{checklists} -- \texttt{checklist\_items} (1--N):} Mỗi ChecklistItem thuộc về đúng một Checklist qua khóa ngoại \texttt{checklist\_id}. Tỷ lệ hoàn thành của Checklist được tính dựa trên số lượng item có \texttt{is\_completed = true}.
+\end{itemize}
+
+\textbf{Nhóm 3: Quan hệ nhiều--nhiều quản lý thành viên}
+
+\begin{itemize}
+    \item \textbf{\texttt{users} -- \texttt{workspaces} qua \texttt{workspace\_members} (N--N):} Một người dùng có thể là thành viên của nhiều Workspace và một Workspace có thể có nhiều thành viên. Bảng trung gian \texttt{workspace\_members} lưu cặp (\texttt{user\_id}, \texttt{workspace\_id}) cùng với \texttt{role\_id} xác định quyền hạn. Ràng buộc UNIQUE trên cặp này đảm bảo mỗi người dùng chỉ có một vai trò duy nhất trong mỗi Workspace.
+    \item \textbf{\texttt{users} -- \texttt{boards} qua \texttt{board\_members} (N--N):} Bảng \texttt{board\_members} quản lý danh sách thành viên trong từng Board kèm vai trò tương ứng, độc lập với danh sách thành viên Workspace. Một người dùng bất kỳ có thể được thêm vào Board mà không cần phải là thành viên của Workspace chứa Board đó. Ràng buộc UNIQUE trên cặp (\texttt{user\_id}, \texttt{board\_id}) ngăn chặn trùng lặp.
+    \item \textbf{\texttt{users} -- \texttt{cards} qua \texttt{card\_members} (N--N):} Bảng \texttt{card\_members} ghi nhận các thành viên được gán làm người phụ trách cho Card. Không có trường \texttt{role\_id} vì quan hệ này chỉ mang ý nghĩa gán trách nhiệm, không phân quyền. Ràng buộc UNIQUE trên cặp (\texttt{user\_id}, \texttt{card\_id}) đảm bảo mỗi thành viên chỉ được gán một lần.
+\end{itemize}
+
+\paragraph{Đặc tả bảng} \mbox{}\\
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{roles}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{roles} lưu trữ các vai trò của thành viên trong hệ thống. Đây là bảng tra cứu dùng chung cho cả Workspace và Board. \\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|l|p{10cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Giá trị} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{ADMIN} & Quản trị viên, có toàn quyền quản lý trong Workspace hoặc Board. \\
+\texttt{id} & INT & Khóa chính & Mã vai trò. \\
 \hline
-\texttt{MEMBER} & Thành viên thông thường. \\
-\hline
-\texttt{VIEWER} & Người xem, chỉ có quyền đọc dữ liệu. \\
-\hline
-\end{tabular}
-\caption{Kiểu liệt kê \texttt{role\_name\_enum}}
-\label{tab:enum_role}
-\end{table}
-
-\subsubsection{Bảng tra cứu}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
-\hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
-\hline
-\texttt{id} & INT & Khóa chính, NOT NULL & Mã vai trò. \\
-\hline
-\texttt{name} & \texttt{role\_name\_enum} & NOT NULL, UNIQUE & Tên vai trò (ADMIN, MEMBER, VIEWER). \\
+\texttt{name} & role\_name\_enum & NOT NULL, UNIQUE & Tên vai trò. \\
 \hline
 \end{tabular}
 \caption{Bảng \texttt{roles}}
-\label{tab:roles}
+\label{tab:db_roles}
 \end{table}
+
+\textbf{c. Ghi chú}
+
+Trường \texttt{name} thuộc kiểu liệt kê \texttt{role\_name\_enum} nhận một trong ba giá trị: \texttt{ADMIN}, \texttt{MEMBER}, \texttt{VIEWER}. Dữ liệu được nạp sẵn khi khởi tạo hệ thống.
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{images}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{images} cung cấp danh sách 8 ảnh nền cố định cho Board. Người dùng chọn một trong các ảnh này khi tạo hoặc cập nhật Board. \\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & INT & Khóa chính, NOT NULL & Mã hình ảnh. \\
+\texttt{id} & INT & Khóa chính & Mã ảnh nền. \\
 \hline
-\texttt{key} & TEXT & NOT NULL & Đường dẫn tương đối đến tệp hình nền Board. \\
+\texttt{key} & TEXT & NOT NULL & Đường dẫn tương đối đến tệp ảnh nền. \\
 \hline
 \end{tabular}
 \caption{Bảng \texttt{images}}
-\label{tab:images}
+\label{tab:db_images}
 \end{table}
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{workspace\_categories}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{workspace\_categories} lưu danh sách các loại Workspace để phân loại không gian làm việc khi tạo mới.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
 \texttt{id} & INT & Khóa chính & Mã loại Workspace. \\
 \hline
-\texttt{name} & VARCHAR(255) & NOT NULL & Tên loại Workspace (ví dụ: Sales CRM, IT, Education...). \\
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên loại Workspace. \\
 \hline
 \end{tabular}
 \caption{Bảng \texttt{workspace\_categories}}
-\label{tab:workspace_categories}
+\label{tab:db_workspace_categories}
 \end{table}
 
-\subsubsection{Bảng nghiệp vụ}
+\textbf{c. Ghi chú}
+
+Hệ thống cung cấp sẵn 8 loại: Sales CRM, Education, Human Resources, Operation, Marketing, IT, Small Business, Other.
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{users}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{users} lưu thông tin người dùng trong hệ thống. Thông tin xác thực được quản lý bởi Amazon Cognito; trường \texttt{cognito\_id} là liên kết giữa hệ thống nội bộ và Cognito User Pool.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh nội bộ. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh nội bộ. \\
 \hline
 \texttt{cognito\_id} & VARCHAR(255) & NOT NULL, UNIQUE & Mã định danh từ Amazon Cognito. \\
 \hline
@@ -1277,7 +2186,7 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \texttt{email} & VARCHAR(255) & NOT NULL, UNIQUE & Địa chỉ email. \\
 \hline
-\texttt{avatar\_url} & VARCHAR(255) & NULL & Đường dẫn ảnh đại diện lưu trên S3. \\
+\texttt{avatar\_url} & VARCHAR(255) & NULL & Đường dẫn ảnh đại diện. \\
 \hline
 \texttt{bio} & TEXT & NULL & Giới thiệu bản thân. \\
 \hline
@@ -1293,26 +2202,35 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \end{tabular}
 \caption{Bảng \texttt{users}}
-\label{tab:users}
+\label{tab:db_users}
 \end{table}
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{workspaces}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{workspaces} lưu thông tin các không gian làm việc. Đây là đơn vị tổ chức cấp cao nhất trong hệ thống, chứa nhiều Board bên trong.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
 \texttt{name} & VARCHAR(255) & NOT NULL & Tên Workspace. \\
 \hline
 \texttt{description} & VARCHAR(255) & NULL & Mô tả Workspace. \\
 \hline
-\texttt{category\_id} & INT & NOT NULL, FK $\rightarrow$ \texttt{workspace\_categories} & Loại Workspace. \\
+\texttt{category\_id} & INT & NOT NULL, FK $\rightarrow$ workspace\_categories & Loại Workspace. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Workspace. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người tạo Workspace. \\
 \hline
-\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ users & Người cập nhật gần nhất. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
 \hline
@@ -1320,51 +2238,71 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \end{tabular}
 \caption{Bảng \texttt{workspaces}}
-\label{tab:workspaces}
+\label{tab:db_workspaces}
 \end{table}
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{workspace\_members}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{workspace\_members} là bảng trung gian thể hiện quan hệ nhiều--nhiều giữa người dùng và Workspace. Mỗi bản ghi xác định một thành viên trong một Workspace cùng vai trò tương ứng.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
-\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Thành viên được thêm vào Workspace. \\
+\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ users & Thành viên được thêm vào Workspace. \\
 \hline
-\texttt{workspace\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{workspaces} & Workspace chứa thành viên. \\
+\texttt{workspace\_id} & UUID & NOT NULL, FK $\rightarrow$ workspaces & Workspace chứa thành viên. \\
 \hline
-\texttt{role\_id} & INT & NOT NULL, FK $\rightarrow$ \texttt{roles} & Vai trò của thành viên trong Workspace. \\
+\texttt{role\_id} & INT & NOT NULL, FK $\rightarrow$ roles & Vai trò trong Workspace. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người thêm thành viên. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người thêm thành viên. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm thêm thành viên. \\
 \hline
-\multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{workspace\_id})} \\
-\hline
 \end{tabular}
-\caption{Bảng \texttt{workspace\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{workspaces}}
-\label{tab:workspace_members}
+\caption{Bảng \texttt{workspace\_members}}
+\label{tab:db_workspace_members}
 \end{table}
+
+\textbf{c. Ghi chú}
+
+Ràng buộc UNIQUE trên cặp (\texttt{user\_id}, \texttt{workspace\_id}) đảm bảo mỗi người dùng chỉ có một vai trò duy nhất trong một Workspace. Khi Workspace hoặc User bị xóa, bản ghi liên quan sẽ bị xóa theo (ON DELETE CASCADE).
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{boards}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{boards} lưu thông tin các bảng công việc bên trong Workspace. Mỗi Board có thể có ảnh nền riêng được chọn từ bảng \texttt{images}.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
 \texttt{name} & VARCHAR(255) & NOT NULL & Tên Board. \\
 \hline
-\texttt{background\_url} & TEXT & NULL & Đường dẫn hình nền. \\
+\texttt{background\_url} & TEXT & NULL & Đường dẫn ảnh nền Board. \\
 \hline
-\texttt{workspace\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{workspaces} & Workspace chứa Board. \\
+\texttt{workspace\_id} & UUID & NOT NULL, FK $\rightarrow$ workspaces, CASCADE & Workspace chứa Board. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Board. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người tạo Board. \\
 \hline
-\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ users & Người cập nhật gần nhất. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
 \hline
@@ -1372,51 +2310,71 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \end{tabular}
 \caption{Bảng \texttt{boards}}
-\label{tab:boards}
+\label{tab:db_boards}
 \end{table}
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{board\_members}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{board\_members} là bảng trung gian thể hiện quan hệ nhiều--nhiều giữa người dùng và Board. Mỗi thành viên trong Board có một vai trò xác định quyền thao tác trong Board đó.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
-\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Thành viên được thêm vào Board. \\
+\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ users & Thành viên được thêm vào Board. \\
 \hline
-\texttt{board\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{boards} & Board chứa thành viên. \\
+\texttt{board\_id} & UUID & NOT NULL, FK $\rightarrow$ boards, CASCADE & Board chứa thành viên. \\
 \hline
-\texttt{role\_id} & INT & NOT NULL, FK $\rightarrow$ \texttt{roles} & Vai trò trong Board (ADMIN, MEMBER, VIEWER). \\
+\texttt{role\_id} & INT & NOT NULL, FK $\rightarrow$ roles & Vai trò trong Board. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người thêm thành viên. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người thêm thành viên. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm thêm thành viên. \\
 \hline
-\multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{board\_id})} \\
-\hline
 \end{tabular}
-\caption{Bảng \texttt{board\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{boards}}
-\label{tab:board_members}
+\caption{Bảng \texttt{board\_members}}
+\label{tab:db_board_members}
 \end{table}
+
+\textbf{c. Ghi chú}
+
+Ràng buộc UNIQUE trên cặp (\texttt{user\_id}, \texttt{board\_id}) đảm bảo mỗi người dùng chỉ có một vai trò duy nhất trong một Board. Danh sách thành viên Board hoàn toàn độc lập với danh sách thành viên Workspace — người dùng có thể được thêm trực tiếp vào Board mà không cần thuộc Workspace chứa Board đó.
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{lists}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{lists} lưu các cột trạng thái (List) bên trong Board theo mô hình Kanban. Thứ tự hiển thị của List được quản lý qua trường \texttt{position}.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
 \texttt{name} & VARCHAR(255) & NOT NULL & Tên List. \\
 \hline
-\texttt{position} & TEXT & NOT NULL & Giá trị vị trí dùng để sắp xếp và xử lý kéo thả. \\
+\texttt{position} & TEXT & NOT NULL & Giá trị vị trí dùng để sắp xếp và kéo thả. \\
 \hline
-\texttt{board\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{boards} & Board chứa List. \\
+\texttt{board\_id} & UUID & NOT NULL, FK $\rightarrow$ boards, CASCADE & Board chứa List. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo List. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người tạo List. \\
 \hline
-\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ users & Người cập nhật gần nhất. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
 \hline
@@ -1424,34 +2382,47 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \end{tabular}
 \caption{Bảng \texttt{lists}}
-\label{tab:lists}
+\label{tab:db_lists}
 \end{table}
+
+\textbf{c. Ghi chú}
+
+Trường \texttt{position} sử dụng kiểu TEXT thay vì INT để tránh phải đánh lại chỉ số toàn bộ khi chèn phần tử vào giữa. Thuật toán fractional indexing được áp dụng để tính giá trị position khi kéo thả.
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{cards}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{cards} là bảng trung tâm của hệ thống, lưu toàn bộ thông tin về các thẻ công việc. Mỗi Card thuộc về một List và có thể được gán thành viên phụ trách, thiết lập ngày bắt đầu và ngày đến hạn.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
 \texttt{title} & VARCHAR(255) & NOT NULL & Tiêu đề Card. \\
 \hline
 \texttt{description} & TEXT & NULL & Mô tả chi tiết. \\
 \hline
-\texttt{position} & TEXT & NOT NULL & Giá trị vị trí dùng để sắp xếp và xử lý kéo thả. \\
-\hline
-\texttt{list\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{lists} & List chứa Card. \\
-\hline
 \texttt{start\_date} & TIMESTAMP & NULL & Ngày bắt đầu. \\
 \hline
-\texttt{due\_date} & TIMESTAMP & NULL & Ngày đến hạn. \\
+\texttt{due\_date} & TIMESTAMP & NULL & Ngày đến hạn hoàn thành. \\
 \hline
-\texttt{is\_completed} & BOOLEAN & DEFAULT FALSE & Trạng thái hoàn thành của Card. \\
+\texttt{is\_completed} & BOOLEAN & NOT NULL, DEFAULT FALSE & Trạng thái hoàn thành. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Card. \\
+\texttt{position} & TEXT & NOT NULL & Giá trị vị trí dùng để sắp xếp và kéo thả. \\
 \hline
-\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\texttt{list\_id} & UUID & NOT NULL, FK $\rightarrow$ lists, CASCADE & List chứa Card. \\
+\hline
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người tạo Card. \\
+\hline
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ users & Người cập nhật gần nhất. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
 \hline
@@ -1459,49 +2430,69 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \end{tabular}
 \caption{Bảng \texttt{cards}}
-\label{tab:cards}
+\label{tab:db_cards}
 \end{table}
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{card\_members}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{card\_members} là bảng trung gian thể hiện quan hệ nhiều--nhiều giữa người dùng và Card. Mỗi bản ghi xác định một thành viên được gán làm người phụ trách cho Card.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
-\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Thành viên được gán vào Card. \\
+\texttt{user\_id} & UUID & NOT NULL, FK $\rightarrow$ users & Thành viên được gán vào Card. \\
 \hline
-\texttt{card\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{cards} & Card được gán thành viên. \\
+\texttt{card\_id} & UUID & NOT NULL, FK $\rightarrow$ cards, CASCADE & Card được gán thành viên. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người gán thành viên. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người gán thành viên. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm gán thành viên. \\
 \hline
-\multicolumn{4}{|l|}{Ràng buộc UNIQUE: (\texttt{user\_id}, \texttt{card\_id})} \\
-\hline
 \end{tabular}
-\caption{Bảng \texttt{card\_members} -- quan hệ nhiều-nhiều giữa \texttt{users} và \texttt{cards}}
-\label{tab:card_members}
+\caption{Bảng \texttt{card\_members}}
+\label{tab:db_card_members}
 \end{table}
+
+\textbf{c. Ghi chú}
+
+Ràng buộc UNIQUE trên cặp (\texttt{user\_id}, \texttt{card\_id}) đảm bảo mỗi thành viên chỉ được gán một lần cho mỗi Card.
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{checklists}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{checklists} lưu các danh sách kiểm tra bên trong Card. Mỗi Card có thể có nhiều Checklist, mỗi Checklist lại chứa nhiều ChecklistItem.\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
 \texttt{name} & VARCHAR(255) & NOT NULL & Tên Checklist. \\
 \hline
 \texttt{position} & TEXT & NOT NULL & Vị trí hiển thị trong Card. \\
 \hline
-\texttt{card\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{cards} & Card chứa Checklist. \\
+\texttt{card\_id} & UUID & NOT NULL, FK $\rightarrow$ cards, CASCADE & Card chứa Checklist. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo Checklist. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người tạo Checklist. \\
 \hline
-\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ users & Người cập nhật gần nhất. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
 \hline
@@ -1509,18 +2500,27 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \end{tabular}
 \caption{Bảng \texttt{checklists}}
-\label{tab:checklists}
+\label{tab:db_checklists}
 \end{table}
+
+% ------------------------------------------------------------------
+\paragraph{Bảng \texttt{checklist\_items}} \mbox{}\\
+
+\textbf{a. Mô tả}
+
+Bảng \texttt{checklist\_items} lưu các hạng mục công việc con bên trong Checklist. Mỗi hạng mục có trạng thái hoàn thành riêng và có thể thiết lập ngày đến hạn độc lập. Frontend sử dụng tỷ lệ \texttt{is\_completed} của các item để hiển thị thanh tiến độ (progress bar).\\
+
+\textbf{b. Cấu trúc bảng}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{5cm}|}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
-\textbf{Tên cột} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Mô tả} \\
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Ràng buộc} & \textbf{Ý nghĩa} \\
 \hline
-\texttt{id} & UUID & Khóa chính, NOT NULL & Mã định danh. \\
+\texttt{id} & UUID & Khóa chính & Mã định danh. \\
 \hline
-\texttt{name} & VARCHAR(255) & NOT NULL & Tên hạng mục công việc con. \\
+\texttt{name} & VARCHAR(255) & NOT NULL & Tên hạng mục. \\
 \hline
 \texttt{position} & TEXT & NOT NULL & Vị trí hiển thị trong Checklist. \\
 \hline
@@ -1528,60 +2528,29 @@ Hệ thống định nghĩa kiểu liệt kê \texttt{role\_name\_enum} để ch
 \hline
 \texttt{due\_date} & TIMESTAMP & NULL & Thời hạn riêng của hạng mục. \\
 \hline
-\texttt{checklist\_id} & UUID & NOT NULL, FK $\rightarrow$ \texttt{checklists} & Checklist chứa hạng mục. \\
+\texttt{checklist\_id} & UUID & NOT NULL, FK $\rightarrow$ checklists, CASCADE & Checklist chứa hạng mục. \\
 \hline
-\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ \texttt{users} & Người tạo hạng mục. \\
+\texttt{created\_by} & UUID & NOT NULL, FK $\rightarrow$ users & Người tạo hạng mục. \\
 \hline
-\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ \texttt{users} & Người cập nhật gần nhất. \\
+\texttt{updated\_by} & UUID & NULL, FK $\rightarrow$ users & Người cập nhật gần nhất. \\
 \hline
 \texttt{created\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm tạo bản ghi. \\
 \hline
 \texttt{updated\_at} & TIMESTAMP & NOT NULL, DEFAULT NOW() & Thời điểm cập nhật gần nhất. \\
 \hline
-\multicolumn{4}{|l|}{Ràng buộc CHECK: \texttt{is\_completed IN (true, false)}} \\
-\hline
 \end{tabular}
 \caption{Bảng \texttt{checklist\_items}}
-\label{tab:checklist_items}
+\label{tab:db_checklist_items}
 \end{table}
 
-\subsection{Thiết kế tổng thể hệ thống}
+\textbf{c. Ghi chú}
 
-Hệ thống được triển khai trên nền tảng điện toán đám mây AWS với sự bao bọc trong một Mạng riêng ảo (VPC) nhằm tối ưu hóa tính bảo mật. Kiến trúc tổng thể được thiết kế với 9 thành phần chính và sự tương tác chặt chẽ như sau:
+Ràng buộc CHECK trên trường \texttt{is\_completed} đảm bảo chỉ nhận hai giá trị hợp lệ: \texttt{true} hoặc \texttt{false}.
 
-\begin{itemize}
-    \item \textbf{Client:} Đại diện cho trình duyệt web của người dùng cuối, là nơi giao diện ứng dụng được hiển thị và thực hiện các tương tác với hệ thống.
 
-    \item \textbf{Amazon CloudFront:} Đóng vai trò là mạng phân phối nội dung (CDN). CloudFront \textit{chỉ tương tác trực tiếp với Client và Amazon S3}, có nhiệm vụ tăng tốc độ tải các tệp tin tĩnh (hình ảnh, tài liệu) từ S3 đến người dùng một cách tối ưu thông qua bộ nhớ đệm (caching), giảm chi phí sử dụng S3.
+\subsubsection{Thiết kế giao diện}
 
-    \item \textbf{Amazon S3:} Được sử dụng chuyên biệt làm kho lưu trữ các tệp đa phương tiện do người dùng tải lên (ví dụ: avatar, tệp đính kèm trong thẻ công việc). Tầng Backend đảm nhận hoàn toàn việc tải tệp tin lên S3 bằng cách tương tác trực tiếp với dịch vụ này; Client không có quyền đẩy trực tiếp tệp tin lên S3.
-
-    \item \textbf{Amazon VPC (Virtual Private Cloud):} Cung cấp một môi trường mạng nội bộ bị cách ly với Internet. Toàn bộ các máy chủ EC2 (cả Frontend và Backend) cũng như cơ sở dữ liệu RDS đều được đặt bên trong VPC này (phân vùng private).
-
-    \item \textbf{Amazon ALB (Application Load Balancer):} Là điểm truy cập (entry point) công khai duy nhất nhận lưu lượng truy cập từ Internet vào VPC. ALB tiếp nhận mọi request từ Client và phân phối tải vào các máy chủ EC2 (Frontend hoặc Backend) ở bên trong mạng private.
-
-    \item \textbf{EC2 (Frontend – Nginx + Docker + React):} Ứng dụng ReactJS được đóng gói bằng Docker và triển khai thông qua web server Nginx trên máy chủ ảo EC2. Máy chủ này là một EC2 private, chỉ nhận lưu lượng HTTP/HTTPS từ ALB chuyển vào thay vì tiếp xúc trực tiếp với Internet.
-
-    \item \textbf{EC2 (Backend – Spring Boot):} Máy chủ chạy ứng dụng API Spring Boot, xử lý các logic nghiệp vụ. Tương tự như Frontend, máy chủ này cũng là một EC2 private và chỉ nhận request nội bộ từ ALB.
-
-    \item \textbf{Amazon Cognito:} Dịch vụ quản lý định danh. Trong kiến trúc này, Cognito chỉ tương tác trực tiếp với tầng Backend. Thay vì Client gọi trực tiếp Cognito, Backend sẽ chịu trách nhiệm gọi API của Cognito để thực hiện xác thực người dùng và nhận JWT.
-
-    \item \textbf{Amazon RDS (PostgreSQL):} Hệ quản trị cơ sở dữ liệu quan hệ được triển khai trong phân vùng mạng nội bộ sâu nhất. Chỉ duy nhất tầng Backend (EC2 chạy Spring Boot) mới được phép tương tác trực tiếp với RDS để thực hiện truy xuất và lưu trữ dữ liệu; mọi nỗ lực truy cập từ các thành phần khác đều bị từ chối hoàn toàn.
-\end{itemize}
-
-Luồng hoạt động tổng thể của hệ thống diễn ra như sau:
-\begin{enumerate}
-    \item \textbf{Tải giao diện ứng dụng:} Client gửi request $\rightarrow$ ALB $\rightarrow$ EC2 (Frontend – Nginx + React) $\rightarrow$ Trả về giao diện cho người dùng.
-    \item \textbf{Tải tài nguyên tĩnh (hình ảnh, tệp):} Client $\rightarrow$ CloudFront $\rightarrow$ S3 $\rightarrow$ Trả về Client.
-    \item \textbf{Xử lý nghiệp vụ và xác thực:} Client gọi API $\rightarrow$ ALB $\rightarrow$ EC2 (Backend – Spring Boot). Tại đây, nếu là tác vụ đăng nhập hoặc đăng ký, EC2 Backend sẽ giao tiếp với Cognito. Đối với các tác vụ liên quan đến dữ liệu hệ thống, EC2 Backend sẽ giao tiếp trực tiếp với RDS (PostgreSQL). Kết quả xử lý cuối cùng được Backend trả về qua ALB đến Client.
-\end{enumerate}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{"./images/chap2/Nello System Architech.png"}
-    \caption{Kiến trúc tổng thể của hệ thống Nello}
-    \label{fig:nello_system_architech_chap3}
-\end{figure}
+\textbf{TODO: Bổ sung nội dung}
 
 \clearpage
 

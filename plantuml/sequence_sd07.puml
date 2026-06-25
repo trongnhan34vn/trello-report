@@ -1,0 +1,59 @@
+@startuml sequence_sd07
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-07: Luồng tải chi tiết Board
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> BACKEND : GET /api/v1/boards/:id\n(kèm access_token trong cookie)
+
+BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
+
+alt JWT không hợp lệ hoặc hết hạn
+    BACKEND --> CLIENT : HTTP 401 Unauthorized
+else JWT hợp lệ
+    BACKEND -> DB : SELECT * FROM boards\nWHERE id = boardId
+
+    alt Board không tồn tại
+        DB --> BACKEND : null
+        BACKEND --> CLIENT : HTTP 404 Not Found
+    else Board tồn tại
+        DB --> BACKEND : board record
+
+        BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = ?
+
+        alt User không có quyền truy cập
+            DB --> BACKEND : null
+            BACKEND --> CLIENT : HTTP 403 Forbidden
+        else User có quyền truy cập
+            DB --> BACKEND : member record
+
+            BACKEND -> DB : SELECT * FROM lists\nWHERE board_id = ?\nORDER BY position
+            DB --> BACKEND : danh sách List (có thứ tự)
+
+            BACKEND -> DB : SELECT * FROM cards\nWHERE list_id IN (...)\nORDER BY position
+            DB --> BACKEND : danh sách Card (có thứ tự)
+
+            BACKEND --> CLIENT : HTTP 200 OK\n{board, lists[], cards[]}
+
+            CLIENT -> CLIENT : Render giao diện Kanban\n(Lists và Cards theo position)
+        end
+    end
+end
+
+@enduml

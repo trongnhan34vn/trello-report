@@ -1,0 +1,55 @@
+@startuml sequence_sd01
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-01: Luồng đăng ký tài khoản
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+participant "AWS Cognito\n(Identity Provider)" as COGNITO
+
+== Bước 1: Đăng ký ==
+
+CLIENT -> BACKEND : POST /api/v1/auth/sign-up\n{fullName, email, password}
+
+BACKEND -> COGNITO : signUp(\n  email, password, fullName\n)
+
+alt Email đã tồn tại hoặc không hợp lệ
+    COGNITO --> BACKEND : UsernameExistsException\n/ InvalidParameterException
+    BACKEND --> CLIENT : HTTP 400 Bad Request
+else Đăng ký thành công
+    COGNITO --> BACKEND : userSub (cognito_id)
+    note over COGNITO : Tài khoản ở trạng thái\nUNCONFIRMED\nCognito gửi OTP qua email
+    BACKEND --> CLIENT : HTTP 200 OK
+    CLIENT -> CLIENT : Chuyển đến trang nhập OTP
+end
+
+== Bước 2: Xác nhận OTP ==
+
+CLIENT -> BACKEND : POST /api/v1/auth/confirm-sign-up\n{email, confirmationCode}
+
+BACKEND -> COGNITO : confirmSignUp(\n  email, confirmationCode\n)
+
+alt OTP không hợp lệ hoặc hết hạn
+    COGNITO --> BACKEND : CodeMismatchException\n/ ExpiredCodeException
+    BACKEND --> CLIENT : HTTP 400 Bad Request
+else OTP hợp lệ
+    COGNITO --> BACKEND : HTTP 200 OK
+    note over COGNITO : Tài khoản chuyển sang\ntrạng thái CONFIRMED
+    BACKEND --> CLIENT : HTTP 200 OK
+    CLIENT -> CLIENT : Chuyển đến trang Đăng nhập
+end
+
+@enduml

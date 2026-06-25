@@ -1,0 +1,58 @@
+@startuml usecase_uc07
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-07: Quản lý Checklist" {
+    usecase "UC-07.1\nTạo Checklist" as UC071
+    usecase "UC-07.2\nCập nhật Checklist" as UC072
+    usecase "UC-07.3\nXóa Checklist" as UC073
+    usecase "UC-07.4\nTạo Checklist Item" as UC074
+    usecase "UC-07.5\nCập nhật Checklist Item" as UC075
+    usecase "UC-07.6\nĐánh dấu Checklist Item\nhoàn thành" as UC076
+    usecase "UC-07.7\nXóa Checklist Item" as UC077
+}
+
+user --> UC071
+user --> UC072
+user --> UC073
+user --> UC074
+user --> UC075
+user --> UC076
+user --> UC077
+
+UC072 ..> UC071 : <<extend>>
+UC073 ..> UC071 : <<extend>>
+UC075 ..> UC074 : <<extend>>
+UC076 ..> UC074 : <<extend>>
+UC077 ..> UC074 : <<extend>>
+
+@enduml

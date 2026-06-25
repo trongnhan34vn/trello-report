@@ -1,0 +1,37 @@
+@startuml activity_uc01_2
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-01.2: Xác nhận tài khoản bằng OTP
+
+start
+
+:Người dùng đã nhận mã OTP qua email;
+:Nhập mã OTP xác nhận trên trang xác nhận;
+:Gửi yêu cầu POST /api/v1/auth/confirm-sign-up\n(kèm email, OTP);
+
+if (OTP đúng và chưa hết hạn?) then (Không)
+    :Hiển thị thông báo OTP không hợp lệ hoặc đã hết hạn;
+    stop
+else (Có)
+    :Cognito kích hoạt tài khoản;
+    :Hiển thị thông báo xác nhận thành công;
+    :Chuyển hướng đến trang Đăng nhập;
+endif
+
+stop
+
+@enduml

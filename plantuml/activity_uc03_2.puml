@@ -1,0 +1,35 @@
+@startuml activity_uc03_2
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-03.2: Xem danh sách Workspace
+
+start
+
+:Người dùng đăng nhập vào hệ thống;
+:Gửi yêu cầu GET /api/v1/workspaces\n(lấy danh sách Workspace của user);
+
+if (Token hợp lệ?) then (Không)
+    :Trả về lỗi 401 Unauthorized;
+    stop
+else (Có)
+    :Backend trả về danh sách Workspace\n(bao gồm Workspace sở hữu và tham gia);
+    :Hiển thị Dashboard — danh sách Workspace;
+endif
+
+stop
+
+@enduml

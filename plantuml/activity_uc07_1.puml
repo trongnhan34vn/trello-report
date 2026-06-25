@@ -1,0 +1,37 @@
+@startuml activity_uc07_1
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-07.1: Tạo Checklist
+
+start
+
+:Người dùng mở Card Detail Modal;
+:Nhấn nút "Thêm Checklist";
+:Nhập tên Checklist;
+
+if (Tên hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Gửi yêu cầu POST /api/v1/checklists\n(kèm cardId, name, position);
+    :Backend lưu Checklist trong Card;
+    :Hiển thị Checklist mới trong Card;
+endif
+
+stop
+
+@enduml

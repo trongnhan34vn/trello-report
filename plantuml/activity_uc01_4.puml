@@ -1,0 +1,38 @@
+@startuml activity_uc01_4
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-01.4: Đăng nhập
+
+start
+
+:Người dùng truy cập trang Đăng nhập;
+:Nhập thông tin đăng nhập\n(email, password);
+:Gửi yêu cầu POST /api/v1/auth/sign-in;
+
+if (Thông tin đăng nhập hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi đăng nhập;
+    stop
+else (Có)
+    :Cognito xác thực thành công;
+    :Cấp JWT (access_token, refresh_token);
+    :Lưu token vào HttpOnly Cookie;
+    :Chuyển hướng đến Dashboard;
+endif
+
+stop
+
+@enduml

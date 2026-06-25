@@ -1,0 +1,44 @@
+@startuml usecase_uc02
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-02: Quản lý người dùng" {
+    usecase "UC-02.1\nXem thông tin cá nhân" as UC021
+    usecase "UC-02.2\nChỉnh sửa thông tin\ncá nhân" as UC022
+}
+
+user --> UC021
+user --> UC022
+
+UC022 ..> UC021 : <<extend>>
+
+@enduml

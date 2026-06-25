@@ -1,0 +1,35 @@
+@startuml activity_uc03_5
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-03.5: Xem danh sách thành viên Workspace
+
+start
+
+:Người dùng truy cập trang chi tiết Workspace;
+:Gửi yêu cầu GET /api/v1/workspaces/:id/members\n(lấy danh sách thành viên);
+
+if (Token hợp lệ và user thuộc Workspace?) then (Không)
+    :Trả về lỗi 401 hoặc 403;
+    stop
+else (Có)
+    :Backend trả về danh sách thành viên\n(fullName, email, role, avatar);
+    :Hiển thị danh sách thành viên Workspace;
+endif
+
+stop
+
+@enduml

@@ -1,16 +1,71 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Logo ReactJS}}{12}{}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Logo Java Spring Boot}}{13}{}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Logo PostgreSQL}}{14}{}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Logo Docker}}{18}{}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Logo Nginx}}{18}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Luồng xác thực người dùng}}{40}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Thiết kế cơ sở dữ liệu}}{41}{}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Kiến trúc tổng thể của hệ thống Nello}}{50}{}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Màn hình Đăng ký tài khoản}}{55}{}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Màn hình Xác nhận OTP}}{55}{}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Màn hình Đăng nhập}}{56}{}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Màn hình Dashboard}}{56}{}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Màn hình Chi tiết Workspace}}{57}{}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Màn hình Board Kanban}}{57}{}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Tính năng kéo thả Card giữa các List}}{58}{}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Modal Chi tiết Card với Checklist, Due Date và thành viên}}{58}{}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Logo ReactJS}}{13}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Logo Java Spring Boot}}{14}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Logo PostgreSQL}}{15}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Logo Docker}}{19}{}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Logo Nginx}}{19}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Biểu đồ Use Case tổng quát hệ thống Nello}}{26}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Biểu đồ Use Case UC-01: Quản lý xác thực}}{29}{}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Biểu đồ Use Case UC-02: Quản lý người dùng}}{33}{}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Biểu đồ Use Case UC-03: Quản lý Workspace}}{35}{}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Biểu đồ Use Case UC-04: Quản lý Board}}{39}{}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Biểu đồ Use Case UC-05: Quản lý List}}{43}{}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Biểu đồ Use Case UC-06: Quản lý Card}}{46}{}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Biểu đồ Use Case UC-07: Quản lý Checklist}}{50}{}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Biểu đồ Use Case UC-08: Quản lý thành viên Card}}{54}{}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Biểu đồ hoạt động UC-01.1: Đăng ký tài khoản}}{57}{}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Biểu đồ hoạt động UC-01.2: Xác nhận tài khoản bằng OTP}}{58}{}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Biểu đồ hoạt động UC-01.3: Gửi lại mã OTP}}{59}{}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Biểu đồ hoạt động UC-01.4: Đăng nhập}}{60}{}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Biểu đồ hoạt động UC-01.5: Làm mới access token}}{61}{}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Biểu đồ hoạt động UC-02.1: Xem thông tin cá nhân}}{62}{}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Biểu đồ hoạt động UC-02.2: Chỉnh sửa thông tin cá nhân}}{63}{}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Biểu đồ hoạt động UC-03.1: Tạo Workspace}}{64}{}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Biểu đồ hoạt động UC-03.2: Xem danh sách Workspace}}{65}{}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Biểu đồ hoạt động UC-03.3: Xem chi tiết Workspace}}{66}{}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Biểu đồ hoạt động UC-03.4: Mời thành viên vào Workspace}}{67}{}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Biểu đồ hoạt động UC-03.5: Xem danh sách thành viên Workspace}}{68}{}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Biểu đồ hoạt động UC-04.1: Tạo Board}}{69}{}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Biểu đồ hoạt động UC-04.2: Xem chi tiết Board}}{70}{}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Biểu đồ hoạt động UC-04.3: Cập nhật tên Board}}{71}{}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Biểu đồ hoạt động UC-04.4: Xóa Board}}{72}{}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Biểu đồ hoạt động UC-04.5: Thêm thành viên vào Board}}{73}{}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Biểu đồ hoạt động UC-05.1: Tạo List}}{74}{}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Biểu đồ hoạt động UC-05.2: Đổi tên List}}{75}{}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Biểu đồ hoạt động UC-05.3: Xóa List}}{76}{}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Biểu đồ hoạt động UC-05.4: Sắp xếp thứ tự List}}{77}{}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Biểu đồ hoạt động UC-06.1: Tạo Card}}{78}{}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Biểu đồ hoạt động UC-06.2: Xem chi tiết Card}}{79}{}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Biểu đồ hoạt động UC-06.3: Cập nhật Card}}{80}{}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Biểu đồ hoạt động UC-06.4: Đánh dấu Card hoàn thành}}{81}{}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Biểu đồ hoạt động UC-06.5: Di chuyển Card giữa các List}}{82}{}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Biểu đồ hoạt động UC-06.6: Xóa Card}}{83}{}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Biểu đồ hoạt động UC-07.1: Tạo Checklist}}{84}{}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Biểu đồ hoạt động UC-07.2: Cập nhật Checklist}}{85}{}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Biểu đồ hoạt động UC-07.3: Xóa Checklist}}{86}{}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Biểu đồ hoạt động UC-07.4: Tạo Checklist Item}}{87}{}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Biểu đồ hoạt động UC-07.5: Cập nhật Checklist Item}}{88}{}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Biểu đồ hoạt động UC-07.6: Đánh dấu Checklist Item hoàn thành}}{89}{}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Biểu đồ hoạt động UC-07.7: Xóa Checklist Item}}{90}{}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Biểu đồ hoạt động UC-08.1: Gán thành viên vào Card}}{91}{}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Biểu đồ hoạt động UC-08.2: Hủy gán thành viên khỏi Card}}{92}{}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Biểu đồ thành phần hệ thống Nello}}{95}{}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Kiến trúc triển khai hệ thống Nello trên AWS}}{96}{}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Biểu đồ tuần tự SD-01: Luồng đăng ký tài khoản}}{97}{}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Biểu đồ tuần tự SD-02: Luồng đăng nhập}}{98}{}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Biểu đồ tuần tự SD-03: Luồng tạo Workspace}}{99}{}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Biểu đồ tuần tự SD-04: Luồng tạo Board}}{100}{}%
+\contentsline {figure}{\numberline {57}{\ignorespaces Biểu đồ tuần tự SD-05: Luồng tạo List}}{101}{}%
+\contentsline {figure}{\numberline {58}{\ignorespaces Biểu đồ tuần tự SD-06: Luồng tạo Card}}{102}{}%
+\contentsline {figure}{\numberline {59}{\ignorespaces Biểu đồ tuần tự SD-07: Luồng tải chi tiết Board}}{104}{}%
+\contentsline {figure}{\numberline {60}{\ignorespaces Biểu đồ tuần tự SD-08: Luồng thêm thành viên vào Board}}{106}{}%
+\contentsline {figure}{\numberline {61}{\ignorespaces Biểu đồ tuần tự SD-09: Luồng di chuyển Card (Drag-and-Drop)}}{108}{}%
+\contentsline {figure}{\numberline {62}{\ignorespaces Biểu đồ tuần tự SD-10: Luồng di chuyển List (Drag-and-Drop)}}{110}{}%
+\contentsline {figure}{\numberline {63}{\ignorespaces Sơ đồ quan hệ cơ sở dữ liệu hệ thống Nello}}{112}{}%
+\contentsline {figure}{\numberline {64}{\ignorespaces Màn hình Đăng ký tài khoản}}{130}{}%
+\contentsline {figure}{\numberline {65}{\ignorespaces Màn hình Xác nhận OTP}}{130}{}%
+\contentsline {figure}{\numberline {66}{\ignorespaces Màn hình Đăng nhập}}{131}{}%
+\contentsline {figure}{\numberline {67}{\ignorespaces Màn hình Dashboard}}{131}{}%
+\contentsline {figure}{\numberline {68}{\ignorespaces Màn hình Chi tiết Workspace}}{132}{}%
+\contentsline {figure}{\numberline {69}{\ignorespaces Màn hình Board Kanban}}{132}{}%
+\contentsline {figure}{\numberline {70}{\ignorespaces Tính năng kéo thả Card giữa các List}}{133}{}%
+\contentsline {figure}{\numberline {71}{\ignorespaces Modal Chi tiết Card với Checklist, Due Date và thành viên}}{133}{}%

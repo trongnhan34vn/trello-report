@@ -1,0 +1,55 @@
+@startuml usecase_uc06
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-06: Quản lý Card" {
+    usecase "UC-06.1\nTạo Card" as UC061
+    usecase "UC-06.2\nXem chi tiết Card" as UC062
+    usecase "UC-06.3\nCập nhật Card" as UC063
+    usecase "UC-06.4\nĐánh dấu Card\nhoàn thành" as UC064
+    usecase "UC-06.5\nDi chuyển Card\ngiữa các List" as UC065
+    usecase "UC-06.6\nXóa Card" as UC066
+}
+
+user --> UC061
+user --> UC062
+user --> UC063
+user --> UC064
+user --> UC065
+user --> UC066
+
+UC063 ..> UC062 : <<extend>>
+UC064 ..> UC062 : <<extend>>
+UC065 ..> UC062 : <<extend>>
+UC066 ..> UC062 : <<extend>>
+
+@enduml

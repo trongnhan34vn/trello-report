@@ -1,0 +1,52 @@
+@startuml usecase_uc04
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-04: Quản lý Board" {
+    usecase "UC-04.1\nTạo Board" as UC041
+    usecase "UC-04.2\nXem chi tiết Board" as UC042
+    usecase "UC-04.3\nCập nhật tên Board" as UC043
+    usecase "UC-04.4\nXóa Board" as UC044
+    usecase "UC-04.5\nThêm thành viên\nvào Board" as UC045
+}
+
+user --> UC041
+user --> UC042
+user --> UC043
+user --> UC044
+user --> UC045
+
+UC043 ..> UC042 : <<extend>>
+UC044 ..> UC042 : <<extend>>
+UC045 ..> UC042 : <<extend>>
+
+@enduml

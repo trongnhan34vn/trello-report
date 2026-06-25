@@ -1,0 +1,58 @@
+@startuml sequence_sd08
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-08: Luồng thêm thành viên vào Board
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> BACKEND : GET /api/v1/users?search={email}\n(tìm kiếm user theo email)
+
+BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
+
+BACKEND -> DB : SELECT * FROM users\nWHERE email LIKE ? (loại trừ current user)
+DB --> BACKEND : danh sách user khớp
+
+BACKEND --> CLIENT : HTTP 200 OK\n{users[]}
+
+CLIENT -> CLIENT : Hiển thị kết quả\nNgười dùng chọn thành viên cần thêm
+
+CLIENT -> BACKEND : POST /api/v1/board-members/:boardId\n{userId}
+
+BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = currentUserId
+
+alt Người yêu cầu không phải thành viên Board
+    DB --> BACKEND : null
+    BACKEND --> CLIENT : HTTP 403 Forbidden
+else Có quyền thêm thành viên
+    DB --> BACKEND : member record
+
+    BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = targetUserId
+
+    alt User đã là thành viên Board
+        DB --> BACKEND : member record
+        BACKEND --> CLIENT : HTTP 409 Conflict
+    else User chưa là thành viên
+        DB --> BACKEND : null
+        BACKEND -> DB : INSERT INTO board_members\n(board_id, user_id, role=MEMBER)
+        DB --> BACKEND : member record (mới)
+        BACKEND --> CLIENT : HTTP 200 OK
+        CLIENT -> CLIENT : Cập nhật danh sách thành viên\ntrên giao diện Board
+    end
+end
+
+@enduml

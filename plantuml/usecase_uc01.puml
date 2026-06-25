@@ -1,0 +1,52 @@
+@startuml usecase_uc01
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "UC-01: Quản lý xác thực" {
+    usecase "UC-01.1\nĐăng ký tài khoản" as UC011
+    usecase "UC-01.2\nXác nhận tài khoản\nbằng OTP" as UC012
+    usecase "UC-01.3\nGửi lại mã OTP" as UC013
+    usecase "UC-01.4\nĐăng nhập" as UC014
+    usecase "UC-01.5\nLàm mới access token" as UC015
+}
+
+user --> UC011
+user --> UC012
+user --> UC013
+user --> UC014
+user --> UC015
+
+UC011 ..> UC012 : <<include>>
+UC013 ..> UC012 : <<extend>>
+UC015 ..> UC014 : <<extend>>
+
+@enduml

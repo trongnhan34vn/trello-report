@@ -1,0 +1,56 @@
+@startuml usecase_overview
+
+skinparam linetype curve
+skinparam defaultFontSize 12
+skinparam backgroundColor #f4f6fb
+skinparam usecase {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #5b6279
+}
+skinparam actor {
+    BackgroundColor #dce3f5
+    BorderColor #1a3a7a
+    FontColor #1e1e2e
+}
+skinparam rectangle {
+    BackgroundColor #f0f4fd
+    BorderColor #4a6fa5
+    FontColor #1a3a7a
+    FontStyle bold
+    RoundCorner 10
+}
+skinparam arrow {
+    Color #5b6279
+    FontColor #3b4261
+    FontSize 10
+}
+
+left to right direction
+
+actor "Người dùng" as user
+
+rectangle "Hệ thống Nello" {
+
+    usecase "UC-01\nQuản lý xác thực" as UC01
+    usecase "UC-02\nQuản lý người dùng" as UC02
+    usecase "UC-03\nQuản lý Workspace" as UC03
+    usecase "UC-04\nQuản lý Board" as UC04
+    usecase "UC-05\nQuản lý List" as UC05
+    usecase "UC-06\nQuản lý Card" as UC06
+    usecase "UC-07\nQuản lý Checklist" as UC07
+    usecase "UC-08\nQuản lý thành viên Card" as UC08
+
+}
+
+user --> UC01
+user --> UC02
+user --> UC03
+user --> UC04
+user --> UC05
+user --> UC06
+user --> UC07
+user --> UC08
+
+@enduml

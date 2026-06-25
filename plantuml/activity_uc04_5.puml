@@ -1,0 +1,39 @@
+@startuml activity_uc04_5
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-04.5: Thêm thành viên vào Board
+
+start
+
+:Người dùng (ADMIN) đang xem Board;
+:Mở chức năng quản lý thành viên Board;
+:Gửi yêu cầu GET /api/v1/workspaces/:id/members\n(lấy danh sách thành viên Workspace);
+:Hiển thị danh sách thành viên Workspace;
+:Chọn thành viên từ danh sách và chọn role;
+:Gửi yêu cầu POST /api/v1/boards-members\n(kèm userIds, roleId, boardId);
+
+if (Thêm thành viên thành công?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Thêm thành viên vào Board với role tương ứng;
+    :Hiển thị thông báo thêm thành viên thành công;
+endif
+
+stop
+
+@enduml

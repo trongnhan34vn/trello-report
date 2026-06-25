@@ -1,0 +1,36 @@
+@startuml activity_uc05_2
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-05.2: Đổi tên List
+
+start
+
+:Người dùng đang xem Board (Kanban View);
+:Nhấn vào tiêu đề List để chỉnh sửa;
+:Nhập tên mới cho List;
+
+if (Tên hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Gửi yêu cầu PATCH /api/v1/lists/:id\n(cập nhật title);
+    :Cập nhật tiêu đề List trên giao diện;
+endif
+
+stop
+
+@enduml

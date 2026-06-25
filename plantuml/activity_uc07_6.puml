@@ -1,0 +1,38 @@
+@startuml activity_uc07_6
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-07.6: Đánh dấu Checklist Item hoàn thành
+
+start
+
+:Người dùng mở Card Detail Modal;
+:Nhìn thấy danh sách Checklist Item;
+:Tick checkbox của Item cần đánh dấu;
+:Gửi yêu cầu PATCH /api/v1/checklist-items/:id\n(isCompleted = true/false);
+
+if (Cập nhật thành công?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Backend cập nhật trạng thái Item;
+    :Cập nhật tiến độ progress bar của Checklist;
+    :Hiển thị trạng thái Item mới trên giao diện;
+endif
+
+stop
+
+@enduml

@@ -1,0 +1,48 @@
+@startuml sequence_sd04
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-04: Luồng tạo Board
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> BACKEND : POST /api/v1/boards\n{workspaceId, title, background}
+
+BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
+
+alt JWT không hợp lệ hoặc hết hạn
+    BACKEND --> CLIENT : HTTP 401 Unauthorized
+else JWT hợp lệ
+    BACKEND -> DB : SELECT * FROM workspace_members\nWHERE workspace_id = ? AND user_id = ?
+
+    alt Không là thành viên Workspace
+        DB --> BACKEND : null
+        BACKEND --> CLIENT : HTTP 403 Forbidden
+    else Là thành viên Workspace
+        DB --> BACKEND : member record
+
+        BACKEND -> DB : INSERT INTO boards\n(id, title, workspace_id, background)
+        DB --> BACKEND : board record
+
+        BACKEND -> DB : INSERT INTO board_members\n(board_id, user_id, role=OWNER)
+        DB --> BACKEND : member record
+
+        BACKEND --> CLIENT : HTTP 201 Created\n{boardId, title, workspaceId}
+    end
+end
+
+@enduml

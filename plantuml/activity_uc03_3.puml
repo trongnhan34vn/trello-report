@@ -1,0 +1,35 @@
+@startuml activity_uc03_3
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-03.3: Xem chi tiết Workspace
+
+start
+
+:Người dùng chọn một Workspace từ Dashboard;
+:Gửi yêu cầu GET /api/v1/workspaces/:id;
+
+if (Workspace tồn tại và user có quyền truy cập?) then (Không)
+    :Trả về lỗi 403 Forbidden hoặc 404 Not Found;
+    stop
+else (Có)
+    :Backend trả về thông tin Workspace\n(tên, danh mục, mô tả, danh sách Board, thành viên);
+    :Hiển thị trang chi tiết Workspace;
+endif
+
+stop
+
+@enduml

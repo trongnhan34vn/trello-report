@@ -1,0 +1,38 @@
+@startuml activity_uc08_2
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-08.2: Hủy gán thành viên khỏi Card
+
+start
+
+:Người dùng mở Card Detail Modal;
+:Mở chức năng quản lý thành viên Card;
+:Hiển thị danh sách thành viên đang được gán vào Card;
+:Người dùng chọn thành viên cần hủy gán;
+:Gửi yêu cầu DELETE /api/v1/card-members/:id;
+
+if (Hủy gán thành công?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Xóa thành viên khỏi danh sách phụ trách Card;
+    :Cập nhật danh sách thành viên trên giao diện Card;
+endif
+
+stop
+
+@enduml

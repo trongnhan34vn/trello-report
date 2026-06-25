@@ -1,0 +1,49 @@
+@startuml sequence_sd02
+
+skinparam backgroundColor #f4f6fb
+skinparam defaultFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam sequenceArrowColor #4a6fa5
+skinparam sequenceLifeLineBorderColor #4a6fa5
+skinparam sequenceParticipantBackgroundColor #ffffff
+skinparam sequenceParticipantBorderColor #5b6279
+skinparam sequenceParticipantFontColor #1e1e2e
+skinparam sequenceActorBackgroundColor #ffffff
+skinparam sequenceActorBorderColor #1a3a7a
+skinparam noteBackgroundColor #dce3f5
+skinparam noteBorderColor #4a6fa5
+skinparam noteFontColor #1e1e2e
+
+title SD-02: Luồng đăng nhập
+
+participant "Client\n(Browser / ReactJS)" as CLIENT
+participant "Backend\n(Spring Boot)" as BACKEND
+participant "AWS Cognito\n(Identity Provider)" as COGNITO
+database "PostgreSQL\n(RDS)" as DB
+
+CLIENT -> BACKEND : POST /api/v1/auth/sign-in\n{email, password}
+
+BACKEND -> COGNITO : initiateAuth(\n  USER_PASSWORD_AUTH,\n  email, password\n)
+
+alt Thông tin đăng nhập không hợp lệ
+    COGNITO --> BACKEND : NotAuthorizedException
+    BACKEND --> CLIENT : HTTP 401 Unauthorized
+else Thông tin đăng nhập hợp lệ
+    COGNITO --> BACKEND : {access_token, refresh_token, cognito_id}
+
+    BACKEND -> DB : SELECT * FROM users\nWHERE cognito_id = ?
+
+    alt User chưa tồn tại trong hệ thống
+        DB --> BACKEND : null
+        BACKEND -> DB : INSERT INTO users\n(cognito_id, email, full_name)
+        DB --> BACKEND : user record (mới)
+    else User đã tồn tại
+        DB --> BACKEND : user record
+    end
+
+    BACKEND --> CLIENT : HTTP 200\nSet HttpOnly Cookie:\n  ACCESS_TOKEN\n  REFRESH_TOKEN
+
+    CLIENT -> CLIENT : Redirect to Dashboard
+end
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml activity_uc05_1
+
+skinparam linetype ortho
+skinparam defaultFontSize 13
+skinparam backgroundColor #f4f6fb
+skinparam activity {
+    BackgroundColor #ffffff
+    BorderColor #5b6279
+    FontColor #1e1e2e
+    ArrowColor #4a6fa5
+    DiamondBackgroundColor #dce3f5
+    DiamondBorderColor #1a3a7a
+    DiamondFontColor #1e1e2e
+    StartColor #1a3a7a
+    EndColor #1a3a7a
+}
+
+title UC-05.1: Tạo List
+
+start
+
+:Người dùng truy cập Board (Kanban View);
+:Nhấn nút "Thêm List mới";
+:Nhập tên List mới;
+
+if (Tên hợp lệ?) then (Không)
+    :Hiển thị thông báo lỗi;
+    stop
+else (Có)
+    :Gửi yêu cầu POST /api/v1/lists\n(kèm boardId, title, position);
+    :Backend lưu List với position cuối cùng;
+    :Hiển thị List mới ở cuối Kanban;
+endif
+
+stop
+
+@enduml
