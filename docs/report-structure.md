@@ -36,7 +36,7 @@
 | 3.2.1 | Thiết kế kiến trúc tổng thể | 1848 – 1902 | 55 | Component diagram + AWS deployment |
 | 3.2.2 | Thiết kế tương tác | 1903 – 2036 | 134 | 10 sequence diagram (SD-01 → SD-10) |
 | 3.2.3 | Thiết kế cơ sở dữ liệu | 2037 – 2550 | **514** | ⚠️ Dài — 13 bảng, mô tả cột chi tiết |
-| 3.2.4 | Thiết kế giao diện | 2551 – 2556 | 6 | ⚠️ Thiếu nội dung |
+| ~~3.2.4~~ | ~~Thiết kế giao diện~~ | — | — | Đã xóa |
 
 ---
 
@@ -82,5 +82,4 @@
 |---|--------|--------|-------------|
 | 1 | 3.1.3 Đặc tả Use Case quá dài (845 dòng) | 🔴 Cao | Cắt bớt Alt Flow ở các UC ít quan trọng, chỉ giữ Main Flow |
 | 2 | 3.2.3 Thiết kế CSDL dài (514 dòng) | 🟠 Trung bình | Gộp bảng nhỏ, bỏ cột mô tả nếu tên cột đã đủ rõ |
-| 3 | 3.2.4 Thiết kế giao diện gần trống (6 dòng) | 🔴 Cao | Cần bổ sung screenshot / wireframe giao diện |
-| 4 | Chương 3 chiếm 78% toàn bộ báo cáo | 🟠 Trung bình | Cân nhắc rút gọn 3.1.3 và 3.2.3 |
+| 3 | Chương 3 chiếm ~78% toàn bộ báo cáo | 🟠 Trung bình | Cân nhắc rút gọn 3.1.3 và 3.2.3 |

@@ -28,16 +28,26 @@ CLIENT -> BACKEND : PATCH /api/v1/cards/:id\n{listId, position}
 
 BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
 
-BACKEND -> DB : UPDATE cards\nSET list_id = ?, position = ?\nWHERE id = ?
+BACKEND -> DB : SELECT role FROM board_members\nWHERE board_id = ? AND user_id = ?
 
-alt Cập nhật thành công
-    DB --> BACKEND : updated card record
-    BACKEND --> CLIENT : HTTP 200 OK\n{cardId, listId, position}
-    CLIENT -> CLIENT : Xác nhận vị trí mới\n(giữ nguyên UI)
-else Cập nhật thất bại (lỗi server / hết hạn phiên)
-    DB --> BACKEND : error
-    BACKEND --> CLIENT : HTTP 4xx / 5xx
+alt Không là thành viên Board hoặc có vai trò VIEWER
+    DB --> BACKEND : null hoặc role=VIEWER
+    BACKEND --> CLIENT : HTTP 403 Forbidden
     CLIENT -> CLIENT : Rollback UI:\nkhôi phục Card về vị trí cũ
+else Có vai trò ADMIN hoặc MEMBER trong Board
+    DB --> BACKEND : member record
+
+    BACKEND -> DB : UPDATE cards\nSET list_id = ?, position = ?\nWHERE id = ?
+
+    alt Cập nhật thành công
+        DB --> BACKEND : updated card record
+        BACKEND --> CLIENT : HTTP 200 OK\n{cardId, listId, position}
+        CLIENT -> CLIENT : Xác nhận vị trí mới\n(giữ nguyên UI)
+    else Cập nhật thất bại (lỗi server / hết hạn phiên)
+        DB --> BACKEND : error
+        BACKEND --> CLIENT : HTTP 500
+        CLIENT -> CLIENT : Rollback UI:\nkhôi phục Card về vị trí cũ
+    end
 end
 
 @enduml

@@ -27,12 +27,12 @@ BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
 alt JWT không hợp lệ hoặc hết hạn
     BACKEND --> CLIENT : HTTP 401 Unauthorized
 else JWT hợp lệ
-    BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = ?
+    BACKEND -> DB : SELECT role FROM board_members\nWHERE board_id = ? AND user_id = ?
 
-    alt Không là thành viên Board
-        DB --> BACKEND : null
+    alt Không là thành viên Board hoặc có vai trò VIEWER
+        DB --> BACKEND : null hoặc role=VIEWER
         BACKEND --> CLIENT : HTTP 403 Forbidden
-    else Là thành viên Board
+    else Có vai trò ADMIN hoặc MEMBER trong Board
         DB --> BACKEND : member record
 
         BACKEND -> DB : INSERT INTO lists\n(id, title, board_id, position)

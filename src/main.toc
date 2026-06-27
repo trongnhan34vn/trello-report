@@ -15,92 +15,91 @@
 \contentsline {paragraph}{\numberline {2.2.1.1}ReactJS}{12}{}%
 \contentsline {paragraph}{\numberline {2.2.1.2}Java Spring Boot}{13}{}%
 \contentsline {paragraph}{\numberline {2.2.1.3}PostgreSQL}{14}{}%
-\contentsline {paragraph}{\numberline {2.2.1.4}Mô hình MVC (Model -- View -- Controller)}{15}{}%
+\contentsline {paragraph}{\numberline {2.2.1.4}Mô hình phân lớp Controller -- Service -- Repository}{14}{}%
 \contentsline {subsubsection}{\numberline {2.2.2}Các nền tảng liên quan đến dịch vụ đám mây}{15}{}%
 \contentsline {paragraph}{\numberline {2.2.2.1}Amazon Cognito}{15}{}%
-\contentsline {paragraph}{\numberline {2.2.2.2}Amazon RDS}{16}{}%
-\contentsline {paragraph}{\numberline {2.2.2.3}Amazon EC2 (Elastic Compute Cloud)}{16}{}%
-\contentsline {paragraph}{\numberline {2.2.2.4}Amazon ALB (Application Load Balancer)}{17}{}%
-\contentsline {paragraph}{\numberline {2.2.2.5}Amazon S3 (Simple Storage Service)}{17}{}%
-\contentsline {paragraph}{\numberline {2.2.2.6}Amazon CloudFront}{17}{}%
-\contentsline {paragraph}{\numberline {2.2.2.7}JWT (JSON Web Token)}{18}{}%
-\contentsline {subsubsection}{\numberline {2.2.3}Các nền tảng khác}{18}{}%
-\contentsline {paragraph}{\numberline {2.2.3.1}Docker}{18}{}%
-\contentsline {paragraph}{\numberline {2.2.3.2}Nginx}{19}{}%
-\contentsline {section}{\numberline {3}CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}{21}{}%
-\contentsline {subsection}{\numberline {3.1}Phân tích hệ thống}{21}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Khảo sát và xác định yêu cầu}{21}{}%
-\contentsline {paragraph}{\numberline {3.1.1.1}Yêu cầu chức năng}{21}{}%
-\contentsline {paragraph}{\numberline {3.1.1.2}Yêu cầu phi chức năng}{24}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Xác định tác nhân và chức năng hệ thống}{24}{}%
-\contentsline {paragraph}{\numberline {3.1.2.1}Biểu đồ Use Case tổng quát}{24}{}%
-\contentsline {paragraph}{\numberline {3.1.2.2}Phân rã Use Case}{27}{}%
-\contentsline {paragraph}{\numberline {3.1.2.3}Danh sách Use Case}{27}{}%
-\contentsline {subsubsection}{\numberline {3.1.3}Đặc tả Use Case}{29}{}%
-\contentsline {subsubsection}{\numberline {3.1.4}Phân tích luồng nghiệp vụ}{56}{}%
-\contentsline {paragraph}{\numberline {3.1.4.1}UC-01: Quản lý xác thực}{56}{}%
-\contentsline {paragraph}{\numberline {3.1.4.2}UC-02: Quản lý người dùng}{61}{}%
-\contentsline {paragraph}{\numberline {3.1.4.3}UC-03: Quản lý Workspace}{63}{}%
-\contentsline {paragraph}{\numberline {3.1.4.4}UC-04: Quản lý Board}{68}{}%
-\contentsline {paragraph}{\numberline {3.1.4.5}UC-05: Quản lý List}{73}{}%
-\contentsline {paragraph}{\numberline {3.1.4.6}UC-06: Quản lý Card}{77}{}%
-\contentsline {paragraph}{\numberline {3.1.4.7}UC-07: Quản lý Checklist}{83}{}%
-\contentsline {paragraph}{\numberline {3.1.4.8}UC-08: Quản lý thành viên Card}{90}{}%
-\contentsline {subsubsection}{\numberline {3.1.5}Phân tích dữ liệu}{92}{}%
-\contentsline {paragraph}{\numberline {3.1.5.1}Các thực thể chính}{92}{}%
-\contentsline {paragraph}{\numberline {3.1.5.2}Quan hệ giữa các thực thể}{93}{}%
-\contentsline {subsection}{\numberline {3.2}Thiết kế hệ thống}{94}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Thiết kế kiến trúc tổng thể}{94}{}%
-\contentsline {paragraph}{\numberline {3.2.1.1}Phân tầng hệ thống}{94}{}%
-\contentsline {paragraph}{\numberline {3.2.1.2}Kiến trúc triển khai}{95}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Thiết kế tương tác giữa các thành phần}{96}{}%
-\contentsline {paragraph}{\numberline {3.2.2.1}SD-01: Luồng đăng ký tài khoản}{96}{}%
-\contentsline {paragraph}{\numberline {3.2.2.2}SD-02: Luồng đăng nhập}{97}{}%
-\contentsline {paragraph}{\numberline {3.2.2.3}SD-03: Luồng tạo Workspace}{98}{}%
-\contentsline {paragraph}{\numberline {3.2.2.4}SD-04: Luồng tạo Board}{99}{}%
-\contentsline {paragraph}{\numberline {3.2.2.5}SD-05: Luồng tạo List}{100}{}%
-\contentsline {paragraph}{\numberline {3.2.2.6}SD-06: Luồng tạo Card}{101}{}%
-\contentsline {paragraph}{\numberline {3.2.2.7}SD-07: Luồng tải chi tiết Board}{102}{}%
-\contentsline {paragraph}{\numberline {3.2.2.8}SD-08: Luồng thêm thành viên vào Board}{104}{}%
-\contentsline {paragraph}{\numberline {3.2.2.9}SD-09: Luồng di chuyển Card (Drag-and-Drop)}{106}{}%
-\contentsline {paragraph}{\numberline {3.2.2.10}SD-10: Luồng di chuyển List (Drag-and-Drop)}{108}{}%
-\contentsline {subsubsection}{\numberline {3.2.3}Thiết kế cơ sở dữ liệu}{111}{}%
-\contentsline {paragraph}{\numberline {3.2.3.1}Sơ đồ quan hệ}{111}{}%
-\contentsline {paragraph}{\numberline {3.2.3.2}Đặc tả bảng}{114}{}%
-\contentsline {paragraph}{\numberline {3.2.3.3}Bảng \texttt {roles}}{114}{}%
-\contentsline {paragraph}{\numberline {3.2.3.4}Bảng \texttt {images}}{115}{}%
-\contentsline {paragraph}{\numberline {3.2.3.5}Bảng \texttt {workspace\_categories}}{115}{}%
-\contentsline {paragraph}{\numberline {3.2.3.6}Bảng \texttt {users}}{116}{}%
-\contentsline {paragraph}{\numberline {3.2.3.7}Bảng \texttt {workspaces}}{116}{}%
-\contentsline {paragraph}{\numberline {3.2.3.8}Bảng \texttt {workspace\_members}}{117}{}%
-\contentsline {paragraph}{\numberline {3.2.3.9}Bảng \texttt {boards}}{118}{}%
-\contentsline {paragraph}{\numberline {3.2.3.10}Bảng \texttt {board\_members}}{119}{}%
-\contentsline {paragraph}{\numberline {3.2.3.11}Bảng \texttt {lists}}{120}{}%
-\contentsline {paragraph}{\numberline {3.2.3.12}Bảng \texttt {cards}}{121}{}%
-\contentsline {paragraph}{\numberline {3.2.3.13}Bảng \texttt {card\_members}}{122}{}%
-\contentsline {paragraph}{\numberline {3.2.3.14}Bảng \texttt {checklists}}{123}{}%
-\contentsline {paragraph}{\numberline {3.2.3.15}Bảng \texttt {checklist\_items}}{124}{}%
-\contentsline {subsubsection}{\numberline {3.2.4}Thiết kế giao diện}{125}{}%
-\contentsline {section}{\numberline {4}CHƯƠNG 4: TRIỂN KHAI VÀ KẾT QUẢ}{126}{}%
-\contentsline {subsection}{\numberline {4.1}Các chức năng đã hoàn thành}{126}{}%
-\contentsline {subsection}{\numberline {4.2}Kết quả đạt được}{127}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Thống kê tổng quát}{127}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}Kết quả kiểm thử theo module}{127}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}Các màn hình giao diện đã hoàn thành}{129}{}%
-\contentsline {subsection}{\numberline {4.3}Hình ảnh minh họa}{133}{}%
-\contentsline {subsection}{\numberline {4.4}Đánh giá kết quả}{134}{}%
-\contentsline {subsubsection}{\numberline {4.4.1}Ưu điểm}{134}{}%
-\contentsline {subsubsection}{\numberline {4.4.2}Hạn chế}{134}{}%
-\contentsline {section}{\numberline {5}CHƯƠNG 5: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{136}{}%
-\contentsline {subsection}{\numberline {5.1}Kết luận}{136}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Kết quả đạt được}{136}{}%
-\contentsline {subsection}{\numberline {5.2}Các vấn đề còn tồn tại}{137}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Chức năng chưa hoàn thiện}{137}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Hạn chế kỹ thuật}{137}{}%
-\contentsline {subsection}{\numberline {5.3}Phương hướng phát triển}{138}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Ưu tiên cao — Hoàn thiện hệ thống hiện tại}{138}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Ưu tiên trung bình — Mở rộng tính năng}{139}{}%
-\contentsline {subsubsection}{\numberline {5.3.3}Ưu tiên thấp — Phát triển dài hạn}{139}{}%
-\contentsline {section}{\numberline {A}PHỤ LỤC A: DANH SÁCH API ENDPOINT ĐẦY ĐỦ}{141}{}%
-\contentsline {section}{\numberline {B}PHỤ LỤC B: CHI TIẾT BẢNG CƠ SỞ DỮ LIỆU}{143}{}%
-\contentsline {section}{\numberline {C}PHỤ LỤC C: DANH SÁCH KỊCH BẢN KIỂM THỬ}{149}{}%
+\contentsline {paragraph}{\numberline {2.2.2.2}Amazon RDS}{15}{}%
+\contentsline {paragraph}{\numberline {2.2.2.3}Amazon EC2 (Elastic Compute Cloud)}{15}{}%
+\contentsline {paragraph}{\numberline {2.2.2.4}Amazon ALB (Application Load Balancer)}{16}{}%
+\contentsline {paragraph}{\numberline {2.2.2.5}Amazon S3 (Simple Storage Service)}{16}{}%
+\contentsline {paragraph}{\numberline {2.2.2.6}Amazon CloudFront}{16}{}%
+\contentsline {paragraph}{\numberline {2.2.2.7}JWT (JSON Web Token)}{16}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}Các nền tảng khác}{17}{}%
+\contentsline {paragraph}{\numberline {2.2.3.1}Docker}{17}{}%
+\contentsline {paragraph}{\numberline {2.2.3.2}Nginx}{17}{}%
+\contentsline {section}{\numberline {3}CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}{19}{}%
+\contentsline {subsection}{\numberline {3.1}Phân tích hệ thống}{19}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Khảo sát và xác định yêu cầu}{19}{}%
+\contentsline {paragraph}{\numberline {3.1.1.1}Yêu cầu chức năng}{19}{}%
+\contentsline {paragraph}{\numberline {3.1.1.2}Yêu cầu phi chức năng}{22}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Xác định tác nhân và chức năng hệ thống}{23}{}%
+\contentsline {paragraph}{\numberline {3.1.2.1}Biểu đồ Use Case tổng quát}{23}{}%
+\contentsline {paragraph}{\numberline {3.1.2.2}Phân rã Use Case}{25}{}%
+\contentsline {paragraph}{\numberline {3.1.2.3}Danh sách Use Case}{25}{}%
+\contentsline {paragraph}{\numberline {3.1.2.4}Phân quyền theo vai trò}{27}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Đặc tả Use Case}{27}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}Phân tích luồng nghiệp vụ}{54}{}%
+\contentsline {paragraph}{\numberline {3.1.4.1}UC-01: Quản lý xác thực}{54}{}%
+\contentsline {paragraph}{\numberline {3.1.4.2}UC-03: Quản lý Workspace}{56}{}%
+\contentsline {paragraph}{\numberline {3.1.4.3}UC-04: Quản lý Board}{58}{}%
+\contentsline {paragraph}{\numberline {3.1.4.4}UC-05: Quản lý List}{61}{}%
+\contentsline {paragraph}{\numberline {3.1.4.5}UC-06: Quản lý Card}{64}{}%
+\contentsline {paragraph}{\numberline {3.1.4.6}UC-07: Quản lý Checklist}{67}{}%
+\contentsline {paragraph}{\numberline {3.1.4.7}UC-08: Quản lý thành viên Card}{70}{}%
+\contentsline {subsubsection}{\numberline {3.1.5}Phân tích dữ liệu}{71}{}%
+\contentsline {paragraph}{\numberline {3.1.5.1}Các thực thể chính}{71}{}%
+\contentsline {paragraph}{\numberline {3.1.5.2}Quan hệ giữa các thực thể}{72}{}%
+\contentsline {subsection}{\numberline {3.2}Thiết kế hệ thống}{73}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Thiết kế kiến trúc tổng thể}{73}{}%
+\contentsline {paragraph}{\numberline {3.2.1.1}Phân tầng hệ thống}{73}{}%
+\contentsline {paragraph}{\numberline {3.2.1.2}Hạ tầng triển khai}{73}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Thiết kế tương tác giữa các thành phần}{74}{}%
+\contentsline {paragraph}{\numberline {3.2.2.1}SD-01: Luồng đăng ký tài khoản}{75}{}%
+\contentsline {paragraph}{\numberline {3.2.2.2}SD-02: Luồng đăng nhập}{76}{}%
+\contentsline {paragraph}{\numberline {3.2.2.3}SD-03: Luồng tạo Workspace}{77}{}%
+\contentsline {paragraph}{\numberline {3.2.2.4}SD-04: Luồng tạo Board}{78}{}%
+\contentsline {paragraph}{\numberline {3.2.2.5}SD-05: Luồng tạo List}{79}{}%
+\contentsline {paragraph}{\numberline {3.2.2.6}SD-06: Luồng tạo Card}{80}{}%
+\contentsline {paragraph}{\numberline {3.2.2.7}SD-07: Luồng tải chi tiết Board}{82}{}%
+\contentsline {paragraph}{\numberline {3.2.2.8}SD-08: Luồng thêm thành viên vào Board}{83}{}%
+\contentsline {paragraph}{\numberline {3.2.2.9}SD-09: Luồng di chuyển Card (Drag-and-Drop)}{85}{}%
+\contentsline {paragraph}{\numberline {3.2.2.10}SD-10: Luồng di chuyển List (Drag-and-Drop)}{87}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Thiết kế cơ sở dữ liệu}{90}{}%
+\contentsline {paragraph}{\numberline {3.2.3.1}Sơ đồ quan hệ}{90}{}%
+\contentsline {paragraph}{\numberline {3.2.3.2}Đặc tả bảng}{93}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.1}Bảng \texttt {roles}}{93}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.2}Bảng \texttt {images}}{94}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.3}Bảng \texttt {workspace\_categories}}{94}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.4}Bảng \texttt {users}}{94}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.5}Bảng \texttt {workspaces}}{95}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.6}Bảng \texttt {workspace\_members}}{96}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.7}Bảng \texttt {boards}}{97}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.8}Bảng \texttt {board\_members}}{97}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.9}Bảng \texttt {lists}}{98}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.10}Bảng \texttt {cards}}{98}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.11}Bảng \texttt {card\_members}}{99}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.12}Bảng \texttt {checklists}}{100}{}%
+\contentsline {subparagraph}{\numberline {3.2.3.2.13}Bảng \texttt {checklist\_items}}{100}{}%
+\contentsline {section}{\numberline {4}CHƯƠNG 4: TRIỂN KHAI VÀ KẾT QUẢ}{102}{}%
+\contentsline {subsection}{\numberline {4.1}Các chức năng đã hoàn thành}{102}{}%
+\contentsline {subsection}{\numberline {4.2}Kết quả đạt được}{103}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Thống kê tổng quát}{103}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Kết quả kiểm thử theo module}{103}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Các màn hình giao diện đã hoàn thành}{104}{}%
+\contentsline {subsection}{\numberline {4.3}Hình ảnh minh họa}{107}{}%
+\contentsline {subsection}{\numberline {4.4}Đánh giá kết quả}{108}{}%
+\contentsline {subsubsection}{\numberline {4.4.1}Ưu điểm}{108}{}%
+\contentsline {subsubsection}{\numberline {4.4.2}Hạn chế}{109}{}%
+\contentsline {section}{\numberline {5}CHƯƠNG 5: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{110}{}%
+\contentsline {subsection}{\numberline {5.1}Kết luận}{110}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Kết quả đạt được}{110}{}%
+\contentsline {subsection}{\numberline {5.2}Các vấn đề còn tồn tại}{110}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Chức năng chưa hoàn thiện}{110}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Hạn chế kỹ thuật}{111}{}%
+\contentsline {subsection}{\numberline {5.3}Phương hướng phát triển}{112}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Ưu tiên cao — Hoàn thiện hệ thống hiện tại}{112}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Ưu tiên trung bình — Mở rộng tính năng}{112}{}%
+\contentsline {subsubsection}{\numberline {5.3.3}Ưu tiên thấp — Phát triển dài hạn}{113}{}%
+\contentsline {section}{\numberline {A}PHỤ LỤC A: DANH SÁCH API ENDPOINT ĐẦY ĐỦ}{115}{}%
+\contentsline {section}{\numberline {B}PHỤ LỤC B: CHI TIẾT BẢNG CƠ SỞ DỮ LIỆU}{117}{}%
+\contentsline {section}{\numberline {C}PHỤ LỤC C: DANH SÁCH KỊCH BẢN KIỂM THỬ}{123}{}%

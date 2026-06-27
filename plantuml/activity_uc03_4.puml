@@ -19,7 +19,7 @@ title UC-03.4: Mời thành viên vào Workspace
 
 start
 
-:Người dùng (ADMIN) truy cập trang chi tiết Workspace;
+:Người dùng truy cập trang Workspace;
 :Mở chức năng quản lý thành viên;
 :Nhập email người dùng cần mời;
 :Gửi yêu cầu POST /api/v1/workspaces-members/:id\n(thêm thành viên theo email);

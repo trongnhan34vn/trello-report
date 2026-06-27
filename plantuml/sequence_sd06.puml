@@ -35,12 +35,13 @@ else JWT hợp lệ
     else List tồn tại
         DB --> BACKEND : list record (boardId)
 
-        BACKEND -> DB : SELECT * FROM board_members\nWHERE boardId = ? AND userId = ?
-        DB --> BACKEND : member record
+        BACKEND -> DB : SELECT role FROM board_members\nWHERE board_id = ? AND user_id = ?
 
-        alt Không có quyền trong Board
+        alt Không là thành viên Board hoặc có vai trò VIEWER
+            DB --> BACKEND : null hoặc role=VIEWER
             BACKEND --> CLIENT : HTTP 403 Forbidden
-        else Có quyền
+        else Có vai trò ADMIN hoặc MEMBER trong Board
+            DB --> BACKEND : member record
             BACKEND -> DB : INSERT INTO cards\n(listId, title, position, isCompleted=false)
             DB --> BACKEND : card record
 

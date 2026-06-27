@@ -27,18 +27,18 @@ BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
 alt JWT không hợp lệ hoặc hết hạn
     BACKEND --> CLIENT : HTTP 401 Unauthorized
 else JWT hợp lệ
-    BACKEND -> DB : SELECT * FROM workspace_members\nWHERE workspace_id = ? AND user_id = ?
+    BACKEND -> DB : SELECT role FROM workspace_members\nWHERE workspace_id = ? AND user_id = ?
 
-    alt Không là thành viên Workspace
-        DB --> BACKEND : null
+    alt Không là thành viên Workspace hoặc có vai trò VIEWER
+        DB --> BACKEND : null hoặc role=VIEWER
         BACKEND --> CLIENT : HTTP 403 Forbidden
-    else Là thành viên Workspace
+    else Có vai trò ADMIN hoặc MEMBER trong Workspace
         DB --> BACKEND : member record
 
         BACKEND -> DB : INSERT INTO boards\n(id, title, workspace_id, background)
         DB --> BACKEND : board record
 
-        BACKEND -> DB : INSERT INTO board_members\n(board_id, user_id, role=OWNER)
+        BACKEND -> DB : INSERT INTO board_members\n(board_id, user_id, role=ADMIN)
         DB --> BACKEND : member record
 
         BACKEND --> CLIENT : HTTP 201 Created\n{boardId, title, workspaceId}

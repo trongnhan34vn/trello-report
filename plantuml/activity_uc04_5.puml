@@ -19,18 +19,18 @@ title UC-04.5: Thêm thành viên vào Board
 
 start
 
-:Người dùng (ADMIN) đang xem Board;
+:Người dùng truy cập trang Board;
 :Mở chức năng quản lý thành viên Board;
 :Gửi yêu cầu GET /api/v1/workspaces/:id/members\n(lấy danh sách thành viên Workspace);
 :Hiển thị danh sách thành viên Workspace;
-:Chọn thành viên từ danh sách và chọn role;
-:Gửi yêu cầu POST /api/v1/boards-members\n(kèm userIds, roleId, boardId);
+:Chọn thành viên từ danh sách;
+:Gửi yêu cầu POST /api/v1/boards-members\n(kèm userIds, boardId);
 
 if (Thêm thành viên thành công?) then (Không)
     :Hiển thị thông báo lỗi;
     stop
 else (Có)
-    :Thêm thành viên vào Board với role tương ứng;
+    :Thêm thành viên vào Board với role mặc định MEMBER;
     :Hiển thị thông báo thêm thành viên thành công;
 endif
 

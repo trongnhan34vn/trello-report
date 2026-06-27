@@ -20,7 +20,7 @@ participant "Client\n(Browser / ReactJS)" as CLIENT
 participant "Backend\n(Spring Boot)" as BACKEND
 database "PostgreSQL\n(RDS)" as DB
 
-CLIENT -> BACKEND : GET /api/v1/users?search={email}\n(tìm kiếm user theo email)
+CLIENT -> BACKEND : GET /api/v1/users?search={email}\n(tìm kiếm user trong toàn bộ hệ thống)
 
 BACKEND -> BACKEND : Xác thực JWT\ntừ HttpOnly Cookie
 
@@ -29,16 +29,16 @@ DB --> BACKEND : danh sách user khớp
 
 BACKEND --> CLIENT : HTTP 200 OK\n{users[]}
 
-CLIENT -> CLIENT : Hiển thị kết quả\nNgười dùng chọn thành viên cần thêm
+CLIENT -> CLIENT : Hiển thị kết quả\nNgười dùng chọn người dùng cần thêm
 
-CLIENT -> BACKEND : POST /api/v1/board-members/:boardId\n{userId}
+CLIENT -> BACKEND : POST /api/v1/board-members/:boardId\n{userId}\n(vai trò mặc định: MEMBER)
 
 BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = currentUserId
 
-alt Người yêu cầu không phải thành viên Board
-    DB --> BACKEND : null
+alt Người yêu cầu không phải ADMIN hoặc MEMBER của Board
+    DB --> BACKEND : null hoặc role=VIEWER
     BACKEND --> CLIENT : HTTP 403 Forbidden
-else Có quyền thêm thành viên
+else Có quyền thêm thành viên (ADMIN hoặc MEMBER)
     DB --> BACKEND : member record
 
     BACKEND -> DB : SELECT * FROM board_members\nWHERE board_id = ? AND user_id = targetUserId
@@ -46,7 +46,7 @@ else Có quyền thêm thành viên
     alt User đã là thành viên Board
         DB --> BACKEND : member record
         BACKEND --> CLIENT : HTTP 409 Conflict
-    else User chưa là thành viên
+    else User chưa là thành viên Board
         DB --> BACKEND : null
         BACKEND -> DB : INSERT INTO board_members\n(board_id, user_id, role=MEMBER)
         DB --> BACKEND : member record (mới)

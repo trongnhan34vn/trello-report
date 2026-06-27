@@ -30,7 +30,7 @@ else JWT hợp lệ
     BACKEND -> DB : INSERT INTO workspaces\n(id, name, description, owner_id)
     DB --> BACKEND : workspace record
 
-    BACKEND -> DB : INSERT INTO workspace_members\n(workspace_id, user_id, role=OWNER)
+    BACKEND -> DB : INSERT INTO workspace_members\n(workspace_id, user_id, role=ADMIN)
     DB --> BACKEND : member record
 
     BACKEND --> CLIENT : HTTP 201 Created\n{workspaceId, name, description}
