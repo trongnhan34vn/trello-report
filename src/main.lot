@@ -7,21 +7,21 @@
 \contentsline {table}{\numberline {7}{\ignorespaces Yêu cầu chức năng nhóm 7}}{22}{}%
 \contentsline {table}{\numberline {8}{\ignorespaces Danh sách Use Case}}{26}{}%
 \contentsline {table}{\numberline {9}{\ignorespaces Phân quyền theo vai trò trong hệ thống}}{27}{}%
-\contentsline {table}{\numberline {10}{\ignorespaces Bảng \texttt {roles}}}{93}{}%
-\contentsline {table}{\numberline {11}{\ignorespaces Bảng \texttt {images}}}{94}{}%
-\contentsline {table}{\numberline {12}{\ignorespaces Bảng \texttt {workspace\_categories}}}{94}{}%
-\contentsline {table}{\numberline {13}{\ignorespaces Bảng \texttt {users}}}{95}{}%
-\contentsline {table}{\numberline {14}{\ignorespaces Bảng \texttt {workspaces}}}{96}{}%
-\contentsline {table}{\numberline {15}{\ignorespaces Bảng \texttt {workspace\_members}}}{96}{}%
-\contentsline {table}{\numberline {16}{\ignorespaces Bảng \texttt {boards}}}{97}{}%
-\contentsline {table}{\numberline {17}{\ignorespaces Bảng \texttt {board\_members}}}{97}{}%
-\contentsline {table}{\numberline {18}{\ignorespaces Bảng \texttt {lists}}}{98}{}%
-\contentsline {table}{\numberline {19}{\ignorespaces Bảng \texttt {cards}}}{99}{}%
-\contentsline {table}{\numberline {20}{\ignorespaces Bảng \texttt {card\_members}}}{99}{}%
-\contentsline {table}{\numberline {21}{\ignorespaces Bảng \texttt {checklists}}}{100}{}%
-\contentsline {table}{\numberline {22}{\ignorespaces Bảng \texttt {checklist\_items}}}{101}{}%
-\contentsline {table}{\numberline {23}{Danh sách chức năng đã hoàn thành (27/31 — 87,1\%)}}{103}{}%
-\contentsline {table}{\numberline {24}{\ignorespaces Tổng hợp kết quả thực hiện}}{103}{}%
-\contentsline {table}{\numberline {25}{\ignorespaces Tổng hợp kết quả kiểm thử theo module}}{104}{}%
-\contentsline {table}{\numberline {26}{\ignorespaces Các tính năng chưa được triển khai}}{111}{}%
-\contentsline {table}{\numberline {27}{Danh sách API endpoint đầy đủ của hệ thống}}{116}{}%
+\contentsline {table}{\numberline {10}{\ignorespaces Bảng \texttt {roles}}}{94}{}%
+\contentsline {table}{\numberline {11}{\ignorespaces Bảng \texttt {images}}}{95}{}%
+\contentsline {table}{\numberline {12}{\ignorespaces Bảng \texttt {workspace\_categories}}}{95}{}%
+\contentsline {table}{\numberline {13}{\ignorespaces Bảng \texttt {users}}}{96}{}%
+\contentsline {table}{\numberline {14}{\ignorespaces Bảng \texttt {workspaces}}}{97}{}%
+\contentsline {table}{\numberline {15}{\ignorespaces Bảng \texttt {workspace\_members}}}{97}{}%
+\contentsline {table}{\numberline {16}{\ignorespaces Bảng \texttt {boards}}}{98}{}%
+\contentsline {table}{\numberline {17}{\ignorespaces Bảng \texttt {board\_members}}}{98}{}%
+\contentsline {table}{\numberline {18}{\ignorespaces Bảng \texttt {lists}}}{99}{}%
+\contentsline {table}{\numberline {19}{\ignorespaces Bảng \texttt {cards}}}{100}{}%
+\contentsline {table}{\numberline {20}{\ignorespaces Bảng \texttt {card\_members}}}{100}{}%
+\contentsline {table}{\numberline {21}{\ignorespaces Bảng \texttt {checklists}}}{101}{}%
+\contentsline {table}{\numberline {22}{\ignorespaces Bảng \texttt {checklist\_items}}}{102}{}%
+\contentsline {table}{\numberline {23}{Danh sách chức năng đã hoàn thành (27/31 — 87,1\%)}}{104}{}%
+\contentsline {table}{\numberline {24}{\ignorespaces Tổng hợp kết quả thực hiện}}{104}{}%
+\contentsline {table}{\numberline {25}{\ignorespaces Tổng hợp kết quả kiểm thử theo module}}{105}{}%
+\contentsline {table}{\numberline {26}{\ignorespaces Các tính năng chưa được triển khai}}{112}{}%
+\contentsline {table}{\numberline {27}{Danh sách API endpoint đầy đủ của hệ thống}}{117}{}%

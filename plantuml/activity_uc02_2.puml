@@ -21,7 +21,7 @@ start
 
 :Người dùng truy cập trang thông tin cá nhân;
 :Nhấn nút "Chỉnh sửa";
-:Gửi yêu cầu GET /api/v1/users/me\n(tải thông tin hiện tại);
+:Hệ thống tải thông tin cá nhân hiện tại;
 :Hiển thị form chỉnh sửa\n(avatar, bio, phone, address);
 :Nhập nội dung chỉnh sửa;
 
@@ -29,7 +29,7 @@ if (Dữ liệu nhập hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi validation;
     stop
 else (Có)
-    :Gửi yêu cầu PATCH /api/v1/users/me\n(cập nhật thông tin);
+    :Hệ thống gửi yêu cầu cập nhật thông tin cá nhân;
     :Backend lưu thông tin mới;
     :Hiển thị thông báo cập nhật thành công;
 endif

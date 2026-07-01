@@ -24,7 +24,7 @@ start
 :Hiển thị hộp thoại xác nhận xóa List;
 
 if (Người dùng xác nhận xóa?) then (Có)
-    :Gửi yêu cầu DELETE /api/v1/lists/:id;
+    :Hệ thống gửi yêu cầu xóa List;
     :Backend xóa List (cascade: Card, Checklist, ChecklistItem);
     :Xóa cột List khỏi giao diện Kanban;
 else (Không)

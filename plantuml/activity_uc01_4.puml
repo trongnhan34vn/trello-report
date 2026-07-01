@@ -21,7 +21,7 @@ start
 
 :Người dùng truy cập trang Đăng nhập;
 :Nhập thông tin đăng nhập\n(email, password);
-:Gửi yêu cầu POST /api/v1/auth/sign-in;
+:Hệ thống tiếp nhận và xử lý yêu cầu đăng nhập;
 
 if (Thông tin đăng nhập hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi đăng nhập;

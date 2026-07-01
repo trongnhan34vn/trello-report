@@ -22,7 +22,7 @@ start
 :Người dùng mở Card Detail Modal;
 :Nhìn thấy danh sách Checklist Item;
 :Tick checkbox của Item cần đánh dấu;
-:Gửi yêu cầu PATCH /api/v1/checklist-items/:id\n(isCompleted = true/false);
+:Hệ thống gửi yêu cầu cập nhật trạng thái hoàn thành của Item;
 
 if (Cập nhật thành công?) then (Không)
     :Hiển thị thông báo lỗi;

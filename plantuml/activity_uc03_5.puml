@@ -20,7 +20,7 @@ title UC-03.5: Xem danh sách thành viên Workspace
 start
 
 :Người dùng truy cập trang chi tiết Workspace;
-:Gửi yêu cầu GET /api/v1/workspaces/:id/members\n(lấy danh sách thành viên);
+:Hệ thống gửi yêu cầu lấy danh sách thành viên Workspace;
 
 if (Token hợp lệ và user thuộc Workspace?) then (Không)
     :Trả về lỗi 401 hoặc 403;

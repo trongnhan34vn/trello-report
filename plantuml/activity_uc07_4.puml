@@ -28,7 +28,7 @@ if (Tên hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi;
     stop
 else (Có)
-    :Gửi yêu cầu POST /api/v1/checklist-items\n(kèm checklistId, name, position);
+    :Hệ thống gửi yêu cầu tạo Checklist Item mới;
     :Backend lưu Item trong Checklist;
     :Hiển thị Item mới trong Checklist;
 endif

@@ -21,10 +21,10 @@ start
 
 :Người dùng mở Card Detail Modal;
 :Mở chức năng quản lý thành viên Card;
-:Gửi yêu cầu GET /api/v1/boards-members?boardId=&search=\n(lấy danh sách thành viên Board);
+:Hệ thống gửi yêu cầu lấy danh sách thành viên Board;
 :Hiển thị danh sách thành viên Board\n(chưa được gán vào Card này);
 :Người dùng chọn thành viên cần gán;
-:Gửi yêu cầu POST /api/v1/card-members\n(kèm cardId, userId);
+:Hệ thống gửi yêu cầu gán thành viên vào Card;
 
 if (Gán thành công?) then (Không)
     :Hiển thị thông báo lỗi\n(thành viên đã được gán hoặc không thuộc Board);

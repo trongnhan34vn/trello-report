@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.30)  27 JUN 2026 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.30)  1 JUL 2026 22:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -786,713 +786,719 @@ File: images/chap3/activity_uc01_1.png Graphic file (type png)
 Package pdftex.def Info: images/chap3/activity_uc01_1.png  used on input line 1487.
 (pdftex.def)             Requested size: 390.00505pt x 405.69081pt.
 [54]
-<images/chap3/activity_uc01_4.png, id=211, 548.0475pt x 571.13374pt>
+<images/chap3/activity_uc01_2.png, id=211, 692.5875pt x 515.9275pt>
+File: images/chap3/activity_uc01_2.png Graphic file (type png)
+<use images/chap3/activity_uc01_2.png>
+Package pdftex.def Info: images/chap3/activity_uc01_2.png  used on input line 1498.
+(pdftex.def)             Requested size: 390.01279pt x 290.53127pt.
+ [55 <./images/chap3/activity_uc01_1.png>]
+<images/chap3/activity_uc01_4.png, id=216, 548.0475pt x 571.13374pt>
 File: images/chap3/activity_uc01_4.png Graphic file (type png)
 <use images/chap3/activity_uc01_4.png>
-Package pdftex.def Info: images/chap3/activity_uc01_4.png  used on input line 1498.
+Package pdftex.def Info: images/chap3/activity_uc01_4.png  used on input line 1509.
 (pdftex.def)             Requested size: 390.00287pt x 406.43156pt.
- [55 <./images/chap3/activity_uc01_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1505--1506
+ [56 <./images/chap3/activity_uc01_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1517
 
  []
 
-<images/chap3/activity_uc03_1.png, id=216, 581.17125pt x 627.34375pt>
+<images/chap3/activity_uc03_1.png, id=221, 581.17125pt x 627.34375pt>
 File: images/chap3/activity_uc03_1.png Graphic file (type png)
 <use images/chap3/activity_uc03_1.png>
-Package pdftex.def Info: images/chap3/activity_uc03_1.png  used on input line 1515.
+Package pdftex.def Info: images/chap3/activity_uc03_1.png  used on input line 1526.
 (pdftex.def)             Requested size: 390.00346pt x 420.9882pt.
-[56 <./images/chap3/activity_uc01_4.png>]
-<images/chap3/activity_uc03_4.png, id=221, 705.63625pt x 571.13374pt>
+[57 <./images/chap3/activity_uc01_4.png>]
+<images/chap3/activity_uc03_4.png, id=226, 705.63625pt x 556.0775pt>
 File: images/chap3/activity_uc03_4.png Graphic file (type png)
 <use images/chap3/activity_uc03_4.png>
-Package pdftex.def Info: images/chap3/activity_uc03_4.png  used on input line 1526.
-(pdftex.def)             Requested size: 389.99615pt x 315.65834pt.
- [57 <./images/chap3/activity_uc03_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1533--1534
+Package pdftex.def Info: images/chap3/activity_uc03_4.png  used on input line 1537.
+(pdftex.def)             Requested size: 389.99615pt x 307.33693pt.
+ [58 <./images/chap3/activity_uc03_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1544--1545
 
  []
 
-<images/chap3/activity_uc04_1.png, id=226, 605.26125pt x 657.45625pt>
+<images/chap3/activity_uc04_1.png, id=231, 605.26125pt x 642.4pt>
 File: images/chap3/activity_uc04_1.png Graphic file (type png)
 <use images/chap3/activity_uc04_1.png>
-Package pdftex.def Info: images/chap3/activity_uc04_1.png  used on input line 1543.
-(pdftex.def)             Requested size: 389.99799pt x 423.62967pt.
-[58 <./images/chap3/activity_uc03_4.png>]
-<images/chap3/activity_uc04_4.png, id=231, 600.2425pt x 530.98375pt>
+Package pdftex.def Info: images/chap3/activity_uc04_1.png  used on input line 1554.
+(pdftex.def)             Requested size: 389.99799pt x 413.92824pt.
+[59 <./images/chap3/activity_uc03_4.png>]
+<images/chap3/activity_uc04_4.png, id=236, 600.2425pt x 530.98375pt>
 File: images/chap3/activity_uc04_4.png Graphic file (type png)
 <use images/chap3/activity_uc04_4.png>
-Package pdftex.def Info: images/chap3/activity_uc04_4.png  used on input line 1554.
+Package pdftex.def Info: images/chap3/activity_uc04_4.png  used on input line 1565.
 (pdftex.def)             Requested size: 390.00645pt x 345.0057pt.
- [59 <./images/chap3/activity_uc04_1.png>]
-<images/chap3/activity_uc04_5.png, id=236, 577.15625pt x 642.4pt>
+ [60 <./images/chap3/activity_uc04_1.png>]
+<images/chap3/activity_uc04_5.png, id=242, 577.15625pt x 611.28375pt>
 File: images/chap3/activity_uc04_5.png Graphic file (type png)
 <use images/chap3/activity_uc04_5.png>
-Package pdftex.def Info: images/chap3/activity_uc04_5.png  used on input line 1565.
-(pdftex.def)             Requested size: 390.01279pt x 434.10121pt.
- [60 <./images/chap3/activity_uc04_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1572--1573
+Package pdftex.def Info: images/chap3/activity_uc04_5.png  used on input line 1576.
+(pdftex.def)             Requested size: 390.01279pt x 413.07443pt.
+ [61 <./images/chap3/activity_uc04_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1584
 
  []
 
-<images/chap3/activity_uc05_1.png, id=242, 481.8pt x 530.98375pt>
+<images/chap3/activity_uc05_1.png, id=247, 481.8pt x 500.87125pt>
 File: images/chap3/activity_uc05_1.png Graphic file (type png)
 <use images/chap3/activity_uc05_1.png>
-Package pdftex.def Info: images/chap3/activity_uc05_1.png  used on input line 1582.
-(pdftex.def)             Requested size: 390.01324pt x 429.8271pt.
-[61 <./images/chap3/activity_uc04_5.png>]
-<images/chap3/activity_uc05_3.png, id=247, 542.025pt x 530.98375pt>
+Package pdftex.def Info: images/chap3/activity_uc05_1.png  used on input line 1593.
+(pdftex.def)             Requested size: 390.01324pt x 405.45126pt.
+[62 <./images/chap3/activity_uc04_5.png>]
+<images/chap3/activity_uc05_3.png, id=252, 542.025pt x 530.98375pt>
 File: images/chap3/activity_uc05_3.png Graphic file (type png)
 <use images/chap3/activity_uc05_3.png>
-Package pdftex.def Info: images/chap3/activity_uc05_3.png  used on input line 1593.
+Package pdftex.def Info: images/chap3/activity_uc05_3.png  used on input line 1604.
 (pdftex.def)             Requested size: 390.00958pt x 382.06493pt.
- [62 <./images/chap3/activity_uc05_1.png>]
-<images/chap3/activity_uc05_4.png, id=252, 518.93875pt x 601.24625pt>
+ [63 <./images/chap3/activity_uc05_1.png>]
+<images/chap3/activity_uc05_4.png, id=257, 518.93875pt x 586.19pt>
 File: images/chap3/activity_uc05_4.png Graphic file (type png)
 <use images/chap3/activity_uc05_4.png>
-Package pdftex.def Info: images/chap3/activity_uc05_4.png  used on input line 1604.
-(pdftex.def)             Requested size: 390.01869pt x 451.87851pt.
- [63 <./images/chap3/activity_uc05_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1611--1612
+Package pdftex.def Info: images/chap3/activity_uc05_4.png  used on input line 1615.
+(pdftex.def)             Requested size: 390.01869pt x 440.5627pt.
+ [64 <./images/chap3/activity_uc05_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1622--1623
 
  []
 
-<images/chap3/activity_uc06_1.png, id=257, 459.7175pt x 530.98375pt>
+<images/chap3/activity_uc06_1.png, id=262, 459.7175pt x 500.87125pt>
 File: images/chap3/activity_uc06_1.png Graphic file (type png)
 <use images/chap3/activity_uc06_1.png>
-Package pdftex.def Info: images/chap3/activity_uc06_1.png  used on input line 1621.
-(pdftex.def)             Requested size: 390.01816pt x 450.47948pt.
-[64 <./images/chap3/activity_uc05_4.png>]
-<images/chap3/activity_uc06_5.png, id=262, 507.8975pt x 601.24625pt>
+Package pdftex.def Info: images/chap3/activity_uc06_1.png  used on input line 1632.
+(pdftex.def)             Requested size: 390.01816pt x 424.93243pt.
+[65 <./images/chap3/activity_uc05_4.png>]
+<images/chap3/activity_uc06_5.png, id=267, 507.8975pt x 586.19pt>
 File: images/chap3/activity_uc06_5.png Graphic file (type png)
 <use images/chap3/activity_uc06_5.png>
-Package pdftex.def Info: images/chap3/activity_uc06_5.png  used on input line 1632.
-(pdftex.def)             Requested size: 390.0128pt x 461.69498pt.
- [65 <./images/chap3/activity_uc06_1.png>]
-<images/chap3/activity_uc06_6.png, id=267, 600.2425pt x 530.98375pt>
+Package pdftex.def Info: images/chap3/activity_uc06_5.png  used on input line 1643.
+(pdftex.def)             Requested size: 390.0128pt x 450.13335pt.
+ [66 <./images/chap3/activity_uc06_1.png>]
+<images/chap3/activity_uc06_6.png, id=273, 600.2425pt x 530.98375pt>
 File: images/chap3/activity_uc06_6.png Graphic file (type png)
 <use images/chap3/activity_uc06_6.png>
-Package pdftex.def Info: images/chap3/activity_uc06_6.png  used on input line 1643.
+Package pdftex.def Info: images/chap3/activity_uc06_6.png  used on input line 1654.
 (pdftex.def)             Requested size: 390.00645pt x 345.0057pt.
- [66 <./images/chap3/activity_uc06_5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1650--1651
+ [67 <./images/chap3/activity_uc06_5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1661--1662
 
  []
 
-<images/chap3/activity_uc07_1.png, id=273, 464.73625pt x 530.98375pt>
+<images/chap3/activity_uc07_1.png, id=278, 483.8075pt x 500.87125pt>
 File: images/chap3/activity_uc07_1.png Graphic file (type png)
 <use images/chap3/activity_uc07_1.png>
-Package pdftex.def Info: images/chap3/activity_uc07_1.png  used on input line 1660.
-(pdftex.def)             Requested size: 390.00703pt x 445.60199pt.
-[67 <./images/chap3/activity_uc06_6.png>]
-<images/chap3/activity_uc07_4.png, id=278, 500.87125pt x 586.19pt>
+Package pdftex.def Info: images/chap3/activity_uc07_1.png  used on input line 1671.
+(pdftex.def)             Requested size: 390.0142pt x 403.76988pt.
+[68 <./images/chap3/activity_uc06_6.png>]
+<images/chap3/activity_uc07_4.png, id=283, 515.9275pt x 556.0775pt>
 File: images/chap3/activity_uc07_4.png Graphic file (type png)
 <use images/chap3/activity_uc07_4.png>
-Package pdftex.def Info: images/chap3/activity_uc07_4.png  used on input line 1671.
-(pdftex.def)             Requested size: 390.01308pt x 456.44818pt.
- [68 <./images/chap3/activity_uc07_1.png>]
-Overfull \hbox (22.48674pt too wide) in paragraph at lines 1678--1679
+Package pdftex.def Info: images/chap3/activity_uc07_4.png  used on input line 1682.
+(pdftex.def)             Requested size: 390.01491pt x 420.36627pt.
+ [69 <./images/chap3/activity_uc07_1.png>]
+Overfull \hbox (22.48674pt too wide) in paragraph at lines 1689--1690
 []\T5/cmr/m/n/12 Ng˜Ìi dÚng tick check-box cıa Item; hª thËng c™p nh™t tr§ng th°i \T5/cmtt/m/n/12 isCompleted
  []
 
-<images/chap3/activity_uc07_6.png, id=283, 510.90875pt x 571.13374pt>
+<images/chap3/activity_uc07_6.png, id=288, 514.92375pt x 556.0775pt>
 File: images/chap3/activity_uc07_6.png Graphic file (type png)
 <use images/chap3/activity_uc07_6.png>
-Package pdftex.def Info: images/chap3/activity_uc07_6.png  used on input line 1682.
-(pdftex.def)             Requested size: 389.99417pt x 435.96599pt.
-[69 <./images/chap3/activity_uc07_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1689--1690
+Package pdftex.def Info: images/chap3/activity_uc07_6.png  used on input line 1693.
+(pdftex.def)             Requested size: 390.0104pt x 421.18083pt.
+[70 <./images/chap3/activity_uc07_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1700--1701
 
  []
 
-<images/chap3/activity_uc08_1.png, id=288, 734.745pt x 674.52pt>
+<images/chap3/activity_uc08_1.png, id=293, 734.745pt x 644.4075pt>
 File: images/chap3/activity_uc08_1.png Graphic file (type png)
 <use images/chap3/activity_uc08_1.png>
-Package pdftex.def Info: images/chap3/activity_uc08_1.png  used on input line 1699.
-(pdftex.def)             Requested size: 390.00719pt x 358.0394pt.
-[70 <./images/chap3/activity_uc07_6.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1707
+Package pdftex.def Info: images/chap3/activity_uc08_1.png  used on input line 1710.
+(pdftex.def)             Requested size: 390.00719pt x 342.0555pt.
+[71 <./images/chap3/activity_uc07_6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1717--1718
 
  []
 
-[71 <./images/chap3/activity_uc08_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1720--1721
+[72 <./images/chap3/activity_uc08_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1731--1732
 
  []
 
 
-Overfull \hbox (6.18936pt too wide) in paragraph at lines 1726--1727
+Overfull \hbox (6.18936pt too wide) in paragraph at lines 1737--1738
 []\T5/cmr/m/n/12 MÎt \T5/cmr/bx/n/12 List \T5/cmr/m/n/12 ch˘a nhi∑u \T5/cmr/bx/n/12 Card\T5/cmr/m/n/12 ; c°c Card ^^_˜Òc s≠p x∏p theo th˘ t¸ \T5/cmtt/m/n/12 position\T5/cmr/m/n/12 . 
  []
 
-[72]
-Underfull \hbox (badness 10000) in paragraph at lines 1737--1738
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1754--1755
-
- []
-
 [73]
-<./images/chap2/Nello System Architech.png, id=304, 1703.36375pt x 930.47626pt>
+Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
+
+ []
+
+[74]
+<./images/chap2/Nello System Architech.png, id=309, 1703.36375pt x 930.47626pt>
 File: ./images/chap2/Nello System Architech.png Graphic file (type png)
 <use ./images/chap2/Nello System Architech.png>
-Package pdftex.def Info: ./images/chap2/Nello System Architech.png  used on input line 1774.
+Package pdftex.def Info: ./images/chap2/Nello System Architech.png  used on input line 1785.
 (pdftex.def)             Requested size: 390.0pt x 213.03958pt.
- [74 <./images/chap2/Nello System Architech.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1787--1788
+ [75 <./images/chap2/Nello System Architech.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1798--1799
 
  []
 
-<images/chap3/sequence_sd01.png, id=308, 623.32875pt x 977.6525pt>
+<images/chap3/sequence_sd01.png, id=313, 623.32875pt x 977.6525pt>
 File: images/chap3/sequence_sd01.png Graphic file (type png)
 <use images/chap3/sequence_sd01.png>
-Package pdftex.def Info: images/chap3/sequence_sd01.png  used on input line 1793.
+Package pdftex.def Info: images/chap3/sequence_sd01.png  used on input line 1804.
 (pdftex.def)             Requested size: 320.83241pt x 503.20576pt.
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 1800--1801
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 1811--1812
 
  []
 
-[76 <./images/chap3/sequence_sd01.png>]
-<images/chap3/sequence_sd02.png, id=316, 706.64pt x 788.9475pt>
+[77 <./images/chap3/sequence_sd01.png>]
+<images/chap3/sequence_sd02.png, id=321, 706.64pt x 788.9475pt>
 File: images/chap3/sequence_sd02.png Graphic file (type png)
 <use images/chap3/sequence_sd02.png>
-Package pdftex.def Info: images/chap3/sequence_sd02.png  used on input line 1806.
+Package pdftex.def Info: images/chap3/sequence_sd02.png  used on input line 1817.
 (pdftex.def)             Requested size: 390.001pt x 435.42725pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1813--1814
+Underfull \hbox (badness 10000) in paragraph at lines 1824--1825
 
  []
 
-[77 <./images/chap3/sequence_sd02.png>]
-<images/chap3/sequence_sd03.png, id=321, 601.24625pt x 573.14125pt>
+[78 <./images/chap3/sequence_sd02.png>]
+<images/chap3/sequence_sd03.png, id=327, 601.24625pt x 573.14125pt>
 File: images/chap3/sequence_sd03.png Graphic file (type png)
 <use images/chap3/sequence_sd03.png>
-Package pdftex.def Info: images/chap3/sequence_sd03.png  used on input line 1819.
+Package pdftex.def Info: images/chap3/sequence_sd03.png  used on input line 1830.
 (pdftex.def)             Requested size: 390.01643pt x 371.7853pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1826--1827
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1838
 
  []
 
-<images/chap3/sequence_sd04.png, id=322, 643.40375pt x 745.78625pt>
+<images/chap3/sequence_sd04.png, id=328, 643.40375pt x 745.78625pt>
 File: images/chap3/sequence_sd04.png Graphic file (type png)
 <use images/chap3/sequence_sd04.png>
-Package pdftex.def Info: images/chap3/sequence_sd04.png  used on input line 1832.
+Package pdftex.def Info: images/chap3/sequence_sd04.png  used on input line 1843.
 (pdftex.def)             Requested size: 390.0115pt x 452.07263pt.
-[78 <./images/chap3/sequence_sd03.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
+[79 <./images/chap3/sequence_sd03.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1850--1851
 
  []
 
-[79 <./images/chap3/sequence_sd04.png>]
-<images/chap3/sequence_sd05.png, id=332, 601.24625pt x 675.52374pt>
+[80 <./images/chap3/sequence_sd04.png>]
+<images/chap3/sequence_sd05.png, id=337, 601.24625pt x 675.52374pt>
 File: images/chap3/sequence_sd05.png Graphic file (type png)
 <use images/chap3/sequence_sd05.png>
-Package pdftex.def Info: images/chap3/sequence_sd05.png  used on input line 1845.
+Package pdftex.def Info: images/chap3/sequence_sd05.png  used on input line 1856.
 (pdftex.def)             Requested size: 390.01643pt x 438.19878pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1853
+Underfull \hbox (badness 10000) in paragraph at lines 1863--1864
 
  []
 
-[80 <./images/chap3/sequence_sd05.png>]
-<images/chap3/sequence_sd06.png, id=337, 636.3775pt x 849.1725pt>
+[81 <./images/chap3/sequence_sd05.png>]
+<images/chap3/sequence_sd06.png, id=342, 636.3775pt x 849.1725pt>
 File: images/chap3/sequence_sd06.png Graphic file (type png)
 <use images/chap3/sequence_sd06.png>
-Package pdftex.def Info: images/chap3/sequence_sd06.png  used on input line 1858.
+Package pdftex.def Info: images/chap3/sequence_sd06.png  used on input line 1869.
 (pdftex.def)             Requested size: 377.11023pt x 503.21017pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1865--1866
+Underfull \hbox (badness 10000) in paragraph at lines 1876--1877
 
  []
 
-[81 <./images/chap3/sequence_sd06.png>]
-<images/chap3/sequence_sd07.png, id=342, 638.385pt x 1003.75pt>
+[82 <./images/chap3/sequence_sd06.png>]
+<images/chap3/sequence_sd07.png, id=347, 638.385pt x 1003.75pt>
 File: images/chap3/sequence_sd07.png Graphic file (type png)
 <use images/chap3/sequence_sd07.png>
-Package pdftex.def Info: images/chap3/sequence_sd07.png  used on input line 1871.
+Package pdftex.def Info: images/chap3/sequence_sd07.png  used on input line 1882.
 (pdftex.def)             Requested size: 320.03917pt x 503.20627pt.
- [82]
-Underfull \hbox (badness 10000) in paragraph at lines 1878--1879
+ [83]
+Underfull \hbox (badness 10000) in paragraph at lines 1889--1890
 
  []
 
-[83 <./images/chap3/sequence_sd07.png>]
-<images/chap3/sequence_sd08.png, id=350, 736.7525pt x 1040.88875pt>
+[84 <./images/chap3/sequence_sd07.png>]
+<images/chap3/sequence_sd08.png, id=356, 736.7525pt x 1040.88875pt>
 File: images/chap3/sequence_sd08.png Graphic file (type png)
 <use images/chap3/sequence_sd08.png>
-Package pdftex.def Info: images/chap3/sequence_sd08.png  used on input line 1884.
+Package pdftex.def Info: images/chap3/sequence_sd08.png  used on input line 1895.
 (pdftex.def)             Requested size: 356.16661pt x 503.19453pt.
- [84]
-Underfull \hbox (badness 10000) in paragraph at lines 1891--1892
+ [85]
+Underfull \hbox (badness 10000) in paragraph at lines 1902--1903
 
  []
 
-[85 <./images/chap3/sequence_sd08.png>]
-<images/chap3/sequence_sd09.png, id=359, 573.14125pt x 1002.74625pt>
+[86 <./images/chap3/sequence_sd08.png>]
+<images/chap3/sequence_sd09.png, id=364, 573.14125pt x 1002.74625pt>
 File: images/chap3/sequence_sd09.png Graphic file (type png)
 <use images/chap3/sequence_sd09.png>
-Package pdftex.def Info: images/chap3/sequence_sd09.png  used on input line 1897.
+Package pdftex.def Info: images/chap3/sequence_sd09.png  used on input line 1908.
 (pdftex.def)             Requested size: 287.61937pt x 503.20798pt.
- [86]
-Underfull \hbox (badness 10000) in paragraph at lines 1904--1905
+ [87]
+Underfull \hbox (badness 10000) in paragraph at lines 1915--1916
 
  []
 
-[87 <./images/chap3/sequence_sd09.png>]
-<images/chap3/sequence_sd10.png, id=367, 574.145pt x 1002.74625pt>
+[88 <./images/chap3/sequence_sd09.png>]
+<images/chap3/sequence_sd10.png, id=372, 574.145pt x 1002.74625pt>
 File: images/chap3/sequence_sd10.png Graphic file (type png)
 <use images/chap3/sequence_sd10.png>
-Package pdftex.def Info: images/chap3/sequence_sd10.png  used on input line 1910.
+Package pdftex.def Info: images/chap3/sequence_sd10.png  used on input line 1921.
 (pdftex.def)             Requested size: 288.12308pt x 503.20798pt.
- [88] [89 <./images/chap3/sequence_sd10.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1919--1920
+ [89] [90 <./images/chap3/sequence_sd10.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1930--1931
 
  []
 
-[90]
-<./images/DB_Design.png, id=379, 756.8275pt x 1172.38pt>
+[91]
+<./images/DB_Design.png, id=384, 756.8275pt x 1172.38pt>
 File: ./images/DB_Design.png Graphic file (type png)
 <use ./images/DB_Design.png>
-Package pdftex.def Info: ./images/DB_Design.png  used on input line 1925.
+Package pdftex.def Info: ./images/DB_Design.png  used on input line 1936.
 (pdftex.def)             Requested size: 545.5159pt x 845.0432pt.
 
 
-LaTeX Warning: Float too large for page by 137.61218pt on input line 1928.
+LaTeX Warning: Float too large for page by 137.61218pt on input line 1939.
 
-[91 <./images/DB_Design.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1931--1932
+[92 <./images/DB_Design.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1942--1943
 
  []
 
 LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 1936.
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 1947.
 
-Overfull \hbox (22.81505pt too wide) in paragraph at lines 1937--1938
+Overfull \hbox (22.81505pt too wide) in paragraph at lines 1948--1949
 \T5/cmr/m/n/12 buÎc ph£i thuÎc mÎt lo§i ^^_˜Òc ^^_‡nh nghæa sÆn trong \T5/cmtt/m/n/12 workspace_categories
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1941--1942
+Underfull \hbox (badness 10000) in paragraph at lines 1952--1953
 
  []
 
 
-Overfull \hbox (14.21623pt too wide) in paragraph at lines 1943--1944
+Overfull \hbox (14.21623pt too wide) in paragraph at lines 1954--1955
 \T5/cmtt/m/n/12 workspaces $\OMS/cmsy/m/n/12 !$ \T5/cmtt/m/n/12 boards $\OMS/cmsy/m/n/12 !$ \T5/cmtt/m/n/12 lists $\OMS/cmsy/m/n/12 !$ \T5/cmtt/m/n/12 cards $\OMS/cmsy/m/n/12 !$ \T5/cmtt/m/n/12 checklists $\OMS/cmsy/m/n/12 !$ \T5/cmtt/m/n/12 checklist_items\T5/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (2.22775pt too wide) in paragraph at lines 1947--1948
+Overfull \hbox (2.22775pt too wide) in paragraph at lines 1958--1959
 []\T5/cmtt/m/n/12 workspaces \T5/cmr/bx/n/12 -- \T5/cmtt/m/n/12 boards \T5/cmr/bx/n/12 (1--N): \T5/cmr/m/n/12 MÈi Board thuÎc v∑ ^^_Ûng mÎt Workspace
  []
 
-[92
+[93
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1977--1977
+Underfull \hbox (badness 10000) in paragraph at lines 1988--1988
 []|\T5/cmr/m/n/12 NOT NULL,
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 1971--1980
- [][] 
- []
-
-[93]
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 1995--2004
- [][] 
- []
-
-
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2015--2024
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2038
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2049--2049
-[]|\T5/cmr/m/n/12 NOT NULL,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2049--2050
-[]|\T5/cmr/m/n/12 M¢ ^^_‡nh danh t¯
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2053--2053
-[]|\T5/cmr/m/n/12 NOT NULL,
- []
-
-
-Underfull \hbox (badness 1590) in paragraph at lines 2055--2056
-[]|\T5/cmr/m/n/12 ^^^˜Ìng d®n £nh ^^_§i
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 2065--2065
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 2067--2067
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2043--2070
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 1982--1991
  [][] 
  []
 
 [94]
-Overfull \hbox (12.14357pt too wide) in paragraph at lines 2091--2091
-\T5/cmr/m/n/12 workspace_categories| 
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2006--2015
+ [][] 
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2097--2097
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2026--2035
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2048--2049
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2060--2060
+[]|\T5/cmr/m/n/12 NOT NULL,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2060--2061
+[]|\T5/cmr/m/n/12 M¢ ^^_‡nh danh t¯
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2064--2064
+[]|\T5/cmr/m/n/12 NOT NULL,
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 2066--2067
+[]|\T5/cmr/m/n/12 ^^^˜Ìng d®n £nh ^^_§i
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 2076--2076
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2099--2099
+Underfull \hbox (badness 1168) in paragraph at lines 2078--2078
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2081--2102
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2054--2081
  [][] 
  []
 
 [95]
-Underfull \hbox (badness 10000) in paragraph at lines 2121--2122
-[]|\T5/cmr/m/n/12 Workspace ch˘a
+Overfull \hbox (12.14357pt too wide) in paragraph at lines 2102--2102
+\T5/cmr/m/n/12 workspace_categories| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2123--2124
-[]|\T5/cmr/m/n/12 Vai tr· trong
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2125--2126
-[]|\T5/cmr/m/n/12 Ng˜Ìi th∂m th†nh
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 2127--2127
+Underfull \hbox (badness 1168) in paragraph at lines 2108--2108
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2113--2130
+Underfull \hbox (badness 1168) in paragraph at lines 2110--2110
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2092--2113
  [][] 
  []
 
 [96]
-Overfull \hbox (1.07063pt too wide) in paragraph at lines 2153--2153
-[]|\T5/cmtt/m/n/12 background_url| 
- []
-
-
-Underfull \hbox (badness 6220) in paragraph at lines 2155--2155
-\T5/cmr/m/n/12 workspaces, CAS-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2155--2156
+Underfull \hbox (badness 10000) in paragraph at lines 2132--2133
 []|\T5/cmr/m/n/12 Workspace ch˘a
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2161--2161
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
+Underfull \hbox (badness 10000) in paragraph at lines 2134--2135
+[]|\T5/cmr/m/n/12 Vai tr· trong
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2163--2163
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2145--2166
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2185--2186
-[]|\T5/cmr/m/n/12 Board ch˘a th†nh
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2189--2190
+Underfull \hbox (badness 10000) in paragraph at lines 2136--2137
 []|\T5/cmr/m/n/12 Ng˜Ìi th∂m th†nh
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2191--2191
+Underfull \hbox (badness 1168) in paragraph at lines 2138--2138
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2177--2194
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2124--2141
  [][] 
  []
 
 [97]
-Underfull \hbox (badness 1168) in paragraph at lines 2225--2225
+Overfull \hbox (1.07063pt too wide) in paragraph at lines 2164--2164
+[]|\T5/cmtt/m/n/12 background_url| 
+ []
+
+
+Underfull \hbox (badness 6220) in paragraph at lines 2166--2166
+\T5/cmr/m/n/12 workspaces, CAS-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2166--2167
+[]|\T5/cmr/m/n/12 Workspace ch˘a
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 2172--2172
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2227--2227
+Underfull \hbox (badness 1168) in paragraph at lines 2174--2174
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2209--2230
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2156--2177
  [][] 
  []
 
 
-Underfull \hbox (badness 1248) in paragraph at lines 2257--2258
-[]|\T5/cmr/m/n/12 Ng†y ^^_∏n h§n ho†n
+Underfull \hbox (badness 10000) in paragraph at lines 2196--2197
+[]|\T5/cmr/m/n/12 Board ch˘a th†nh
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2259--2259
+Underfull \hbox (badness 10000) in paragraph at lines 2200--2201
+[]|\T5/cmr/m/n/12 Ng˜Ìi th∂m th†nh
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 2202--2202
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2259--2260
-[]|\T5/cmr/m/n/12 Tr§ng th°i ho†n
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 2269--2269
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Underfull \hbox (badness 1168) in paragraph at lines 2271--2271
-[]|\T5/cmr/m/n/12 NOT NULL, DE-
- []
-
-
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2245--2274
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2188--2205
  [][] 
  []
 
 [98]
-Underfull \hbox (badness 1168) in paragraph at lines 2297--2297
+Underfull \hbox (badness 1168) in paragraph at lines 2236--2236
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2285--2300
+Underfull \hbox (badness 1168) in paragraph at lines 2238--2238
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2220--2241
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 2268--2269
+[]|\T5/cmr/m/n/12 Ng†y ^^_∏n h§n ho†n
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 2270--2270
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2270--2271
+[]|\T5/cmr/m/n/12 Tr§ng th°i ho†n
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 2280--2280
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 2282--2282
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2256--2285
  [][] 
  []
 
 [99]
-Underfull \hbox (badness 1168) in paragraph at lines 2331--2331
+Underfull \hbox (badness 1168) in paragraph at lines 2308--2308
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2333--2333
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2296--2311
+ [][] 
+ []
+
+[100]
+Underfull \hbox (badness 1168) in paragraph at lines 2342--2342
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2315--2336
+Underfull \hbox (badness 1168) in paragraph at lines 2344--2344
+[]|\T5/cmr/m/n/12 NOT NULL, DE-
+ []
+
+
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2326--2347
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2345--2346
+Underfull \hbox (badness 10000) in paragraph at lines 2356--2357
 
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2361--2361
+Underfull \hbox (badness 1168) in paragraph at lines 2372--2372
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 2363--2364
+Underfull \hbox (badness 1983) in paragraph at lines 2374--2375
 []|\T5/cmr/m/n/12 ThÌi h§n ri∂ng cıa
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 2365--2365
+Underfull \hbox (badness 3635) in paragraph at lines 2376--2376
 []|\T5/cmr/m/n/12 NOT NULL, FK
  []
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 2365--2366
+Underfull \hbox (badness 1817) in paragraph at lines 2376--2377
 []|\T5/cmr/m/n/12 Checklist ch˘a h§ng
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2371--2371
+Underfull \hbox (badness 1168) in paragraph at lines 2382--2382
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2373--2373
+Underfull \hbox (badness 1168) in paragraph at lines 2384--2384
 []|\T5/cmr/m/n/12 NOT NULL, DE-
  []
 
 
-Overfull \hbox (58.33853pt too wide) in paragraph at lines 2351--2376
+Overfull \hbox (58.33853pt too wide) in paragraph at lines 2362--2387
  [][] 
  []
 
-[100] [101]
-Overfull \hbox (1.07799pt too wide) in alignment at lines 2393--2397
+[101] [102]
+Overfull \hbox (1.07799pt too wide) in alignment at lines 2404--2408
  [] [] [] 
  []
 
 
-Overfull \hbox (1.07799pt too wide) in alignment at lines 2397--2401
+Overfull \hbox (1.07799pt too wide) in alignment at lines 2408--2412
  [] [] [] 
  []
 
 
-Overfull \hbox (1.07799pt too wide) in alignment at lines 2401--2403
+Overfull \hbox (1.07799pt too wide) in alignment at lines 2412--2414
  [] [] [] 
  []
 
 
-Overfull \hbox (1.07799pt too wide) in alignment at lines 2403--2475
+Overfull \hbox (1.07799pt too wide) in alignment at lines 2414--2486
  [] [] [] 
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [102
+ignored: Infinite glue shrinkage found in box being split [103
 
 ]
-Overfull \hbox (33.53854pt too wide) in paragraph at lines 2483--2502
+Overfull \hbox (33.53854pt too wide) in paragraph at lines 2494--2513
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2514--2515
+Underfull \hbox (badness 10000) in paragraph at lines 2525--2526
 []|\T5/cmr/bx/n/12 K∏t
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2516--2516
+Underfull \hbox (badness 10000) in paragraph at lines 2527--2527
 []|\T5/cmr/m/n/12 Authentication
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2518--2518
+Underfull \hbox (badness 10000) in paragraph at lines 2529--2529
 []|\T5/cmr/m/n/12 Workspace &
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 2520--2520
+Underfull \hbox (badness 1715) in paragraph at lines 2531--2531
 []|\T5/cmr/m/n/12 Card & Check-list
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 2522--2522
+Underfull \hbox (badness 2600) in paragraph at lines 2533--2533
 []|\T5/cmr/m/n/12 LuÁng x°c th¸c end-to-end, Dash-
  []
 
 
-Underfull \hbox (badness 5417) in paragraph at lines 2524--2524
+Underfull \hbox (badness 5417) in paragraph at lines 2535--2535
 []|\T5/cmr/m/n/12 Giao diªn Board
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 2524--2524
+Underfull \hbox (badness 6173) in paragraph at lines 2535--2535
 []|\T5/cmr/m/n/12 Workspace De-tail, Board Kan-ban:
  []
 
 
-Overfull \hbox (44.11214pt too wide) in paragraph at lines 2512--2527
+Overfull \hbox (44.11214pt too wide) in paragraph at lines 2523--2538
  [][] 
  []
 
-[103]
-<./images/chap4/screen-signup.png, id=423, 1914.15125pt x 913.4125pt>
+[104]
+<./images/chap4/screen-signup.png, id=428, 1914.15125pt x 913.4125pt>
 File: ./images/chap4/screen-signup.png Graphic file (type png)
 <use ./images/chap4/screen-signup.png>
-Package pdftex.def Info: ./images/chap4/screen-signup.png  used on input line 2541.
+Package pdftex.def Info: ./images/chap4/screen-signup.png  used on input line 2552.
 (pdftex.def)             Requested size: 390.0pt x 186.09396pt.
-<./images/chap4/screen-confirm-otp.png, id=424, 1906.12125pt x 908.39375pt>
+<./images/chap4/screen-confirm-otp.png, id=429, 1906.12125pt x 908.39375pt>
 File: ./images/chap4/screen-confirm-otp.png Graphic file (type png)
 <use ./images/chap4/screen-confirm-otp.png>
-Package pdftex.def Info: ./images/chap4/screen-confirm-otp.png  used on input line 2551.
+Package pdftex.def Info: ./images/chap4/screen-confirm-otp.png  used on input line 2562.
 (pdftex.def)             Requested size: 390.0pt x 185.86154pt.
- [104 <./images/chap4/screen-signup.png>]
-<./images/chap4/screen-signin.png, id=429, 1916.15875pt x 910.40125pt>
+ [105 <./images/chap4/screen-signup.png>]
+<./images/chap4/screen-signin.png, id=434, 1916.15875pt x 910.40125pt>
 File: ./images/chap4/screen-signin.png Graphic file (type png)
 <use ./images/chap4/screen-signin.png>
-Package pdftex.def Info: ./images/chap4/screen-signin.png  used on input line 2561.
+Package pdftex.def Info: ./images/chap4/screen-signin.png  used on input line 2572.
 (pdftex.def)             Requested size: 390.0pt x 185.28598pt.
- [105 <./images/chap4/screen-confirm-otp.png> <./images/chap4/screen-signin.png>]
-<./images/chap4/screen-dashboard.png, id=435, 1916.15875pt x 909.3975pt>
+ [106 <./images/chap4/screen-confirm-otp.png> <./images/chap4/screen-signin.png>]
+<./images/chap4/screen-dashboard.png, id=440, 1916.15875pt x 909.3975pt>
 File: ./images/chap4/screen-dashboard.png Graphic file (type png)
 <use ./images/chap4/screen-dashboard.png>
-Package pdftex.def Info: ./images/chap4/screen-dashboard.png  used on input line 2571.
+Package pdftex.def Info: ./images/chap4/screen-dashboard.png  used on input line 2582.
 (pdftex.def)             Requested size: 390.0pt x 185.0817pt.
-<./images/chap4/screen-workspace-detail.png, id=436, 1915.155pt x 913.4125pt>
+<./images/chap4/screen-workspace-detail.png, id=441, 1915.155pt x 913.4125pt>
 File: ./images/chap4/screen-workspace-detail.png Graphic file (type png)
 <use ./images/chap4/screen-workspace-detail.png>
-Package pdftex.def Info: ./images/chap4/screen-workspace-detail.png  used on input line 2581.
+Package pdftex.def Info: ./images/chap4/screen-workspace-detail.png  used on input line 2592.
 (pdftex.def)             Requested size: 390.0pt x 185.9964pt.
- [106 <./images/chap4/screen-dashboard.png> <./images/chap4/screen-workspace-detail.png>]
-<./images/chap4/screen-board-kanban.png, id=442, 1917.1625pt x 907.39pt>
+ [107 <./images/chap4/screen-dashboard.png> <./images/chap4/screen-workspace-detail.png>]
+<./images/chap4/screen-board-kanban.png, id=447, 1917.1625pt x 907.39pt>
 File: ./images/chap4/screen-board-kanban.png Graphic file (type png)
 <use ./images/chap4/screen-board-kanban.png>
-Package pdftex.def Info: ./images/chap4/screen-board-kanban.png  used on input line 2591.
+Package pdftex.def Info: ./images/chap4/screen-board-kanban.png  used on input line 2602.
 (pdftex.def)             Requested size: 390.0pt x 184.5762pt.
-<./images/chap4/feature-drag-drop.png, id=443, 1927.2pt x 1084.05pt>
+<./images/chap4/feature-drag-drop.png, id=448, 1927.2pt x 1084.05pt>
 File: ./images/chap4/feature-drag-drop.png Graphic file (type png)
 <use ./images/chap4/feature-drag-drop.png>
-Package pdftex.def Info: ./images/chap4/feature-drag-drop.png  used on input line 2603.
+Package pdftex.def Info: ./images/chap4/feature-drag-drop.png  used on input line 2614.
 (pdftex.def)             Requested size: 390.0pt x 219.37006pt.
-<./images/chap4/feature-card-detail.png, id=444, 1656.1875pt x 902.37125pt>
+<./images/chap4/feature-card-detail.png, id=449, 1656.1875pt x 902.37125pt>
 File: ./images/chap4/feature-card-detail.png Graphic file (type png)
 <use ./images/chap4/feature-card-detail.png>
-Package pdftex.def Info: ./images/chap4/feature-card-detail.png  used on input line 2611.
+Package pdftex.def Info: ./images/chap4/feature-card-detail.png  used on input line 2622.
 (pdftex.def)             Requested size: 390.0pt x 212.48412pt.
- [107 <./images/chap4/screen-board-kanban.png> <./images/chap4/feature-drag-drop.png>] [108 <./images/chap4/feature-card-detail.png>] [109]
-Overfull \hbox (24.82755pt too wide) in paragraph at lines 2644--2644
+ [108 <./images/chap4/screen-board-kanban.png> <./images/chap4/feature-drag-drop.png>] [109 <./images/chap4/feature-card-detail.png>] [110]
+Overfull \hbox (24.82755pt too wide) in paragraph at lines 2655--2655
 []\T5/cmr/bx/n/17.28 CH◊ÃNG 5: KòT LUäN VÄ H◊ŒNG PHÅT
  []
 
-[110
+[111
 
 ]
-Underfull \hbox (badness 4036) in paragraph at lines 2680--2680
+Underfull \hbox (badness 4036) in paragraph at lines 2691--2691
 []|\T5/cmr/m/n/12 Qu£n l˛ nh¢n d°n
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 2690--2690
+Underfull \hbox (badness 4132) in paragraph at lines 2701--2701
 []|\T5/cmr/m/n/12 ^^^Áng bÎ thÌi gian
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 2676--2693
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 2687--2704
  [][] 
  []
 
-[111] [112] [113]) (./references.tex
+[112] [113] [114]) (./references.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 []\T5/cmr/m/n/12 Amazon Web Ser-vices. \T5/cmr/m/it/12 Ama-zon Cog-
  []
@@ -1562,7 +1568,7 @@ Underfull \hbox (badness 1668) in paragraph at lines 25--26
 \T5/cmr/m/n/12 2024. Truy c™p t§i: \T5/cmtt/m/n/12 https://www.atlassian.com/software/jira\T5/cmr/m/n/12 .
  []
 
-) (./appendix.tex [114
+) (./appendix.tex [115
 
 ]
 Overfull \hbox (95.16985pt too wide) in alignment at lines 12--17
@@ -1640,9 +1646,9 @@ Overfull \hbox (95.16985pt too wide) in alignment at lines 29--122
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [115
+ignored: Infinite glue shrinkage found in box being split [116
 
-] [116] [117
+] [117] [118
 
 ]
 Underfull \hbox (badness 1946) in paragraph at lines 261--261
@@ -1659,37 +1665,37 @@ Underfull \hbox (badness 1762) in paragraph at lines 261--261
 []|\T5/cmr/m/n/12 FK $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 users(id) ON DELETE SET
  []
 
-[118]
+[119]
 Underfull \hbox (badness 10000) in paragraph at lines 288--288
 []|\T5/cmr/m/n/12 FK $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 workspaces(id) \T5/cmr/bx/n/12 ON
  []
 
-[119]
+[120]
 Underfull \hbox (badness 4660) in paragraph at lines 340--340
 []|\T5/cmr/m/n/12 FK $\OMS/cmsy/m/n/12 !$ \T5/cmr/m/n/12 boards(id) \T5/cmr/bx/n/12 ON DELETE
  []
 
-[120] [121] [122] [123
+[121] [122] [123] [124
 
-] [124] [125]) (./main.aux)
+] [125] [126]) (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3572 strings out of 467525
- 61899 string characters out of 5418982
- 497030 words of memory out of 5000000
- 32433 multiletter control sequences out of 15000+600000
+ 3580 strings out of 467525
+ 62192 string characters out of 5418982
+ 497057 words of memory out of 5000000
+ 32441 multiletter control sequences out of 15000+600000
  638768 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,83p,1061b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on main.pdf (126 pages, 18875330 bytes).
+Output written on main.pdf (127 pages, 18878807 bytes).
 PDF statistics:
- 541 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
+ 548 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 

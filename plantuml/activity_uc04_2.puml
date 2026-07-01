@@ -20,7 +20,7 @@ title UC-04.2: Xem chi tiết Board
 start
 
 :Người dùng chọn một Board từ trang Workspace;
-:Gửi yêu cầu GET /api/v1/boards/:id\n(lấy Board kèm List và Card);
+:Hệ thống gửi yêu cầu lấy dữ liệu Board kèm List và Card;
 
 if (Board tồn tại và user có quyền truy cập?) then (Không)
     :Trả về lỗi 403 Forbidden hoặc 404 Not Found;

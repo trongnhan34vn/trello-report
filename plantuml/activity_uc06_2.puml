@@ -20,7 +20,7 @@ title UC-06.2: Xem chi tiết Card
 start
 
 :Người dùng nhấn vào một Card trong Kanban;
-:Gửi yêu cầu GET /api/v1/cards/:id;
+:Hệ thống gửi yêu cầu lấy thông tin chi tiết Card;
 
 if (Card tồn tại và user có quyền truy cập?) then (Không)
     :Trả về lỗi 403 Forbidden hoặc 404 Not Found;

@@ -24,7 +24,7 @@ start
 :Hiển thị hộp thoại xác nhận xóa Item;
 
 if (Người dùng xác nhận xóa?) then (Có)
-    :Gửi yêu cầu DELETE /api/v1/checklist-items/:id;
+    :Hệ thống gửi yêu cầu xóa Checklist Item;
     :Backend xóa Item khỏi Checklist;
     :Xóa Item khỏi giao diện;
     :Cập nhật tiến độ progress bar;

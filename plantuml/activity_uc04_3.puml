@@ -27,7 +27,7 @@ if (Tên hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi;
     stop
 else (Có)
-    :Gửi yêu cầu PUT /api/v1/boards/:id\n(cập nhật title);
+    :Hệ thống gửi yêu cầu cập nhật tên Board;
     :Backend lưu tên Board mới;
     :Hiển thị thông báo cập nhật thành công;
 endif

@@ -21,7 +21,7 @@ start
 
 :Người dùng đang sử dụng hệ thống;
 :Access token hết hạn;
-:Tự động gửi yêu cầu POST /api/v1/auth/refresh-token\n(dùng refresh_token trong cookie);
+:Hệ thống tự động gửi yêu cầu làm mới token\n(dùng refresh_token trong cookie);
 
 if (Refresh token hợp lệ?) then (Không)
     :Xóa cookie;

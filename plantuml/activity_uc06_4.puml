@@ -21,7 +21,7 @@ start
 
 :Người dùng mở Card Detail Modal;
 :Nhấn nút "Đánh dấu hoàn thành";
-:Gửi yêu cầu PATCH /api/v1/cards/:id\n(isCompleted = true);
+:Hệ thống gửi yêu cầu cập nhật trạng thái hoàn thành Card;
 
 if (Cập nhật thành công?) then (Không)
     :Hiển thị thông báo lỗi;

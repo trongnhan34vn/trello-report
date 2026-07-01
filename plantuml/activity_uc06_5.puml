@@ -23,7 +23,7 @@ start
 :Kéo thả Card sang List khác hoặc vị trí mới;
 :Frontend tính toán listId đích và position mới;
 :Cập nhật giao diện tức thì (optimistic update);
-:Gửi yêu cầu PATCH /api/v1/cards/:id\n(cập nhật listId và position);
+:Hệ thống gửi yêu cầu cập nhật List và vị trí của Card;
 
 if (Di chuyển thành công?) then (Không)
     :Rollback giao diện về vị trí cũ;

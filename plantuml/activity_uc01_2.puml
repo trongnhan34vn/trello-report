@@ -21,7 +21,7 @@ start
 
 :Người dùng đã nhận mã OTP qua email;
 :Nhập mã OTP xác nhận trên trang xác nhận;
-:Gửi yêu cầu POST /api/v1/auth/confirm-sign-up\n(kèm email, OTP);
+:Hệ thống tiếp nhận yêu cầu xác nhận tài khoản\n(kèm email, OTP);
 
 if (OTP đúng và chưa hết hạn?) then (Không)
     :Hiển thị thông báo OTP không hợp lệ hoặc đã hết hạn;

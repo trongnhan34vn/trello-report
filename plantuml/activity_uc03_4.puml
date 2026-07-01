@@ -22,7 +22,7 @@ start
 :Người dùng truy cập trang Workspace;
 :Mở chức năng quản lý thành viên;
 :Nhập email người dùng cần mời;
-:Gửi yêu cầu POST /api/v1/workspaces-members/:id\n(thêm thành viên theo email);
+:Hệ thống gửi yêu cầu thêm thành viên theo email;
 
 if (Email tồn tại trong hệ thống?) then (Không)
     :Hiển thị thông báo không tìm thấy người dùng;

@@ -21,10 +21,10 @@ start
 
 :Người dùng truy cập trang Board;
 :Mở chức năng quản lý thành viên Board;
-:Gửi yêu cầu GET /api/v1/workspaces/:id/members\n(lấy danh sách thành viên Workspace);
+:Hệ thống gửi yêu cầu lấy danh sách thành viên Workspace;
 :Hiển thị danh sách thành viên Workspace;
 :Chọn thành viên từ danh sách;
-:Gửi yêu cầu POST /api/v1/boards-members\n(kèm userIds, boardId);
+:Hệ thống gửi yêu cầu thêm thành viên vào Board;
 
 if (Thêm thành viên thành công?) then (Không)
     :Hiển thị thông báo lỗi;

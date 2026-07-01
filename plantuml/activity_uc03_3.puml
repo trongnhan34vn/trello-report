@@ -20,7 +20,7 @@ title UC-03.3: Xem chi tiết Workspace
 start
 
 :Người dùng chọn một Workspace từ Dashboard;
-:Gửi yêu cầu GET /api/v1/workspaces/:id;
+:Hệ thống gửi yêu cầu lấy thông tin chi tiết Workspace;
 
 if (Workspace tồn tại và user có quyền truy cập?) then (Không)
     :Trả về lỗi 403 Forbidden hoặc 404 Not Found;

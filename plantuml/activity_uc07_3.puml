@@ -24,7 +24,7 @@ start
 :Hiển thị hộp thoại xác nhận xóa;
 
 if (Người dùng xác nhận xóa?) then (Có)
-    :Gửi yêu cầu DELETE /api/v1/checklists/:id;
+    :Hệ thống gửi yêu cầu xóa Checklist;
     :Backend xóa Checklist (cascade: ChecklistItem);
     :Xóa Checklist khỏi giao diện Card;
 else (Không)

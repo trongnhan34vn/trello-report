@@ -21,7 +21,7 @@ start
 
 :Người dùng đang ở trang xác nhận OTP;
 :Nhấn nút "Gửi lại mã OTP";
-:Gửi yêu cầu POST /api/v1/auth/resend-code\n(kèm email);
+:Hệ thống tiếp nhận yêu cầu gửi lại mã OTP\n(kèm email);
 
 if (Yêu cầu hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi;

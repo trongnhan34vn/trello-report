@@ -27,7 +27,7 @@ if (Tiêu đề hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi;
     stop
 else (Có)
-    :Gửi yêu cầu POST /api/v1/cards\n(kèm listId, title, position);
+    :Hệ thống gửi yêu cầu tạo Card mới;
     :Backend lưu Card trong List;
     :Hiển thị Card mới dưới cuối cột List;
 endif

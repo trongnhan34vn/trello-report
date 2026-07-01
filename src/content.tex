@@ -1476,7 +1476,7 @@ Phần này trình bày biểu đồ hoạt động cho các use case quan trọ
 
 \paragraph{UC-01: Quản lý xác thực} \mbox{}\\
 
-Nhóm chức năng xác thực trình bày biểu đồ hoạt động cho hai luồng: đăng ký tài khoản (UC-01.1) và đăng nhập (UC-01.4).
+Nhóm chức năng xác thực trình bày biểu đồ hoạt động cho ba luồng: đăng ký tài khoản (UC-01.1), xác nhận OTP (UC-01.2) và đăng nhập (UC-01.4).
 
 \medskip\noindent\textbf{UC-01.1: Đăng ký tài khoản}\medskip
 
@@ -1487,6 +1487,17 @@ Người dùng nhập thông tin đăng ký; hệ thống xác thực dữ liệ
 \includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_1.png}
 \caption{Biểu đồ hoạt động UC-01.1: Đăng ký tài khoản}
 \label{fig:activity_uc01_1}
+\end{figure}
+
+\medskip\noindent\textbf{UC-01.2: Xác nhận OTP}\medskip
+
+Người dùng nhập mã OTP đã nhận qua email; hệ thống kiểm tra tính hợp lệ và thời hạn của mã OTP, sau đó ủy quyền cho Amazon Cognito kích hoạt tài khoản trước khi chuyển hướng đến trang đăng nhập.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/chap3/activity_uc01_2.png}
+\caption{Biểu đồ hoạt động UC-01.2: Xác nhận OTP}
+\label{fig:activity_uc01_2}
 \end{figure}
 
 \medskip\noindent\textbf{UC-01.4: Đăng nhập}\medskip

@@ -27,7 +27,7 @@ if (Tên hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi;
     stop
 else (Có)
-    :Gửi yêu cầu POST /api/v1/lists\n(kèm boardId, title, position);
+    :Hệ thống gửi yêu cầu tạo List mới;
     :Backend lưu List với position cuối cùng;
     :Hiển thị List mới ở cuối Kanban;
 endif

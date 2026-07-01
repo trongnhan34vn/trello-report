@@ -27,7 +27,7 @@ if (Tên hợp lệ?) then (Không)
     :Hiển thị thông báo lỗi;
     stop
 else (Có)
-    :Gửi yêu cầu PATCH /api/v1/checklists/:id\n(cập nhật name, position);
+    :Hệ thống gửi yêu cầu cập nhật thông tin Checklist;
     :Backend lưu thông tin Checklist;
     :Cập nhật tên Checklist trên giao diện;
 endif

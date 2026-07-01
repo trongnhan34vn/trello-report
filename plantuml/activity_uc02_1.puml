@@ -21,7 +21,7 @@ start
 
 :Người dùng đã đăng nhập vào hệ thống;
 :Truy cập trang thông tin cá nhân;
-:Gửi yêu cầu GET /api/v1/users/me\n(kèm access_token trong cookie);
+:Hệ thống gửi yêu cầu tải thông tin cá nhân\n(kèm access_token trong cookie);
 
 if (Token hợp lệ?) then (Không)
     :Trả về lỗi 401 Unauthorized;

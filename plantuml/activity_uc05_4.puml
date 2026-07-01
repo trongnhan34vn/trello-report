@@ -23,7 +23,7 @@ start
 :Kéo thả (drag-and-drop) List sang vị trí mới;
 :Frontend tính toán position mới (string-based);
 :Cập nhật giao diện tức thì (optimistic update);
-:Gửi yêu cầu PATCH /api/v1/lists/:id\n(cập nhật position);
+:Hệ thống gửi yêu cầu cập nhật vị trí List;
 
 if (Cập nhật thành công?) then (Không)
     :Rollback giao diện về vị trí cũ;

@@ -20,7 +20,7 @@ title UC-03.2: Xem danh sách Workspace
 start
 
 :Người dùng đăng nhập vào hệ thống;
-:Gửi yêu cầu GET /api/v1/workspaces\n(lấy danh sách Workspace của user);
+:Hệ thống gửi yêu cầu lấy danh sách Workspace của người dùng;
 
 if (Token hợp lệ?) then (Không)
     :Trả về lỗi 401 Unauthorized;
